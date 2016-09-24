@@ -1,6 +1,6 @@
 # TinySwift
 
-[![CI Status](http://img.shields.io/travis/Piotr Sochalewski/TinySwift.svg?style=flat)](https://travis-ci.org/Piotr Sochalewski/TinySwift)
+[![CI Status](http://img.shields.io/travis/sochalewski/TinySwift.svg?style=flat)](https://travis-ci.org/sochalewski/TinySwift)
 [![Version](https://img.shields.io/cocoapods/v/TinySwift.svg?style=flat)](http://cocoapods.org/pods/TinySwift)
 [![License](https://img.shields.io/cocoapods/l/TinySwift.svg?style=flat)](http://cocoapods.org/pods/TinySwift)
 [![Platform](https://img.shields.io/cocoapods/p/TinySwift.svg?style=flat)](http://cocoapods.org/pods/TinySwift)
@@ -22,7 +22,7 @@ pod "TinySwift"
 
 ## Author
 
-Piotr Sochalewski, sochalewski@gmail.com
+Piotr Sochalewski, <a href="http://sochalewski.github.io/">sochalewski.github.io</a>
 
 ## License
 
