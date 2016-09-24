@@ -1,0 +1,6 @@
+framework module TinySwift {
+  umbrella header "TinySwift-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "TinySwift",
+  "version": "0.1.0",
+  "summary": "A short description of TinySwift.",
+  "description": "A longer description of TinySwift.",
+  "homepage": "https://github.com/sochalewski/TinySwift",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Piotr Sochalewski": "sochalewski@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/sochalewski/TinySwift.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "TinySwift/**/*"
+}

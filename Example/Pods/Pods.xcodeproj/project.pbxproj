@@ -1,0 +1,550 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		093194B474909E40698EC62123AFED89 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392F41F6DCE530E3268B5580FD1D62EE /* String.swift */; };
+		167B14E8E58D4AF0D0B2AD56ECB3ECB0 /* TinySwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F189EA83930FB6EDB248AFA949C72F2 /* TinySwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		51974210DC820EB6C925D290FFCE7F5E /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAAA42D9F7DEF90719927B90EE71A22 /* UIViewController.swift */; };
+		8C4F76EBE3359B11051B0CF7703A0766 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		A59F576687790E4C41DAF036E3049306 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		B520668C8BC3C07ADB3F7F11D836618C /* TinySwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 682A6F43DDBE5848E864971E39703EA5 /* TinySwift-dummy.m */; };
+		D7254A187B174581004A71290573F828 /* Pods-TinySwift_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CFB478925B933351790C9CEEA44ABB36 /* Pods-TinySwift_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DAEAF2A6F1AF427C0ECE0FC65EF74EE8 /* Pods-TinySwift_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A8571B17D0AF72BFFD36D98065C4308A /* Pods-TinySwift_Tests-dummy.m */; };
+		DEB5354CFE9C4F46E0B90743A94F00C8 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF6B3FC7E2DBC36D486ECCD563B51A0 /* Array.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5A85531C243317BB89473A2FEFD5C8DD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 23EE60C3F388092D05E4BE39DCA4A47C;
+			remoteInfo = TinySwift;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0289A4B8AE4AB4024E7DD292D8B5547D /* Pods-TinySwift_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TinySwift_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		1E89965FADD89BE2F1A32DD369A3C49F /* Pods_TinySwift_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TinySwift_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2073A31C09323A65F63912543E30C06E /* Pods-TinySwift_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TinySwift_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		392F41F6DCE530E3268B5580FD1D62EE /* String.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		5BCFAA59BFA06DCE932785ABAE7CFD03 /* Pods-TinySwift_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TinySwift_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		62E6DE9FE8C1E22175050AB655D3AACD /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		682A6F43DDBE5848E864971E39703EA5 /* TinySwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TinySwift-dummy.m"; sourceTree = "<group>"; };
+		6BBEBACC42D77BC4140D6CB081A59186 /* TinySwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TinySwift-prefix.pch"; sourceTree = "<group>"; };
+		7A5B306F8EA6B122430EC67334B0596F /* Pods-TinySwift_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TinySwift_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		7F189EA83930FB6EDB248AFA949C72F2 /* TinySwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TinySwift-umbrella.h"; sourceTree = "<group>"; };
+		8902BB40CE508C5A4FD982BC555B4888 /* TinySwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TinySwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9848481F026D0C7C2CA8B57F50DEBE4E /* Pods-TinySwift_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TinySwift_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		A81A185989B4928F86F3730A0D593B2A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A8571B17D0AF72BFFD36D98065C4308A /* Pods-TinySwift_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TinySwift_Tests-dummy.m"; sourceTree = "<group>"; };
+		AEE8787FE3178E9EA5864E0D1E5787CE /* TinySwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TinySwift.xcconfig; sourceTree = "<group>"; };
+		B7B2F17836A9682BCB4DE42C571C5E6B /* Pods-TinySwift_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-TinySwift_Tests.modulemap"; sourceTree = "<group>"; };
+		BDAAA42D9F7DEF90719927B90EE71A22 /* UIViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		CFB478925B933351790C9CEEA44ABB36 /* Pods-TinySwift_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TinySwift_Tests-umbrella.h"; sourceTree = "<group>"; };
+		DFF6B3FC7E2DBC36D486ECCD563B51A0 /* Array.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		E19DFD5614A061F03627E8468BF180BB /* TinySwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = TinySwift.modulemap; sourceTree = "<group>"; };
+		FBDC5609C08AB1C94777259433CDC136 /* Pods-TinySwift_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TinySwift_Tests-resources.sh"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1AD3FB1E8681816D2A1EC1000255641C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C4F76EBE3359B11051B0CF7703A0766 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA5A1903A9F8DC283BEBA0ACBFB01A7F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A59F576687790E4C41DAF036E3049306 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				F66327A455C5F1B6585A3944F2DEB2A7 /* Development Pods */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				C0B49E94DC55231085EE53527E74C91D /* Products */,
+				DB9108A68F2EA5500E9CDE4BF21685C1 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C0B49E94DC55231085EE53527E74C91D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1E89965FADD89BE2F1A32DD369A3C49F /* Pods_TinySwift_Tests.framework */,
+				8902BB40CE508C5A4FD982BC555B4888 /* TinySwift.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DB9108A68F2EA5500E9CDE4BF21685C1 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E4A9413C92CA1E8F6C84A3681A51E75F /* Pods-TinySwift_Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		E4A9413C92CA1E8F6C84A3681A51E75F /* Pods-TinySwift_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				A81A185989B4928F86F3730A0D593B2A /* Info.plist */,
+				B7B2F17836A9682BCB4DE42C571C5E6B /* Pods-TinySwift_Tests.modulemap */,
+				7A5B306F8EA6B122430EC67334B0596F /* Pods-TinySwift_Tests-acknowledgements.markdown */,
+				9848481F026D0C7C2CA8B57F50DEBE4E /* Pods-TinySwift_Tests-acknowledgements.plist */,
+				A8571B17D0AF72BFFD36D98065C4308A /* Pods-TinySwift_Tests-dummy.m */,
+				5BCFAA59BFA06DCE932785ABAE7CFD03 /* Pods-TinySwift_Tests-frameworks.sh */,
+				FBDC5609C08AB1C94777259433CDC136 /* Pods-TinySwift_Tests-resources.sh */,
+				CFB478925B933351790C9CEEA44ABB36 /* Pods-TinySwift_Tests-umbrella.h */,
+				2073A31C09323A65F63912543E30C06E /* Pods-TinySwift_Tests.debug.xcconfig */,
+				0289A4B8AE4AB4024E7DD292D8B5547D /* Pods-TinySwift_Tests.release.xcconfig */,
+			);
+			name = "Pods-TinySwift_Tests";
+			path = "Target Support Files/Pods-TinySwift_Tests";
+			sourceTree = "<group>";
+		};
+		E73394C8767AD25AF2A4F2C1784515AC /* TinySwift */ = {
+			isa = PBXGroup;
+			children = (
+				FE4B545737DAC57C94B92FA7529A9839 /* Support Files */,
+				EF797B63503697B837E4618960348B86 /* TinySwift */,
+			);
+			name = TinySwift;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		EF797B63503697B837E4618960348B86 /* TinySwift */ = {
+			isa = PBXGroup;
+			children = (
+				DFF6B3FC7E2DBC36D486ECCD563B51A0 /* Array.swift */,
+				392F41F6DCE530E3268B5580FD1D62EE /* String.swift */,
+				BDAAA42D9F7DEF90719927B90EE71A22 /* UIViewController.swift */,
+			);
+			path = TinySwift;
+			sourceTree = "<group>";
+		};
+		F66327A455C5F1B6585A3944F2DEB2A7 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E73394C8767AD25AF2A4F2C1784515AC /* TinySwift */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		FE4B545737DAC57C94B92FA7529A9839 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				62E6DE9FE8C1E22175050AB655D3AACD /* Info.plist */,
+				E19DFD5614A061F03627E8468BF180BB /* TinySwift.modulemap */,
+				AEE8787FE3178E9EA5864E0D1E5787CE /* TinySwift.xcconfig */,
+				682A6F43DDBE5848E864971E39703EA5 /* TinySwift-dummy.m */,
+				6BBEBACC42D77BC4140D6CB081A59186 /* TinySwift-prefix.pch */,
+				7F189EA83930FB6EDB248AFA949C72F2 /* TinySwift-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/TinySwift";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		7A7DB1C679C16AA225E46B18F21966AD /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				167B14E8E58D4AF0D0B2AD56ECB3ECB0 /* TinySwift-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F773890DFC836259D93A02C0801B5AA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7254A187B174581004A71290573F828 /* Pods-TinySwift_Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		23EE60C3F388092D05E4BE39DCA4A47C /* TinySwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6DEC38D381BB859BBE1322C62C007E15 /* Build configuration list for PBXNativeTarget "TinySwift" */;
+			buildPhases = (
+				AC4498F9FFB22DE56516F83490930FD9 /* Sources */,
+				DA5A1903A9F8DC283BEBA0ACBFB01A7F /* Frameworks */,
+				7A7DB1C679C16AA225E46B18F21966AD /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TinySwift;
+			productName = TinySwift;
+			productReference = 8902BB40CE508C5A4FD982BC555B4888 /* TinySwift.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		CE0C4BFF48EE17F5153E3A1D7AA694CB /* Pods-TinySwift_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 63B9DD8608FB6E35621AF7E325D0045F /* Build configuration list for PBXNativeTarget "Pods-TinySwift_Tests" */;
+			buildPhases = (
+				97900E1FFE6DDD36628F32AA0792D315 /* Sources */,
+				1AD3FB1E8681816D2A1EC1000255641C /* Frameworks */,
+				9F773890DFC836259D93A02C0801B5AA /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				99B869A4F5E4120AE4FE2E43B0A83DF1 /* PBXTargetDependency */,
+			);
+			name = "Pods-TinySwift_Tests";
+			productName = "Pods-TinySwift_Tests";
+			productReference = 1E89965FADD89BE2F1A32DD369A3C49F /* Pods_TinySwift_Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = C0B49E94DC55231085EE53527E74C91D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CE0C4BFF48EE17F5153E3A1D7AA694CB /* Pods-TinySwift_Tests */,
+				23EE60C3F388092D05E4BE39DCA4A47C /* TinySwift */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		97900E1FFE6DDD36628F32AA0792D315 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DAEAF2A6F1AF427C0ECE0FC65EF74EE8 /* Pods-TinySwift_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC4498F9FFB22DE56516F83490930FD9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEB5354CFE9C4F46E0B90743A94F00C8 /* Array.swift in Sources */,
+				093194B474909E40698EC62123AFED89 /* String.swift in Sources */,
+				B520668C8BC3C07ADB3F7F11D836618C /* TinySwift-dummy.m in Sources */,
+				51974210DC820EB6C925D290FFCE7F5E /* UIViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		99B869A4F5E4120AE4FE2E43B0A83DF1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = TinySwift;
+			target = 23EE60C3F388092D05E4BE39DCA4A47C /* TinySwift */;
+			targetProxy = 5A85531C243317BB89473A2FEFD5C8DD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		2BEF4444A559C6FE9EEA51FCEBE65629 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2073A31C09323A65F63912543E30C06E /* Pods-TinySwift_Tests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-TinySwift_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TinySwift_Tests/Pods-TinySwift_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_TinySwift_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		51272FDF4BB76903B3C01282E75EE7B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AEE8787FE3178E9EA5864E0D1E5787CE /* TinySwift.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/TinySwift/TinySwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TinySwift/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/TinySwift/TinySwift.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = TinySwift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		55F8AED3319CD6924EB8CEB32D864B41 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0289A4B8AE4AB4024E7DD292D8B5547D /* Pods-TinySwift_Tests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-TinySwift_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TinySwift_Tests/Pods-TinySwift_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_TinySwift_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		8DED8AD26D381A6ACFF202E5217EC498 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9E1E4E48AF2EAB23169E611BF694090A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		A5A854F805EFE7A30E8EA59A4902092E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AEE8787FE3178E9EA5864E0D1E5787CE /* TinySwift.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/TinySwift/TinySwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TinySwift/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/TinySwift/TinySwift.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = TinySwift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9E1E4E48AF2EAB23169E611BF694090A /* Debug */,
+				8DED8AD26D381A6ACFF202E5217EC498 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		63B9DD8608FB6E35621AF7E325D0045F /* Build configuration list for PBXNativeTarget "Pods-TinySwift_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2BEF4444A559C6FE9EEA51FCEBE65629 /* Debug */,
+				55F8AED3319CD6924EB8CEB32D864B41 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6DEC38D381BB859BBE1322C62C007E15 /* Build configuration list for PBXNativeTarget "TinySwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				51272FDF4BB76903B3C01282E75EE7B3 /* Debug */,
+				A5A854F805EFE7A30E8EA59A4902092E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
