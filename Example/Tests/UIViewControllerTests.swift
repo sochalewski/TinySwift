@@ -16,7 +16,7 @@ class UIViewControllerTests: XCTestCase {
     
     func testPresentAlertController() {
         XCTAssert(viewController.presentedViewController == nil, "View controller should not present any view controller before execute tested function")
-        viewController.presentAlertViewController(withTitle: "Title", message: nil) {
+        viewController.presentAlertController(withTitle: "Title", message: nil) {
             XCTAssert(self.viewController.presentedViewController != nil, "View controller should present alert view controller after execute tested function")
         }
     }

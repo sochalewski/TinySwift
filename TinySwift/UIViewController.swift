@@ -16,7 +16,7 @@ public extension UIViewController {
      - parameter message: Descriptive text that provides additional details about the reason for the alert.
      - parameter completion: The block to execute after the presentation finishes. This block has no return value and takes no parameters. You may specify nil for this parameter.
      */
-    public func presentAlertViewController(withTitle title: String?, message: String?, completion: (() -> Void)? = nil) {
+    public func presentAlertController(withTitle title: String?, message: String?, completion: (() -> Void)? = nil) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         present(alertController, animated: true, completion: nil)

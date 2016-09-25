@@ -1,8 +1,8 @@
 {
   "name": "TinySwift",
-  "version": "0.1.0",
-  "summary": "A short description of TinySwift.",
-  "description": "A longer description of TinySwift.",
+  "version": "0.2.0",
+  "summary": "Powerful Swift classes and structs extensions",
+  "description": "Powerful Swift classes and structs extensions giving you even better Swift 3.0 experience.",
   "homepage": "https://github.com/sochalewski/TinySwift",
   "license": {
     "type": "MIT",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/sochalewski/TinySwift.git",
-    "tag": "0.1.0"
+    "tag": "0.2.0"
   },
   "platforms": {
     "ios": "8.0"

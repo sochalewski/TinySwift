@@ -5,11 +5,9 @@
 [![License](https://img.shields.io/cocoapods/l/TinySwift.svg?style=flat)](http://cocoapods.org/pods/TinySwift)
 [![Platform](https://img.shields.io/cocoapods/p/TinySwift.svg?style=flat)](http://cocoapods.org/pods/TinySwift)
 
-## Example
-
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
-
 ## Requirements
+
+Swift 3, iOS 8+
 
 ## Installation
 
@@ -19,6 +17,43 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod "TinySwift"
 ```
+
+## Usage
+
+TinySwift is an extension pack for Swift classes and structs.
+
+It contains the following functions and properties:
+
+### Array
+
+* `var random`
+* `var areAllElementsEqual`
+* `func subcript(safe:)`
+
+### AVAsset
+
+* `var thumbnail`
+
+### String
+
+* `init(randomAlphanumericWithLength:)`
+* `var trimmed`
+
+### UIImage
+
+* `var jpeg`
+* `var normalizedImage`
+* `var png`
+* `var square`
+* `var thumbnail`
+* `func applyBorder(width:color:)`
+* `func crop(to:)`
+* `func jpeg(quality:)`
+* `func resize(to:)`
+
+### UIViewController
+
+* `func presentAlertController(withTitle:message:completion:)`
 
 ## Author
 

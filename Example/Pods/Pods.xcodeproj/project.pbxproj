@@ -7,15 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		093194B474909E40698EC62123AFED89 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392F41F6DCE530E3268B5580FD1D62EE /* String.swift */; };
-		167B14E8E58D4AF0D0B2AD56ECB3ECB0 /* TinySwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F189EA83930FB6EDB248AFA949C72F2 /* TinySwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		51974210DC820EB6C925D290FFCE7F5E /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAAA42D9F7DEF90719927B90EE71A22 /* UIViewController.swift */; };
+		167B14E8E58D4AF0D0B2AD56ECB3ECB0 /* TinySwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C274F752F4E92B4B80A7219DBC83793C /* TinySwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2B0CCA9E231B187B2A512DF7B0B9425B /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1011D5392C627E596D5029DCBD4278C /* Array.swift */; };
+		61AD0BE84268990C3D7E80B6F8E6C6F2 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0433329BCBD9CEC32DF214768B27A9 /* UIImage.swift */; };
+		7788C2A26F414359197C77D72424253B /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE472FCFF6798F5ACD031DDB44AA6DF5 /* UIViewController.swift */; };
+		77BC37268EF504C78755EE3BCBB750EC /* AVAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B766E010E4AB076FB03AECA72D7418B /* AVAsset.swift */; };
+		7E717FACA0A63E2CCFA5B8085C85A7FC /* TinySwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A04101BB71D90BF385E5405C3E02FBC /* TinySwift-dummy.m */; };
 		8C4F76EBE3359B11051B0CF7703A0766 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
 		A59F576687790E4C41DAF036E3049306 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
-		B520668C8BC3C07ADB3F7F11D836618C /* TinySwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 682A6F43DDBE5848E864971E39703EA5 /* TinySwift-dummy.m */; };
 		D7254A187B174581004A71290573F828 /* Pods-TinySwift_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CFB478925B933351790C9CEEA44ABB36 /* Pods-TinySwift_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DAEAF2A6F1AF427C0ECE0FC65EF74EE8 /* Pods-TinySwift_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A8571B17D0AF72BFFD36D98065C4308A /* Pods-TinySwift_Tests-dummy.m */; };
-		DEB5354CFE9C4F46E0B90743A94F00C8 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF6B3FC7E2DBC36D486ECCD563B51A0 /* Array.swift */; };
+		E67A3A6DA74945109054A84388BD530F /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA8F5891EDF9E1E96764AFE4BF437EE /* String.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,25 +34,27 @@
 		0289A4B8AE4AB4024E7DD292D8B5547D /* Pods-TinySwift_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TinySwift_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		1E89965FADD89BE2F1A32DD369A3C49F /* Pods_TinySwift_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TinySwift_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2073A31C09323A65F63912543E30C06E /* Pods-TinySwift_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TinySwift_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		392F41F6DCE530E3268B5580FD1D62EE /* String.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		2415767329D247478CD4C591BCD236F8 /* TinySwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TinySwift.xcconfig; sourceTree = "<group>"; };
+		2A0433329BCBD9CEC32DF214768B27A9 /* UIImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		5B766E010E4AB076FB03AECA72D7418B /* AVAsset.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AVAsset.swift; sourceTree = "<group>"; };
 		5BCFAA59BFA06DCE932785ABAE7CFD03 /* Pods-TinySwift_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TinySwift_Tests-frameworks.sh"; sourceTree = "<group>"; };
-		62E6DE9FE8C1E22175050AB655D3AACD /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		682A6F43DDBE5848E864971E39703EA5 /* TinySwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TinySwift-dummy.m"; sourceTree = "<group>"; };
-		6BBEBACC42D77BC4140D6CB081A59186 /* TinySwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TinySwift-prefix.pch"; sourceTree = "<group>"; };
+		6655BD927B671B6B77F4F01EABD2A9F1 /* TinySwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = TinySwift.modulemap; sourceTree = "<group>"; };
+		7380E62C854EBE5033B5A6F509111B2A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A5B306F8EA6B122430EC67334B0596F /* Pods-TinySwift_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TinySwift_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		7F189EA83930FB6EDB248AFA949C72F2 /* TinySwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TinySwift-umbrella.h"; sourceTree = "<group>"; };
 		8902BB40CE508C5A4FD982BC555B4888 /* TinySwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TinySwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9848481F026D0C7C2CA8B57F50DEBE4E /* Pods-TinySwift_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TinySwift_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		9A04101BB71D90BF385E5405C3E02FBC /* TinySwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TinySwift-dummy.m"; sourceTree = "<group>"; };
+		A621EF632CB9F2F0491B9B9460D03171 /* TinySwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TinySwift-prefix.pch"; sourceTree = "<group>"; };
 		A81A185989B4928F86F3730A0D593B2A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A8571B17D0AF72BFFD36D98065C4308A /* Pods-TinySwift_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TinySwift_Tests-dummy.m"; sourceTree = "<group>"; };
-		AEE8787FE3178E9EA5864E0D1E5787CE /* TinySwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TinySwift.xcconfig; sourceTree = "<group>"; };
+		B1011D5392C627E596D5029DCBD4278C /* Array.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		B7B2F17836A9682BCB4DE42C571C5E6B /* Pods-TinySwift_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-TinySwift_Tests.modulemap"; sourceTree = "<group>"; };
-		BDAAA42D9F7DEF90719927B90EE71A22 /* UIViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		C274F752F4E92B4B80A7219DBC83793C /* TinySwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TinySwift-umbrella.h"; sourceTree = "<group>"; };
 		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		CFB478925B933351790C9CEEA44ABB36 /* Pods-TinySwift_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TinySwift_Tests-umbrella.h"; sourceTree = "<group>"; };
-		DFF6B3FC7E2DBC36D486ECCD563B51A0 /* Array.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
-		E19DFD5614A061F03627E8468BF180BB /* TinySwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = TinySwift.modulemap; sourceTree = "<group>"; };
+		EE472FCFF6798F5ACD031DDB44AA6DF5 /* UIViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		EFA8F5891EDF9E1E96764AFE4BF437EE /* String.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		FBDC5609C08AB1C94777259433CDC136 /* Pods-TinySwift_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TinySwift_Tests-resources.sh"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -74,12 +78,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0FD445A513F35937E5B16F3EA91A2AA8 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				7380E62C854EBE5033B5A6F509111B2A /* Info.plist */,
+				6655BD927B671B6B77F4F01EABD2A9F1 /* TinySwift.modulemap */,
+				2415767329D247478CD4C591BCD236F8 /* TinySwift.xcconfig */,
+				9A04101BB71D90BF385E5405C3E02FBC /* TinySwift-dummy.m */,
+				A621EF632CB9F2F0491B9B9460D03171 /* TinySwift-prefix.pch */,
+				C274F752F4E92B4B80A7219DBC83793C /* TinySwift-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/TinySwift";
+			sourceTree = "<group>";
+		};
 		3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
 				CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */,
 			);
 			name = iOS;
+			sourceTree = "<group>";
+		};
+		625E32586CFDCED0ECA39BE74D30F098 /* TinySwift */ = {
+			isa = PBXGroup;
+			children = (
+				B1011D5392C627E596D5029DCBD4278C /* Array.swift */,
+				5B766E010E4AB076FB03AECA72D7418B /* AVAsset.swift */,
+				EFA8F5891EDF9E1E96764AFE4BF437EE /* String.swift */,
+				2A0433329BCBD9CEC32DF214768B27A9 /* UIImage.swift */,
+				EE472FCFF6798F5ACD031DDB44AA6DF5 /* UIViewController.swift */,
+			);
+			path = TinySwift;
+			sourceTree = "<group>";
+		};
+		6F78C0C7909E4CD1592D2F9F5C2DE417 /* TinySwift */ = {
+			isa = PBXGroup;
+			children = (
+				0FD445A513F35937E5B16F3EA91A2AA8 /* Support Files */,
+				625E32586CFDCED0ECA39BE74D30F098 /* TinySwift */,
+			);
+			name = TinySwift;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -136,46 +176,12 @@
 			path = "Target Support Files/Pods-TinySwift_Tests";
 			sourceTree = "<group>";
 		};
-		E73394C8767AD25AF2A4F2C1784515AC /* TinySwift */ = {
-			isa = PBXGroup;
-			children = (
-				FE4B545737DAC57C94B92FA7529A9839 /* Support Files */,
-				EF797B63503697B837E4618960348B86 /* TinySwift */,
-			);
-			name = TinySwift;
-			path = ../..;
-			sourceTree = "<group>";
-		};
-		EF797B63503697B837E4618960348B86 /* TinySwift */ = {
-			isa = PBXGroup;
-			children = (
-				DFF6B3FC7E2DBC36D486ECCD563B51A0 /* Array.swift */,
-				392F41F6DCE530E3268B5580FD1D62EE /* String.swift */,
-				BDAAA42D9F7DEF90719927B90EE71A22 /* UIViewController.swift */,
-			);
-			path = TinySwift;
-			sourceTree = "<group>";
-		};
 		F66327A455C5F1B6585A3944F2DEB2A7 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				E73394C8767AD25AF2A4F2C1784515AC /* TinySwift */,
+				6F78C0C7909E4CD1592D2F9F5C2DE417 /* TinySwift */,
 			);
 			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		FE4B545737DAC57C94B92FA7529A9839 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				62E6DE9FE8C1E22175050AB655D3AACD /* Info.plist */,
-				E19DFD5614A061F03627E8468BF180BB /* TinySwift.modulemap */,
-				AEE8787FE3178E9EA5864E0D1E5787CE /* TinySwift.xcconfig */,
-				682A6F43DDBE5848E864971E39703EA5 /* TinySwift-dummy.m */,
-				6BBEBACC42D77BC4140D6CB081A59186 /* TinySwift-prefix.pch */,
-				7F189EA83930FB6EDB248AFA949C72F2 /* TinySwift-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/TinySwift";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,7 +210,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6DEC38D381BB859BBE1322C62C007E15 /* Build configuration list for PBXNativeTarget "TinySwift" */;
 			buildPhases = (
-				AC4498F9FFB22DE56516F83490930FD9 /* Sources */,
+				C8E558CF94A77B6822DF6AE3D90F35AA /* Sources */,
 				DA5A1903A9F8DC283BEBA0ACBFB01A7F /* Frameworks */,
 				7A7DB1C679C16AA225E46B18F21966AD /* Headers */,
 			);
@@ -271,14 +277,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AC4498F9FFB22DE56516F83490930FD9 /* Sources */ = {
+		C8E558CF94A77B6822DF6AE3D90F35AA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DEB5354CFE9C4F46E0B90743A94F00C8 /* Array.swift in Sources */,
-				093194B474909E40698EC62123AFED89 /* String.swift in Sources */,
-				B520668C8BC3C07ADB3F7F11D836618C /* TinySwift-dummy.m in Sources */,
-				51974210DC820EB6C925D290FFCE7F5E /* UIViewController.swift in Sources */,
+				2B0CCA9E231B187B2A512DF7B0B9425B /* Array.swift in Sources */,
+				77BC37268EF504C78755EE3BCBB750EC /* AVAsset.swift in Sources */,
+				E67A3A6DA74945109054A84388BD530F /* String.swift in Sources */,
+				7E717FACA0A63E2CCFA5B8085C85A7FC /* TinySwift-dummy.m in Sources */,
+				61AD0BE84268990C3D7E80B6F8E6C6F2 /* UIImage.swift in Sources */,
+				7788C2A26F414359197C77D72424253B /* UIViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,7 +340,7 @@
 		};
 		51272FDF4BB76903B3C01282E75EE7B3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AEE8787FE3178E9EA5864E0D1E5787CE /* TinySwift.xcconfig */;
+			baseConfigurationReference = 2415767329D247478CD4C591BCD236F8 /* TinySwift.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -484,7 +492,7 @@
 		};
 		A5A854F805EFE7A30E8EA59A4902092E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AEE8787FE3178E9EA5864E0D1E5787CE /* TinySwift.xcconfig */;
+			baseConfigurationReference = 2415767329D247478CD4C591BCD236F8 /* TinySwift.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
