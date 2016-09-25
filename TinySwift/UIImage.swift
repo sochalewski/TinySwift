@@ -104,7 +104,7 @@ public extension UIImage {
      - parameter borderColor: The desired color of the border.
      - returns: A bordered UIImage object.
      */
-    public func applyBorder(width borderWidth: CGFloat, color borderColor: UIColor) -> UIImage? {
+    public func border(width borderWidth: CGFloat, color borderColor: UIColor) -> UIImage? {
         guard let cgImage = cgImage else { return nil }
 
         UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
@@ -131,5 +131,24 @@ public extension UIImage {
         UIGraphicsEndImageContext()
 
         return UIImage(cgImage: coreImage)
+    }
+    
+    /**
+     Return a color the given point.
+     
+     - parameter point: The point to get color with.
+     - returns: A UIColor object.
+     */
+    public func color(atPoint point: CGPoint) -> UIColor? {
+        guard let dataProvider = cgImage?.dataProvider, let data = CFDataGetBytePtr(dataProvider.data) else { return nil }
+        
+        let pixelInfo = ((Int(self.size.width) * Int(point.y)) + Int(point.x)) * 4
+        
+        let r = CGFloat(data[pixelInfo]) / 255.0
+        let g = CGFloat(data[pixelInfo+1]) / 255.0
+        let b = CGFloat(data[pixelInfo+2]) / 255.0
+        let a = CGFloat(data[pixelInfo+3]) / 255.0
+        
+        return UIColor(red: r, green: g, blue: b, alpha: a)
     }
 }

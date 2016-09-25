@@ -47,7 +47,8 @@ It contains the following functions and properties:
 * `var png`
 * `var square`
 * `var thumbnail`
-* `func applyBorder(width:color:)`
+* `func border(width:color:)`
+* `func color(atPoint:)`
 * `func crop(to:)`
 * `func jpeg(quality:)`
 * `func resize(to:)`
