@@ -1,6 +1,7 @@
 # TinySwift
 
 [![CI Status](http://img.shields.io/travis/sochalewski/TinySwift.svg?style=flat)](https://travis-ci.org/sochalewski/TinySwift)
+[![codecov](https://codecov.io/gh/sochalewski/TinySwift/branch/master/graph/badge.svg)](https://codecov.io/gh/sochalewski/TinySwift)
 [![Version](https://img.shields.io/cocoapods/v/TinySwift.svg?style=flat)](http://cocoapods.org/pods/TinySwift)
 [![License](https://img.shields.io/cocoapods/l/TinySwift.svg?style=flat)](http://cocoapods.org/pods/TinySwift)
 [![Platform](https://img.shields.io/cocoapods/p/TinySwift.svg?style=flat)](http://cocoapods.org/pods/TinySwift)
@@ -28,7 +29,7 @@ It contains the following functions and properties:
 
 * `var random`
 * `var areAllElementsEqual`
-* `func subcript(safe:)`
+* `subscript(safe:)`
 
 ### AVAsset
 
