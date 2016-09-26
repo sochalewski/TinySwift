@@ -38,7 +38,14 @@ It contains the following functions and properties:
 ### String
 
 * `init(randomAlphanumericWithLength:)`
+* `var initials`
+* `var lines`
+* `var nonEmptyLines`
 * `var trimmed`
+
+### UIColor
+
+* `init(hex:alpha:)`
 
 ### UIImage
 
@@ -52,6 +59,11 @@ It contains the following functions and properties:
 * `func crop(to:)`
 * `func jpeg(quality:)`
 * `func resize(to:)`
+
+### UIScreen
+
+* `var isPad13OrBigger`
+* `var isSmallScreen`
 
 ### UIViewController
 

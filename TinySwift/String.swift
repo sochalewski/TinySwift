@@ -33,4 +33,27 @@ public extension String {
     public var trimmed: String {
         return trimmingCharacters(in: .whitespacesAndNewlines)
     }
+    
+    /// Returns a new string made by first letter of the each String word.
+    public var initials: String? {
+        return components(separatedBy: .whitespacesAndNewlines)
+            .filter { !$0.isEmpty }
+            .map { $0.substring(to: index(after: startIndex)) }
+            .joined()
+    }
+    
+    /// Returns an array of strings where elements are the String lines.
+    public var lines: [String] {
+        var result = [String]()
+        enumerateLines { (line, _) in
+            result.append(line)
+        }
+        
+        return result
+    }
+    
+    /// Returns an array of strings where elements are the String non-empty lines.
+    public var nonEmptyLines: [String] {
+        return lines.filter { !$0.trimmed.isEmpty }
+    }
 }

@@ -1,6 +1,6 @@
 //
 //  AVAsset.swift
-//  Pods
+//  TinySwift
 //
 //  Created by Piotr Sochalewski on 25.09.2016.
 //  Copyright © 2016 Piotr Sochalewski. All rights reserved.

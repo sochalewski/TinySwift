@@ -22,4 +22,23 @@ class Tests: XCTestCase {
         let stringToBeTrimmed = "\n\n  XX \n \r \t "
         XCTAssert(stringToBeTrimmed.trimmed.characters.count == 2, "Trimmed string length is not desired length")
     }
+    
+    func testInitialsString() {
+        let name = "Piotr Sochalewski"
+        let lorem = "Lorem ipsum dolor  \n    sit amet  "
+        XCTAssert(name.initials == "PS", "Initials should return first letters")
+        XCTAssert(lorem.initials == "Lidsa", "Initials should return first letters even if there are multiple spaces or new lines")
+    }
+    
+    func testLinesString() {
+        let lorem = ["Lorem ipsum", "dolor sit amet", "consectetur adipiscing elit"]
+        let string = lorem.joined(separator: "\n")
+        let lines = string.lines
+        XCTAssert(lines == lorem, "Lines should equal the array that elements joined created the string")
+    }
+    
+    func testNonEmptyLinesString() {
+        let string = "Lorem ipsum\n  \t \ndolor sit amet\n \n  \n consectetur adipiscing elit\n  \n"
+        XCTAssert(string.nonEmptyLines.count == 3, "Non empty lines should have three elements")
+    }
 }
