@@ -8,14 +8,16 @@
 
 import Foundation
 
-public extension Array {
+public extension Collection where Index == Int {
     /// Returns a randomized array's element.
-    public var random: Element? {
+    public var random: Iterator.Element? {
         guard !isEmpty else { return nil }
-        let index = Int(arc4random_uniform(UInt32(count)))
+        let index = Int(arc4random_uniform(UInt32(endIndex - startIndex)))
         return self[index]
     }
-    
+}
+
+public extension Array {
     /**
      Accesses the element at the specified position in a safe way.
      
@@ -44,5 +46,31 @@ public extension Array where Element: Equatable {
     public var areAllElementsEqual: Bool {
         guard let first = first else { return true }
         return !dropFirst().contains { $0 != first }
+    }
+}
+
+public extension Array where Element: Integer {
+    /// Returns the sum of all elements in the array.
+    var sum: Element {
+        return reduce(0, +)
+    }
+}
+
+public extension Collection where Iterator.Element == Int, Index == Int {
+    /// Returns the average of all elements in the array.
+    var average: Double {
+        return isEmpty ? 0 : Double(reduce(0, +)) / Double(endIndex-startIndex)
+    }
+}
+
+public extension Array where Element: FloatingPoint {
+    /// Returns the sum of all elements in the array.
+    var sum: Element {
+        return reduce(0, +)
+    }
+    
+    /// Returns the average of all elements in the array.
+    var average: Element {
+        return isEmpty ? 0 : sum / Element(count)
     }
 }

@@ -9,7 +9,7 @@
 import XCTest
 import TinySwift
 
-class Tests: XCTestCase {
+class StringTests: XCTestCase {
     
     func testRandomString() {
         let desiredLength = 12
