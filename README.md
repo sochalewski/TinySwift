@@ -25,15 +25,32 @@ TinySwift is an extension pack for Swift classes and structs.
 
 It contains the following functions and properties:
 
-### Array
-
-* `var random`
-* `var areAllElementsEqual`
-* `subscript(safe:)`
-
 ### AVAsset
 
 * `var thumbnail`
+
+### Collection
+
+* `var random`
+
+#### Array
+
+* `var areAllElementsEqual`
+* `var average`
+* `var sum`
+* `subscript(safe:)`
+
+### Date
+
+* `var firstOfMonth`
+* `var firstOfYear`
+* `var lastOfMonth`
+* `var lastOfYear`
+* `var weekday`
+
+### Integer
+
+* `var factorial`
 
 ### String
 

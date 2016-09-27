@@ -30,4 +30,24 @@ class ArrayTests: XCTestCase {
         fiveElements[safe: 2] = 5
         XCTAssert(fiveElements[safe: 2] == 5, "Elements should be able to change through the safe: subscript accessor")
     }
+    
+    func testArrayFloatSum() {
+        let array = [1.2, 2.7, 3.2, 4.0, 5.1, 6.9]
+        XCTAssert(array.sum == array.reduce(0, +))
+    }
+    
+    func testArrayIntSum() {
+        let array = [1, 2, 3, 4, 5, 6]
+        XCTAssert(array.sum == array.reduce(0, +))
+    }
+    
+    func testArrayFloatAverage() {
+        let array = [1.2, 2.7, 3.2, 4.0, 5.1, 6.9]
+        XCTAssert(array.average == array.reduce(0, +) / Double(array.count))
+    }
+    
+    func testArrayIntAverage() {
+        let array = [1, 2, 3, 4, 5, 6]
+        XCTAssert(array.average == Double(array.reduce(0, +)) / Double(array.count))
+    }
 }

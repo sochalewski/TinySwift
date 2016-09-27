@@ -7,19 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		002E516FBFB6798EAA477B206E3BE41A /* UIScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A506F519A932F3F6415FB751172A574 /* UIScreen.swift */; };
-		167B14E8E58D4AF0D0B2AD56ECB3ECB0 /* TinySwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A76A784325135637830E179AEB540746 /* TinySwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3AF9C1FED1881AF3B8A573452C1F4FB9 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF9C2DA4BE8666A5EB14347BE48A223 /* UIImage.swift */; };
-		4C78AB1E73335578CC696CF50E82AED5 /* TinySwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B9A70E0997CDC17EC76590145C150BD7 /* TinySwift-dummy.m */; };
-		51E03D9039D69CCD0616ABB0B193F79B /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31347AFA2C8F682A2DBEC610E4E31F58 /* UIColor.swift */; };
-		5928EFCAC61964AAF6107E21DFD4F6F3 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCDBD19609BED7EB6484F81EAE2DB36 /* UIViewController.swift */; };
-		76771D2326557F3DB992E7F2B4FA224E /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDDB11CF74C2A7C0A2A7A28B2BDDA7E /* Array.swift */; };
+		167B14E8E58D4AF0D0B2AD56ECB3ECB0 /* TinySwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 28A3DBE4D4BE79BD250003BB5B3D0869 /* TinySwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4137DE84F3C61F1803E82EA889BC622A /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2999A1AC5B0730D8994E334407DD1A /* Date.swift */; };
+		4AAEBC48DFEF67DF819547892BF6726A /* TinySwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E62B79672709EC6B056E081BD03EC6 /* TinySwift-dummy.m */; };
+		5199A2CAD207F4081BBEECB7559C1E39 /* UIScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC77F7146CA46DD33E3D452198CC3C6 /* UIScreen.swift */; };
+		5D7EE47D50686D45EDB30BC075AFD9DE /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86A8CED29A1F8DED8131DBC40CBF304 /* Array.swift */; };
+		704C96B01B7E1803C2B6C3B703F541A6 /* AVAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD737E8DC8FB4CC6A2B4C46DD500201 /* AVAsset.swift */; };
+		82F84E455033102057827660535C094C /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E2BB4C3550D7A5030DEFCC895E35F0 /* UIViewController.swift */; };
 		8C4F76EBE3359B11051B0CF7703A0766 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		90881886072A5BBCE28AC52684B646F7 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BAB094712104E99D2DC2D4150306F8C /* String.swift */; };
 		A59F576687790E4C41DAF036E3049306 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		AF7A3E108683752F9F3251DC013D4B45 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD64A2EFE07C555209E8460AF0791B7 /* UIImage.swift */; };
 		D7254A187B174581004A71290573F828 /* Pods-TinySwift_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CFB478925B933351790C9CEEA44ABB36 /* Pods-TinySwift_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D78562697E5A49272EB365D1BB759836 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4D0B0564A5E5B553FAA0A4BE81A8CA /* UIColor.swift */; };
 		DAEAF2A6F1AF427C0ECE0FC65EF74EE8 /* Pods-TinySwift_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A8571B17D0AF72BFFD36D98065C4308A /* Pods-TinySwift_Tests-dummy.m */; };
-		F17AB8B966B21953C0F4A199B97204ED /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C714B8119E2EC2B5A21027C0C553FA /* String.swift */; };
-		F459E8FB01F5B4E7F4FC672F1DB1DA94 /* AVAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D76E7E4DEE8BDC7333583EEFE5B34B /* AVAsset.swift */; };
+		F01831971E166B1EBD5A05CA04EEF0AB /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ED469C7162500AAF74283E7B1D4B13 /* Int.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,31 +36,33 @@
 
 /* Begin PBXFileReference section */
 		0289A4B8AE4AB4024E7DD292D8B5547D /* Pods-TinySwift_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TinySwift_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		0A4A25290BEFE2620883669D481F5A51 /* TinySwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TinySwift-prefix.pch"; sourceTree = "<group>"; };
-		1DCDBD19609BED7EB6484F81EAE2DB36 /* UIViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		07ED469C7162500AAF74283E7B1D4B13 /* Int.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
+		0BAB094712104E99D2DC2D4150306F8C /* String.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		1E89965FADD89BE2F1A32DD369A3C49F /* Pods_TinySwift_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TinySwift_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2073A31C09323A65F63912543E30C06E /* Pods-TinySwift_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TinySwift_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		2838A013CB4B31EAF665C3ED8D0A4754 /* TinySwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TinySwift.xcconfig; sourceTree = "<group>"; };
-		31347AFA2C8F682A2DBEC610E4E31F58 /* UIColor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
-		40D76E7E4DEE8BDC7333583EEFE5B34B /* AVAsset.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AVAsset.swift; sourceTree = "<group>"; };
-		4BF9C2DA4BE8666A5EB14347BE48A223 /* UIImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
-		4EDDB11CF74C2A7C0A2A7A28B2BDDA7E /* Array.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		28A3DBE4D4BE79BD250003BB5B3D0869 /* TinySwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TinySwift-umbrella.h"; sourceTree = "<group>"; };
+		2C48438D6AAF904BC0EC663D82DA2F7E /* TinySwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TinySwift-prefix.pch"; sourceTree = "<group>"; };
+		2EC77F7146CA46DD33E3D452198CC3C6 /* UIScreen.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIScreen.swift; sourceTree = "<group>"; };
+		3BD64A2EFE07C555209E8460AF0791B7 /* UIImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		40E62B79672709EC6B056E081BD03EC6 /* TinySwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TinySwift-dummy.m"; sourceTree = "<group>"; };
 		5BCFAA59BFA06DCE932785ABAE7CFD03 /* Pods-TinySwift_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TinySwift_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		7A5B306F8EA6B122430EC67334B0596F /* Pods-TinySwift_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TinySwift_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		7E2999A1AC5B0730D8994E334407DD1A /* Date.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		8902BB40CE508C5A4FD982BC555B4888 /* TinySwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TinySwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8A506F519A932F3F6415FB751172A574 /* UIScreen.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIScreen.swift; sourceTree = "<group>"; };
+		92B0D153CB660BC7E458587317BA27D3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9848481F026D0C7C2CA8B57F50DEBE4E /* Pods-TinySwift_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TinySwift_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		A3C714B8119E2EC2B5A21027C0C553FA /* String.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
-		A6F6536BEC0888686DD2669590F9659D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A76A784325135637830E179AEB540746 /* TinySwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TinySwift-umbrella.h"; sourceTree = "<group>"; };
 		A81A185989B4928F86F3730A0D593B2A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A8571B17D0AF72BFFD36D98065C4308A /* Pods-TinySwift_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TinySwift_Tests-dummy.m"; sourceTree = "<group>"; };
+		AA4D0B0564A5E5B553FAA0A4BE81A8CA /* UIColor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		B7B2F17836A9682BCB4DE42C571C5E6B /* Pods-TinySwift_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-TinySwift_Tests.modulemap"; sourceTree = "<group>"; };
-		B9A70E0997CDC17EC76590145C150BD7 /* TinySwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TinySwift-dummy.m"; sourceTree = "<group>"; };
+		CDD737E8DC8FB4CC6A2B4C46DD500201 /* AVAsset.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AVAsset.swift; sourceTree = "<group>"; };
 		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		CF6E5AF9BEC473E1C289FD3DD15FCC14 /* TinySwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = TinySwift.modulemap; sourceTree = "<group>"; };
 		CFB478925B933351790C9CEEA44ABB36 /* Pods-TinySwift_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TinySwift_Tests-umbrella.h"; sourceTree = "<group>"; };
+		D86A8CED29A1F8DED8131DBC40CBF304 /* Array.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		ECCA5B46FB827B2096A23790EEF47A99 /* TinySwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = TinySwift.modulemap; sourceTree = "<group>"; };
+		F4E2BB4C3550D7A5030DEFCC895E35F0 /* UIViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		F975C7227C33FF2F58D40EB81656E02D /* TinySwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TinySwift.xcconfig; sourceTree = "<group>"; };
 		FBDC5609C08AB1C94777259433CDC136 /* Pods-TinySwift_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TinySwift_Tests-resources.sh"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,12 +86,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E69623E63F926AB961172FEC6E135AD /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				92B0D153CB660BC7E458587317BA27D3 /* Info.plist */,
+				ECCA5B46FB827B2096A23790EEF47A99 /* TinySwift.modulemap */,
+				F975C7227C33FF2F58D40EB81656E02D /* TinySwift.xcconfig */,
+				40E62B79672709EC6B056E081BD03EC6 /* TinySwift-dummy.m */,
+				2C48438D6AAF904BC0EC663D82DA2F7E /* TinySwift-prefix.pch */,
+				28A3DBE4D4BE79BD250003BB5B3D0869 /* TinySwift-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/TinySwift";
+			sourceTree = "<group>";
+		};
 		3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
 				CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */,
 			);
 			name = iOS;
+			sourceTree = "<group>";
+		};
+		5DB6FC2492105A3F27245730FC75F321 /* TinySwift */ = {
+			isa = PBXGroup;
+			children = (
+				D86A8CED29A1F8DED8131DBC40CBF304 /* Array.swift */,
+				CDD737E8DC8FB4CC6A2B4C46DD500201 /* AVAsset.swift */,
+				7E2999A1AC5B0730D8994E334407DD1A /* Date.swift */,
+				07ED469C7162500AAF74283E7B1D4B13 /* Int.swift */,
+				0BAB094712104E99D2DC2D4150306F8C /* String.swift */,
+				AA4D0B0564A5E5B553FAA0A4BE81A8CA /* UIColor.swift */,
+				3BD64A2EFE07C555209E8460AF0791B7 /* UIImage.swift */,
+				2EC77F7146CA46DD33E3D452198CC3C6 /* UIScreen.swift */,
+				F4E2BB4C3550D7A5030DEFCC895E35F0 /* UIViewController.swift */,
+			);
+			path = TinySwift;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -101,18 +135,14 @@
 			);
 			sourceTree = "<group>";
 		};
-		7F9BBF33C99B38168913132AE2710C4D /* Support Files */ = {
+		851EF5EB6CAA72CA0DCA83959D138920 /* TinySwift */ = {
 			isa = PBXGroup;
 			children = (
-				A6F6536BEC0888686DD2669590F9659D /* Info.plist */,
-				CF6E5AF9BEC473E1C289FD3DD15FCC14 /* TinySwift.modulemap */,
-				2838A013CB4B31EAF665C3ED8D0A4754 /* TinySwift.xcconfig */,
-				B9A70E0997CDC17EC76590145C150BD7 /* TinySwift-dummy.m */,
-				0A4A25290BEFE2620883669D481F5A51 /* TinySwift-prefix.pch */,
-				A76A784325135637830E179AEB540746 /* TinySwift-umbrella.h */,
+				1E69623E63F926AB961172FEC6E135AD /* Support Files */,
+				5DB6FC2492105A3F27245730FC75F321 /* TinySwift */,
 			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/TinySwift";
+			name = TinySwift;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -140,20 +170,6 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		E41252AE6FD0FF90E41D42CAE7479F29 /* TinySwift */ = {
-			isa = PBXGroup;
-			children = (
-				4EDDB11CF74C2A7C0A2A7A28B2BDDA7E /* Array.swift */,
-				40D76E7E4DEE8BDC7333583EEFE5B34B /* AVAsset.swift */,
-				A3C714B8119E2EC2B5A21027C0C553FA /* String.swift */,
-				31347AFA2C8F682A2DBEC610E4E31F58 /* UIColor.swift */,
-				4BF9C2DA4BE8666A5EB14347BE48A223 /* UIImage.swift */,
-				8A506F519A932F3F6415FB751172A574 /* UIScreen.swift */,
-				1DCDBD19609BED7EB6484F81EAE2DB36 /* UIViewController.swift */,
-			);
-			path = TinySwift;
-			sourceTree = "<group>";
-		};
 		E4A9413C92CA1E8F6C84A3681A51E75F /* Pods-TinySwift_Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,20 +188,10 @@
 			path = "Target Support Files/Pods-TinySwift_Tests";
 			sourceTree = "<group>";
 		};
-		EC465D5A8835CB3D9DB198CD27137E2D /* TinySwift */ = {
-			isa = PBXGroup;
-			children = (
-				7F9BBF33C99B38168913132AE2710C4D /* Support Files */,
-				E41252AE6FD0FF90E41D42CAE7479F29 /* TinySwift */,
-			);
-			name = TinySwift;
-			path = ../..;
-			sourceTree = "<group>";
-		};
 		F66327A455C5F1B6585A3944F2DEB2A7 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				EC465D5A8835CB3D9DB198CD27137E2D /* TinySwift */,
+				851EF5EB6CAA72CA0DCA83959D138920 /* TinySwift */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
@@ -216,7 +222,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6DEC38D381BB859BBE1322C62C007E15 /* Build configuration list for PBXNativeTarget "TinySwift" */;
 			buildPhases = (
-				CF7FF12DBBB9C4DBECD9991829003519 /* Sources */,
+				9C8F6D4E528558F8A9DAFC219FCBB14A /* Sources */,
 				DA5A1903A9F8DC283BEBA0ACBFB01A7F /* Frameworks */,
 				7A7DB1C679C16AA225E46B18F21966AD /* Headers */,
 			);
@@ -283,18 +289,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CF7FF12DBBB9C4DBECD9991829003519 /* Sources */ = {
+		9C8F6D4E528558F8A9DAFC219FCBB14A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				76771D2326557F3DB992E7F2B4FA224E /* Array.swift in Sources */,
-				F459E8FB01F5B4E7F4FC672F1DB1DA94 /* AVAsset.swift in Sources */,
-				F17AB8B966B21953C0F4A199B97204ED /* String.swift in Sources */,
-				4C78AB1E73335578CC696CF50E82AED5 /* TinySwift-dummy.m in Sources */,
-				51E03D9039D69CCD0616ABB0B193F79B /* UIColor.swift in Sources */,
-				3AF9C1FED1881AF3B8A573452C1F4FB9 /* UIImage.swift in Sources */,
-				002E516FBFB6798EAA477B206E3BE41A /* UIScreen.swift in Sources */,
-				5928EFCAC61964AAF6107E21DFD4F6F3 /* UIViewController.swift in Sources */,
+				5D7EE47D50686D45EDB30BC075AFD9DE /* Array.swift in Sources */,
+				704C96B01B7E1803C2B6C3B703F541A6 /* AVAsset.swift in Sources */,
+				4137DE84F3C61F1803E82EA889BC622A /* Date.swift in Sources */,
+				F01831971E166B1EBD5A05CA04EEF0AB /* Int.swift in Sources */,
+				90881886072A5BBCE28AC52684B646F7 /* String.swift in Sources */,
+				4AAEBC48DFEF67DF819547892BF6726A /* TinySwift-dummy.m in Sources */,
+				D78562697E5A49272EB365D1BB759836 /* UIColor.swift in Sources */,
+				AF7A3E108683752F9F3251DC013D4B45 /* UIImage.swift in Sources */,
+				5199A2CAD207F4081BBEECB7559C1E39 /* UIScreen.swift in Sources */,
+				82F84E455033102057827660535C094C /* UIViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,7 +356,7 @@
 		};
 		51272FDF4BB76903B3C01282E75EE7B3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2838A013CB4B31EAF665C3ED8D0A4754 /* TinySwift.xcconfig */;
+			baseConfigurationReference = F975C7227C33FF2F58D40EB81656E02D /* TinySwift.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -500,7 +508,7 @@
 		};
 		A5A854F805EFE7A30E8EA59A4902092E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2838A013CB4B31EAF665C3ED8D0A4754 /* TinySwift.xcconfig */;
+			baseConfigurationReference = F975C7227C33FF2F58D40EB81656E02D /* TinySwift.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
