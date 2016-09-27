@@ -1,5 +1,5 @@
 //
-//  ArrayTests.swift
+//  UIViewControllerTests.swift
 //  TinySwift
 //
 //  Created by Piotr Sochalewski on 24.09.2016.

@@ -19,6 +19,6 @@ public extension UIViewController {
     public func presentAlertController(withTitle title: String?, message: String?, completion: (() -> Void)? = nil) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        present(alertController, animated: true, completion: nil)
+        present(alertController, animated: true, completion: completion)
     }
 }

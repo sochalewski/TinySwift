@@ -31,13 +31,13 @@ It contains the following functions and properties:
 
 ### Collection
 
+* `var average`
+* `var sum`
 * `var random`
 
 #### Array
 
 * `var areAllElementsEqual`
-* `var average`
-* `var sum`
 * `subscript(safe:)`
 
 ### Date
