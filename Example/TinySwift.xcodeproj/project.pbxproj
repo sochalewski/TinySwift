@@ -14,6 +14,7 @@
 		AE1683881D993EB50070AE29 /* UIColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1683871D993EB50070AE29 /* UIColorTests.swift */; };
 		AE4BAD931D9AA22F007B8A66 /* IntTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4BAD921D9AA22F007B8A66 /* IntTests.swift */; };
 		AE88FB0C1D9725FF00B071AB /* ArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE88FB0B1D9725FF00B071AB /* ArrayTests.swift */; };
+		AEABFFB31D9AB30A00516730 /* DateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEABFFB21D9AB30A00516730 /* DateTests.swift */; };
 		AEB4CA741D972B03003F7335 /* UIViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB4CA731D972B03003F7335 /* UIViewControllerTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		AE1683871D993EB50070AE29 /* UIColorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorTests.swift; sourceTree = "<group>"; };
 		AE4BAD921D9AA22F007B8A66 /* IntTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntTests.swift; sourceTree = "<group>"; };
 		AE88FB0B1D9725FF00B071AB /* ArrayTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayTests.swift; sourceTree = "<group>"; };
+		AEABFFB21D9AB30A00516730 /* DateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTests.swift; sourceTree = "<group>"; };
 		AEB4CA731D972B03003F7335 /* UIViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerTests.swift; sourceTree = "<group>"; };
 		E487A2539A5BC4B1D4E75A87 /* Pods_TinySwift_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TinySwift_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -78,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				AE88FB0B1D9725FF00B071AB /* ArrayTests.swift */,
+				AEABFFB21D9AB30A00516730 /* DateTests.swift */,
 				AE4BAD921D9AA22F007B8A66 /* IntTests.swift */,
 				607FACEB1AFB9204008FA782 /* StringTests.swift */,
 				AE1683871D993EB50070AE29 /* UIColorTests.swift */,
@@ -241,6 +244,7 @@
 				607FACEC1AFB9204008FA782 /* StringTests.swift in Sources */,
 				AE0EF9211D97EB3D00DED25A /* UIImageTests.swift in Sources */,
 				AE1683881D993EB50070AE29 /* UIColorTests.swift in Sources */,
+				AEABFFB31D9AB30A00516730 /* DateTests.swift in Sources */,
 				AE4BAD931D9AA22F007B8A66 /* IntTests.swift in Sources */,
 				AE88FB0C1D9725FF00B071AB /* ArrayTests.swift in Sources */,
 				AEB4CA741D972B03003F7335 /* UIViewControllerTests.swift in Sources */,

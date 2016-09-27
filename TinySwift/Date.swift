@@ -8,8 +8,8 @@
 
 import Foundation
 
-extension Date {
-    var firstOfMonth: Date? {
+public extension Date {
+    public var firstOfMonth: Date? {
         /// Return a new Date by setting this Date's day to first.
         let calendar = Calendar.current
         let components = calendar.dateComponents([.year, .month], from: self)
@@ -18,7 +18,7 @@ extension Date {
     }
     
     /// Return a new Date by setting this Date's day to last.
-    var lastOfMonth: Date? {
+    public var lastOfMonth: Date? {
         guard let firstOfMonth = firstOfMonth else { return nil }
         
         let calendar = Calendar.current
@@ -30,7 +30,7 @@ extension Date {
     }
     
     /// Return a new Date by setting this Date's day and month to first.
-    var firstOfYear: Date? {
+    public var firstOfYear: Date? {
         let calendar = Calendar.current
         let components = calendar.dateComponents([.year], from: self)
         
@@ -38,12 +38,13 @@ extension Date {
     }
     
     /// Return a new Date by setting this Date's day and month to last.
-    var lastOfYear: Date? {
+    public var lastOfYear: Date? {
         guard let firstOfYear = firstOfYear else { return nil }
         
         let calendar = Calendar.current
         var components = DateComponents()
-        components.month = -1
+        components.year = 1
+//        components.month = -1
         components.day = -1
         
         return calendar.date(byAdding: components, to: firstOfYear)
@@ -54,7 +55,7 @@ extension Date {
      
      - note: This value is interpreted in the context of the current calendar.
      */
-    var weekday: Int? {
+    public var weekday: Int? {
         let calendar = Calendar.current
         let components = calendar.dateComponents([.weekday], from: self)
         
