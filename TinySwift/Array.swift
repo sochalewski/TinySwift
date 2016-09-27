@@ -49,28 +49,30 @@ public extension Array where Element: Equatable {
     }
 }
 
-public extension Array where Element: Integer {
+public extension Collection where Iterator.Element: Integer {
     /// Returns the sum of all elements in the array.
-    var sum: Element {
+    var sum: Iterator.Element {
         return reduce(0, +)
     }
 }
 
-public extension Collection where Iterator.Element == Int, Index == Int {
+public extension Collection where Iterator.Element: Integer, Index == Int {
     /// Returns the average of all elements in the array.
     var average: Double {
-        return isEmpty ? 0 : Double(reduce(0, +)) / Double(endIndex-startIndex)
+        return isEmpty ? 0 : Double(sum.toIntMax()) / Double(endIndex - startIndex)
     }
 }
 
-public extension Array where Element: FloatingPoint {
+public extension Collection where Iterator.Element: FloatingPoint {
     /// Returns the sum of all elements in the array.
-    var sum: Element {
+    var sum: Iterator.Element {
         return reduce(0, +)
     }
-    
+}
+
+public extension Collection where Iterator.Element: FloatingPoint, Index == Int {
     /// Returns the average of all elements in the array.
-    var average: Element {
-        return isEmpty ? 0 : sum / Element(count)
+    var average: Iterator.Element {
+        return isEmpty ? 0 : sum / Iterator.Element(endIndex - startIndex)
     }
 }
