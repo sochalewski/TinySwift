@@ -66,6 +66,7 @@ It contains the following functions and properties:
 
 ### UIImage
 
+* `var grayscale`
 * `var jpeg`
 * `var normalizedImage`
 * `var png`

@@ -10,14 +10,29 @@ import UIKit
 import XCTest
 import TinySwift
 
+@testable import TinySwift_Example
+
 class UIViewControllerTests: XCTestCase {
     
-    let viewController = UIViewController()
+    let viewController = UIApplication.shared.keyWindow!.rootViewController!
+    let title = "Title"
+    let message = "Message"
     
     func testPresentAlertController() {
-        XCTAssert(viewController.presentedViewController == nil, "View controller should not present any view controller before execute tested function")
-        viewController.presentAlertController(withTitle: "Title", message: nil) {
-            XCTAssert(self.viewController.presentedViewController != nil, "View controller should present alert view controller after execute tested function")
+        let alertTitleExceptation = expectation(description: "Alert controller's title should be correct")
+        let alertMessageExceptation = expectation(description: "Alert controller's message should be correct")
+        
+        viewController.presentAlertController(withTitle: title, message: message) {
+            guard let alertController = self.viewController.presentedViewController as? UIAlertController else { XCTFail("View controller should present alert controller after execute tested function"); return }
+            
+            if alertController.title == self.title {
+                alertTitleExceptation.fulfill()
+            }
+            if alertController.message == self.message {
+                alertMessageExceptation.fulfill()
+            }
         }
+        
+        waitForExpectations(timeout: 5.0)
     }
 }
