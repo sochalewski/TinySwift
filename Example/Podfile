@@ -1,6 +1,9 @@
 use_frameworks!
-target 'TinySwift_Tests' do
+
+target 'TinySwift_Example' do
   pod 'TinySwift', :path => '../'
-  
-  
+
+  target 'TinySwift_Tests' do
+    inherit! :search_paths
+  end
 end
