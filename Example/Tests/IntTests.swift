@@ -10,20 +10,20 @@ import XCTest
 
 class IntTests: XCTestCase {
     
-    func testIntFactorial() {
+    func testFactorial() {
         let usnignedInt: UInt = 5
         XCTAssert(usnignedInt.factorial == 120)
         
-        let signedInt = 5
-        XCTAssert(signedInt.factorial! == 120)
+        let signedInt = 9
+        XCTAssert(signedInt.factorial! == 362_880)
+        
+        let zero = 0
+        XCTAssert(zero.factorial! == 1)
         
         let negativeInt = -1
         XCTAssertNil(negativeInt.factorial)
         
-        let tooBigSignedInt = 30
-        XCTAssertNil(tooBigSignedInt.factorial)
-        
-        let tooBigUnsignedInt: UInt = 30
-        XCTAssertNil(tooBigUnsignedInt.factorial)
+        let tooBigInt = 200
+        XCTAssert(tooBigInt.factorial! == Double.infinity)
     }
 }

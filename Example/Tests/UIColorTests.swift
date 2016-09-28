@@ -10,7 +10,7 @@ import XCTest
 
 class UIColorTests: XCTestCase {
     
-    func testHexColor() {
+    func testHex() {
         XCTAssert(UIColor(hex: "#000", alpha: 1.0) == UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0), "Three signs hex with hash should return proper color")
         XCTAssert(UIColor(hex: "000f") == UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0), "Four signs hex without hash should return proper color")
         XCTAssert(UIColor(hex: "000000", alpha: 1.0) == UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0), "Six signs hex without hash should return proper color")

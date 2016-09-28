@@ -69,6 +69,14 @@ public extension UIImage {
         return crop(to: insetRect)
     }
     
+    /// Returns a copy of the image converted to grayscale.
+    public var grayscale: UIImage? {
+        guard let ciImage = CIImage(image: self) else { return nil }
+        let grayscale = ciImage.applyingFilter("CIColorControls", withInputParameters: [kCIInputSaturationKey : 0.0])
+        
+        return UIImage(ciImage: grayscale)
+    }
+    
     /**
      Returns a resized non-stretched copy of the image.
      
