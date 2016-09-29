@@ -26,4 +26,9 @@ class IntTests: XCTestCase {
         let tooBigInt = 200
         XCTAssert(tooBigInt.factorial! == Double.infinity)
     }
+    
+    func testTest() {
+        let array = [0, 0, 0, 0, 0, 1, 2, 2, 2, 2, 5, 5, 7, 7, 7, 9] //0x5, 1x1, 2x4, 5x2, 7x3, 9x1
+        array.mode
+    }
 }
