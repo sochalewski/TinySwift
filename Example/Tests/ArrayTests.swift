@@ -86,4 +86,26 @@ class ArrayTests: XCTestCase {
         
         XCTAssert(array.mode == 2)
     }
+    
+    func testAppearanceAndModeForSingleIntArray() {
+        let array = [5]
+        
+        guard let appearances = array.appearances else { XCTFail("Cannot return appeareances"); return }
+
+        XCTAssert(appearances[5] == 1)
+        XCTAssert(appearances.keys.count == 1)
+
+        XCTAssert(array.mode == 5)
+    }
+    
+    func testAppearanceAndModeForSingleFloatArray() {
+        let array = [5.1]
+        
+        guard let appearances = array.appearances else { XCTFail("Cannot return appeareances"); return }
+        
+        XCTAssert(appearances[5.1] == 1)
+        XCTAssert(appearances.keys.count == 1)
+        
+        XCTAssert(array.mode == 5.1)
+    }
 }
