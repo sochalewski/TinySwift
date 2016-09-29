@@ -10,6 +10,9 @@ import XCTest
 import TinySwift
 
 class ArrayTests: XCTestCase {
+    
+    let ints = [1, 2, 3, 4, 5, 6]
+    let floats = [1.2, 2.7, 3.2, 4.0, 5.1, 6.9]
 
     func testRandomElement() {
         let array = [1, 2, 3, 4, 5]
@@ -31,23 +34,56 @@ class ArrayTests: XCTestCase {
         XCTAssert(fiveElements[safe: 2] == 5, "Elements should be able to change through the safe: subscript accessor")
     }
     
-    func testFloatSum() {
-        let array = [1.2, 2.7, 3.2, 4.0, 5.1, 6.9]
-        XCTAssert(array.sum == array.reduce(0, +))
+    func testSum() {
+        XCTAssert(floats.sum == floats.reduce(0, +))
+        XCTAssert(ints.sum == ints.reduce(0, +))
     }
     
-    func testIntSum() {
-        let array = [1, 2, 3, 4, 5, 6]
-        XCTAssert(array.sum == array.reduce(0, +))
+    func testMean() {
+        XCTAssert(floats.mean == floats.reduce(0, +) / Double(floats.count))
+        XCTAssert(ints.mean == Double(ints.reduce(0, +)) / Double(ints.count))
     }
     
-    func testFloatAverage() {
-        let array = [1.2, 2.7, 3.2, 4.0, 5.1, 6.9]
-        XCTAssert(array.mean == array.reduce(0, +) / Double(array.count))
+    func testMedian() {
+        XCTAssert(floats.median == [floats[floats.count / 2], floats[floats.count / 2 - 1]].mean, "Sample even float array median is wrong.")
+        XCTAssert(ints.median == [ints[floats.count / 2], ints[floats.count / 2 - 1]].mean, "Sample even int array median is wrong.")
+        
+        let oddFloats = floats.dropLast()
+        XCTAssert(oddFloats.median == oddFloats[oddFloats.count / 2], "Sample odd float array median is wrong.")
+        let oddInts = ints.dropLast()
+        XCTAssert(oddInts.median == Double(oddInts[oddInts.count / 2]), "Sample odd int array median is wrong.")
     }
     
-    func testIntAverage() {
-        let array = [1, 2, 3, 4, 5, 6]
-        XCTAssert(array.mean == Double(array.reduce(0, +)) / Double(array.count))
+    func testVariance() {
+        XCTAssert(floats.variance == 3.2758333333333333)
+        XCTAssert(ints.variance == 2.9166666666666667)
+    }
+    
+    func testStandardDeviation() {
+        XCTAssert(floats.standardDeviation == sqrt(3.2758333333333333))
+        XCTAssert(ints.standardDeviation == sqrt(2.9166666666666667))
+    }
+    
+    func testAppearancesAndMode() {
+        // an array where 0 appears 3x, 2 - 21x, 5 - 14x, 7 - 3x and 140 - 2x.
+        let array: [Int] = Array(
+            [Array(repeating: 5, count: 14),
+             Array(repeating: 0, count: 1),
+             Array(repeating: 2, count: 21),
+             Array(repeating: 140, count: 2),
+             Array(repeating: 0, count: 2),
+             Array(repeating: 7, count: 3)]
+                .joined(separator: []))
+        
+        guard let appearances = array.appearances else { XCTFail("Cannot return appeareances"); return }
+        
+        XCTAssert(appearances[0] == 3)
+        XCTAssert(appearances[2] == 21)
+        XCTAssert(appearances[5] == 14)
+        XCTAssert(appearances[7] == 3)
+        XCTAssert(appearances[140] == 2)
+        XCTAssert(appearances.keys.count == 5)
+        
+        XCTAssert(array.mode == 2)
     }
 }

@@ -9,7 +9,7 @@
 import Foundation
 
 public extension Collection where Index == Int {
-    /// Returns a randomized array's element.
+    /// Returns a randomized element of the collection.
     public var random: Iterator.Element? {
         guard !isEmpty else { return nil }
         let index = Int(arc4random_uniform(UInt32(endIndex - startIndex)))
@@ -57,7 +57,7 @@ public extension Collection where Iterator.Element: Integer {
 }
 
 public extension Collection where Iterator.Element: Integer, Index == Int {
-    /// Returns the average of all elements in the collection.
+    /// Returns the arithmetic mean of all elements in the collection.
     var mean: Double {
         return isEmpty ? 0 : Double(sum.toIntMax()) / Double(endIndex - startIndex)
     }
@@ -70,46 +70,70 @@ public extension Collection where Iterator.Element: Integer, Index == Int {
         let sort = sorted()
         
         if isCountEven {
-            return [sort[count / 2].toIntMax(), sort[(count / 2) + 1].toIntMax()].mean
+            return [sort[(count / 2) - 1].toIntMax(), sort[count / 2].toIntMax()].mean
         } else {
             return Double(sort[count / 2].toIntMax())
         }
     }
     
-    /// Returns the expectation of the squared deviation of a random variable from its mean, and it informally measures how far a set of (random) numbers are spread out from their mean.
-    var variance: Double {
+    /**
+     Returns the variance of an entire population (σ²).
+     
+     If the number of elements in the collection is lower than or equal to 1, the value of the property is `nil`.
+     */
+    var variance: Double? {
+        guard count >= 2 else { return nil }
+
         let arrayMean = mean
         let elements = map { pow((Double($0.toIntMax()) - arrayMean), 2) }
         
         return elements.mean
     }
     
-    /// Returns a measure that is used to quantify the amount of variation or dispersion of a set of data values. A low standard deviation indicates that the data points tend to be close to the mean (also called the expected value) of the set, while a high standard deviation indicates that the data points are spread out over a wider range of values.
-    var standardDeviation: Double {
+    /**
+     Returns the standard deviation (σ); a measure that is used to quantify the amount of variation or dispersion of a set of data values.
+     
+     If the number of elements in the collection is lower than or equal to 1, the value of the property is `nil`.
+     */
+    var standardDeviation: Double? {
+        guard let variance = variance else { return nil }
+
         return sqrt(variance)
     }
-}
 
-public extension Collection where Iterator.Element == Int, Index == Int {
-    var mode: [Int: Int]? {
+    /// Returns a dictionary with number of appearances for all elements of the collection.
+    var appearances: [Int: Int]? {
         guard !isEmpty else { return nil }
         
-        let sort = sorted()
+        let sort = sorted().map { $0.hashValue }
         
         let set = NSOrderedSet(array: sort)
         var counts = [Int: Int]() // number: count
         
         counts[set.firstObject as! Int] = 0
         
-        for (index, element) in set.enumerated() {
-            if index == 0 { continue }
-            counts[(counts.keys.sorted().last)!] = sort.index(of: element as! Int)! - counts.values.sum
-            counts[element as! Int] = 0
+        set.dropFirst().forEach {
+            counts[(counts.keys.sorted().last)!] = sort.index(of: $0 as! Int)! - counts.values.sum
+            counts[$0 as! Int] = 0
         }
         
         counts[set.lastObject as! Int] = Int(endIndex - startIndex) - counts.values.sum
         
         return counts
+    }
+    
+    /**
+     Returns the value that appears most often in the collection.
+     
+     If there is a multimodal distribution, the value of the property is `nil`.
+     */
+    var mode: Int? {
+        guard let appearances = appearances, !isEmpty else { return nil }
+        
+        let sortedAppearances = Array(appearances.keys).sorted(by: { appearances[$0]! > appearances[$1]! })
+        guard sortedAppearances.count != 1 else { return sortedAppearances.first }
+        
+        return appearances[sortedAppearances[0]]! > appearances[sortedAppearances[1]]! ? sortedAppearances[0] : nil
     }
 }
 
@@ -121,7 +145,7 @@ public extension Collection where Iterator.Element: FloatingPoint {
 }
 
 public extension Collection where Iterator.Element: FloatingPoint, Index == Int {
-    /// Returns the average of all elements in the collection.
+    /// Returns the arithmetic mean of all elements in the collection.
     var mean: Iterator.Element {
         return isEmpty ? 0 : sum / Iterator.Element(endIndex - startIndex)
     }
@@ -134,24 +158,34 @@ public extension Collection where Iterator.Element: FloatingPoint, Index == Int 
         let sort = sorted()
         
         if isCountEven {
-            return [sort[count / 2], sort[(count / 2) + 1]].mean
+            return [sort[(count / 2) - 1], sort[count / 2]].mean
         } else {
             return sort[count / 2]
         }
     }
     
-    /// Returns the expectation of the squared deviation of a random variable from its mean, and it informally measures how far a set of (random) numbers are spread out from their mean.
-    var variance: Iterator.Element {
-        let arrayMean = mean
+    /**
+     Returns the variance of an entire population (σ²).
+     
+     If the number of elements in the collection is lower than or equal to 1, the value of the property is `nil`.
+     */
+    var variance: Iterator.Element? {
+        guard count >= 2 else { return nil }
         
-        let x = first! - arrayMean
-        let elements = map { pow(($0 - arrayMean), 2) }
+        let arrayMean = mean
+        let elements = map { ($0 - arrayMean) * ($0 - arrayMean) }
         
         return elements.mean
     }
     
-    /// Returns a measure that is used to quantify the amount of variation or dispersion of a set of data values. A low standard deviation indicates that the data points tend to be close to the mean (also called the expected value) of the set, while a high standard deviation indicates that the data points are spread out over a wider range of values.
-    var standardDeviation: Iterator.Element {
+    /**
+     Returns the standard deviation (σ); a measure that is used to quantify the amount of variation or dispersion of a set of data values.
+     
+     If the number of elements in the collection is lower than or equal to 1, the value of the property is `nil`.
+     */
+    var standardDeviation: Iterator.Element? {
+        guard let variance = variance else { return nil }
+        
         return sqrt(variance)
     }
 }
