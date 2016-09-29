@@ -102,22 +102,20 @@ public extension Collection where Iterator.Element: Integer, Index == Int {
     }
 
     /// Returns a dictionary with number of appearances for all elements of the collection.
-    var appearances: [Int: Int]? {
+    var appearances: [Iterator.Element: Int]? {
         guard !isEmpty else { return nil }
         
-        let sort = sorted().map { $0.hashValue }
+        let sort = sorted()
+        let set = NSOrderedSet(array: sort).array as! [Iterator.Element]
+        var counts = [set.first!: 0] // number: count
         
-        let set = NSOrderedSet(array: sort)
-        var counts = [Int: Int]() // number: count
-        
-        counts[set.firstObject as! Int] = 0
-        
-        set.dropFirst().forEach {
-            counts[(counts.keys.sorted().last)!] = sort.index(of: $0 as! Int)! - counts.values.sum
-            counts[$0 as! Int] = 0
+        set.dropFirst().forEach { element in
+            let indexes = sort.enumerated().filter({ $0.element == element }).map { $0.offset }
+            counts[(counts.keys.sorted().last)!] = indexes.first!.toIntMax() - IntMax(counts.values.sum)
+            counts[element] = 0
         }
         
-        counts[set.lastObject as! Int] = Int(endIndex - startIndex) - counts.values.sum
+        counts[set.last!] = Int(endIndex - startIndex) - counts.values.sum
         
         return counts
     }
@@ -127,7 +125,7 @@ public extension Collection where Iterator.Element: Integer, Index == Int {
      
      If there is a multimodal distribution, the value of the property is `nil`.
      */
-    var mode: Int? {
+    var mode: Iterator.Element? {
         guard let appearances = appearances, !isEmpty else { return nil }
         
         let sortedAppearances = Array(appearances.keys).sorted(by: { appearances[$0]! > appearances[$1]! })
@@ -187,5 +185,40 @@ public extension Collection where Iterator.Element: FloatingPoint, Index == Int 
         guard let variance = variance else { return nil }
         
         return sqrt(variance)
+    }
+}
+
+public extension Collection where Iterator.Element: FloatingPoint, Iterator.Element: Hashable, Index == Int {
+    /// Returns a dictionary with number of appearances for all elements of the collection.
+    var appearances: [Iterator.Element: Int]? {
+        guard !isEmpty else { return nil }
+        
+        let sort = sorted()
+        let set = NSOrderedSet(array: sort).array as! [Iterator.Element]
+        var counts = [set.first!: 0] // number: count
+        
+        set.dropFirst().forEach { element in
+            let indexes = sort.enumerated().filter({ $0.element == element }).map { $0.offset }
+            counts[(counts.keys.sorted().last)!] = indexes.first!.toIntMax() - IntMax(counts.values.sum)
+            counts[element] = 0
+        }
+        
+        counts[set.last!] = Int(endIndex - startIndex) - counts.values.sum
+        
+        return counts
+    }
+    
+    /**
+     Returns the value that appears most often in the collection.
+     
+     If there is a multimodal distribution, the value of the property is `nil`.
+     */
+    var mode: Iterator.Element? {
+        guard let appearances = appearances, !isEmpty else { return nil }
+        
+        let sortedAppearances = Array(appearances.keys).sorted(by: { appearances[$0]! > appearances[$1]! })
+        guard sortedAppearances.count != 1 else { return sortedAppearances.first }
+        
+        return appearances[sortedAppearances[0]]! > appearances[sortedAppearances[1]]! ? sortedAppearances[0] : nil
     }
 }
