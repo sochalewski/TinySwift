@@ -31,9 +31,14 @@ It contains the following functions and properties:
 
 ### Collection
 
-* `var average`
-* `var sum`
+* `var appearances`
+* `var mean`
+* `var median`
+* `var mode`
 * `var random`
+* `var standardDeviation`
+* `var sum`
+* `var variance`
 
 #### Array
 
@@ -54,6 +59,7 @@ It contains the following functions and properties:
 
 ### String
 
+* `init(path:)`
 * `init(randomAlphanumericWithLength:)`
 * `var initials`
 * `var lines`
