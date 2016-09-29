@@ -43,11 +43,11 @@ class ArrayTests: XCTestCase {
     
     func testFloatAverage() {
         let array = [1.2, 2.7, 3.2, 4.0, 5.1, 6.9]
-        XCTAssert(array.average == array.reduce(0, +) / Double(array.count))
+        XCTAssert(array.mean == array.reduce(0, +) / Double(array.count))
     }
     
     func testIntAverage() {
         let array = [1, 2, 3, 4, 5, 6]
-        XCTAssert(array.average == Double(array.reduce(0, +)) / Double(array.count))
+        XCTAssert(array.mean == Double(array.reduce(0, +)) / Double(array.count))
     }
 }

@@ -50,29 +50,108 @@ public extension Array where Element: Equatable {
 }
 
 public extension Collection where Iterator.Element: Integer {
-    /// Returns the sum of all elements in the array.
+    /// Returns the sum of all elements in the collection.
     var sum: Iterator.Element {
         return reduce(0, +)
     }
 }
 
 public extension Collection where Iterator.Element: Integer, Index == Int {
-    /// Returns the average of all elements in the array.
-    var average: Double {
+    /// Returns the average of all elements in the collection.
+    var mean: Double {
         return isEmpty ? 0 : Double(sum.toIntMax()) / Double(endIndex - startIndex)
+    }
+    
+    /// Returns the middle number in the collection, taken as the average of the two middle numbers when the collection has an even number of numbers.
+    var median: Double {
+        guard !isEmpty else { return 0 }
+        let count = Int(endIndex - startIndex)
+        let isCountEven = count % 2 == 0
+        let sort = sorted()
+        
+        if isCountEven {
+            return [sort[count / 2].toIntMax(), sort[(count / 2) + 1].toIntMax()].mean
+        } else {
+            return Double(sort[count / 2].toIntMax())
+        }
+    }
+    
+    /// Returns the expectation of the squared deviation of a random variable from its mean, and it informally measures how far a set of (random) numbers are spread out from their mean.
+    var variance: Double {
+        let arrayMean = mean
+        let elements = map { pow((Double($0.toIntMax()) - arrayMean), 2) }
+        
+        return elements.mean
+    }
+    
+    /// Returns a measure that is used to quantify the amount of variation or dispersion of a set of data values. A low standard deviation indicates that the data points tend to be close to the mean (also called the expected value) of the set, while a high standard deviation indicates that the data points are spread out over a wider range of values.
+    var standardDeviation: Double {
+        return sqrt(variance)
+    }
+}
+
+public extension Collection where Iterator.Element == Int, Index == Int {
+    var mode: [Int: Int]? {
+        guard !isEmpty else { return nil }
+        
+        let sort = sorted()
+        
+        let set = NSOrderedSet(array: sort)
+        var counts = [Int: Int]() // number: count
+        
+        counts[set.firstObject as! Int] = 0
+        
+        for (index, element) in set.enumerated() {
+            if index == 0 { continue }
+            counts[(counts.keys.sorted().last)!] = sort.index(of: element as! Int)! - counts.values.sum
+            counts[element as! Int] = 0
+        }
+        
+        counts[set.lastObject as! Int] = Int(endIndex - startIndex) - counts.values.sum
+        
+        return counts
     }
 }
 
 public extension Collection where Iterator.Element: FloatingPoint {
-    /// Returns the sum of all elements in the array.
+    /// Returns the sum of all elements in the collection.
     var sum: Iterator.Element {
         return reduce(0, +)
     }
 }
 
 public extension Collection where Iterator.Element: FloatingPoint, Index == Int {
-    /// Returns the average of all elements in the array.
-    var average: Iterator.Element {
+    /// Returns the average of all elements in the collection.
+    var mean: Iterator.Element {
         return isEmpty ? 0 : sum / Iterator.Element(endIndex - startIndex)
+    }
+    
+    /// Returns the middle number in the collection, taken as the average of the two middle numbers when the collection has an even number of numbers.
+    var median: Iterator.Element {
+        guard !isEmpty else { return 0 }
+        let count = Int(endIndex - startIndex)
+        let isCountEven = count % 2 == 0
+        let sort = sorted()
+        
+        if isCountEven {
+            return [sort[count / 2], sort[(count / 2) + 1]].mean
+        } else {
+            return sort[count / 2]
+        }
+    }
+    
+    /// Returns the expectation of the squared deviation of a random variable from its mean, and it informally measures how far a set of (random) numbers are spread out from their mean.
+    var variance: Iterator.Element {
+        let arrayMean = mean
+        
+        let x = first! - arrayMean
+        let elements = map { pow(($0 - arrayMean), 2) }
+        
+        return elements.mean
+    }
+    
+    /// Returns a measure that is used to quantify the amount of variation or dispersion of a set of data values. A low standard deviation indicates that the data points tend to be close to the mean (also called the expected value) of the set, while a high standard deviation indicates that the data points are spread out over a wider range of values.
+    var standardDeviation: Iterator.Element {
+        return sqrt(variance)
     }
 }
