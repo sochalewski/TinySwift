@@ -105,17 +105,8 @@ public extension Collection where Iterator.Element: Integer, Index == Int {
     var appearances: [Iterator.Element: Int]? {
         guard !isEmpty else { return nil }
         
-        let sort = sorted()
-        let set = NSOrderedSet(array: sort).array as! [Iterator.Element]
-        var counts = [set.first!: 0] // number: count
-        
-        set.dropFirst().forEach { element in
-            let indexes = sort.enumerated().filter({ $0.element == element }).map { $0.offset }
-            counts[(counts.keys.sorted().last)!] = indexes.first!.toIntMax() - IntMax(counts.values.sum)
-            counts[element] = 0
-        }
-        
-        counts[set.last!] = Int(endIndex - startIndex) - counts.values.sum
+        var counts = [first!: 0] // number: count
+        forEach { counts[$0] = (counts[$0] ?? 0) + 1 }
         
         return counts
     }
@@ -193,17 +184,8 @@ public extension Collection where Iterator.Element: FloatingPoint, Iterator.Elem
     var appearances: [Iterator.Element: Int]? {
         guard !isEmpty else { return nil }
         
-        let sort = sorted()
-        let set = NSOrderedSet(array: sort).array as! [Iterator.Element]
-        var counts = [set.first!: 0] // number: count
-        
-        set.dropFirst().forEach { element in
-            let indexes = sort.enumerated().filter({ $0.element == element }).map { $0.offset }
-            counts[(counts.keys.sorted().last)!] = indexes.first!.toIntMax() - IntMax(counts.values.sum)
-            counts[element] = 0
-        }
-        
-        counts[set.last!] = Int(endIndex - startIndex) - counts.values.sum
+        var counts = [first!: 0] // number: count
+        forEach { counts[$0] = (counts[$0] ?? 0) + 1 }
         
         return counts
     }
