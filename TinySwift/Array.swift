@@ -8,15 +8,6 @@
 
 import Foundation
 
-public extension Collection where Index == Int {
-    /// Returns a randomized element of the collection.
-    public var random: Iterator.Element? {
-        guard !isEmpty else { return nil }
-        let index = Int(arc4random_uniform(UInt32(endIndex - startIndex)))
-        return self[index]
-    }
-}
-
 public extension Array {
     /**
      Accesses the element at the specified position in a safe way.
@@ -46,6 +37,41 @@ public extension Array where Element: Equatable {
     public var areAllElementsEqual: Bool {
         guard let first = first else { return true }
         return !dropFirst().contains { $0 != first }
+    }
+}
+
+public extension Collection where Index == Int {
+    /// Returns a randomized element of the collection.
+    public var random: Iterator.Element? {
+        guard !isEmpty else { return nil }
+        let index = Int(arc4random_uniform(UInt32(endIndex - startIndex)))
+        return self[index]
+    }
+}
+
+public extension Collection where Index == Int, Iterator.Element: Hashable {
+    /// Returns a dictionary with number of appearances for all elements of the collection.
+    var appearances: [Iterator.Element: Int]? {
+        guard !isEmpty else { return nil }
+        
+        var counts = [first!: 0] // number: count
+        forEach { counts[$0] = (counts[$0] ?? 0) + 1 }
+        
+        return counts
+    }
+    
+    /**
+     Returns the value that appears most often in the collection.
+     
+     If there is a multimodal distribution, the value of the property is `nil`.
+     */
+    var mode: Iterator.Element? {
+        guard let appearances = appearances, !isEmpty else { return nil }
+        
+        let sortedAppearances = Array(appearances.keys).sorted(by: { appearances[$0]! > appearances[$1]! })
+        guard sortedAppearances.count != 1 else { return sortedAppearances.first }
+        
+        return appearances[sortedAppearances[0]]! > appearances[sortedAppearances[1]]! ? sortedAppearances[0] : nil
     }
 }
 
@@ -100,30 +126,6 @@ public extension Collection where Iterator.Element: Integer, Index == Int {
 
         return sqrt(variance)
     }
-
-    /// Returns a dictionary with number of appearances for all elements of the collection.
-    var appearances: [Iterator.Element: Int]? {
-        guard !isEmpty else { return nil }
-        
-        var counts = [first!: 0] // number: count
-        forEach { counts[$0] = (counts[$0] ?? 0) + 1 }
-        
-        return counts
-    }
-    
-    /**
-     Returns the value that appears most often in the collection.
-     
-     If there is a multimodal distribution, the value of the property is `nil`.
-     */
-    var mode: Iterator.Element? {
-        guard let appearances = appearances, !isEmpty else { return nil }
-        
-        let sortedAppearances = Array(appearances.keys).sorted(by: { appearances[$0]! > appearances[$1]! })
-        guard sortedAppearances.count != 1 else { return sortedAppearances.first }
-        
-        return appearances[sortedAppearances[0]]! > appearances[sortedAppearances[1]]! ? sortedAppearances[0] : nil
-    }
 }
 
 public extension Collection where Iterator.Element: FloatingPoint {
@@ -176,31 +178,5 @@ public extension Collection where Iterator.Element: FloatingPoint, Index == Int 
         guard let variance = variance else { return nil }
         
         return sqrt(variance)
-    }
-}
-
-public extension Collection where Iterator.Element: FloatingPoint, Iterator.Element: Hashable, Index == Int {
-    /// Returns a dictionary with number of appearances for all elements of the collection.
-    var appearances: [Iterator.Element: Int]? {
-        guard !isEmpty else { return nil }
-        
-        var counts = [first!: 0] // number: count
-        forEach { counts[$0] = (counts[$0] ?? 0) + 1 }
-        
-        return counts
-    }
-    
-    /**
-     Returns the value that appears most often in the collection.
-     
-     If there is a multimodal distribution, the value of the property is `nil`.
-     */
-    var mode: Iterator.Element? {
-        guard let appearances = appearances, !isEmpty else { return nil }
-        
-        let sortedAppearances = Array(appearances.keys).sorted(by: { appearances[$0]! > appearances[$1]! })
-        guard sortedAppearances.count != 1 else { return sortedAppearances.first }
-        
-        return appearances[sortedAppearances[0]]! > appearances[sortedAppearances[1]]! ? sortedAppearances[0] : nil
     }
 }

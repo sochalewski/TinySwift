@@ -44,7 +44,6 @@ public extension Date {
         let calendar = Calendar.current
         var components = DateComponents()
         components.year = 1
-//        components.month = -1
         components.day = -1
         
         return calendar.date(byAdding: components, to: firstOfYear)
