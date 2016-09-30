@@ -69,6 +69,7 @@ It contains the following functions and properties:
 ### UIColor
 
 * `init(hex:alpha:)`
+* `var hex`
 
 ### UIImage
 

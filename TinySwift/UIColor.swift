@@ -66,4 +66,13 @@ public extension UIColor {
         
         self.init(red: red, green: green, blue: blue, alpha: alphaChannel ?? alpha)
     }
+    
+    /// Returns the color's hexadecimal code starting with `#` and followed by 6 or 8 signs (depending on the alpha channel information).
+    var hex: String {
+        var red: CGFloat = 0.0, green: CGFloat = 0.0, blue: CGFloat = 0.0, alpha: CGFloat = 0.0
+        getRed(&red, green: &green, blue: &blue, alpha: &alpha)
+        let hex = String(format: "#%02X%02X%02X", Int(red * 255.0), Int(green * 255.0), Int(blue * 255.0))
+        
+        return alpha == 1.0 ? hex : hex.appendingFormat("%02X", Int(alpha * 255.0))
+    }
 }

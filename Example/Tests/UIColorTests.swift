@@ -10,11 +10,21 @@ import XCTest
 
 class UIColorTests: XCTestCase {
     
-    func testHex() {
-        XCTAssert(UIColor(hex: "#000", alpha: 1.0) == UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0), "Three signs hex with hash should return proper color")
-        XCTAssert(UIColor(hex: "000f") == UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0), "Four signs hex without hash should return proper color")
-        XCTAssert(UIColor(hex: "000000", alpha: 1.0) == UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0), "Six signs hex without hash should return proper color")
-        XCTAssert(UIColor(hex: "#000000ff") == UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0), "Eight signs hex without hash should return proper color")
+    let black = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0)
+    let white = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+    let transparentWhite = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.0)
+    
+    func testHexInit() {
+        XCTAssert(UIColor(hex: "#000", alpha: 1.0) == black, "Three signs hex with hash should return proper color")
+        XCTAssert(UIColor(hex: "000f") == black, "Four signs hex without hash should return proper color")
+        XCTAssert(UIColor(hex: "000000", alpha: 1.0) == black, "Six signs hex without hash should return proper color")
+        XCTAssert(UIColor(hex: "#000000ff") == black, "Eight signs hex without hash should return proper color")
         XCTAssertNil(UIColor(hex: "#MKL666"), "Wrong hex should return nil")
+    }
+    
+    func testHex() {
+        XCTAssert(black.hex == "#000000", "Wrong hex for black color")
+        XCTAssert(white.hex == "#FFFFFF", "Wrong hex for white color")
+        XCTAssert(transparentWhite.hex == "#FFFFFF00", "Wrong hex for transparent white color")
     }
 }
