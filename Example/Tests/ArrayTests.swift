@@ -11,19 +11,24 @@ import TinySwift
 
 class ArrayTests: XCTestCase {
     
-    let ints = [1, 2, 3, 4, 5, 6]
+    let ints = Array(stride(from: 1, through: 6, by: 1))
     let floats = [1.2, 2.7, 3.2, 4.0, 5.1, 6.9]
 
     func testRandomElement() {
-        let array = [1, 2, 3, 4, 5]
-        XCTAssert(array.contains(array.random!), "Array does not contain randomized element")
+        XCTAssert(ints.contains(ints.random!), "Array does not contain randomized element")
     }
     
     func testAreAllElementsEqual() {
-        let equalArray = [1, 1, 1, 1, 1]
-        let nonEqualArray = [1, 1, 1, 1, 0]
+        let equalArray = Array(repeating: 0, count: 5)
+        let nonEqualArray = equalArray + [1]
         XCTAssert(equalArray.areAllElementsEqual, "False negative result on Array.areAllElementsEqual()")
         XCTAssert(!nonEqualArray.areAllElementsEqual, "False positive result on Array.areAllElementsEqual()")
+    }
+    
+    func testShuffle() {
+        let shuffledInts = ints.shuffled
+        XCTAssert(shuffledInts.count == ints.count)
+        XCTAssert(shuffledInts != ints)
     }
     
     func testSafeSubscript() {

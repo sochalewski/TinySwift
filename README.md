@@ -43,6 +43,8 @@ It contains the following functions and properties:
 #### Array
 
 * `var areAllElementsEqual`
+* `var shuffled`
+* `func shuffle()`
 * `subscript(safe:)`
 
 ### Date
