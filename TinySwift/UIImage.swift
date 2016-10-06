@@ -142,7 +142,7 @@ public extension UIImage {
     }
     
     /**
-     Return a color the given point.
+     Returns a color of the given point.
      
      - parameter point: The point to get color with.
      - returns: A UIColor object.

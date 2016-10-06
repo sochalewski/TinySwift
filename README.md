@@ -8,7 +8,9 @@
 
 ## Requirements
 
-Swift 3, iOS 8+
+Swift 3
+
+iOS 8+, tvOS 9+
 
 ## Installation
 
@@ -53,7 +55,9 @@ It contains the following functions and properties:
 * `var firstOfYear`
 * `var lastOfMonth`
 * `var lastOfYear`
+* `var tomorrow`
 * `var weekday`
+* `var yesterday`
 
 ### Integer
 
