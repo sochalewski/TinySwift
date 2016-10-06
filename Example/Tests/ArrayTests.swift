@@ -44,14 +44,19 @@ class ArrayTests: XCTestCase {
         XCTAssert(ints.sum == ints.reduce(0, +))
     }
     
-    func testMean() {
-        XCTAssert(floats.mean == floats.reduce(0, +) / Double(floats.count))
-        XCTAssert(ints.mean == Double(ints.reduce(0, +)) / Double(ints.count))
+    func testArithmeticMean() {
+        XCTAssert(floats.arithmeticMean == floats.reduce(0, +) / Double(floats.count))
+        XCTAssert(ints.arithmeticMean == Double(ints.reduce(0, +)) / Double(ints.count))
+    }
+    
+    func testGeometricMean() {
+        XCTAssert(floats.geometricMean == pow(floats.reduce(1, *), 1 / Double(floats.count)))
+        XCTAssert(ints.geometricMean == pow(Double(ints.reduce(1, *)), 1 / Double(ints.count)))
     }
     
     func testMedian() {
-        XCTAssert(floats.median == [floats[floats.count / 2], floats[floats.count / 2 - 1]].mean, "Sample even float array median is wrong.")
-        XCTAssert(ints.median == [ints[floats.count / 2], ints[floats.count / 2 - 1]].mean, "Sample even int array median is wrong.")
+        XCTAssert(floats.median == [floats[floats.count / 2], floats[floats.count / 2 - 1]].arithmeticMean, "Sample even float array median is wrong.")
+        XCTAssert(ints.median == [ints[floats.count / 2], ints[floats.count / 2 - 1]].arithmeticMean, "Sample even int array median is wrong.")
         
         let oddFloats = floats.dropLast()
         XCTAssert(oddFloats.median == oddFloats[oddFloats.count / 2], "Sample odd float array median is wrong.")
