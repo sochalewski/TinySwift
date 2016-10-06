@@ -62,6 +62,9 @@ It contains the following functions and properties:
 ### Integer
 
 * `var factorial`
+* `var isEven`
+* `var isOdd`
+* `var isPrimeNumber`
 
 ### String
 

@@ -24,4 +24,29 @@ public extension Integer {
         
         return integers.reduce(1, *)
     }
+    
+    /// A Boolean value that determines whether the value can be divided exactly by 2.
+    var isEven: Bool {
+        return self % 2 == 0
+    }
+    
+    /// A Boolean value that determines whether the value cannot be divided exactly by 2.
+    var isOdd: Bool {
+        return self % 2 != 0
+    }
+    
+    /// A Boolean value that determines whether the value is a natural number greater than 1 that has no positive divisors other than 1 and itself.
+    var isPrimeNumber: Bool {
+        guard self > 1 else { return false }
+        var divisor: Self = 2
+        while divisor < self / 2 {
+            if self % divisor == 0 {
+                return false
+            } else {
+                divisor = divisor + 1
+            }
+        }
+        
+        return true
+    }
 }
