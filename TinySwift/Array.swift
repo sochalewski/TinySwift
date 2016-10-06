@@ -100,8 +100,13 @@ public extension Collection where Iterator.Element: Integer {
 
 public extension Collection where Iterator.Element: Integer, Index == Int {
     /// Returns the arithmetic mean of all elements in the collection.
-    var mean: Double {
+    var arithmeticMean: Double {
         return isEmpty ? 0 : Double(sum.toIntMax()) / Double(endIndex - startIndex)
+    }
+    
+    /// Returns the geometric mean of all elements in the collection.
+    var geometricMean: Double {
+        return isEmpty ? 0 : pow(map({ Double($0.toIntMax()) }).reduce(1, *), 1 / Double(endIndex - startIndex))
     }
     
     /// Returns the middle number in the collection, taken as the average of the two middle numbers when the collection has an even number of numbers.
@@ -112,7 +117,7 @@ public extension Collection where Iterator.Element: Integer, Index == Int {
         let sort = sorted()
         
         if isCountEven {
-            return [sort[(count / 2) - 1].toIntMax(), sort[count / 2].toIntMax()].mean
+            return [sort[(count / 2) - 1].toIntMax(), sort[count / 2].toIntMax()].arithmeticMean
         } else {
             return Double(sort[count / 2].toIntMax())
         }
@@ -126,10 +131,10 @@ public extension Collection where Iterator.Element: Integer, Index == Int {
     var variance: Double? {
         guard count >= 2 else { return nil }
 
-        let arrayMean = mean
+        let arrayMean = arithmeticMean
         let elements = map { pow((Double($0.toIntMax()) - arrayMean), 2) }
         
-        return elements.mean
+        return elements.arithmeticMean
     }
     
     /**
@@ -153,8 +158,14 @@ public extension Collection where Iterator.Element: FloatingPoint {
 
 public extension Collection where Iterator.Element: FloatingPoint, Index == Int {
     /// Returns the arithmetic mean of all elements in the collection.
-    var mean: Iterator.Element {
+    var arithmeticMean: Iterator.Element {
         return isEmpty ? 0 : sum / Iterator.Element(endIndex - startIndex)
+    }
+    
+    /// Returns the geometric mean of all elements in the collection.
+    var geometricMean: Double {
+        let `self` = self as! [Double]
+        return isEmpty ? 0 : pow(self.reduce(1.0, *), 1 / Double(endIndex - startIndex))
     }
     
     /// Returns the middle number in the collection, taken as the average of the two middle numbers when the collection has an even number of numbers.
@@ -165,7 +176,7 @@ public extension Collection where Iterator.Element: FloatingPoint, Index == Int 
         let sort = sorted()
         
         if isCountEven {
-            return [sort[(count / 2) - 1], sort[count / 2]].mean
+            return [sort[(count / 2) - 1], sort[count / 2]].arithmeticMean
         } else {
             return sort[count / 2]
         }
@@ -179,10 +190,10 @@ public extension Collection where Iterator.Element: FloatingPoint, Index == Int 
     var variance: Iterator.Element? {
         guard count >= 2 else { return nil }
         
-        let arrayMean = mean
+        let arrayMean = arithmeticMean
         let elements = map { ($0 - arrayMean) * ($0 - arrayMean) }
         
-        return elements.mean
+        return elements.arithmeticMean
     }
     
     /**

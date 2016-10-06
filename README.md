@@ -34,7 +34,8 @@ It contains the following functions and properties:
 ### Collection
 
 * `var appearances`
-* `var mean`
+* `var arithmeticMean`
+* `var geometricMean`
 * `var median`
 * `var mode`
 * `var random`
