@@ -75,6 +75,11 @@ It contains the following functions and properties:
 * `var lines`
 * `var nonEmptyLines`
 * `var trimmed`
+* `func occurrences(of:)`
+
+### TimeInterval
+
+* `func time(withFormat:)`
 
 ### UIColor
 

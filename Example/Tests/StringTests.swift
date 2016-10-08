@@ -47,4 +47,13 @@ class StringTests: XCTestCase {
         let string = "Lorem ipsum\n  \t \ndolor sit amet\n \n  \n consectetur adipiscing elit\n  \n"
         XCTAssert(string.nonEmptyLines.count == 3, "Non empty lines should have three elements")
     }
+    
+    func testOccurrences() {
+        let swift = "Swifty Swift is the swiftest"
+        XCTAssert(swift.occurrences(of: "Swift") == 2)
+        XCTAssert(swift.occurrences(of: "swift") == 1)
+        XCTAssert(swift.uppercased().occurrences(of: "SWIFT") == 3)
+        XCTAssert(swift.occurrences(of: " ") == 4)
+        XCTAssert(swift.occurrences(of: "Obj-C") == 0)
+    }
 }

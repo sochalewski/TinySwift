@@ -1,6 +1,6 @@
 {
   "name": "TinySwift",
-  "version": "0.5.6",
+  "version": "0.6.0",
   "summary": "Powerful Swift classes and structs extensions",
   "description": "Powerful Swift classes and structs extensions giving you even better Swift 3.0 experience.",
   "homepage": "https://github.com/sochalewski/TinySwift",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/sochalewski/TinySwift.git",
-    "tag": "0.5.6"
+    "tag": "0.6.0"
   },
   "platforms": {
     "ios": "8.0",
