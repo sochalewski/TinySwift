@@ -67,4 +67,9 @@ public extension String {
     public var nonEmptyLines: [String] {
         return lines.filter { !$0.trimmed.isEmpty }
     }
+    
+    /// Returns the number of occurrences of a given case-sensitive string within the `String`.
+    public func occurrences(of substring: String) -> Int {
+        return components(separatedBy: substring).count - 1
+    }
 }

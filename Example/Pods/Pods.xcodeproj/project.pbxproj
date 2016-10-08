@@ -19,6 +19,7 @@
 		7460B6795F9E84A0AC561BFF76D795AC /* TinySwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 28A3DBE4D4BE79BD250003BB5B3D0869 /* TinySwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A462E9FB3BEA1FA5F258A84FD17F0070 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86A8CED29A1F8DED8131DBC40CBF304 /* Array.swift */; };
 		A680836D102E793F32715987EFB1BBBD /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E2BB4C3550D7A5030DEFCC895E35F0 /* UIViewController.swift */; };
+		AE3D8CD31DA95D4F00A3DD82 /* TimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3197CF1DA95B9E00AB381A /* TimeInterval.swift */; };
 		DE40023A72A37815A0F5DECD7C6842DE /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4D0B0564A5E5B553FAA0A4BE81A8CA /* UIColor.swift */; };
 		E4486D968DFFC54D72433D705F02B4FA /* Pods-TinySwift_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FDBAE9A0ACF99D2E23EDDF262C55873 /* Pods-TinySwift_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E879BA80477315EA65DFED1383B0AD6C /* Pods-TinySwift_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2B4663F3DC1A751D8F148A774B783F /* Pods-TinySwift_Tests-dummy.m */; };
@@ -64,6 +65,7 @@
 		9F0CF2C72CE7213FA61B06B499EFFC5F /* Pods-TinySwift_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TinySwift_Example.release.xcconfig"; sourceTree = "<group>"; };
 		A6E02CE2BE09DC96A88F223F11F23204 /* Pods-TinySwift_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TinySwift_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		AA4D0B0564A5E5B553FAA0A4BE81A8CA /* UIColor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		AE3197CF1DA95B9E00AB381A /* TimeInterval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeInterval.swift; sourceTree = "<group>"; };
 		B7D11D222EEBB4AC651D6C6CA782AF5C /* Pods-TinySwift_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TinySwift_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		CDD737E8DC8FB4CC6A2B4C46DD500201 /* AVAsset.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AVAsset.swift; sourceTree = "<group>"; };
 		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
@@ -156,6 +158,7 @@
 				7E2999A1AC5B0730D8994E334407DD1A /* Date.swift */,
 				07ED469C7162500AAF74283E7B1D4B13 /* Int.swift */,
 				0BAB094712104E99D2DC2D4150306F8C /* String.swift */,
+				AE3197CF1DA95B9E00AB381A /* TimeInterval.swift */,
 				AA4D0B0564A5E5B553FAA0A4BE81A8CA /* UIColor.swift */,
 				3BD64A2EFE07C555209E8460AF0791B7 /* UIImage.swift */,
 				2EC77F7146CA46DD33E3D452198CC3C6 /* UIScreen.swift */,
@@ -328,6 +331,11 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0800;
+				TargetAttributes = {
+					B1D7AC5A2F70E2810D4824DA16A01A77 = {
+						LastSwiftMigration = 0800;
+					};
+				};
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -363,6 +371,7 @@
 				730AF5FC36E9B6304CF1A4EF27CD9B8F /* UIImage.swift in Sources */,
 				437AAEBF2A64C4B9E00E64A86F2D6CBD /* UIScreen.swift in Sources */,
 				A680836D102E793F32715987EFB1BBBD /* UIViewController.swift in Sources */,
+				AE3D8CD31DA95D4F00A3DD82 /* TimeInterval.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,6 +524,7 @@
 			baseConfigurationReference = 908EC7A21D18FDCD1B144F9289676B77 /* Pods-TinySwift_Example.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -541,6 +551,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -664,6 +675,7 @@
 			baseConfigurationReference = 9F0CF2C72CE7213FA61B06B499EFFC5F /* Pods-TinySwift_Example.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -689,6 +701,7 @@
 				PRODUCT_NAME = Pods_TinySwift_Example;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
