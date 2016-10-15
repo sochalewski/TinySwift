@@ -52,4 +52,17 @@ class IntTests: XCTestCase {
         XCTAssertFalse(1.isPrimeNumber)
         XCTAssertFalse((-1).isPrimeNumber)
     }
+    
+    func testTimes() {
+        var zero = 0
+        5.times {
+            zero += 1
+        }
+        XCTAssert(zero == 5)
+        (-5).times {
+            zero -= 1
+        }
+        XCTAssert(zero == 5)
+    }
+    
 }

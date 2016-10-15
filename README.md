@@ -67,6 +67,10 @@ It contains the following functions and properties:
 * `var isOdd`
 * `var isPrimeNumber`
 
+#### Int
+
+* `func times(execute:)`
+
 ### String
 
 * `init(path:)`
@@ -107,7 +111,7 @@ It contains the following functions and properties:
 
 ### UIViewController
 
-* `func presentAlertController(withTitle:message:completion:)`
+* `func presentAlertController(withTitle:message:completion:handler:)`
 
 ## Author
 
