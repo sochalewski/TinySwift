@@ -22,7 +22,7 @@ class UIViewControllerTests: XCTestCase {
         let alertTitleExceptation = expectation(description: "Alert controller's title should be correct")
         let alertMessageExceptation = expectation(description: "Alert controller's message should be correct")
         
-        viewController.presentAlertController(withTitle: title, message: message) {
+        viewController.presentAlertController(withTitle: title, message: message, completion: {
             guard let alertController = self.viewController.presentedViewController as? UIAlertController else { XCTFail("View controller should present alert controller after execute tested function"); return }
             
             if alertController.title == self.title {
@@ -31,7 +31,7 @@ class UIViewControllerTests: XCTestCase {
             if alertController.message == self.message {
                 alertMessageExceptation.fulfill()
             }
-        }
+        })
         
         waitForExpectations(timeout: 5.0)
     }

@@ -50,3 +50,17 @@ public extension Integer {
         return true
     }
 }
+
+public extension Int {
+    /**
+     Submits a block object for execution number or times defined by the value.
+
+     - parameter block: The block to be invoked at least once. This parameter cannot be `NULL`.
+     */
+    func times(execute block: @escaping () -> Void) {
+        guard self > 0 else { return }
+        (0..<self).forEach { _ in
+            block()
+        }
+    }
+}
