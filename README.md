@@ -74,7 +74,7 @@ It contains the following functions and properties:
 ### String
 
 * `init(path:)`
-* `init(randomAlphanumericWithLength:)`
+* `init(random:length:nonRepeating:)`
 * `var initials`
 * `var lines`
 * `var nonEmptyLines`
