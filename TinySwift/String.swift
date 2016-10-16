@@ -9,19 +9,50 @@
 import Foundation
 
 public extension String {
+    /// The collection of Latin letters and Arabic digits or a text constructed from this collection.
+    public enum RandomStringType {
+        /// The character set with 36 (`A-Z+0-9`, case insensitive) or 62 (`A-Z+a-z+0-9`, case-sensitive) alphanumeric characters.
+        case alphanumeric(caseSensitive: Bool)
+        /// The character set with 26 (`A-Z`, case insensitive) or 52 (`A-Z+a-z`, case-sensitive) Latin letters.
+        case alphabetic(caseSensitive: Bool)
+        /// The character set with 10 (`0-9`) Arabic digits.
+        case numeric
+        
+        fileprivate var characterSet: String {
+            switch self {
+            case .alphanumeric(true): return "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+            case .alphanumeric(false): return "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+            case .alphabetic(true): return "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            case .alphabetic(false): return "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            case .numeric: return "0123456789"
+            }
+        }
+    }
+    
     /**
-     Creates a new string with randomized alphanumeric (`A-Z+a-z+0-9`, case-sensitive) characters.
+     Creates a new string with randomized characters.
      
-     You can get `A-Z+0-9`, case insensitive randomized string by calling `uppercased()` on a result of this initializer.
-     
+     - parameter random: The desired randomized character set.
      - parameter length: The desired length of a string.
+     - parameter nonRepeating: The boolean value that determines whether characters in the initialized can or cannot be repeated. The default value is `false`. If `true` and length is greater than number of characters in selected character set, then string with maximum allowed length will be produced.
      */
-    public init(randomAlphanumericWithLength length: Int) {
-        let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+    public init(random: RandomStringType, length: Int, nonRepeating: Bool = false) {
+        var letters = random.characterSet
+        
+        var length = length
+        if length > random.characterSet.characters.count, nonRepeating {
+            length = random.characterSet.characters.count
+        }
+        
         var string = ""
-        for _ in 0..<length {
+        
+        while string.characters.count < length {
             let index = letters.characters.index(letters.startIndex, offsetBy: Int(arc4random_uniform(UInt32(letters.characters.count))))
-            string.append(letters[index])
+            let letter = letters[index]
+            string.append(letter)
+            if nonRepeating {
+                letters.remove(at: index)
+            }
         }
         
         self = string

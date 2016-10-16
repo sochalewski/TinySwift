@@ -13,9 +13,24 @@ class StringTests: XCTestCase {
     
     func testRandom() {
         let desiredLength = 12
-        let randomString = String(randomAlphanumericWithLength: desiredLength)
-        XCTAssert(randomString.characters.count == desiredLength, "Randomized string length is not desired length")
-        XCTAssert(!randomString.trimmed.isEmpty, "Randomized string contains only whitespaces")
+        
+        let randomString1 = String(random: .alphanumeric(caseSensitive: true), length: desiredLength)
+        XCTAssertTrue(randomString1.characters.count == desiredLength, "Randomized string has wrong length")
+        XCTAssertFalse(randomString1.trimmed.isEmpty, "Randomized string contains only whitespaces")
+        
+        let randomString2 = String(random: .alphabetic(caseSensitive: false), length: desiredLength)
+        XCTAssertTrue(randomString2.uppercased() == randomString2, "Case insensitive string should be equal with uppercased string")
+        XCTAssertTrue(randomString2.characters.count == desiredLength, "Randomized string has wrong length")
+        XCTAssertFalse(randomString2.trimmed.isEmpty, "Randomized string contains only whitespaces")
+        
+        let randomString3 = String(random: .numeric, length: desiredLength)
+        XCTAssertTrue(randomString3.characters.count == desiredLength, "Randomized string has wrong length")
+        XCTAssertFalse(randomString3.trimmed.isEmpty, "Randomized string contains only whitespaces")
+        
+        let randomString4 = String(random: .numeric, length: desiredLength, nonRepeating: true)
+        XCTAssertTrue(randomString4.characters.count == 10, "Randomized string has wrong length")
+        XCTAssertTrue(Array(Array(randomString4.characters).appearances!.values) == Array(repeatElement(1, count: 10)), "Each character should appear exactly once")
+        XCTAssertFalse(randomString4.trimmed.isEmpty, "Randomized string contains only whitespaces")
     }
     
     func testPath() {
