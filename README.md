@@ -109,6 +109,10 @@ It contains the following functions and properties:
 * `var isPad13OrBigger`
 * `var isSmallScreen`
 
+### UIView
+
+* `var viewFromNib`
+
 ### UIViewController
 
 * `func presentAlertController(withTitle:message:completion:handler:)`
