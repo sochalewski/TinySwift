@@ -19,6 +19,7 @@
 		7460B6795F9E84A0AC561BFF76D795AC /* TinySwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 28A3DBE4D4BE79BD250003BB5B3D0869 /* TinySwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A462E9FB3BEA1FA5F258A84FD17F0070 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86A8CED29A1F8DED8131DBC40CBF304 /* Array.swift */; };
 		A680836D102E793F32715987EFB1BBBD /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E2BB4C3550D7A5030DEFCC895E35F0 /* UIViewController.swift */; };
+		AE1D6B1F1DB80521005BEEB7 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1D6B1B1DB8042E005BEEB7 /* UIView.swift */; };
 		AE3D8CD31DA95D4F00A3DD82 /* TimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3197CF1DA95B9E00AB381A /* TimeInterval.swift */; };
 		DE40023A72A37815A0F5DECD7C6842DE /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4D0B0564A5E5B553FAA0A4BE81A8CA /* UIColor.swift */; };
 		E4486D968DFFC54D72433D705F02B4FA /* Pods-TinySwift_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FDBAE9A0ACF99D2E23EDDF262C55873 /* Pods-TinySwift_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -65,6 +66,7 @@
 		9F0CF2C72CE7213FA61B06B499EFFC5F /* Pods-TinySwift_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TinySwift_Example.release.xcconfig"; sourceTree = "<group>"; };
 		A6E02CE2BE09DC96A88F223F11F23204 /* Pods-TinySwift_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TinySwift_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		AA4D0B0564A5E5B553FAA0A4BE81A8CA /* UIColor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		AE1D6B1B1DB8042E005BEEB7 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		AE3197CF1DA95B9E00AB381A /* TimeInterval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeInterval.swift; sourceTree = "<group>"; };
 		B7D11D222EEBB4AC651D6C6CA782AF5C /* Pods-TinySwift_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TinySwift_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		CDD737E8DC8FB4CC6A2B4C46DD500201 /* AVAsset.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AVAsset.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				AA4D0B0564A5E5B553FAA0A4BE81A8CA /* UIColor.swift */,
 				3BD64A2EFE07C555209E8460AF0791B7 /* UIImage.swift */,
 				2EC77F7146CA46DD33E3D452198CC3C6 /* UIScreen.swift */,
+				AE1D6B1B1DB8042E005BEEB7 /* UIView.swift */,
 				F4E2BB4C3550D7A5030DEFCC895E35F0 /* UIViewController.swift */,
 			);
 			path = TinySwift;
@@ -365,6 +368,7 @@
 				F148BFAFECF4340406AB6355D998B7BC /* AVAsset.swift in Sources */,
 				5568F9EA061DCA30891F5BD366E0E820 /* Date.swift in Sources */,
 				EDB16550A95A606941C9428B3E039C0B /* Int.swift in Sources */,
+				AE1D6B1F1DB80521005BEEB7 /* UIView.swift in Sources */,
 				632A494778A69D2BD5216BE5196BF149 /* String.swift in Sources */,
 				4B2198B9FF590B5C68472FE42865141C /* TinySwift-dummy.m in Sources */,
 				DE40023A72A37815A0F5DECD7C6842DE /* UIColor.swift in Sources */,
