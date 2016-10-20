@@ -4,7 +4,7 @@ branches:
   only:
   - master
 before_install:
-  - gem install cocoapods --pre
+  - gem install cocoapods
 script:
   - set -o pipefail && xcodebuild test -workspace Example/TinySwift.xcworkspace -scheme TinySwift-Example -destination 'platform=iOS Simulator,name=iPhone 7,OS=10.0' | xcpretty
   - pod lib lint
