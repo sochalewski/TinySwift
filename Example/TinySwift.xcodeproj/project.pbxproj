@@ -24,6 +24,7 @@
 		AE2C0D5C1D9C5BE1002234C9 /* UIViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2C0D551D9C5BE1002234C9 /* UIViewControllerTests.swift */; };
 		AE2C0D5E1D9C5C04002234C9 /* land.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE2C0D5D1D9C5C04002234C9 /* land.jpg */; };
 		AE3D8CD51DA9623400A3DD82 /* TimeIntervalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3D8CD41DA9623400A3DD82 /* TimeIntervalTests.swift */; };
+		AE50CFEC1DBE5D9900278F23 /* RawRepresentableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE50CFEB1DBE5D9900278F23 /* RawRepresentableTests.swift */; };
 		C26BC6DA20ECA70E5F7D0CE7 /* Pods_TinySwift_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B4D15F9A03F907B504915B9 /* Pods_TinySwift_Example.framework */; };
 		F7790282FAE5CDF43B0D80FC /* Pods_TinySwift_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4DFA9BA4CF4C4571AA077E0 /* Pods_TinySwift_Tests.framework */; };
 /* End PBXBuildFile section */
@@ -67,6 +68,7 @@
 		AE2C0D551D9C5BE1002234C9 /* UIViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerTests.swift; sourceTree = "<group>"; };
 		AE2C0D5D1D9C5C04002234C9 /* land.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = land.jpg; sourceTree = "<group>"; };
 		AE3D8CD41DA9623400A3DD82 /* TimeIntervalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeIntervalTests.swift; sourceTree = "<group>"; };
+		AE50CFEB1DBE5D9900278F23 /* RawRepresentableTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RawRepresentableTests.swift; sourceTree = "<group>"; };
 		AEC35CB61DA60E2A00974A52 /* TinySwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TinySwift.framework; path = "../../../Library/Developer/Xcode/DerivedData/TinySwift-cohddqsgxhzltkgtonmxnsexaswn/Build/Products/Debug-iphonesimulator/TinySwift/TinySwift.framework"; sourceTree = "<group>"; };
 		E00170ABCD2C04DE8432ECDF /* Pods-TinySwift_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinySwift_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-TinySwift_Example/Pods-TinySwift_Example.release.xcconfig"; sourceTree = "<group>"; };
 		E4DFA9BA4CF4C4571AA077E0 /* Pods_TinySwift_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TinySwift_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -151,6 +153,7 @@
 				AE2C0D4F1D9C5BE1002234C9 /* ArrayTests.swift */,
 				AE2C0D501D9C5BE1002234C9 /* DateTests.swift */,
 				AE2C0D511D9C5BE1002234C9 /* IntTests.swift */,
+				AE50CFEB1DBE5D9900278F23 /* RawRepresentableTests.swift */,
 				AE2C0D521D9C5BE1002234C9 /* StringTests.swift */,
 				AE3D8CD41DA9623400A3DD82 /* TimeIntervalTests.swift */,
 				AE2C0D531D9C5BE1002234C9 /* UIColorTests.swift */,
@@ -408,6 +411,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE2C0D581D9C5BE1002234C9 /* IntTests.swift in Sources */,
+				AE50CFEC1DBE5D9900278F23 /* RawRepresentableTests.swift in Sources */,
 				AE3D8CD51DA9623400A3DD82 /* TimeIntervalTests.swift in Sources */,
 				AE1D6B231DB80560005BEEB7 /* View.swift in Sources */,
 				AE1D6B1E1DB804EE005BEEB7 /* UIViewTests.swift in Sources */,

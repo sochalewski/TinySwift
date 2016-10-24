@@ -71,6 +71,10 @@ It contains the following functions and properties:
 
 * `func times(execute:)`
 
+### RawRepresentable: Hashable
+
+* `var all`
+
 ### String
 
 * `init(path:)`
