@@ -34,13 +34,13 @@ public extension Array {
     
     /// Shuffles the objects in the array. The objects in the array are shuffled based on a Fisher-Yates shuffle.
     @available(iOS 9.0, tvOS 9.0, *)
-    mutating func shuffle() {
+    public mutating func shuffle() {
         self = GKRandomSource.sharedRandom().arrayByShufflingObjects(in: self) as! [Element]
     }
     
     /// Returns a shuffled instance of the array. The objects in the array are shuffled based on a Fisher-Yates shuffle.
     @available(iOS 9.0, tvOS 9.0, *)
-    var shuffled: [Element] {
+    public var shuffled: [Element] {
         var array = Array(self)
         array.shuffle()
         
@@ -61,13 +61,14 @@ public extension Collection where Index == Int {
     public var random: Iterator.Element? {
         guard !isEmpty else { return nil }
         let index = Int(arc4random_uniform(UInt32(endIndex - startIndex)))
+        
         return self[index]
     }
 }
 
 public extension Collection where Index == Int, Iterator.Element: Hashable {
     /// Returns a dictionary with number of appearances for all elements of the collection.
-    var appearances: [Iterator.Element: Int]? {
+    public var appearances: [Iterator.Element: Int]? {
         guard !isEmpty else { return nil }
         
         var counts = [first!: 0] // number: count
@@ -81,7 +82,7 @@ public extension Collection where Index == Int, Iterator.Element: Hashable {
      
      If there is a multimodal distribution, the value of the property is `nil`.
      */
-    var mode: Iterator.Element? {
+    public var mode: Iterator.Element? {
         guard let appearances = appearances, !isEmpty else { return nil }
         
         let sortedAppearances = Array(appearances.keys).sorted(by: { appearances[$0]! > appearances[$1]! })
@@ -93,24 +94,24 @@ public extension Collection where Index == Int, Iterator.Element: Hashable {
 
 public extension Collection where Iterator.Element: Integer {
     /// Returns the sum of all elements in the collection.
-    var sum: Iterator.Element {
+    public var sum: Iterator.Element {
         return reduce(0, +)
     }
 }
 
 public extension Collection where Iterator.Element: Integer, Index == Int {
     /// Returns the arithmetic mean of all elements in the collection.
-    var arithmeticMean: Double {
+    public var arithmeticMean: Double {
         return isEmpty ? 0 : Double(sum.toIntMax()) / Double(endIndex - startIndex)
     }
     
     /// Returns the geometric mean of all elements in the collection.
-    var geometricMean: Double {
+    public var geometricMean: Double {
         return isEmpty ? 0 : pow(map({ Double($0.toIntMax()) }).reduce(1, *), 1 / Double(endIndex - startIndex))
     }
     
     /// Returns the middle number in the collection, taken as the average of the two middle numbers when the collection has an even number of numbers.
-    var median: Double {
+    public var median: Double {
         guard !isEmpty else { return 0 }
         let count = Int(endIndex - startIndex)
         let isCountEven = count % 2 == 0
@@ -128,7 +129,7 @@ public extension Collection where Iterator.Element: Integer, Index == Int {
      
      If the number of elements in the collection is lower than or equal to 1, the value of the property is `nil`.
      */
-    var variance: Double? {
+    public var variance: Double? {
         guard count >= 2 else { return nil }
 
         let arrayMean = arithmeticMean
@@ -142,9 +143,8 @@ public extension Collection where Iterator.Element: Integer, Index == Int {
      
      If the number of elements in the collection is lower than or equal to 1, the value of the property is `nil`.
      */
-    var standardDeviation: Double? {
+    public var standardDeviation: Double? {
         guard let variance = variance else { return nil }
-
         return sqrt(variance)
     }
 }
@@ -158,18 +158,18 @@ public extension Collection where Iterator.Element: FloatingPoint {
 
 public extension Collection where Iterator.Element: FloatingPoint, Index == Int {
     /// Returns the arithmetic mean of all elements in the collection.
-    var arithmeticMean: Iterator.Element {
+    public var arithmeticMean: Iterator.Element {
         return isEmpty ? 0 : sum / Iterator.Element(endIndex - startIndex)
     }
     
     /// Returns the geometric mean of all elements in the collection.
-    var geometricMean: Double {
+    public var geometricMean: Double {
         let `self` = self as! [Double]
         return isEmpty ? 0 : pow(self.reduce(1.0, *), 1 / Double(endIndex - startIndex))
     }
     
     /// Returns the middle number in the collection, taken as the average of the two middle numbers when the collection has an even number of numbers.
-    var median: Iterator.Element {
+    public var median: Iterator.Element {
         guard !isEmpty else { return 0 }
         let count = Int(endIndex - startIndex)
         let isCountEven = count % 2 == 0
@@ -187,7 +187,7 @@ public extension Collection where Iterator.Element: FloatingPoint, Index == Int 
      
      If the number of elements in the collection is lower than or equal to 1, the value of the property is `nil`.
      */
-    var variance: Iterator.Element? {
+    public var variance: Iterator.Element? {
         guard count >= 2 else { return nil }
         
         let arrayMean = arithmeticMean
@@ -201,9 +201,8 @@ public extension Collection where Iterator.Element: FloatingPoint, Index == Int 
      
      If the number of elements in the collection is lower than or equal to 1, the value of the property is `nil`.
      */
-    var standardDeviation: Iterator.Element? {
+    public var standardDeviation: Iterator.Element? {
         guard let variance = variance else { return nil }
-        
         return sqrt(variance)
     }
 }

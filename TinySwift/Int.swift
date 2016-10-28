@@ -26,17 +26,17 @@ public extension Integer {
     }
     
     /// A Boolean value that determines whether the value can be divided exactly by 2.
-    var isEven: Bool {
+    public var isEven: Bool {
         return self % 2 == 0
     }
     
     /// A Boolean value that determines whether the value cannot be divided exactly by 2.
-    var isOdd: Bool {
+    public var isOdd: Bool {
         return self % 2 != 0
     }
     
     /// A Boolean value that determines whether the value is a natural number greater than 1 that has no positive divisors other than 1 and itself.
-    var isPrimeNumber: Bool {
+    public var isPrimeNumber: Bool {
         guard self > 1 else { return false }
         var divisor: Self = 2
         while divisor < self / 2 {
@@ -49,6 +49,24 @@ public extension Integer {
         
         return true
     }
+    
+    /// Returns the opposite number.
+    public var additiveInverse: IntMax {
+        return self.toIntMax() * -1.toIntMax()
+    }
+    
+    /// Returns the value to the power of `-1`.
+    public var multiplicativeInverse: Double? {
+        guard self != 0 else { return nil }
+        return 1.0 / Double(self.toIntMax())
+    }
+}
+
+public extension SignedInteger {
+    /// Returns the opposite number.
+    public var additiveInverse: Self {
+        return self * -1
+    }
 }
 
 public extension Int {
@@ -57,7 +75,7 @@ public extension Int {
 
      - parameter block: The block to be invoked at least once. This parameter cannot be `NULL`.
      */
-    func times(execute block: @escaping () -> Void) {
+    public func times(execute block: @escaping () -> Void) {
         guard self > 0 else { return }
         (0..<self).forEach { _ in
             block()

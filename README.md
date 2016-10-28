@@ -60,12 +60,19 @@ It contains the following functions and properties:
 * `var weekday`
 * `var yesterday`
 
+### FloatingPoint
+
+* `var additiveInverse`
+* `var multiplicativeInverse`
+
 ### Integer
 
+* `var additiveInverse`
 * `var factorial`
 * `var isEven`
 * `var isOdd`
 * `var isPrimeNumber`
+* `var multiplicativeInverse`
 
 #### Int
 
@@ -112,6 +119,10 @@ It contains the following functions and properties:
 
 * `var isPad13OrBigger`
 * `var isSmallScreen`
+
+### UITableViewCell
+
+* `func hideSeparator()`
 
 ### UIView
 

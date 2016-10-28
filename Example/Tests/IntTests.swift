@@ -10,6 +10,10 @@ import XCTest
 
 class IntTests: XCTestCase {
     
+    let zero = 0
+    let five = 5
+    let minusFive = -5
+    
     func testFactorial() {
         let usnignedInt: UInt = 5
         XCTAssert(usnignedInt.factorial == 120)
@@ -17,7 +21,6 @@ class IntTests: XCTestCase {
         let signedInt = 9
         XCTAssert(signedInt.factorial! == 362_880)
         
-        let zero = 0
         XCTAssert(zero.factorial! == 1)
         
         let negativeInt = -1
@@ -55,14 +58,28 @@ class IntTests: XCTestCase {
     
     func testTimes() {
         var zero = 0
-        5.times {
+        five.times {
             zero += 1
         }
-        XCTAssert(zero == 5)
-        (-5).times {
+        XCTAssert(zero == five)
+        minusFive.times {
             zero -= 1
         }
-        XCTAssert(zero == 5)
+        XCTAssert(zero == five)
     }
     
+    func testAdditiveInverse() {
+        XCTAssertTrue(zero.additiveInverse == 0)
+        XCTAssertTrue(five.additiveInverse == minusFive)
+        XCTAssertTrue(minusFive.additiveInverse == five)
+        
+        let unsignedFive: UInt = 5
+        XCTAssertTrue(unsignedFive.additiveInverse == (-5).toIntMax())
+    }
+    
+    func testMultiplicativeInverse() {
+        XCTAssertNil(zero.multiplicativeInverse)
+        XCTAssertTrue(five.multiplicativeInverse == 0.2)
+        XCTAssertTrue(minusFive.multiplicativeInverse == -0.2)
+    }
 }
