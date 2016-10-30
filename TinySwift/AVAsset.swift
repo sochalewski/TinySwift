@@ -6,6 +6,7 @@
 //  Copyright © 2016 Piotr Sochalewski. All rights reserved.
 //
 
+#if !os(watchOS)
 import Foundation
 import AVFoundation
 
@@ -21,3 +22,4 @@ public extension AVAsset {
         return UIImage(cgImage: imageRef)
     }
 }
+#endif

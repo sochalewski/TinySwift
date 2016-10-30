@@ -81,4 +81,18 @@ public extension Int {
             block()
         }
     }
+    
+    /**
+     Initializes and returns a randomized integer value.
+     
+     - parameter range: A half-open interval over a comparable type, from a lower bound up to, but not including, an upper bound. You create Range instances by using the half-open range operator (`..<`). You may specify `nil` for this parameter if you want randomized value in the range of `-2^31` to `2^31`.
+     - returns: A signed randomized integer value type.
+     */
+    public init(random range: Range<Int>? = nil) {
+        if let range = range {
+            self = Int(arc4random_uniform(UInt32(range.upperBound - range.lowerBound))) + range.lowerBound
+        } else {
+            self = Int(arc4random()) + Int(Int32.min)
+        }
+    }
 }

@@ -8,7 +8,10 @@
 
 import UIKit
 
+#if !os(watchOS)
+
 public extension UIScreen {
+    #if os(iOS)
     /// A Boolean value that determines whether the device height is equal or lower than 480 multiplied by `scale` (iPhone 4s and older).
     public var isSmallScreen: Bool {
         return nativeBounds.size.height <= 480.0 * scale
@@ -18,4 +21,7 @@ public extension UIScreen {
     public var isPad13OrBigger: Bool {
         return UIDevice.current.userInterfaceIdiom == .pad && nativeBounds.size.height >= 1366.0 * scale
     }
+    #endif
 }
+
+#endif

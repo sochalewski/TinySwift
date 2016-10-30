@@ -8,6 +8,8 @@
 
 import UIKit
 
+#if !os(watchOS)
+
 public extension UIViewController {
     /**
      Presents an alert controller with "OK" button modally.
@@ -23,3 +25,5 @@ public extension UIViewController {
         present(alertController, animated: true, completion: completion)
     }
 }
+
+#endif

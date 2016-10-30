@@ -7,7 +7,9 @@
 //
 
 import Foundation
+#if !os(watchOS)
 import GameplayKit
+#endif
 
 public extension Array {
     /**
@@ -32,6 +34,7 @@ public extension Array {
         }
     }
     
+    #if !os(watchOS)
     /// Shuffles the objects in the array. The objects in the array are shuffled based on a Fisher-Yates shuffle.
     @available(iOS 9.0, tvOS 9.0, *)
     public mutating func shuffle() {
@@ -46,6 +49,7 @@ public extension Array {
         
         return array
     }
+    #endif
 }
 
 public extension Array where Element: Equatable {
