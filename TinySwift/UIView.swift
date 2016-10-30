@@ -8,6 +8,8 @@
 
 import UIKit
 
+#if !os(watchOS)
+
 public extension UIView {
     /**
      Returns a view instantiated from the nib/xib corresponding to the view.
@@ -39,3 +41,5 @@ public extension UIView {
         return view
     }
 }
+
+#endif

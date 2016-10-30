@@ -69,6 +69,7 @@ public extension UIImage {
         return crop(to: insetRect)
     }
     
+    #if !os(watchOS)
     /// Returns a copy of the image converted to grayscale.
     public var grayscale: UIImage? {
         guard let ciImage = CIImage(image: self) else { return nil }
@@ -76,6 +77,7 @@ public extension UIImage {
         
         return UIImage(ciImage: grayscale)
     }
+    #endif
     
     /**
      Returns a resized non-stretched copy of the image.

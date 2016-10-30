@@ -10,7 +10,7 @@
 
 Swift 3
 
-iOS 8+, tvOS 9+
+iOS 8+, tvOS 9+, watchOS 2+
 
 ## Installation
 
@@ -29,108 +29,109 @@ It contains the following functions and properties:
 
 ### AVAsset
 
-* `var thumbnail`
+* `var thumbnail` <sup>iOS, tvOS</sup>
 
 ### Collection
 
-* `var appearances`
-* `var arithmeticMean`
-* `var geometricMean`
-* `var median`
-* `var mode`
-* `var random`
-* `var standardDeviation`
-* `var sum`
-* `var variance`
+* `var appearances` <sup>iOS, tvOS, watchOS</sup>
+* `var arithmeticMean` <sup>iOS, tvOS, watchOS</sup>
+* `var geometricMean` <sup>iOS, tvOS, watchOS</sup>
+* `var median` <sup>iOS, tvOS, watchOS</sup>
+* `var mode` <sup>iOS, tvOS, watchOS</sup>
+* `var random` <sup>iOS, tvOS, watchOS</sup>
+* `var standardDeviation` <sup>iOS, tvOS, watchOS</sup>
+* `var sum` <sup>iOS, tvOS, watchOS</sup>
+* `var variance` <sup>iOS, tvOS, watchOS</sup>
 
 #### Array
 
-* `var areAllElementsEqual`
-* `var shuffled`
-* `func shuffle()`
-* `subscript(safe:)`
+* `var areAllElementsEqual` <sup>iOS, tvOS, watchOS</sup>
+* `var shuffled` <sup>iOS, tvOS</sup>
+* `func shuffle()` <sup>iOS, tvOS</sup>
+* `subscript(safe:)` <sup>iOS, tvOS, watchOS</sup>
 
 ### Date
 
-* `var firstOfMonth`
-* `var firstOfYear`
-* `var lastOfMonth`
-* `var lastOfYear`
-* `var tomorrow`
-* `var weekday`
-* `var yesterday`
+* `var firstOfMonth` <sup>iOS, tvOS, watchOS</sup>
+* `var firstOfYear` <sup>iOS, tvOS, watchOS</sup>
+* `var lastOfMonth` <sup>iOS, tvOS, watchOS</sup>
+* `var lastOfYear` <sup>iOS, tvOS, watchOS</sup>
+* `var tomorrow` <sup>iOS, tvOS, watchOS</sup>
+* `var weekday` <sup>iOS, tvOS, watchOS</sup>
+* `var yesterday` <sup>iOS, tvOS, watchOS</sup>
 
 ### FloatingPoint
 
-* `var additiveInverse`
-* `var multiplicativeInverse`
+* `var additiveInverse` <sup>iOS, tvOS, watchOS</sup>
+* `var multiplicativeInverse` <sup>iOS, tvOS, watchOS</sup>
 
 ### Integer
 
-* `var additiveInverse`
-* `var factorial`
-* `var isEven`
-* `var isOdd`
-* `var isPrimeNumber`
-* `var multiplicativeInverse`
+* `var additiveInverse` <sup>iOS, tvOS, watchOS</sup>
+* `var factorial` <sup>iOS, tvOS, watchOS</sup>
+* `var isEven` <sup>iOS, tvOS, watchOS</sup>
+* `var isOdd` <sup>iOS, tvOS, watchOS</sup>
+* `var isPrimeNumber` <sup>iOS, tvOS, watchOS</sup>
+* `var multiplicativeInverse` <sup>iOS, tvOS, watchOS</sup>
 
 #### Int
 
-* `func times(execute:)`
+* `init(random:)` <sup>iOS, tvOS, watchOS</sup>
+* `func times(execute:)` <sup>iOS, tvOS, watchOS</sup>
 
 ### RawRepresentable: Hashable
 
-* `var all`
+* `var all` <sup>iOS, tvOS, watchOS</sup>
 
 ### String
 
-* `init(path:)`
-* `init(random:length:nonRepeating:)`
-* `var initials`
-* `var lines`
-* `var nonEmptyLines`
-* `var trimmed`
-* `func occurrences(of:)`
+* `init(path:)` <sup>iOS, tvOS, watchOS</sup>
+* `init(random:length:nonRepeating:)` <sup>iOS, tvOS, watchOS</sup>
+* `var initials` <sup>iOS, tvOS, watchOS</sup>
+* `var lines` <sup>iOS, tvOS, watchOS</sup>
+* `var nonEmptyLines` <sup>iOS, tvOS, watchOS</sup>
+* `var trimmed` <sup>iOS, tvOS, watchOS</sup>
+* `func occurrences(of:)` <sup>iOS, tvOS, watchOS</sup>
 
 ### TimeInterval
 
-* `func time(withFormat:)`
+* `func time(withFormat:)` <sup>iOS, tvOS, watchOS</sup>
 
 ### UIColor
 
-* `init(hex:alpha:)`
-* `var hex`
+* `init(hex:alpha:)` <sup>iOS, tvOS, watchOS</sup>
+* `var hex` <sup>iOS, tvOS, watchOS</sup>
 
 ### UIImage
 
-* `var grayscale`
-* `var jpeg`
-* `var normalizedImage`
-* `var png`
-* `var square`
-* `var thumbnail`
-* `func border(width:color:)`
-* `func color(atPoint:)`
-* `func crop(to:)`
-* `func jpeg(quality:)`
-* `func resize(to:)`
+* `var grayscale` <sup>iOS, tvOS</sup>
+* `var jpeg` <sup>iOS, tvOS, watchOS</sup>
+* `var normalizedImage` <sup>iOS, tvOS, watchOS</sup>
+* `var png` <sup>iOS, tvOS, watchOS</sup>
+* `var square` <sup>iOS, tvOS, watchOS</sup>
+* `var thumbnail` <sup>iOS, tvOS, watchOS</sup>
+* `func border(width:color:)` <sup>iOS, tvOS, watchOS</sup>
+* `func color(atPoint:)` <sup>iOS, tvOS, watchOS</sup>
+* `func crop(to:)` <sup>iOS, tvOS, watchOS</sup>
+* `func jpeg(quality:)` <sup>iOS, tvOS, watchOS</sup>
+* `func resize(to:)` <sup>iOS, tvOS, watchOS</sup>
 
 ### UIScreen
 
-* `var isPad13OrBigger`
-* `var isSmallScreen`
+* `var isPad13OrBigger` <sup>iOS</sup>
+* `var isSmallScreen` <sup>iOS</sup>
 
 ### UITableViewCell
 
-* `func hideSeparator()`
+* `func hideSeparator()` <sup>iOS</sup>
 
 ### UIView
 
-* `var viewFromNib`
+* `var viewFromNib` <sup>iOS, tvOS</sup>
 
 ### UIViewController
 
-* `func presentAlertController(withTitle:message:completion:handler:)`
+* `func presentAlertController(withTitle:message:completion:handler:)` <sup>iOS, tvOS</sup>
 
 ## Author
 

@@ -9,6 +9,7 @@
 import UIKit
 
 #if os(iOS)
+
 public extension UITableViewCell {
     /// Hides the separator below the cell.
     public func hideSeparator() {
@@ -18,4 +19,5 @@ public extension UITableViewCell {
         indentationLevel = 1
     }
 }
+
 #endif

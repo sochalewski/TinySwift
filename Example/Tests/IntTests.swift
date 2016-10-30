@@ -82,4 +82,11 @@ class IntTests: XCTestCase {
         XCTAssertTrue(five.multiplicativeInverse == 0.2)
         XCTAssertTrue(minusFive.multiplicativeInverse == -0.2)
     }
+    
+    func testRandom() {
+        var random = Int(random: -5..<6)
+        XCTAssertTrue(random >= -5 && random < 6)
+        random = Int(random: nil)
+        XCTAssertTrue(random >= Int(Int32.min) && random < Int(Int32.max))
+    }
 }
