@@ -35,20 +35,20 @@ public extension Array {
     }
     
     #if !os(watchOS)
-    /// Shuffles the objects in the array. The objects in the array are shuffled based on a Fisher-Yates shuffle.
-    @available(iOS 9.0, tvOS 9.0, *)
-    public mutating func shuffle() {
-        self = GKRandomSource.sharedRandom().arrayByShufflingObjects(in: self) as! [Element]
-    }
-    
-    /// Returns a shuffled instance of the array. The objects in the array are shuffled based on a Fisher-Yates shuffle.
-    @available(iOS 9.0, tvOS 9.0, *)
-    public var shuffled: [Element] {
-        var array = Array(self)
-        array.shuffle()
+        /// Shuffles the objects in the array. The objects in the array are shuffled based on a Fisher-Yates shuffle.
+        @available(iOS 9.0, tvOS 9.0, *)
+        public mutating func shuffle() {
+            self = GKRandomSource.sharedRandom().arrayByShufflingObjects(in: self) as! [Element]
+        }
         
-        return array
-    }
+        /// Returns a shuffled instance of the array. The objects in the array are shuffled based on a Fisher-Yates shuffle.
+        @available(iOS 9.0, tvOS 9.0, *)
+        public var shuffled: [Element] {
+            var array = Array(self)
+            array.shuffle()
+            
+            return array
+        }
     #endif
 }
 

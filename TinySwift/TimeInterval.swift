@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// The time format representation.
 public enum TimeFormat {
     /// The time format represented using at least two digits of hour (from 00 to ∞), two digits of minute (from 00 to 59) and two digits of second (from 00 to 59) separated by colons.
     case hhmmss
