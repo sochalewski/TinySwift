@@ -70,13 +70,13 @@ public extension UIImage {
     }
     
     #if !os(watchOS)
-    /// Returns a copy of the image converted to grayscale.
-    public var grayscale: UIImage? {
-        guard let ciImage = CIImage(image: self) else { return nil }
-        let grayscale = ciImage.applyingFilter("CIColorControls", withInputParameters: [kCIInputSaturationKey : 0.0])
-        
-        return UIImage(ciImage: grayscale)
-    }
+        /// Returns a copy of the image converted to grayscale.
+        public var grayscale: UIImage? {
+            guard let ciImage = CIImage(image: self) else { return nil }
+            let grayscale = ciImage.applyingFilter("CIColorControls", withInputParameters: [kCIInputSaturationKey : 0.0])
+            
+            return UIImage(ciImage: grayscale)
+        }
     #endif
     
     /**

@@ -102,6 +102,11 @@ It contains the following functions and properties:
 * `init(hex:alpha:)` <sup>iOS, tvOS, watchOS</sup>
 * `var hex` <sup>iOS, tvOS, watchOS</sup>
 
+### UIDevice
+
+* `var device` <sup>iOS, tvOS</sup>
+* `var deviceCode` <sup>iOS, tvOS</sup>
+
 ### UIImage
 
 * `var grayscale` <sup>iOS, tvOS</sup>
@@ -132,6 +137,12 @@ It contains the following functions and properties:
 ### UIViewController
 
 * `func presentAlertController(withTitle:message:completion:handler:)` <sup>iOS, tvOS</sup>
+
+### WKInterfaceDevice
+
+* `var device` <sup>iOS, watchOS</sup>
+* `var is38mm` <sup>iOS, watchOS</sup>
+* `var is42mm` <sup>iOS, watchOS</sup>
 
 ## Author
 
