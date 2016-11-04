@@ -4,10 +4,16 @@ branches:
   only:
   - master
 before_install:
+  # warm up the simulator
+  - export IOS_SIMULATOR_UDID=`instruments -s devices | grep "iPhone 7 (10.0" | awk -F '[ ]' '{print $4}' | awk -F '[\[]' '{print $2}' | sed 's/.$//'`
+  - echo $IOS_SIMULATOR_UDID
+  - open -a "simulator" --args -CurrentDeviceUDID $IOS_SIMULATOR_UDID
+
+  # cocoapods
   - gem install cocoapods
-  - cd Example ; pod install --verbose ; cd ..
+  - cd Example ; pod install ; cd ..
 script:
-  - set -o pipefail && xcodebuild test -workspace Example/TinySwift.xcworkspace -scheme TinySwift-Example -destination 'platform=iOS Simulator,name=iPhone 7,OS=10.0' | xcpretty
+  - travis_retry set -o pipefail && xcodebuild test -workspace Example/TinySwift.xcworkspace -scheme TinySwift-Example -destination 'platform=iOS Simulator,name=iPhone 7,OS=10.0' | xcpretty
   - pod lib lint
 after_success:
   - bash <(curl -s https://codecov.io/bash)
