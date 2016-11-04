@@ -27,6 +27,7 @@
 		AE3D8CD51DA9623400A3DD82 /* TimeIntervalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3D8CD41DA9623400A3DD82 /* TimeIntervalTests.swift */; };
 		AE3DA4E01DC3F8E200DB23DB /* FloatingPointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3DA4DE1DC3F87700DB23DB /* FloatingPointTests.swift */; };
 		AE50CFEC1DBE5D9900278F23 /* RawRepresentableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE50CFEB1DBE5D9900278F23 /* RawRepresentableTests.swift */; };
+		AEBE05331DCD371B002DFBB6 /* UIScreenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBE05321DCD371B002DFBB6 /* UIScreenTests.swift */; };
 		C26BC6DA20ECA70E5F7D0CE7 /* Pods_TinySwift_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B4D15F9A03F907B504915B9 /* Pods_TinySwift_Example.framework */; };
 		F7790282FAE5CDF43B0D80FC /* Pods_TinySwift_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4DFA9BA4CF4C4571AA077E0 /* Pods_TinySwift_Tests.framework */; };
 /* End PBXBuildFile section */
@@ -73,6 +74,7 @@
 		AE3D8CD41DA9623400A3DD82 /* TimeIntervalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeIntervalTests.swift; sourceTree = "<group>"; };
 		AE3DA4DE1DC3F87700DB23DB /* FloatingPointTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingPointTests.swift; sourceTree = "<group>"; };
 		AE50CFEB1DBE5D9900278F23 /* RawRepresentableTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RawRepresentableTests.swift; sourceTree = "<group>"; };
+		AEBE05321DCD371B002DFBB6 /* UIScreenTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScreenTests.swift; sourceTree = "<group>"; };
 		AEC35CB61DA60E2A00974A52 /* TinySwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TinySwift.framework; path = "../../../Library/Developer/Xcode/DerivedData/TinySwift-cohddqsgxhzltkgtonmxnsexaswn/Build/Products/Debug-iphonesimulator/TinySwift/TinySwift.framework"; sourceTree = "<group>"; };
 		E00170ABCD2C04DE8432ECDF /* Pods-TinySwift_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinySwift_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-TinySwift_Example/Pods-TinySwift_Example.release.xcconfig"; sourceTree = "<group>"; };
 		E4DFA9BA4CF4C4571AA077E0 /* Pods_TinySwift_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TinySwift_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -164,6 +166,7 @@
 				AE2C0D531D9C5BE1002234C9 /* UIColorTests.swift */,
 				AE2ABEC21DC6B8E100A11DB3 /* UIDeviceTests.swift */,
 				AE2C0D541D9C5BE1002234C9 /* UIImageTests.swift */,
+				AEBE05321DCD371B002DFBB6 /* UIScreenTests.swift */,
 				AE1D6B1D1DB804EE005BEEB7 /* UIViewTests.swift */,
 				AE2C0D551D9C5BE1002234C9 /* UIViewControllerTests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
@@ -420,6 +423,7 @@
 				AE3DA4E01DC3F8E200DB23DB /* FloatingPointTests.swift in Sources */,
 				AE2ABEC31DC6B8E100A11DB3 /* UIDeviceTests.swift in Sources */,
 				AE2C0D581D9C5BE1002234C9 /* IntTests.swift in Sources */,
+				AEBE05331DCD371B002DFBB6 /* UIScreenTests.swift in Sources */,
 				AE50CFEC1DBE5D9900278F23 /* RawRepresentableTests.swift in Sources */,
 				AE3D8CD51DA9623400A3DD82 /* TimeIntervalTests.swift in Sources */,
 				AE1D6B231DB80560005BEEB7 /* View.swift in Sources */,

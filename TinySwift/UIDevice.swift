@@ -130,17 +130,11 @@
         case (.pad(let model1), .pad(let model2)): return model1 == model2
         case (.pod(let model1), .pod(let model2)): return model1 == model2
         case (.tv(let model1), .tv(let model2)): return model1 == model2
-        case (.simulator, .simulator): return true
-        case (.unknown, .unknown): return true
-        default: return false
+        default: return lhs == rhs
         }
     }
     
-    public func ==(lhs: PhoneModel, rhs: PhoneModel) -> Bool { return lhs == rhs }
     public func ==(lhs: PadModel, rhs: PadModel) -> Bool { return lhs == rhs }
-    public func ==(lhs: PodModel, rhs: PodModel) -> Bool { return lhs == rhs }
-    public func ==(lhs: TVModel, rhs: TVModel) -> Bool { return lhs == rhs }
-    public func ==(lhs: PadProSize, rhs: PadProSize) -> Bool { return lhs == rhs }
     
     public func <(lhs: PhoneModel, rhs: PhoneModel) -> Bool { return lhs.rawValue < rhs.rawValue }
     public func <(lhs: PodModel, rhs: PodModel) -> Bool { return lhs.rawValue < rhs.rawValue }
@@ -148,7 +142,7 @@
     public func <(lhs: PadProSize, rhs: PadProSize) -> Bool { return lhs.rawValue < rhs.rawValue }
 
     public extension UIDevice {
-        /// Return a string containing device code.
+        /// Returns a string containing the device code.
         public var deviceCode: String {
             var systemInfo = utsname()
             uname(&systemInfo)
@@ -156,7 +150,7 @@
             return String(validatingUTF8: NSString(bytes: &systemInfo.machine, length: Int(_SYS_NAMELEN), encoding: String.Encoding.ascii.rawValue)!.utf8String!)!
         }
         
-        /// Returns a current device type.
+        /// Returns the device type.
         public var device: DeviceType {
             switch deviceCode {
             case "iPhone1,1": return .phone(model: .iPhone)
