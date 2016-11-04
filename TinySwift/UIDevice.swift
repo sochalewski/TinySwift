@@ -87,7 +87,7 @@
         /// The iPad mini 4.
         case iPadMini4
         /// The iPad Pro.
-        case iPadPro(size: PadProSize)
+        case iPadPro(size: ScreenSize)
     }
 
     // The iPod touch device type representation.
@@ -115,14 +115,6 @@
         /// The fourth generation of Apple TV.
         case tv4g
     }
-
-    // The iPad Pro device screen size representation.
-    public enum PadProSize: Int, Equatable, Comparable {
-        /// 9.7" screen size.
-        case inch9p7
-        /// 12.9" screen size.
-        case inch12p9
-    }
     
     public func ==(lhs: DeviceType, rhs: DeviceType) -> Bool {
         switch (lhs, rhs) {
@@ -141,7 +133,6 @@
     public func <(lhs: PhoneModel, rhs: PhoneModel) -> Bool { return lhs.rawValue < rhs.rawValue }
     public func <(lhs: PodModel, rhs: PodModel) -> Bool { return lhs.rawValue < rhs.rawValue }
     public func <(lhs: TVModel, rhs: TVModel) -> Bool { return lhs.rawValue < rhs.rawValue }
-    public func <(lhs: PadProSize, rhs: PadProSize) -> Bool { return lhs.rawValue < rhs.rawValue }
 
     public extension UIDevice {
         /// Returns a string containing the device code.

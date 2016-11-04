@@ -123,6 +123,7 @@ It contains the following functions and properties:
 
 ### UIScreen
 
+* `var isLowResolution` <sup>tvOS</sup>
 * `var isSmallScreen` <sup>iOS</sup>
 * `var size` <sup>iOS</sup>
 
