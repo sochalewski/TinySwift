@@ -11,7 +11,7 @@ import XCTest
 class UIScreenTests: XCTestCase {
     
     func testScreenSize() {
-        XCTAssertTrue(UIScreen.main.size == .size4p7In, "Wrong screen size returned. Please check if you run the tests on iPhone 7 simulator (like Travis CI).")
+        XCTAssertTrue(UIScreen.main.size == .inch4p7, "Wrong screen size returned. Please check if you run the tests on iPhone 7 simulator (like Travis CI).")
         XCTAssertFalse(UIScreen.main.isSmallScreen, "Wrong screen size returned. Please check if you run the tests on iPhone 7 simulator (like Travis CI).")
     }
 }
