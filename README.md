@@ -123,8 +123,8 @@ It contains the following functions and properties:
 
 ### UIScreen
 
-* `var isPad13OrBigger` <sup>iOS</sup>
 * `var isSmallScreen` <sup>iOS</sup>
+* `var size` <sup>iOS</sup>
 
 ### UITableViewCell
 
