@@ -130,6 +130,8 @@
         case (.pad(let model1), .pad(let model2)): return model1 == model2
         case (.pod(let model1), .pod(let model2)): return model1 == model2
         case (.tv(let model1), .tv(let model2)): return model1 == model2
+        case (.simulator, .simulator): return true
+        case (.unknown, .unknown): return true
         default: return lhs == rhs
         }
     }
