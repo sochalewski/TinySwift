@@ -50,6 +50,11 @@ It contains the following functions and properties:
 * `func shuffle()` <sup>iOS, tvOS</sup>
 * `subscript(safe:)` <sup>iOS, tvOS, watchOS</sup>
 
+### Data
+
+* `init(hexadecimalString:)` <sup>iOS, tvOS, watchOS</sup>
+* `var hexadecimalString` <sup>iOS, tvOS, watchOS</sup>
+
 ### Date
 
 * `var firstOfMonth` <sup>iOS, tvOS, watchOS</sup>
