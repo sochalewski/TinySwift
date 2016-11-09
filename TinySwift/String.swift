@@ -35,6 +35,7 @@ public extension String {
      - parameter random: The desired randomized character set.
      - parameter length: The desired length of a string.
      - parameter nonRepeating: The boolean value that determines whether characters in the initialized can or cannot be repeated. The default value is `false`. If `true` and length is greater than number of characters in selected character set, then string with maximum allowed length will be produced.
+     - returns: The new string with randomized characters.
      */
     public init(random: RandomStringType, length: Int, nonRepeating: Bool = false) {
         var letters = random.characterSet
@@ -63,6 +64,7 @@ public extension String {
      
      - parameter directory: The location of a variety of directories
      - note: The directory returned by this method may not exist. This method simply gives you the appropriate location for the requested directory. Depending on the application’s needs, it may be up to the developer to create the appropriate directory and any in between.
+     - returns: The string with a path for the specified directories in the user's home directory or `nil` if a path cannot be found.
      */
     public init?(path directory: FileManager.SearchPathDirectory) {
         guard let path = NSSearchPathForDirectoriesInDomains(directory, .userDomainMask, true).first else { return nil }
