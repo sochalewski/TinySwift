@@ -21,7 +21,7 @@ public extension Array {
      
      It cannot be fixed until Swift support for a generic subscripts. Read more [here](https://bugs.swift.org/browse/SR-115).
      
-     - parameter index: The position of the element to access. `index` **must not** be greater than or equal to `startIndex` and less than `endIndex`, because elements are accessed in a safe way.
+     - parameter index: The position of the element to access. `index` **may or may not** be greater than or equal to `startIndex` and less than `endIndex`, because elements are accessed in a safe way.
      */
     public subscript(safe index: Int) -> Element? {
         get {
@@ -33,31 +33,6 @@ public extension Array {
             self[index] = newValue
         }
     }
-    
-    #if !os(watchOS)
-        /// Shuffles the objects in the array. The objects in the array are shuffled based on a Fisher-Yates shuffle.
-        @available(iOS 9.0, tvOS 9.0, *)
-        public mutating func shuffle() {
-            self = GKRandomSource.sharedRandom().arrayByShufflingObjects(in: self) as! [Element]
-        }
-        
-        /// Returns a shuffled instance of the array. The objects in the array are shuffled based on a Fisher-Yates shuffle.
-        @available(iOS 9.0, tvOS 9.0, *)
-        public var shuffled: [Element] {
-            var array = Array(self)
-            array.shuffle()
-            
-            return array
-        }
-    #endif
-}
-
-public extension Array where Element: Equatable {
-    /// A Boolean value that determines whether all elements of the array are equal.
-    public var areAllElementsEqual: Bool {
-        guard let first = first else { return true }
-        return !dropFirst().contains { $0 != first }
-    }
 }
 
 public extension Collection where Index == Int {
@@ -68,14 +43,37 @@ public extension Collection where Index == Int {
         
         return self[index]
     }
+    
+    #if !os(watchOS)
+        /// Shuffles the objects in the collection. The objects in the collection are shuffled based on a Fisher-Yates shuffle.
+        @available(iOS 9.0, tvOS 9.0, *)
+        public mutating func shuffle() {
+            self = GKRandomSource.sharedRandom().arrayByShufflingObjects(in: self as! [Any]) as! Self
+        }
+        
+        /// Returns a shuffled instance of the collection. The objects in the collection are shuffled based on a Fisher-Yates shuffle.
+        @available(iOS 9.0, tvOS 9.0, *)
+        public var shuffled: [Iterator.Element] {
+            var array = Array(self)
+            array.shuffle()
+            
+            return array
+        }
+    #endif
 }
 
 public extension Collection where Index == Int, Iterator.Element: Hashable {
+    /// A Boolean value that determines whether all elements of the array are equal.
+    public var areAllElementsEqual: Bool {
+        guard !isEmpty else { return true }
+        return !Array(self).dropFirst().contains { $0 != first! }
+    }
+    
     /// Returns a dictionary with number of appearances for all elements of the collection.
-    public var appearances: [Iterator.Element: Int]? {
+    public var appearances: [Iterator.Element : Int]? {
         guard !isEmpty else { return nil }
         
-        var counts = [first!: 0] // number: count
+        var counts = [first! : 0] // number: count
         forEach { counts[$0] = (counts[$0] ?? 0) + 1 }
         
         return counts
