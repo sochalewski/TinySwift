@@ -8,7 +8,7 @@
 
 import Foundation
 #if !os(watchOS)
-import GameplayKit
+    import GameplayKit
 #endif
 
 public extension Array {
@@ -48,7 +48,7 @@ public extension Collection where Index == Int {
         /// Shuffles the objects in the collection. The objects in the collection are shuffled based on a Fisher-Yates shuffle.
         @available(iOS 9.0, tvOS 9.0, *)
         public mutating func shuffle() {
-            self = GKRandomSource.sharedRandom().arrayByShufflingObjects(in: self as! [Any]) as! Self
+            self = GKARC4RandomSource.sharedRandom().arrayByShufflingObjects(in: self as! [Any]) as! Self
         }
         
         /// Returns a shuffled instance of the collection. The objects in the collection are shuffled based on a Fisher-Yates shuffle.
