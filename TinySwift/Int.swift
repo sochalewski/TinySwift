@@ -71,18 +71,6 @@ public extension SignedInteger {
 
 public extension Int {
     /**
-     Submits a block object for execution number or times defined by the value.
-
-     - parameter block: The block to be invoked at least once. This parameter cannot be `NULL`.
-     */
-    public func times(execute block: @escaping () -> Void) {
-        guard self > 0 else { return }
-        (0..<self).forEach { _ in
-            block()
-        }
-    }
-    
-    /**
      Initializes and returns a randomized integer value.
      
      - parameter range: A half-open interval over a comparable type, from a lower bound up to, but not including, an upper bound. You create Range instances by using the half-open range operator (`..<`). You may specify `nil` for this parameter if you want randomized value in the range of `-2^31` to `2^31`.
@@ -93,6 +81,18 @@ public extension Int {
             self = Int(arc4random_uniform(UInt32(range.upperBound - range.lowerBound))) + range.lowerBound
         } else {
             self = Int(arc4random()) + Int(Int32.min)
+        }
+    }
+    
+    /**
+     Submits a block object for execution number or times defined by the value.
+
+     - parameter block: The block to be invoked at least once. This parameter cannot be `NULL`.
+     */
+    public func times(execute block: @escaping () -> Void) {
+        guard self > 0 else { return }
+        (0..<self).forEach { _ in
+            block()
         }
     }
 }
