@@ -7,7 +7,6 @@
 //
 
 #if !os(watchOS)
-    
     import UIKit
 
     public extension UIViewController {
@@ -25,5 +24,4 @@
             present(alertController, animated: true, completion: completion)
         }
     }
-
 #endif

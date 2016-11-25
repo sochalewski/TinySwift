@@ -89,4 +89,13 @@ class IntTests: XCTestCase {
         random = Int(random: nil)
         XCTAssertTrue(random >= Int(Int32.min) && random < Int(Int32.max))
     }
+    
+    func testTimeIntervals() {
+        XCTAssert(five.seconds == 5.0)
+        XCTAssert(five.minutes == 5.0 * 60)
+        XCTAssert(five.hours == 5.0 * 60 * 60)
+        XCTAssert(five.days == 5.0 * 60 * 60 * 24)
+        XCTAssert(zero.seconds == 0.0)
+        XCTAssert([zero.seconds, zero.minutes, zero.hours, zero.days].areAllElementsEqual)
+    }
 }

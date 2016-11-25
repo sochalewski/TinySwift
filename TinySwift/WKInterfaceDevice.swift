@@ -7,8 +7,6 @@
 //
 
 #if !os(tvOS)
-
-    import Foundation
     import WatchKit
 
     /// The Apple Watch device type based on a case size.
@@ -50,5 +48,4 @@
             }
         }
     }
-
 #endif

@@ -17,4 +17,11 @@ class DictionaryTests: XCTestCase {
         XCTAssert(Array(shuffled.keys).count == Array(dictionary.keys).count)
         XCTAssert(Array(shuffled.values).count == Array(dictionary.values).count)
     }
+    
+    func testRandom() {
+        guard let random = dictionary.random else { XCTFail(); return }
+        XCTAssert(random.count == 1)
+        XCTAssert(dictionary.keys.contains(random.keys.first!))
+        XCTAssert(dictionary.values.contains(random.values.first!))
+    }
 }

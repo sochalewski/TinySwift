@@ -37,4 +37,12 @@ public extension Dictionary {
         return dictionary
     }
     #endif
+    
+    /// Returns a randomized key and value pair from the dictionary.
+    public var random: [Key : Value]? {
+        guard !isEmpty else { return nil }
+        let index = Int(arc4random_uniform(UInt32(count)))
+        
+        return [Array(keys)[index] : Array(values)[index]]
+    }
 }

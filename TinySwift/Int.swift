@@ -67,6 +67,26 @@ public extension SignedInteger {
     public var additiveInverse: Self {
         return self * -1
     }
+    
+    /// Returns the time interval treating the value as a number of seconds.
+    public var seconds: TimeInterval {
+        return TimeInterval(self.toIntMax())
+    }
+    
+    /// Returns the time interval treating the value as a number of minutes.
+    public var minutes: TimeInterval {
+        return seconds * 60.0
+    }
+    
+    /// Returns the time interval treating the value as a number of hours.
+    public var hours: TimeInterval {
+        return minutes * 60.0
+    }
+    
+    /// Returns the time interval treating the value as a number of days.
+    public var days: TimeInterval {
+        return hours * 24.0
+    }
 }
 
 public extension Int {

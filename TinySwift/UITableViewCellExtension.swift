@@ -7,7 +7,6 @@
 //
 
 #if os(iOS)
-
     import UIKit
 
     public extension UITableViewCell {
@@ -19,5 +18,4 @@
             indentationLevel = 1
         }
     }
-
 #endif
