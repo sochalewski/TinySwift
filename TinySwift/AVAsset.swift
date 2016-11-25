@@ -7,8 +7,6 @@
 //
 
 #if !os(watchOS)
-
-    import Foundation
     import AVFoundation
 
     public extension AVAsset {
@@ -23,5 +21,4 @@
             return UIImage(cgImage: imageRef)
         }
     }
-
 #endif

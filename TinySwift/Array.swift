@@ -36,7 +36,7 @@ public extension Array {
 }
 
 public extension Collection where Index == Int {
-    /// Returns a randomized element of the collection.
+    /// Returns a randomized element from the collection.
     public var random: Iterator.Element? {
         guard !isEmpty else { return nil }
         let index = Int(arc4random_uniform(UInt32(endIndex - startIndex)))

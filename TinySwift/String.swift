@@ -101,6 +101,21 @@ public extension String {
         return lines.filter { !$0.trimmed.isEmpty }
     }
     
+    /// Returns a data created from the value treated as a hexadecimal string.
+    public var dataFromHexadecimalString: Data? {
+        guard let regex = try? NSRegularExpression(pattern: "[0-9a-f]{1,2}", options: .caseInsensitive) else { return nil }
+        
+        var data = Data(capacity: characters.count / 2)
+        regex.enumerateMatches(in: self, options: [], range: NSRange(location: 0, length: characters.count)) { (match, _, _) in
+            guard let match = match else { return }
+            let byteString = (self as NSString).substring(with: match.range)
+            guard var num = UInt8(byteString, radix: 16) else { return }
+            data.append(&num, count: 1)
+        }
+        
+        return data
+    }
+    
     /// Returns the number of occurrences of a given case-sensitive string within the `String`.
     public func occurrences(of substring: String) -> Int {
         return components(separatedBy: substring).count - 1

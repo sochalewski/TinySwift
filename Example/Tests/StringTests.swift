@@ -80,4 +80,12 @@ class StringTests: XCTestCase {
         XCTAssert(swift.occurrences(of: " ") == 4)
         XCTAssert(swift.occurrences(of: "Obj-C") == 0)
     }
+    
+    func testHexString() {
+        let hex = "54696e795377696674"
+        guard let data = hex.dataFromHexadecimalString else { XCTFail(); return }
+        
+        XCTAssert(data.count == hex.characters.count / 2)
+        XCTAssert(String(data: data, encoding: .utf8) == "TinySwift")
+    }
 }

@@ -7,7 +7,6 @@
 //
 
 #if !os(watchOS)
-
     import UIKit
 
     public extension UIView {
@@ -41,5 +40,4 @@
             return view
         }
     }
-
 #endif

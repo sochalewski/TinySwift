@@ -73,11 +73,15 @@ It contains the following functions and properties:
 ### Integer
 
 * `var additiveInverse` <sup>iOS, tvOS, watchOS</sup>
+* `var days` <sup>iOS, tvOS, watchOS</sup>
 * `var factorial` <sup>iOS, tvOS, watchOS</sup>
+* `var hours` <sup>iOS, tvOS, watchOS</sup>
 * `var isEven` <sup>iOS, tvOS, watchOS</sup>
 * `var isOdd` <sup>iOS, tvOS, watchOS</sup>
 * `var isPrimeNumber` <sup>iOS, tvOS, watchOS</sup>
+* `var minutes` <sup>iOS, tvOS, watchOS</sup>
 * `var multiplicativeInverse` <sup>iOS, tvOS, watchOS</sup>
+* `var seconds` <sup>iOS, tvOS, watchOS</sup>
 
 #### Int
 
@@ -92,6 +96,7 @@ It contains the following functions and properties:
 
 * `init(path:)` <sup>iOS, tvOS, watchOS</sup>
 * `init(random:length:nonRepeating:)` <sup>iOS, tvOS, watchOS</sup>
+* `var dataFromHexadecimalString` <sup>iOS, tvOS, watchOS</sup>
 * `var initials` <sup>iOS, tvOS, watchOS</sup>
 * `var lines` <sup>iOS, tvOS, watchOS</sup>
 * `var nonEmptyLines` <sup>iOS, tvOS, watchOS</sup>
