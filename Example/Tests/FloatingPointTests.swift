@@ -25,4 +25,10 @@ class FloatingPointTests: XCTestCase {
         XCTAssertTrue(five.multiplicativeInverse == 0.2)
         XCTAssertTrue(minusFive.multiplicativeInverse == -0.2)
     }
+    
+    func testAngles() {
+        let fiveDegToRad = five.degreesToRadians
+        XCTAssert(0.08..<0.09 ~= fiveDegToRad)
+        XCTAssert(fiveDegToRad.radiansToDegrees == five)
+    }
 }

@@ -98,4 +98,10 @@ class IntTests: XCTestCase {
         XCTAssert(zero.seconds == 0.0)
         XCTAssert([zero.seconds, zero.minutes, zero.hours, zero.days].areAllElementsEqual)
     }
+    
+    func testAngles() {
+        let fiveDegToRad = five.degreesToRadians
+        XCTAssert(0.08..<0.09 ~= fiveDegToRad)
+        XCTAssert(fiveDegToRad.radiansToDegrees == Double(five))
+    }
 }

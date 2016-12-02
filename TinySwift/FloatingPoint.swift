@@ -21,4 +21,14 @@ public extension FloatingPoint {
         
         return 1 / self
     }
+    
+    /// Converts an angle measured in degrees to radians.
+    public var degreesToRadians: Self {
+        return self * .pi / (180.0 as! Self)
+    }
+    
+    /// Converts an angle measured in radians to degrees.
+    public var radiansToDegrees: Self {
+        return self * (180.0 as! Self) / .pi
+    }
 }
