@@ -70,13 +70,6 @@ public extension Integer {
     public var radiansToDegrees: Double {
         return Double(self.toIntMax()) * 180.0 / .pi
     }
-}
-
-public extension SignedInteger {
-    /// Returns the opposite number.
-    public var additiveInverse: Self {
-        return self * -1
-    }
     
     /// Returns the time interval treating the value as a number of seconds.
     public var seconds: TimeInterval {
@@ -96,6 +89,13 @@ public extension SignedInteger {
     /// Returns the time interval treating the value as a number of days.
     public var days: TimeInterval {
         return hours * 24.0
+    }
+}
+
+public extension SignedInteger {
+    /// Returns the opposite number.
+    public var additiveInverse: Self {
+        return self * -1
     }
 }
 

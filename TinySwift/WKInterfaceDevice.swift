@@ -9,7 +9,7 @@
 #if !os(tvOS)
     import WatchKit
 
-    /// The Apple Watch device type based on a case size.
+    /// The Apple Watch device type representation based on a case size.
     public enum WatchDeviceType: Int, Equatable, Comparable {
         /// An unknown Apple Watch case size.
         case unknown
