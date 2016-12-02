@@ -31,6 +31,12 @@ It contains the following functions and properties:
 
 * `var thumbnail` <sup>iOS, tvOS</sup>
 
+### Bool
+
+* `init(_: Integer)` <sup>iOS, tvOS, watchOS</sup>
+* `static func random()` <sup>iOS, tvOS, watchOS</sup>
+* `func toggle()` <sup>iOS, tvOS, watchOS</sup>
+
 ### Collection
 
 * `var appearances` <sup>iOS, tvOS, watchOS</sup>
