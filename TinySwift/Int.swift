@@ -60,6 +60,16 @@ public extension Integer {
         guard self != 0 else { return nil }
         return 1.0 / Double(self.toIntMax())
     }
+    
+    /// Converts an angle measured in degrees to radians.
+    public var degreesToRadians: Double {
+        return Double(self.toIntMax()) * .pi / 180.0
+    }
+    
+    /// Converts an angle measured in radians to degrees.
+    public var radiansToDegrees: Double {
+        return Double(self.toIntMax()) * 180.0 / .pi
+    }
 }
 
 public extension SignedInteger {

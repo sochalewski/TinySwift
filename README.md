@@ -68,12 +68,15 @@ It contains the following functions and properties:
 ### FloatingPoint
 
 * `var additiveInverse` <sup>iOS, tvOS, watchOS</sup>
+* `var degreesToRadians` <sup>iOS, tvOS, watchOS</sup>
 * `var multiplicativeInverse` <sup>iOS, tvOS, watchOS</sup>
+* `var radiansToDegrees` <sup>iOS, tvOS, watchOS</sup>
 
 ### Integer
 
 * `var additiveInverse` <sup>iOS, tvOS, watchOS</sup>
 * `var days` <sup>iOS, tvOS, watchOS</sup>
+* `var degreesToRadians` <sup>iOS, tvOS, watchOS</sup>
 * `var factorial` <sup>iOS, tvOS, watchOS</sup>
 * `var hours` <sup>iOS, tvOS, watchOS</sup>
 * `var isEven` <sup>iOS, tvOS, watchOS</sup>
@@ -81,6 +84,7 @@ It contains the following functions and properties:
 * `var isPrimeNumber` <sup>iOS, tvOS, watchOS</sup>
 * `var minutes` <sup>iOS, tvOS, watchOS</sup>
 * `var multiplicativeInverse` <sup>iOS, tvOS, watchOS</sup>
+* `var radiansToDegrees` <sup>iOS, tvOS, watchOS</sup>
 * `var seconds` <sup>iOS, tvOS, watchOS</sup>
 
 #### Int
