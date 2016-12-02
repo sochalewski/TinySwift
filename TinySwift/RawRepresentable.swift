@@ -1,6 +1,6 @@
 //
 //  RawRepresentable.swift
-//  Pods
+//  TinySwift
 //
 //  Created by Piotr Sochalewski on 24.10.2016.
 //  Copyright © 2016 Piotr Sochalewski. All rights reserved.
@@ -18,6 +18,7 @@ public extension RawRepresentable where Self: Hashable {
             
             if next.hashValue != i { return nil }
             i += 1
+            
             return next
         }
     }

@@ -10,7 +10,7 @@
 
     import UIKit
 
-    // The device type representation.
+    /// The device type representation.
     public enum DeviceType: Equatable {
         /// The iPhone device type.
         case phone(model: PhoneModel)
@@ -26,7 +26,7 @@
         case unknown
     }
 
-    // The iPhone device type representation.
+    /// The iPhone device type representation.
     public enum PhoneModel: Int, Equatable, Comparable {
         /// An unknown iPhone model.
         case unknown
@@ -62,7 +62,7 @@
         case iPhone7Plus
     }
 
-    // The iPad device type representation.
+    /// The iPad device type representation.
     public enum PadModel: Equatable {
         /// An unknown iPad model.
         case unknown
@@ -90,7 +90,7 @@
         case iPadPro(size: ScreenSize)
     }
 
-    // The iPod touch device type representation.
+    /// The iPod touch device type representation.
     public enum PodModel: Int, Equatable, Comparable {
         /// An unknown iPod touch model.
         case unknown
@@ -108,7 +108,7 @@
         case touch6g
     }
 
-    // The Apple TV device type representation.
+    /// The Apple TV device type representation.
     public enum TVModel: Int, Equatable, Comparable {
         /// An unknown Apple TV model.
         case unknown

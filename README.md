@@ -100,11 +100,13 @@ It contains the following functions and properties:
 
 * `init(path:)` <sup>iOS, tvOS, watchOS</sup>
 * `init(random:length:nonRepeating:)` <sup>iOS, tvOS, watchOS</sup>
+* `var camelCased` <sup>iOS, tvOS, watchOS</sup>
 * `var dataFromHexadecimalString` <sup>iOS, tvOS, watchOS</sup>
 * `var initials` <sup>iOS, tvOS, watchOS</sup>
 * `var lines` <sup>iOS, tvOS, watchOS</sup>
 * `var nonEmptyLines` <sup>iOS, tvOS, watchOS</sup>
 * `var trimmed` <sup>iOS, tvOS, watchOS</sup>
+* `var upperCamelCased` <sup>iOS, tvOS, watchOS</sup>
 * `func occurrences(of:)` <sup>iOS, tvOS, watchOS</sup>
 
 ### TimeInterval
@@ -158,6 +160,10 @@ It contains the following functions and properties:
 * `var device` <sup>iOS, watchOS</sup>
 * `var is38mm` <sup>iOS, watchOS</sup>
 * `var is42mm` <sup>iOS, watchOS</sup>
+
+### Functions
+
+* `func NSLocalizedString(_:)` <sup>iOS, tvOS, watchOS</sup>
 
 ## Author
 

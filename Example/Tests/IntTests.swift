@@ -101,7 +101,8 @@ class IntTests: XCTestCase {
     
     func testAngles() {
         let fiveDegToRad = five.degreesToRadians
-        XCTAssert(0.08..<0.09 ~= fiveDegToRad)
+        XCTAssert(0.08..<0.09 ~= fiveDegToRad) // 5 deg = ~0.087 radians
         XCTAssert(fiveDegToRad.radiansToDegrees == Double(five))
+        XCTAssert(286..<287 ~= five.radiansToDegrees) // 5 radians = ~286.5 deg
     }
 }

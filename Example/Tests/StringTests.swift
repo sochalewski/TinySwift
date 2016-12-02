@@ -88,4 +88,18 @@ class StringTests: XCTestCase {
         XCTAssert(data.count == hex.characters.count / 2)
         XCTAssert(String(data: data, encoding: .utf8) == "TinySwift")
     }
+    
+    func testCamelCase() {
+        let swift = "Swifty Swift is the swiftest"
+        XCTAssert(swift.camelCased != swift.upperCamelCased)
+        XCTAssert(swift.camelCased == "swiftySwiftIsTheSwiftest")
+        XCTAssert(swift.upperCamelCased == "SwiftySwiftIsTheSwiftest")
+        
+        let crazySwift = "SwiFTy SwIfT IS the SwifTest"
+        XCTAssert(swift.camelCased == crazySwift.camelCased)
+        XCTAssert(swift.upperCamelCased == crazySwift.upperCamelCased)
+        
+        let emptyString = String()
+        XCTAssert([emptyString, emptyString.upperCamelCased, emptyString.camelCased].areAllElementsEqual)
+    }
 }
