@@ -34,7 +34,7 @@ It contains the following functions and properties:
 ### Bool
 
 * `init(_: Integer)` <sup>iOS, tvOS, watchOS</sup>
-* `static func random()` <sup>iOS, tvOS, watchOS</sup>
+* `static var random` <sup>iOS, tvOS, watchOS</sup>
 * `func toggle()` <sup>iOS, tvOS, watchOS</sup>
 
 ### Collection

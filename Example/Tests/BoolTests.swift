@@ -18,7 +18,7 @@ class BoolTests: XCTestCase {
     }
     
     func testRandom() {
-        let randoms = (0..<20).flatMap { _ in Bool.random() }
+        let randoms = (0..<20).flatMap { _ in Bool.random }
         XCTAssert(!randoms.areAllElementsEqual)
     }
     

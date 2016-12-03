@@ -18,7 +18,7 @@ public extension Bool {
     }
     
     /// Creates an instance initialized to randomized value: `true` or `false`.
-    public static func random() -> Bool {
+    public static var random: Bool {
         return arc4random_uniform(2) == 0
     }
     
