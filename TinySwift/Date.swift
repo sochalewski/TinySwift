@@ -48,7 +48,7 @@ public extension Date {
     }
     
     /// Returns a new Date with the day following this Date.
-    public var tomorrow: Date? {
+    public var nextDay: Date? {
         var components = DateComponents()
         components.day = 1
         
@@ -56,7 +56,7 @@ public extension Date {
     }
     
     /// Returns a new Date with the day preceding this Date.
-    public var yesterday: Date? {
+    public var previousDay: Date? {
         var components = DateComponents()
         components.day = -1
         

@@ -67,9 +67,9 @@ It contains the following functions and properties:
 * `var firstOfYear` <sup>iOS, tvOS, watchOS</sup>
 * `var lastOfMonth` <sup>iOS, tvOS, watchOS</sup>
 * `var lastOfYear` <sup>iOS, tvOS, watchOS</sup>
-* `var tomorrow` <sup>iOS, tvOS, watchOS</sup>
+* `var nextDay` <sup>iOS, tvOS, watchOS</sup>
+* `var previousDay` <sup>iOS, tvOS, watchOS</sup>
 * `var weekday` <sup>iOS, tvOS, watchOS</sup>
-* `var yesterday` <sup>iOS, tvOS, watchOS</sup>
 
 ### FloatingPoint
 

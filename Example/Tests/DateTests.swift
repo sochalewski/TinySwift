@@ -41,18 +41,18 @@ class DateTests: XCTestCase {
         XCTAssert(components.day! == 31 && components.month! == 12 && components.year! == 2001, "lastOfYear should return December 31st, 2001")
     }
     
-    func testTomorrow() {
-        guard let tomorrow = date.tomorrow else { XCTFail("tomorrow should not return nil"); return }
+    func testNextDay() {
+        guard let nextDay = date.nextDay else { XCTFail("tomorrow should not return nil"); return }
         
-        let components = calendar.dateComponents([.day, .month, .year], from: tomorrow)
-        XCTAssert(components.day! == 27 && components.month! == 4 && components.year! == 2001, "tomorrow should return April 27th, 2001")
+        let components = calendar.dateComponents([.day, .month, .year], from: nextDay)
+        XCTAssert(components.day! == 27 && components.month! == 4 && components.year! == 2001, "nextDay should return April 27th, 2001")
     }
     
-    func testYesterday() {
-        guard let yesterday = date.yesterday else { XCTFail("yesterday should not return nil"); return }
+    func testPreviousDay() {
+        guard let previousDay = date.previousDay else { XCTFail("yesterday should not return nil"); return }
         
-        let components = calendar.dateComponents([.day, .month, .year], from: yesterday)
-        XCTAssert(components.day! == 25 && components.month! == 4 && components.year! == 2001, "yesterday should return April 25th, 2001")
+        let components = calendar.dateComponents([.day, .month, .year], from: previousDay)
+        XCTAssert(components.day! == 25 && components.month! == 4 && components.year! == 2001, "previousDay should return April 25th, 2001")
     }
     
     func testWeekday() {
