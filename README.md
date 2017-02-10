@@ -37,6 +37,12 @@ It contains the following functions and properties:
 * `static var random` <sup>iOS, tvOS, watchOS</sup>
 * `func toggle()` <sup>iOS, tvOS, watchOS</sup>
 
+### CGAffineTransform
+
+* `var rotationAngle` <sup>iOS, tvOS, watchOS</sup>
+* `var scaleX` <sup>iOS, tvOS, watchOS</sup>
+* `var scaleY` <sup>iOS, tvOS, watchOS</sup>
+
 ### Collection
 
 * `var appearances` <sup>iOS, tvOS, watchOS</sup>
