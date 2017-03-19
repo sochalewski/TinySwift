@@ -42,7 +42,7 @@ class CollectionTests: XCTestCase {
         var fiveOptionalElements: [Int?] = Array(fiveElements)
         XCTAssert(fiveOptionalElements.count == fiveOptionalElements.flatMap({ $0 }).count, "Pre-condition: fiveOptionalElements array should not have nils inside")
         fiveOptionalElements[safe: 2] = nil
-        XCTAssert(fiveOptionalElements[safe: 2] == nil, "Changed element should be nil")
+        XCTAssert(fiveOptionalElements[2] == nil, "Changed element should be nil")
         XCTAssert(fiveOptionalElements.count - 1 == fiveOptionalElements.flatMap({ $0 }).count, "Changed array should have less not-nil elements")
         XCTAssert(fiveOptionalElements.count == fiveOptionalElements.count, "Changed array should have the same number of elements")
     }
