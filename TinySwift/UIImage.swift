@@ -149,7 +149,7 @@ public extension UIImage {
      - parameter point: The point to get color with.
      - returns: A UIColor object.
      */
-    public func color(atPoint point: CGPoint) -> UIColor? {
+    public func color(at point: CGPoint) -> UIColor? {
         guard let dataProvider = cgImage?.dataProvider, let data = CFDataGetBytePtr(dataProvider.data) else { return nil }
         
         let pixelInfo = ((Int(self.size.width) * Int(point.y)) + Int(point.x)) * 4
