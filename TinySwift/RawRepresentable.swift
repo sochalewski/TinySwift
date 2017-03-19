@@ -30,8 +30,8 @@ public extension RawRepresentable where Self: Hashable {
 }
 
 public extension RawRepresentable where Self: Hashable, RawValue: Comparable {
-    /// Returns an ascendingly ordered collection of `RawRepresentable` conforming to `Hashable` cases or options where `RawValue` conforms to `Comparable`.
-    public static var all: [Self] {
+    /// Returns an ascendingly ordered collection of `RawRepresentable` conforming to `Hashable` cases and `RawValue` conforming to `Comparable`.
+    public static var sortedAll: [Self] {
         return Array(iterate()).sorted { $0.rawValue < $1.rawValue }
     }
 }
