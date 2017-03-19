@@ -7,6 +7,9 @@
 //
 
 import Foundation
+#if !os(watchOS)
+    import GameplayKit
+#endif
 
 public extension Bool {
     /**
@@ -17,8 +20,14 @@ public extension Bool {
         self = integer != 0
     }
     
-    /// Creates an instance initialized to randomized value: `true` or `false`.
+    /// Generates and returns a new random Boolean value.
     public static var random: Bool {
+        #if !os(watchOS)
+        if #available(iOS 9.0, tvOS 9.0, *) {
+            return GKRandomSource.sharedRandom().nextBool()
+        }
+        #endif
+
         return arc4random_uniform(2) == 0
     }
     

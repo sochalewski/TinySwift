@@ -101,7 +101,7 @@ public extension SignedInteger {
 
 public extension Int {
     /**
-     Initializes and returns a randomized integer value.
+     Generates and returns a random integer value.
      
      - parameter range: A half-open interval over a comparable type, from a lower bound up to, but not including, an upper bound. You create Range instances by using the half-open range operator (`..<`). You may specify `nil` for this parameter if you want randomized value in the range of `-2^31` to `2^31`.
      - returns: A signed randomized integer value type.

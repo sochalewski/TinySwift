@@ -68,22 +68,22 @@ public extension RandomAccessCollection where Iterator.Element: Hashable {
 public extension Set {
     /// Returns a randomized element from the collection.
     public var random: Iterator.Element? {
+        return Array(self).random
+    }
+}
+
+public extension RandomAccessCollection {
+    /// Returns a randomized element from the collection.
+    public var random: Iterator.Element? {
         guard !isEmpty else { return nil }
-        let index = self.index(startIndex, offsetBy: Int(arc4random_uniform(UInt32(count))))
+        let offset = arc4random_uniform(numericCast(count))
+        let index = self.index(startIndex, offsetBy: numericCast(offset))
         
         return self[index]
     }
 }
 
 public extension Collection where Index == Int {
-    /// Returns a randomized element from the collection.
-    public var random: Iterator.Element? {
-        guard !isEmpty else { return nil }
-        let index = Int(arc4random_uniform(UInt32(endIndex - startIndex)))
-        
-        return self[index]
-    }
-    
     #if !os(watchOS)
         /// Shuffles the objects in the collection. The objects in the collection are shuffled based on a Fisher-Yates shuffle.
         @available(iOS 9.0, tvOS 9.0, *)
