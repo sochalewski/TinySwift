@@ -8,7 +8,7 @@
 
 import XCTest
 
-enum CardValue: Int {
+enum Card: Int {
     case ace = 11
     case ten = 10
     case king = 4
@@ -17,12 +17,19 @@ enum CardValue: Int {
     case nine = 0
 }
 
+enum Platform: String {
+    case iOS = "iOS"
+    case android = "Android"
+}
+
 class RawRepresentableTests: XCTestCase {
     
     func testCases() {
-        let cases = CardValue.all
+        let cardCases = Card.sortedAll
+        XCTAssert(cardCases.count == 6)
+        XCTAssert(cardCases.first == .nine && cardCases.last == .ace)
         
-        XCTAssert(cases.count == 6)
-        XCTAssert(cases.first == .nine && cases.last == .ace)
+        let platformCases = Platform.all
+        XCTAssert(platformCases.count == 2)
     }
 }

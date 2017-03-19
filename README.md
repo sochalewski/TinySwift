@@ -108,6 +108,7 @@ It contains the following functions and properties:
 ### RawRepresentable: Hashable
 
 * `var all` <sup>iOS, tvOS, watchOS</sup>
+* `var sortedAll` <sup>iOS, tvOS, watchOS</sup>
 
 ### String
 
