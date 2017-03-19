@@ -24,6 +24,10 @@ fileprivate extension Array where Element: ExpressibleByNilLiteral {
 }
 
 public extension Array where Element: Any {
+    fileprivate var isOptionalAllowed: Bool {
+        return String(describing: Element.self).hasPrefix("Optional<") // ugh
+    }
+    
     /**
      Accesses the element at the specified position in a safe way.
      
@@ -31,6 +35,11 @@ public extension Array where Element: Any {
      */
     public subscript(safe index: Int) -> Element? {
         get {
+            if isOptionalAllowed {
+                var selfOfOptionals = self as Array<Optional<Any>>
+                return selfOfOptionals[safeOptional: index] as? Element
+            }
+            
             return indices.contains(index) ? self[index] : nil
         }
         set {
@@ -41,8 +50,7 @@ public extension Array where Element: Any {
                 return
             }
             
-            let isElementOptional = String(describing: Element.self).hasPrefix("Optional<") // ugh
-            guard isElementOptional else { fatalError("nil cannot be assigned to type '\(String(describing: Element.self))'") }
+            guard isOptionalAllowed else { fatalError("nil cannot be assigned to type '\(String(describing: Element.self))'") }
             var selfOfOptionals = self as Array<Optional<Any>>
             selfOfOptionals[safeOptional: index] = newValue
             self = selfOfOptionals as! [Element]
