@@ -116,26 +116,21 @@ public extension String {
         return data
     }
     
-    /// Returns the number of occurrences of a given case-sensitive string within the `String`.
-    public func occurrences(of substring: String) -> Int {
-        return components(separatedBy: substring).count - 1
-    }
-    
     /**
      Returns a camel case version of the string.
      
      Here’s an example of transforming a string to all camel case letters.
      
-         let variable = "Find way home"
-         print(variable.camelCased)
-         // Prints "findWayHome"
+     let variable = "Find way home"
+     print(variable.camelCased)
+     // Prints "findWayHome"
      */
     public var camelCased: String {
         guard let _ = rangeOfCharacter(from: .whitespacesAndNewlines) else { return lowercased() }
         
         let first = lowercased().substring(to: index(after: startIndex))
         let rest = String(upperCamelCased.characters.dropFirst())
-
+        
         return "\(first)\(rest)"
     }
     
@@ -144,11 +139,16 @@ public extension String {
      
      Here’s an example of transforming a string to all upper camel case letters.
      
-         let variable = "find way home"
-         print(variable.camelCased)
-         // Prints "FindWayHome"
+     let variable = "find way home"
+     print(variable.camelCased)
+     // Prints "FindWayHome"
      */
     public var upperCamelCased: String {
         return capitalized.components(separatedBy: .whitespacesAndNewlines).joined()
+    }
+    
+    /// Returns the number of occurrences of a given case-sensitive string within the `String`.
+    public func occurrences(of substring: String) -> Int {
+        return components(separatedBy: substring).count - 1
     }
 }

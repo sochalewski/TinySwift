@@ -1,5 +1,5 @@
 //
-//  Array.swift
+//  Collection.swift
 //  TinySwift
 //
 //  Created by Piotr Sochalewski on 24.09.2016.
@@ -11,15 +11,21 @@ import Foundation
     import GameplayKit
 #endif
 
-public extension Array {
+fileprivate extension Array where Element: ExpressibleByNilLiteral {
+    fileprivate subscript(safeOptional index: Int) -> Element {
+        get {
+            return indices.contains(index) ? self[index] : nil
+        }
+        set {
+            guard indices.contains(index) else { return }
+            self[index] = newValue
+        }
+    }
+}
+
+public extension Array where Element: Any {
     /**
      Accesses the element at the specified position in a safe way.
-     
-     **Use the setter carefully**: When getter is 100% safe, setter does nothing if you try to set `nil` as a new value. You should use `Optional<T>(nilLiteral: ())` (where `T` is an array's element type) instead of `nil` or do not use it at all.
-     
-     The prohibited usage stops program execution in a debuggable state after printing message in playgrounds and `-Onone` builds.
-     
-     It cannot be fixed until Swift support for a generic subscripts. Read more [here](https://bugs.swift.org/browse/SR-115).
      
      - parameter index: The position of the element to access. `index` **may or may not** be greater than or equal to `startIndex` and less than `endIndex`, because elements are accessed in a safe way.
      */
@@ -28,10 +34,36 @@ public extension Array {
             return indices.contains(index) ? self[index] : nil
         }
         set {
-            assert(newValue != nil, "Do not set nil as a new value through array's safe: subscript. You should use Optional<T>(nilLiteral: ()) (where T is an array's element type) instead of nil or do not use it at all. Read the documentation for more informations.")
-            guard let newValue = newValue, indices.contains(index) else { return }
-            self[index] = newValue
+            guard indices.contains(index) else { return }
+            
+            if let newValue = newValue {
+                self[index] = newValue
+                return
+            }
+            
+            let isElementOptional = String(describing: Element.self).hasPrefix("Optional<") // ugh
+            guard isElementOptional else { fatalError("nil cannot be assigned to type '\(String(describing: Element.self))'") }
+            var selfOfOptionals = self as Array<Optional<Any>>
+            selfOfOptionals[safeOptional: index] = newValue
+            self = selfOfOptionals as! [Element]
         }
+    }
+}
+
+public extension RandomAccessCollection where Iterator.Element: Hashable {
+    /// Returns a set containing the elements of the collection.
+    public var set: Set<Iterator.Element> {
+        return Set(self)
+    }
+}
+
+public extension Set {
+    /// Returns a randomized element from the collection.
+    public var random: Iterator.Element? {
+        guard !isEmpty else { return nil }
+        let index = self.index(startIndex, offsetBy: Int(arc4random_uniform(UInt32(count))))
+        
+        return self[index]
     }
 }
 
@@ -62,13 +94,7 @@ public extension Collection where Index == Int {
     #endif
 }
 
-public extension Collection where Index == Int, Iterator.Element: Hashable {
-    /// A Boolean value that determines whether all elements of the array are equal.
-    public var areAllElementsEqual: Bool {
-        guard !isEmpty else { return true }
-        return !Array(self).dropFirst().contains { $0 != first! }
-    }
-    
+extension Collection where Iterator.Element: Hashable {
     /// Returns a dictionary with number of appearances for all elements of the collection.
     public var appearances: [Iterator.Element : Int]? {
         guard !isEmpty else { return nil }
@@ -91,6 +117,14 @@ public extension Collection where Index == Int, Iterator.Element: Hashable {
         guard sortedAppearances.count != 1 else { return sortedAppearances.first }
         
         return appearances[sortedAppearances[0]]! > appearances[sortedAppearances[1]]! ? sortedAppearances[0] : nil
+    }
+}
+
+public extension Collection where Index == Int, Iterator.Element: Hashable {
+    /// A Boolean value that determines whether all elements of the collection are equal.
+    public var areAllElementsEqual: Bool {
+        guard !isEmpty else { return true }
+        return !Array(self).dropFirst().contains { $0 != first! }
     }
 }
 
@@ -153,7 +187,7 @@ public extension Collection where Iterator.Element: Integer, Index == Int {
 
 public extension Collection where Iterator.Element: FloatingPoint {
     /// Returns the sum of all elements in the collection.
-    var sum: Iterator.Element {
+    public var sum: Iterator.Element {
         return reduce(0, +)
     }
 }
@@ -166,8 +200,7 @@ public extension Collection where Iterator.Element: FloatingPoint, Index == Int 
     
     /// Returns the geometric mean of all elements in the collection.
     public var geometricMean: Double {
-        let `self` = self as! [Double]
-        return isEmpty ? 0 : pow(self.reduce(1.0, *), 1 / Double(endIndex - startIndex))
+        return isEmpty ? 0 : pow((self as! [Double]).reduce(1.0, *), 1 / Double(endIndex - startIndex))
     }
     
     /// Returns the middle number in the collection, taken as the average of the two middle numbers when the collection has an even number of numbers.

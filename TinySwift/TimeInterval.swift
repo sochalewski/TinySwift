@@ -55,7 +55,7 @@ public extension TimeInterval {
      - parameter timeFormat: The desired date format.
      - returns: A string representation of time interval.
      */
-    public func time(withFormat timeFormat: TimeFormat) -> String {
+    public func time(with timeFormat: TimeFormat) -> String {
         return String(format: timeFormat.format, arguments: timeFormat.arguments(for: Int(rounded())))
     }
 }

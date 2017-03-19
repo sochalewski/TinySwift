@@ -1,5 +1,5 @@
 //
-//  ArrayTests.swift
+//  CollectionTests.swift
 //  TinySwift
 //
 //  Created by Piotr Sochalewski on 24.09.2016.
@@ -9,13 +9,14 @@
 import XCTest
 import TinySwift
 
-class ArrayTests: XCTestCase {
+class CollectionTests: XCTestCase {
     
     let ints = Array(stride(from: 1, through: 6, by: 1))
     let floats = [1.2, 2.7, 3.2, 4.0, 5.1, 6.9]
 
     func testRandomElement() {
         XCTAssert(ints.contains(ints.random!), "Array does not contain randomized element")
+        XCTAssert(ints.set.contains(ints.set.random!), "Set does not contain randomized element")
     }
     
     func testAreAllElementsEqual() {
@@ -37,6 +38,22 @@ class ArrayTests: XCTestCase {
         XCTAssertNotNil(fiveElements[safe: fiveElements.count - 1], "Element from bounds got with safe: subscript should exist")
         fiveElements[safe: 2] = 5
         XCTAssert(fiveElements[safe: 2] == 5, "Elements should be able to change through the safe: subscript accessor")
+        
+        var fiveOptionalElements: [Int?] = Array(fiveElements)
+        XCTAssert(fiveOptionalElements.count == fiveOptionalElements.flatMap({ $0 }).count, "Pre-condition: fiveOptionalElements array should not have nils inside")
+        fiveOptionalElements[safe: 2] = nil
+        XCTAssert(fiveOptionalElements[safe: 2] == nil, "Changed element should be nil")
+        XCTAssert(fiveOptionalElements.count - 1 == fiveOptionalElements.flatMap({ $0 }).count, "Changed array should have less not-nil elements")
+        XCTAssert(fiveOptionalElements.count == fiveOptionalElements.count, "Changed array should have the same number of elements")
+    }
+    
+    func testSet() {
+        let uniqueStrings = ["foo", "bar", "nil"]
+        let uniqueStringsSet = uniqueStrings.set
+        XCTAssert(uniqueStringsSet.count == uniqueStrings.count)
+        let strings = ["foo", "bar", "foo"]
+        let stringsSet = strings.set
+        XCTAssert(stringsSet.count == 2)
     }
     
     func testSum() {

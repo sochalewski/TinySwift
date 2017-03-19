@@ -61,6 +61,7 @@ It contains the following functions and properties:
 #### Array
 
 * `subscript(safe:)` <sup>iOS, tvOS, watchOS</sup>
+* `var set` <sup>iOS, tvOS, watchOS</sup>
 
 ### Data
 
@@ -123,7 +124,7 @@ It contains the following functions and properties:
 
 ### TimeInterval
 
-* `func time(withFormat:)` <sup>iOS, tvOS, watchOS</sup>
+* `func time(with:)` <sup>iOS, tvOS, watchOS</sup>
 
 ### UIColor
 
@@ -144,7 +145,7 @@ It contains the following functions and properties:
 * `var square` <sup>iOS, tvOS, watchOS</sup>
 * `var thumbnail` <sup>iOS, tvOS, watchOS</sup>
 * `func border(width:color:)` <sup>iOS, tvOS, watchOS</sup>
-* `func color(atPoint:)` <sup>iOS, tvOS, watchOS</sup>
+* `func color(at:)` <sup>iOS, tvOS, watchOS</sup>
 * `func crop(to:)` <sup>iOS, tvOS, watchOS</sup>
 * `func jpeg(quality:)` <sup>iOS, tvOS, watchOS</sup>
 * `func resize(to:)` <sup>iOS, tvOS, watchOS</sup>
