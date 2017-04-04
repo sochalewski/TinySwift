@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'TinySwift'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.summary          = 'Powerful Swift classes and structs extensions'
   s.description      = 'Powerful Swift classes and structs extensions giving you even better Swift 3.0 experience.'
   s.homepage         = 'https://github.com/sochalewski/TinySwift'
