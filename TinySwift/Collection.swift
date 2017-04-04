@@ -56,6 +56,23 @@ public extension Array {
             self = selfOfOptionals as! [Element]
         }
     }
+    
+    #if !os(watchOS)
+    /// Shuffles the objects in the collection. The objects in the collection are shuffled based on a Fisher-Yates shuffle.
+    @available(iOS 9.0, tvOS 9.0, *)
+    public mutating func shuffle() {
+        self = GKARC4RandomSource.sharedRandom().arrayByShufflingObjects(in: self) as! [Element]
+    }
+    
+    /// Returns a shuffled instance of the collection. The objects in the collection are shuffled based on a Fisher-Yates shuffle.
+    @available(iOS 9.0, tvOS 9.0, *)
+    public var shuffled: [Element] {
+        var copy = self
+        copy.shuffle()
+        
+        return copy
+    }
+    #endif
 }
 
 public extension RandomAccessCollection where Iterator.Element: Hashable {
@@ -81,25 +98,6 @@ public extension RandomAccessCollection {
         
         return self[index]
     }
-}
-
-public extension ExpressibleByArrayLiteral {
-    #if !os(watchOS)
-        /// Shuffles the objects in the collection. The objects in the collection are shuffled based on a Fisher-Yates shuffle.
-        @available(iOS 9.0, tvOS 9.0, *)
-        public mutating func shuffle() {
-            self = GKARC4RandomSource.sharedRandom().arrayByShufflingObjects(in: self as! [Any]) as! Self
-        }
-        
-        /// Returns a shuffled instance of the collection. The objects in the collection are shuffled based on a Fisher-Yates shuffle.
-        @available(iOS 9.0, tvOS 9.0, *)
-        public var shuffled: [Element] {
-            var copy = self
-            copy.shuffle()
-            
-            return copy as! [Element]
-        }
-    #endif
 }
 
 extension Collection where Iterator.Element: Hashable {
