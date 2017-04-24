@@ -7,9 +7,6 @@
 //
 
 import Foundation
-#if !os(watchOS)
-    import GameplayKit
-#endif
 
 public extension Dictionary {
     /// Returns a randomized key and value pair from the dictionary.

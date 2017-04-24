@@ -45,23 +45,26 @@ It contains the following functions and properties:
 
 ### Collection
 
-* `var appearances` <sup>iOS, tvOS, watchOS</sup>
-* `var areAllElementsEqual` <sup>iOS, tvOS, watchOS</sup>
-* `var arithmeticMean` <sup>iOS, tvOS, watchOS</sup>
-* `var geometricMean` <sup>iOS, tvOS, watchOS</sup>
-* `var median` <sup>iOS, tvOS, watchOS</sup>
-* `var mode` <sup>iOS, tvOS, watchOS</sup>
 * `var random` <sup>iOS, tvOS, watchOS</sup>
-* `var shuffled` <sup>iOS, tvOS</sup>
-* `var standardDeviation` <sup>iOS, tvOS, watchOS</sup>
-* `var sum` <sup>iOS, tvOS, watchOS</sup>
-* `var variance` <sup>iOS, tvOS, watchOS</sup>
-* `func shuffle()` <sup>iOS, tvOS</sup>
 
 #### Array
 
 * `subscript(safe:)` <sup>iOS, tvOS, watchOS</sup>
+* `var shuffled` <sup>iOS, tvOS</sup>
+* `func shuffle()` <sup>iOS, tvOS</sup>
+
+#### RandomAccessCollection
+
+* `var appearances` <sup>iOS, tvOS, watchOS</sup>
+* `var arithmeticMean` <sup>iOS, tvOS, watchOS</sup>
+* `var areAllElementsEqual` <sup>iOS, tvOS, watchOS</sup>
+* `var geometricMean` <sup>iOS, tvOS, watchOS</sup>
+* `var median` <sup>iOS, tvOS, watchOS</sup>
+* `var mode` <sup>iOS, tvOS, watchOS</sup>
 * `var set` <sup>iOS, tvOS, watchOS</sup>
+* `var standardDeviation` <sup>iOS, tvOS, watchOS</sup>
+* `var sum` <sup>iOS, tvOS, watchOS</sup>
+* `var variance` <sup>iOS, tvOS, watchOS</sup>
 
 ### Data
 
@@ -94,7 +97,7 @@ It contains the following functions and properties:
 * `var hours` <sup>iOS, tvOS, watchOS</sup>
 * `var isEven` <sup>iOS, tvOS, watchOS</sup>
 * `var isOdd` <sup>iOS, tvOS, watchOS</sup>
-* `var isPrimeNumber` <sup>iOS, tvOS, watchOS</sup>
+* `var isPrime` <sup>iOS, tvOS, watchOS</sup>
 * `var minutes` <sup>iOS, tvOS, watchOS</sup>
 * `var multiplicativeInverse` <sup>iOS, tvOS, watchOS</sup>
 * `var radiansToDegrees` <sup>iOS, tvOS, watchOS</sup>
@@ -140,7 +143,6 @@ It contains the following functions and properties:
 ### UIImage
 
 * `var grayscale` <sup>iOS, tvOS</sup>
-* `var jpeg` <sup>iOS, tvOS, watchOS</sup>
 * `var normalizedImage` <sup>iOS, tvOS, watchOS</sup>
 * `var png` <sup>iOS, tvOS, watchOS</sup>
 * `var square` <sup>iOS, tvOS, watchOS</sup>
