@@ -100,7 +100,13 @@ public extension RandomAccessCollection {
     }
 }
 
-extension Collection where Iterator.Element: Hashable {
+public extension RandomAccessCollection where Iterator.Element: Hashable {
+    /// A Boolean value that determines whether all elements of the collection are equal.
+    public var areAllElementsEqual: Bool {
+        guard !isEmpty else { return true }
+        return !Array(self).dropFirst().contains { $0 != first! }
+    }
+    
     /// Returns a dictionary with number of appearances for all elements of the collection.
     public var appearances: [Iterator.Element : Int]? {
         guard !isEmpty else { return nil }
@@ -123,14 +129,6 @@ extension Collection where Iterator.Element: Hashable {
         guard sortedAppearances.count != 1 else { return sortedAppearances.first }
         
         return appearances[sortedAppearances[0]]! > appearances[sortedAppearances[1]]! ? sortedAppearances[0] : nil
-    }
-}
-
-public extension RandomAccessCollection where Iterator.Element: Hashable {
-    /// A Boolean value that determines whether all elements of the collection are equal.
-    public var areAllElementsEqual: Bool {
-        guard !isEmpty else { return true }
-        return !Array(self).dropFirst().contains { $0 != first! }
     }
 }
 
@@ -197,9 +195,7 @@ public extension RandomAccessCollection where Iterator.Element: FloatingPoint {
     public var sum: Iterator.Element {
         return reduce(0, +)
     }
-}
 
-public extension RandomAccessCollection where Iterator.Element: FloatingPoint {
     /// Returns the arithmetic mean of all elements in the collection.
     public var arithmeticMean: Iterator.Element {
         return isEmpty ? 0 : sum / Iterator.Element(count.toIntMax())

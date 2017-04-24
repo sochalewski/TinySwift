@@ -20,7 +20,7 @@ class UIImageTests: XCTestCase {
     }
     
     func testJpeg() {
-        guard let jpeg100 = image?.jpeg, let jpeg40 = image?.jpeg(quality: 0.4), let _ = image?.png else { XCTFail("Cannot generate compressed images"); return }
+        guard let jpeg100 = image?.jpeg(), let jpeg40 = image?.jpeg(quality: 0.4), let _ = image?.png else { XCTFail("Cannot generate compressed images"); return }
         XCTAssert(jpeg100.count > jpeg40.count, "Stronger compression should correspond with smaller size")
     }
     

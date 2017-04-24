@@ -26,24 +26,19 @@ public extension UIImage {
         return normalizedImage
     }
     
+    /// Returns the data for the image in PNG format.
+    public var png: Data? {
+        return UIImagePNGRepresentation(self)
+    }
+    
     /**
      Returns the data for the image in JPEG format.
      
      - parameter quality: The quality of the resulting JPEG image, expressed as a value from 0.0 to 1.0. The value 0.0 represents the maximum compression (or lowest quality) while the value 1.0 represents the least compression (or best quality).
      - returns: A data object containing the JPEG data, or `nil` if there was a problem generating the data. This function may return `nil` if the image has no data or if the underlying `CGImageRef` contains data in an unsupported bitmap format.
      */
-    public func jpeg(quality: CGFloat) -> Data? {
+    public func jpeg(quality: CGFloat = 1.0) -> Data? {
         return UIImageJPEGRepresentation(self, quality)
-    }
-    
-    /// Returns the data for the image in JPEG format in the best quality.
-    public var jpeg: Data? {
-        return jpeg(quality: 1.0)
-    }
-    
-    /// Returns the data for the image in PNG format.
-    public var png: Data? {
-        return UIImagePNGRepresentation(self)
     }
     
     /**

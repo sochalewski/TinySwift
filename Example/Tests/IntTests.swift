@@ -47,13 +47,13 @@ class IntTests: XCTestCase {
     }
     
     func testPrimeNumber() {
-        XCTAssertTrue(2.isPrimeNumber)
-        XCTAssertTrue(11.isPrimeNumber)
-        XCTAssertTrue(863.isPrimeNumber)
-        XCTAssertFalse(20.isPrimeNumber)
-        XCTAssertFalse(0.isPrimeNumber)
-        XCTAssertFalse(1.isPrimeNumber)
-        XCTAssertFalse((-1).isPrimeNumber)
+        XCTAssertTrue(2.isPrime)
+        XCTAssertTrue(11.isPrime)
+        XCTAssertTrue(863.isPrime)
+        XCTAssertFalse(20.isPrime)
+        XCTAssertFalse(0.isPrime)
+        XCTAssertFalse(1.isPrime)
+        XCTAssertFalse((-1).isPrime)
     }
     
     func testTimes() {

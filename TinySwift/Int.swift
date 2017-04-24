@@ -36,7 +36,7 @@ public extension Integer {
     }
     
     /// A Boolean value that determines whether the value is a natural number greater than 1 that has no positive divisors other than 1 and itself.
-    public var isPrimeNumber: Bool {
+    public var isPrime: Bool {
         guard self > 1 else { return false }
         var divisor: Self = 2
         while divisor < self / 2 {
