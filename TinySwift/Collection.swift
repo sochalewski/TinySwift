@@ -12,7 +12,7 @@ import Foundation
 #endif
 
 fileprivate extension Array where Element: ExpressibleByNilLiteral {
-    fileprivate subscript(safeOptional index: Int) -> Element {
+    fileprivate subscript(safeOptional index: Index) -> Element {
         get {
             return indices.contains(index) ? self[index] : nil
         }
@@ -33,7 +33,7 @@ public extension Array {
      
      - parameter index: The position of the element to access. `index` **may or may not** be greater than or equal to `startIndex` and less than `endIndex`, because elements are accessed in a safe way.
      */
-    public subscript(safe index: Int) -> Element? {
+    public subscript(safe index: Index) -> Element? {
         get {
             if isOptionalAllowed {
                 var selfOfOptionals = self as Array<Optional<Any>>

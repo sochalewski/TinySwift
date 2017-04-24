@@ -34,6 +34,7 @@ class CollectionTests: XCTestCase {
     
     func testSafeSubscript() {
         var fiveElements = Array(repeating: 0, count: 5)
+        XCTAssertNil(fiveElements[safe: -1], "Element with negative index should be optional/nil and not cause a crash")
         XCTAssertNil(fiveElements[safe: fiveElements.count], "Element out of bounds got with safe: subscript should be optional/nil and not cause a crash")
         XCTAssertNotNil(fiveElements[safe: fiveElements.count - 1], "Element from bounds got with safe: subscript should exist")
         fiveElements[safe: 2] = 5
