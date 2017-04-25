@@ -72,8 +72,10 @@
         case iPad2
         /// The iPad 3.
         case iPad3
-        /// An iPad 4.
+        /// The iPad 4.
         case iPad4
+        /// The iPad 5.
+        case iPad5
         /// The first iPad Air.
         case iPadAir
         /// The iPad Air 2.
@@ -174,6 +176,7 @@
             case "iPad5,1", "iPad5,2": return .pad(model: .iPadMini4)
             case "iPad6,3", "iPad6,4": return .pad(model: .iPadPro(size: .inch9p7))
             case "iPad6,7", "iPad6,8": return .pad(model: .iPadPro(size: .inch12p9))
+            case "iPad6,11", "iPad6,12": return .pad(model: .iPad5)
                 
             case "iPod1,1": return .pod(model: .touch1g)
             case "iPod2,1": return .pod(model: .touch2g)
