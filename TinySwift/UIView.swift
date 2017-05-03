@@ -16,7 +16,7 @@
          For example a snippet for `MyView.xib`:
          
              class MyView: UIView {
-                 private(set) view: UIView?
+                 private(set) var view: UIView?
          
                  override init(frame: CGRect) {
                      super.init(frame: frame)
@@ -26,7 +26,7 @@
                  fileprivate func setup() {
                      view = viewFromNib
                      guard let view = view else { return }
-                     addSubiew(view)
+                     addSubview(view)
                  }
              }
         */
