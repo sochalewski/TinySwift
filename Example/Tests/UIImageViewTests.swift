@@ -1,0 +1,29 @@
+//
+//  UIImageViewTests.swift
+//  TinySwift
+//
+//  Created by Piotr Sochalewski on 06.05.2017.
+//  Copyright © 2017 Piotr Sochalewski. All rights reserved.
+//
+
+import UIKit
+import XCTest
+import TinySwift
+
+class UIImageViewTests: XCTestCase {
+    
+    let image = UIImage(named: "land.jpg", in: Bundle(for: UIImageViewTests.self), compatibleWith: nil)
+    let url = URL(string: "https://httpbin.org/image/jpeg")!
+    
+    func testImageFromURL() {
+        let expectation = self.expectation(description: "Image should be downloaded")
+        
+        let imageView = UIImageView()
+        imageView.setImage(from: url, placeholder: image) { success in
+            guard success else { return }
+            expectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 10.0)
+    }
+}
