@@ -147,11 +147,16 @@ It contains the following functions and properties:
 * `var png` <sup>iOS, tvOS, watchOS</sup>
 * `var square` <sup>iOS, tvOS, watchOS</sup>
 * `var thumbnail` <sup>iOS, tvOS, watchOS</sup>
+* `static func get(from:completion:)` <sup>iOS, tvOS, watchOS</sup>
 * `func border(width:color:)` <sup>iOS, tvOS, watchOS</sup>
 * `func color(at:)` <sup>iOS, tvOS, watchOS</sup>
 * `func crop(to:)` <sup>iOS, tvOS, watchOS</sup>
 * `func jpeg(quality:)` <sup>iOS, tvOS, watchOS</sup>
 * `func resize(to:)` <sup>iOS, tvOS, watchOS</sup>
+
+### UIImageView
+
+* `func setImage(from:placeholder:completion:)` <sup>iOS, tvOS</sup>
 
 ### UIScreen
 

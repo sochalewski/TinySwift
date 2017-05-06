@@ -156,4 +156,26 @@ public extension UIImage {
         
         return UIColor(red: r, green: g, blue: b, alpha: a)
     }
+    
+    /**
+     Gets an image in asynchronous way using the `URLSession` for downloading the content.
+     
+     If the request completes successfully and the request's data is formatted to match the file format of one of the system’s supported image types, the `image` parameter of the completion handler block contains the image. If the request fails or the request's data is not formatted to match the file format of one of the system’s supported image types, the `image` parameter is nil.
+     
+     - parameter url: The URL to be retrieved.
+     - parameter completion: The completion handler to call when the load request is complete. This handler is executed on the main queue.
+     */
+    public static func get(from url: URL, completion: @escaping (UIImage?) -> Void) {
+        URLSession.shared.dataTask(with: url) { data, _, _ in
+            var image: UIImage?
+            if let data = data {
+                image = UIImage(data: data)
+            }
+            
+            DispatchQueue.main.async {
+                completion(image)
+            }
+        }
+            .resume()
+    }
 }
