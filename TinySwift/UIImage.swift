@@ -9,6 +9,28 @@
 import UIKit
 
 public extension UIImage {
+    
+    /**
+     Initializes and returns an image object filled with the specified color
+     
+     - parameter color: The color to fill the image.
+     - parameter size: The size of the created image. When function requires `size` and is called without this parameter, then `(1.0, 1.0)` is used as a default value.
+     - returns: An initialized `UIImage` object, or `nil` if the method could not initialize the image from the specified data.
+     */
+    public convenience init?(color: UIColor, size: CGSize = CGSize(width: 1.0, height: 1.0)) {
+        let rect = CGRect(origin: .zero, size: size)
+        UIGraphicsBeginImageContext(size)
+        guard let context = UIGraphicsGetCurrentContext() else { return nil }
+        
+        context.setFillColor(color.cgColor)
+        context.fill(rect)
+        
+        guard let image = UIGraphicsGetImageFromCurrentImageContext()?.cgImage else { return nil }
+        UIGraphicsEndImageContext()
+        
+        self.init(cgImage: image)
+    }
+    
     /// Returns the image scaled to maximum 300 × 300 resolution.
     public var thumbnail: UIImage? {
         return resize(to: CGSize(width: 300.0, height: 300.0))

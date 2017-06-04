@@ -14,6 +14,14 @@ class UIImageTests: XCTestCase {
     
     let image = UIImage(named: "land.jpg", in: Bundle(for: UIImageTests.self), compatibleWith: nil)
     
+    func testColorInit() {
+        let color = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        let size = CGSize(width: 12.0, height: 24.0)
+        guard let image = UIImage(color: color, size: size) else { XCTFail("Cannot init image"); return }
+        XCTAssert(image.color(at: CGPoint(x: 0.0, y: 0.0)) == color, "Created image has wrong color")
+        XCTAssert(image.size == size, "Created image has wrong size")
+    }
+    
     func testThumbnail() {
         guard let thumbnail = image?.thumbnail else { XCTFail("Cannot generate thumbnail"); return }
         XCTAssert(thumbnail.size.width == 300.0 || thumbnail.size.height == 300.0, "Thumbnail's width or height should equal 300 px")
