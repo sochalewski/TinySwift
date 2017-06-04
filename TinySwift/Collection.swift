@@ -153,12 +153,9 @@ public extension RandomAccessCollection where Iterator.Element: Integer {
     /// Returns the middle number in the collection, taken as the average of the two middle numbers when the collection has an even number of numbers.
     public var median: Double {
         guard !isEmpty else { return 0 }
-        let isCountEven = count % 2 == 0
-        let sort = sorted { (x, y) -> Bool in
-            return x > y
-        }
+        let sort = sorted { $0 > $1 }
         
-        if isCountEven {
+        if count.isEven {
             return [Double(sort[Int(count.toIntMax()) / 2 - 1].toIntMax()), Double(sort[Int(count.toIntMax()) / 2].toIntMax())].arithmeticMean
         } else {
             return Double(sort[Int(count.toIntMax()) / 2].toIntMax())
@@ -209,10 +206,9 @@ public extension RandomAccessCollection where Iterator.Element: FloatingPoint {
     /// Returns the middle number in the collection, taken as the average of the two middle numbers when the collection has an even number of numbers.
     public var median: Iterator.Element {
         guard !isEmpty else { return 0 }
-        let isCountEven = count % 2 == 0
         let sort = sorted()
         
-        if isCountEven {
+        if count.isEven {
             return [sort[Int(count.toIntMax()) / 2 - 1], sort[Int(count.toIntMax()) / 2]].arithmeticMean
         } else {
             return sort[Int(count.toIntMax()) / 2]
