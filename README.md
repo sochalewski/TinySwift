@@ -142,7 +142,7 @@ It contains the following functions and properties:
 
 ### UIImage
 
-* `init(color:size:)`
+* `init(color:size:)` <sup>iOS, tvOS, watchOS</sup>
 * `var grayscale` <sup>iOS, tvOS</sup>
 * `var normalizedImage` <sup>iOS, tvOS, watchOS</sup>
 * `var png` <sup>iOS, tvOS, watchOS</sup>
