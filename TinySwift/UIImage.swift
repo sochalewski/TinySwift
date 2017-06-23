@@ -70,8 +70,8 @@ public extension UIImage {
      - returns: A UIImage object that specifies a subimage of the image. If the `rect` parameter defines an area that is not in the image, returns `nil`.
     */
     public func crop(to bounds: CGRect) -> UIImage? {
-        guard let cgImage = cgImage, bounds.contains(bounds) else { return nil }
-        return UIImage(cgImage: cgImage.cropping(to: bounds)!, scale: 0.0, orientation: imageOrientation)
+        guard let cgImage = normalizedImage?.cgImage, bounds.contains(bounds) else { return nil }
+        return UIImage(cgImage: cgImage.cropping(to: bounds)!)
     }
     
     /// Returns a square bitmap image cropping the sides.
