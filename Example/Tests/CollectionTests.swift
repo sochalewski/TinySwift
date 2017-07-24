@@ -11,8 +11,15 @@ import TinySwift
 
 class CollectionTests: XCTestCase {
     
-    let ints = Array(stride(from: 1, through: 6, by: 1))
-    let floats = [1.2, 2.7, 3.2, 4.0, 5.1, 6.9]
+    var ints: [Int]!
+    var doubles: [Double]!
+    
+    override func setUp() {
+        super.setUp()
+        
+        ints = Array(stride(from: 1, through: 6, by: 1))
+        doubles = [1.2, 2.7, 3.2, 4.0, 5.1, 6.9]
+    }
 
     func testRandomElement() {
         XCTAssert(ints.contains(ints.random!), "Array does not contain randomized element")
@@ -58,37 +65,37 @@ class CollectionTests: XCTestCase {
     }
     
     func testSum() {
-        XCTAssert(floats.sum == floats.reduce(0, +))
+        XCTAssert(doubles.sum == doubles.reduce(0, +))
         XCTAssert(ints.sum == ints.reduce(0, +))
     }
     
     func testArithmeticMean() {
-        XCTAssert(floats.arithmeticMean == floats.reduce(0, +) / Double(floats.count))
+        XCTAssert(doubles.arithmeticMean == doubles.reduce(0, +) / Double(doubles.count))
         XCTAssert(ints.arithmeticMean == Double(ints.reduce(0, +)) / Double(ints.count))
     }
     
     func testGeometricMean() {
-        XCTAssert(floats.geometricMean == pow(floats.reduce(1, *), 1 / Double(floats.count)))
+        XCTAssert(doubles.geometricMean == pow(doubles.reduce(1, *), 1 / Double(doubles.count)))
         XCTAssert(ints.geometricMean == pow(Double(ints.reduce(1, *)), 1 / Double(ints.count)))
     }
     
     func testMedian() {
-        XCTAssert(floats.median == [floats[floats.count / 2], floats[floats.count / 2 - 1]].arithmeticMean, "Sample even float array median is wrong.")
-        XCTAssert(ints.median == [ints[floats.count / 2], ints[floats.count / 2 - 1]].arithmeticMean, "Sample even int array median is wrong.")
+        XCTAssert(doubles.median == [doubles[doubles.count / 2], doubles[doubles.count / 2 - 1]].arithmeticMean, "Sample even float array median is wrong.")
+        XCTAssert(ints.median == [ints[doubles.count / 2], ints[doubles.count / 2 - 1]].arithmeticMean, "Sample even int array median is wrong.")
         
-        let oddFloats = floats.dropLast()
-        XCTAssert(oddFloats.median == oddFloats[oddFloats.count / 2], "Sample odd float array median is wrong.")
+        let odddoubles = doubles.dropLast()
+        XCTAssert(odddoubles.median == odddoubles[odddoubles.count / 2], "Sample odd float array median is wrong.")
         let oddInts = ints.dropLast()
         XCTAssert(oddInts.median == Double(oddInts[oddInts.count / 2]), "Sample odd int array median is wrong.")
     }
     
     func testVariance() {
-        XCTAssert(floats.variance == 3.2758333333333333)
+        XCTAssert(doubles.variance == 3.2758333333333333)
         XCTAssert(ints.variance == 2.9166666666666667)
     }
     
     func testStandardDeviation() {
-        XCTAssert(floats.standardDeviation == sqrt(3.2758333333333333))
+        XCTAssert(doubles.standardDeviation == sqrt(3.2758333333333333))
         XCTAssert(ints.standardDeviation == sqrt(2.9166666666666667))
     }
     
@@ -135,5 +142,13 @@ class CollectionTests: XCTestCase {
         XCTAssert(appearances.keys.count == 1)
         
         XCTAssert(array.mode == 5.1)
+    }
+    
+    func testRemove() {
+        let count = ints.count
+        XCTAssertTrue(ints.remove(element: 1))
+        XCTAssertFalse(ints.remove(element: 999))
+        XCTAssert(count == ints.count + 1)
+        
     }
 }
