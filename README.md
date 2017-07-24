@@ -51,6 +51,7 @@ It contains the following functions and properties:
 
 * `subscript(safe:)` <sup>iOS, tvOS, watchOS</sup>
 * `var shuffled` <sup>iOS, tvOS</sup>
+* `func remove(element:)` <sup>iOS, tvOS, watchOS</sup>
 * `func shuffle()` <sup>iOS, tvOS</sup>
 
 #### RandomAccessCollection
