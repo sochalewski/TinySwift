@@ -75,6 +75,21 @@ public extension Array {
     #endif
 }
 
+public extension Array where Iterator.Element: Equatable {
+    /**
+     Remove the element.
+     
+     - parameter element: The element to be removed.
+     - returns: A bool value that represents if the element was successfully removed.
+     */
+    public mutating func remove(element: Iterator.Element) -> Bool {
+        guard let index = index(of: element) else { return false }
+        remove(at: index)
+        
+        return true
+    }
+}
+
 public extension RandomAccessCollection where Iterator.Element: Hashable {
     /// Returns a set containing the elements of the collection.
     public var set: Set<Iterator.Element> {
