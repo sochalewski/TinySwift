@@ -82,6 +82,7 @@ public extension Array where Iterator.Element: Equatable {
      - parameter element: The element to be removed.
      - returns: A bool value that represents if the element was successfully removed.
      */
+    @discardableResult
     public mutating func remove(element: Iterator.Element) -> Bool {
         guard let index = index(of: element) else { return false }
         remove(at: index)
