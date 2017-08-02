@@ -10,8 +10,35 @@ import XCTest
 
 class DateTests: XCTestCase {
     
-    let date = Date(timeIntervalSinceReferenceDate: 10_000_000) // April 26th, 2001, Thursday
+    var date: Date! // April 26th, 2001, Thursday
     let calendar = Calendar.current
+    
+    override func setUp() {
+        super.setUp()
+        date = Date(timeIntervalSinceReferenceDate: 10_000_000)
+    }
+    
+    func testDay() {
+        date.day = 10
+        XCTAssert(date.day == 10 && date.month == 4 && date.year == 2001)
+    }
+    
+    func testMonth() {
+        date.month = 12
+        XCTAssert(date.day == 26 && date.month == 12 && date.year == 2001)
+    }
+    
+    func testYear() {
+        date.year = 2017
+        XCTAssert(date.day == 26 && date.month == 4 && date.year == 2017)
+    }
+    
+    func testDayMonthYear() {
+        date.day = 20
+        date.month = 12
+        date.year = 2016
+        XCTAssert(date.day == 20 && date.month == 12 && date.year == 2016)
+    }
     
     func testFirstOfMonth() {
         guard let firstOfMonth = date.firstOfMonth else { XCTFail("firstOfMonth should not return nil"); return }

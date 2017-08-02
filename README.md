@@ -74,13 +74,16 @@ It contains the following functions and properties:
 
 ### Date
 
+* `var day` <sup>iOS, tvOS, watchOS</sup>
 * `var firstOfMonth` <sup>iOS, tvOS, watchOS</sup>
 * `var firstOfYear` <sup>iOS, tvOS, watchOS</sup>
 * `var lastOfMonth` <sup>iOS, tvOS, watchOS</sup>
 * `var lastOfYear` <sup>iOS, tvOS, watchOS</sup>
+* `var month` <sup>iOS, tvOS, watchOS</sup>
 * `var nextDay` <sup>iOS, tvOS, watchOS</sup>
 * `var previousDay` <sup>iOS, tvOS, watchOS</sup>
 * `var weekday` <sup>iOS, tvOS, watchOS</sup>
+* `var year` <sup>iOS, tvOS, watchOS</sup>
 
 ### FloatingPoint
 
