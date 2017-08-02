@@ -9,6 +9,60 @@
 import Foundation
 
 public extension Date {
+    /// The day of the date.
+    public var day: Int {
+        get {
+            let calendar = Calendar.current
+            let components = calendar.dateComponents([.day], from: self)
+            
+            return components.day ?? 0
+        }
+        set {
+            let calendar = Calendar.current
+            var components = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: self)
+            components.day = newValue
+            guard let newDate = calendar.date(from: components) else { return }
+            
+            self = newDate
+        }
+    }
+    
+    /// The month of the date.
+    public var month: Int {
+        get {
+            let calendar = Calendar.current
+            let components = calendar.dateComponents([.month], from: self)
+            
+            return components.month ?? 0
+        }
+        set {
+            let calendar = Calendar.current
+            var components = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: self)
+            components.month = newValue
+            guard let newDate = calendar.date(from: components) else { return }
+            
+            self = newDate
+        }
+    }
+    
+    /// The year of the date.
+    public var year: Int {
+        get {
+            let calendar = Calendar.current
+            let components = calendar.dateComponents([.year], from: self)
+            
+            return components.year ?? 0
+        }
+        set {
+            let calendar = Calendar.current
+            var components = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: self)
+            components.year = newValue
+            guard let newDate = calendar.date(from: components) else { return }
+            
+            self = newDate
+        }
+    }
+    
     /// Returns a new Date by setting this Date's day to first.
     public var firstOfMonth: Date? {
         let calendar = Calendar.current
