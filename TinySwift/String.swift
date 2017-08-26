@@ -82,7 +82,7 @@ public extension String {
     public var initials: String? {
         return components(separatedBy: .whitespacesAndNewlines)
             .filter { !$0.isEmpty }
-            .map { $0.substring(to: index(after: startIndex)) }
+            .map { $0[..<index(after: startIndex)] }
             .joined()
     }
     
@@ -128,7 +128,7 @@ public extension String {
     public var camelCased: String {
         guard let _ = rangeOfCharacter(from: .whitespacesAndNewlines) else { return lowercased() }
         
-        let first = lowercased().substring(to: index(after: startIndex))
+        let first = lowercased()[..<index(after: startIndex)]
         let rest = String(upperCamelCased.characters.dropFirst())
         
         return "\(first)\(rest)"

@@ -148,33 +148,34 @@ public extension RandomAccessCollection where Iterator.Element: Hashable {
     }
 }
 
-public extension RandomAccessCollection where Iterator.Element: Integer {
+public extension RandomAccessCollection where Iterator.Element: BinaryInteger {
     /// Returns the sum of all elements in the collection.
     public var sum: Iterator.Element {
         return reduce(0, +)
     }
 }
 
-public extension RandomAccessCollection where Iterator.Element: Integer {
+public extension RandomAccessCollection where Iterator.Element: BinaryInteger {
     /// Returns the arithmetic mean of all elements in the collection.
     public var arithmeticMean: Double {
-        return isEmpty ? 0 : Double(sum.toIntMax()) / Double(count.toIntMax())
+        return isEmpty ? 0 : Double(Int64(sum)) / Double(Int64(count))
     }
     
     /// Returns the geometric mean of all elements in the collection.
     public var geometricMean: Double {
-        return isEmpty ? 0 : pow(map({ Double($0.toIntMax()) }).reduce(1, *), 1 / Double(count.toIntMax()))
+        return isEmpty ? 0 : pow(map({ Double(Int64($0)) }).reduce(1, *), 1 / Double(Int64(count)))
     }
     
     /// Returns the middle number in the collection, taken as the average of the two middle numbers when the collection has an even number of numbers.
     public var median: Double {
         guard !isEmpty else { return 0 }
-        let sort = sorted { $0 > $1 }
+        let sort = sorted().flatMap { Int64($0) }
+        let count = Int(self.count)
         
         if count.isEven {
-            return [Double(sort[Int(count.toIntMax()) / 2 - 1].toIntMax()), Double(sort[Int(count.toIntMax()) / 2].toIntMax())].arithmeticMean
+            return [Double(sort[count / 2 - 1]), Double(sort[count / 2])].arithmeticMean
         } else {
-            return Double(sort[Int(count.toIntMax()) / 2].toIntMax())
+            return Double(sort[count / 2])
         }
     }
     
@@ -187,7 +188,7 @@ public extension RandomAccessCollection where Iterator.Element: Integer {
         guard count >= 2 else { return nil }
 
         let arrayMean = arithmeticMean
-        let elements = map { pow((Double($0.toIntMax()) - arrayMean), 2) }
+        let elements = map { pow((Double(Int64($0)) - arrayMean), 2) }
         
         return elements.arithmeticMean
     }
@@ -211,23 +212,23 @@ public extension RandomAccessCollection where Iterator.Element: FloatingPoint {
 
     /// Returns the arithmetic mean of all elements in the collection.
     public var arithmeticMean: Iterator.Element {
-        return isEmpty ? 0 : sum / Iterator.Element(count.toIntMax())
+        return isEmpty ? 0 : sum / Iterator.Element(Int64(count))
     }
     
     /// Returns the geometric mean of all elements in the collection.
     public var geometricMean: Double {
-        return isEmpty ? 0 : pow((self as! [Double]).reduce(1.0, *), 1 / Double(count.toIntMax()))
+        return isEmpty ? 0 : pow((self as! [Double]).reduce(1.0, *), 1 / Double(Int64(count)))
     }
     
     /// Returns the middle number in the collection, taken as the average of the two middle numbers when the collection has an even number of numbers.
     public var median: Iterator.Element {
-        guard !isEmpty else { return 0 }
         let sort = sorted()
+        let count = Int(Int64(self.count))
         
         if count.isEven {
-            return [sort[Int(count.toIntMax()) / 2 - 1], sort[Int(count.toIntMax()) / 2]].arithmeticMean
+            return [sort[count / 2 - 1], sort[count / 2]].arithmeticMean
         } else {
-            return sort[Int(count.toIntMax()) / 2]
+            return sort[count / 2]
         }
     }
     

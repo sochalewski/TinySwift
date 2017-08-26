@@ -8,7 +8,7 @@
 
 import Foundation
 
-public extension Integer {
+public extension BinaryInteger {
     /**
      Returns the product of all positive integers less than or equal to the integer.
      
@@ -18,7 +18,7 @@ public extension Integer {
         guard self != 0 else { return 1 }
         guard self > 0 else { return nil }
         var integers = [Double]()
-        for i in 2...toIntMax() {
+        for i in 2...Int64(self) {
             integers.append(Double(i))
         }
         
@@ -51,29 +51,29 @@ public extension Integer {
     }
     
     /// Returns the opposite number.
-    public var additiveInverse: IntMax {
-        return self.toIntMax() * -1.toIntMax()
+    public var additiveInverse: Int64 {
+        return Int64(self) * -1
     }
     
     /// Returns the value to the power of `-1`.
     public var multiplicativeInverse: Double? {
         guard self != 0 else { return nil }
-        return 1.0 / Double(self.toIntMax())
+        return 1.0 / Double(Int64(self))
     }
     
     /// Converts an angle measured in degrees to radians.
     public var degreesToRadians: Double {
-        return Double(self.toIntMax()) * .pi / 180.0
+        return Double(Int64(self)) * .pi / 180.0
     }
     
     /// Converts an angle measured in radians to degrees.
     public var radiansToDegrees: Double {
-        return Double(self.toIntMax()) * 180.0 / .pi
+        return Double(Int64(self)) * 180.0 / .pi
     }
     
     /// Returns the time interval treating the value as a number of seconds.
     public var seconds: TimeInterval {
-        return TimeInterval(self.toIntMax())
+        return TimeInterval(Int64(self))
     }
     
     /// Returns the time interval treating the value as a number of minutes.

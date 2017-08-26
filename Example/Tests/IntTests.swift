@@ -74,7 +74,7 @@ class IntTests: XCTestCase {
         XCTAssertTrue(minusFive.additiveInverse == five)
         
         let unsignedFive: UInt = 5
-        XCTAssertTrue(unsignedFive.additiveInverse == (-5).toIntMax())
+        XCTAssertTrue(unsignedFive.additiveInverse == Int64(-5))
     }
     
     func testMultiplicativeInverse() {

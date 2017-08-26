@@ -16,7 +16,7 @@ public extension Bool {
      Creates an instance initialized to the specified integer value.
      - parameter integer: The integer value.
      */
-    public init<T: Integer>(_ integer: T) {
+    public init<T: BinaryInteger>(_ integer: T) {
         self = integer != 0
     }
     
