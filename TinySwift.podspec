@@ -1,8 +1,8 @@
 Pod::Spec.new do |s|
   s.name             = 'TinySwift'
-  s.version          = '1.0.10'
+  s.version          = '2.0.10-beta1'
   s.summary          = 'Powerful Swift classes and structs extensions'
-  s.description      = 'Powerful Swift classes and structs extensions giving you even better Swift 3.0 experience.'
+  s.description      = 'Powerful Swift classes and structs extensions giving you even better Swift experience.'
   s.homepage         = 'https://github.com/sochalewski/TinySwift'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Piotr Sochalewski' => 'sochalewski@gmail.com' }
