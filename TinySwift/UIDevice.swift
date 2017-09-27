@@ -60,6 +60,12 @@
         case iPhone7
         /// The iPhone 7 Plus.
         case iPhone7Plus
+        /// The iPhone 8.
+        case iPhone8
+        /// The iPhone 8 Plus.
+        case iPhone8Plus
+        /// The iPhone X.
+        case iPhoneX
     }
 
     /// The iPad device type representation.
@@ -116,6 +122,8 @@
         case unknown
         /// The fourth generation of Apple TV.
         case tv4g
+        /// The Apple TV 4K.
+        case tv4k
     }
     
     public func ==(lhs: DeviceType, rhs: DeviceType) -> Bool {
@@ -163,6 +171,9 @@
             case "iPhone8,4": return .phone(model: .iPhoneSE)
             case "iPhone9,1", "iPhone9,3": return .phone(model: .iPhone7)
             case "iPhone9,2", "iPhone9,4": return .phone(model: .iPhone7Plus)
+            case "iPhone10,1", "iPhone10,4": return .phone(model: .iPhone8)
+            case "iPhone10,2", "iPhone10,5": return .phone(model: .iPhone8Plus)
+            case "iPhone10,3", "iPhone10,6": return .phone(model: .iPhoneX)
                 
             case "iPad1,1": return .pad(model: .iPad1)
             case "iPad2,1", "iPad2,2", "iPad2,3", "iPad2,4": return .pad(model: .iPad2)
@@ -186,6 +197,7 @@
             case "iPod7,1": return .pod(model: .touch6g)
             
             case "AppleTV5,3": return .tv(model: .tv4g)
+            case "AppleTV6,2": return .tv(model: .tv4k)
                 
             case "i386", "x86_64": return .simulator
                 
