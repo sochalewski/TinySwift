@@ -22,6 +22,8 @@ import UIKit
         case inch4p7
         /// The 5.5" screen size.
         case inch5p5
+        /// The 5.8" screen size.
+        case inch5p8
         /// The 7.9" screen size.
         case inch7p9
         /// The 9.7" screen size.
@@ -43,6 +45,7 @@ import UIKit
             case 568: return .inch4
             case 667: return .inch4p7
             case 736: return .inch5p5
+            case 812: return .inch5p8
             case 1024:
                 switch UIDevice.current.device {
                 case .pad(model: .iPadMini), .pad(model: .iPadMini2), .pad(model: .iPadMini3), .pad(model: .iPadMini4):
