@@ -39,7 +39,7 @@ public extension BinaryInteger {
     public var isPrime: Bool {
         guard self > 1 else { return false }
         var divisor: Self = 2
-        while divisor < self / 2 {
+        while divisor <= self / 2 {
             if self % divisor == 0 {
                 return false
             } else {

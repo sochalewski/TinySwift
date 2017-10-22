@@ -138,7 +138,12 @@
         }
     }
     
-    public func ==(lhs: PadModel, rhs: PadModel) -> Bool { return lhs == rhs }
+    public func ==(lhs: PadModel, rhs: PadModel) -> Bool {
+        switch (lhs, rhs) {
+        case (.iPadPro(let size1), .iPadPro(let size2)): return size1 == size2
+        default: return lhs == rhs
+        }
+    }
     
     public func <(lhs: PhoneModel, rhs: PhoneModel) -> Bool { return lhs.rawValue < rhs.rawValue }
     public func <(lhs: PodModel, rhs: PodModel) -> Bool { return lhs.rawValue < rhs.rawValue }

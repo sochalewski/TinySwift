@@ -102,4 +102,20 @@ class StringTests: XCTestCase {
         let emptyString = String()
         XCTAssert([emptyString, emptyString.upperCamelCased, emptyString.camelCased].areAllElementsEqual)
     }
+    
+    func testIsEmailAddress() {
+        let validAddresses = ["sochalewski@gmail.com",
+                              "very.unusual.”@”.unusual.com@example.com",
+                              """
+                              very.”(),:;<>[]”.VERY.”very@\\ "very”.unusual@strange.example.com
+                              """]
+        let invalidAddresses = ["あいうえお@domain.com",
+                                "email@111.222.333.44444",
+                                "email.@domain.com",
+                                "email@-domain.com",
+                                "email@domain..com"]
+        
+        validAddresses.forEach { XCTAssertTrue($0.isEmailAddress) }
+        invalidAddresses.forEach { XCTAssertFalse($0.isEmailAddress) }
+    }
 }
