@@ -124,6 +124,7 @@ It contains the following functions and properties:
 * `var camelCased` <sup>iOS, tvOS, watchOS</sup>
 * `var dataFromHexadecimalString` <sup>iOS, tvOS, watchOS</sup>
 * `var initials` <sup>iOS, tvOS, watchOS</sup>
+* `var isEmailAddress` <sup>iOS, tvOS, watchOS</sup>
 * `var lines` <sup>iOS, tvOS, watchOS</sup>
 * `var nonEmptyLines` <sup>iOS, tvOS, watchOS</sup>
 * `var trimmed` <sup>iOS, tvOS, watchOS</sup>

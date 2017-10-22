@@ -147,6 +147,14 @@ public extension String {
         return capitalized.components(separatedBy: .whitespacesAndNewlines).joined()
     }
     
+    /// Returns whether the value is a valid email address.
+    public var isEmailAddress: Bool {
+        let dataDetector = try? NSDataDetector(types: NSTextCheckingResult.CheckingType.link.rawValue)
+        let firstMatch = dataDetector?.firstMatch(in: self, options: .reportCompletion, range: NSRange(location: 0, length: count))
+        
+        return (firstMatch?.range.location != NSNotFound && firstMatch?.url?.scheme == "mailto")
+    }
+    
     /// Returns the number of occurrences of a given case-sensitive string within the `String`.
     public func occurrences(of substring: String) -> Int {
         return components(separatedBy: substring).count - 1

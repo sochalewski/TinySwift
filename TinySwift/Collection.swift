@@ -141,15 +141,15 @@ public extension RandomAccessCollection where Iterator.Element: Hashable {
     public var mode: Iterator.Element? {
         guard let appearances = appearances, !isEmpty else { return nil }
         
-        let sortedAppearances = Array(appearances.keys).sorted(by: { appearances[$0]! > appearances[$1]! })
+        let sortedAppearances = Array(appearances.keys).sorted { appearances[$0]! > appearances[$1]! }
         guard sortedAppearances.count != 1 else { return sortedAppearances.first }
         
         return appearances[sortedAppearances[0]]! > appearances[sortedAppearances[1]]! ? sortedAppearances[0] : nil
     }
 }
 
-public extension RandomAccessCollection where Iterator.Element: BinaryInteger {
-    /// Returns the sum of all elements in the collection.
+public extension Sequence where Iterator.Element: Numeric {
+    /// Returns the sum of all elements in the sequence.
     public var sum: Iterator.Element {
         return reduce(0, +)
     }
@@ -165,7 +165,7 @@ public extension RandomAccessCollection where Iterator.Element: BinaryInteger {
     public var geometricMean: Double {
         return isEmpty ? 0 : pow(map({ Double(Int64($0)) }).reduce(1, *), 1 / Double(Int64(count)))
     }
-    
+
     /// Returns the middle number in the collection, taken as the average of the two middle numbers when the collection has an even number of numbers.
     public var median: Double {
         guard !isEmpty else { return 0 }
@@ -205,11 +205,6 @@ public extension RandomAccessCollection where Iterator.Element: BinaryInteger {
 }
 
 public extension RandomAccessCollection where Iterator.Element: FloatingPoint {
-    /// Returns the sum of all elements in the collection.
-    public var sum: Iterator.Element {
-        return reduce(0, +)
-    }
-
     /// Returns the arithmetic mean of all elements in the collection.
     public var arithmeticMean: Iterator.Element {
         return isEmpty ? 0 : sum / Iterator.Element(Int64(count))
@@ -219,36 +214,36 @@ public extension RandomAccessCollection where Iterator.Element: FloatingPoint {
     public var geometricMean: Double {
         return isEmpty ? 0 : pow((self as! [Double]).reduce(1.0, *), 1 / Double(Int64(count)))
     }
-    
+
     /// Returns the middle number in the collection, taken as the average of the two middle numbers when the collection has an even number of numbers.
     public var median: Iterator.Element {
         let sort = sorted()
         let count = Int(Int64(self.count))
-        
+
         if count.isEven {
             return [sort[count / 2 - 1], sort[count / 2]].arithmeticMean
         } else {
             return sort[count / 2]
         }
     }
-    
+
     /**
      Returns the variance of an entire population (σ²).
-     
+
      If the number of elements in the collection is lower than or equal to 1, the value of the property is `nil`.
      */
     public var variance: Iterator.Element? {
         guard count >= 2 else { return nil }
-        
+
         let arrayMean = arithmeticMean
         let elements = map { ($0 - arrayMean) * ($0 - arrayMean) }
-        
+
         return elements.arithmeticMean
     }
-    
+
     /**
      Returns the standard deviation (σ); a measure that is used to quantify the amount of variation or dispersion of a set of data values.
-     
+
      If the number of elements in the collection is lower than or equal to 1, the value of the property is `nil`.
      */
     public var standardDeviation: Iterator.Element? {
