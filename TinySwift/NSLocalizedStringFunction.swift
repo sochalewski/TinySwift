@@ -8,12 +8,7 @@
 
 import Foundation
 
-/**
- Returns a localized version of a string.
- 
- - parameter key: The key for a string in the default table.
- - returns: Returns a localized string, using the main bundle.
- */
+@available(*, deprecated, message: "Deprecated in favor of String.localized")
 public func NSLocalizedString(_ key: String) -> String {
     return NSLocalizedString(key, comment: "")
 }

@@ -31,6 +31,7 @@
 		AE8FE41A1DD39CDC00C0C010 /* DataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8FE4191DD39CDC00C0C010 /* DataTests.swift */; };
 		AE9058161EBE754A00445A21 /* UIImageViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9058151EBE754A00445A21 /* UIImageViewTests.swift */; };
 		AEBE05331DCD371B002DFBB6 /* UIScreenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBE05321DCD371B002DFBB6 /* UIScreenTests.swift */; };
+		AECF6F951FB063CA0097F077 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AECF6F971FB063CA0097F077 /* Localizable.strings */; };
 		AED205DA1DDCFCE2001C7C7C /* DictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED205D91DDCFCE2001C7C7C /* DictionaryTests.swift */; };
 		AEF63C451DF234E1004B1980 /* BoolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF63C441DF234E1004B1980 /* BoolTests.swift */; };
 		C26BC6DA20ECA70E5F7D0CE7 /* Pods_TinySwift_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B4D15F9A03F907B504915B9 /* Pods_TinySwift_Example.framework */; };
@@ -84,6 +85,7 @@
 		AE9058151EBE754A00445A21 /* UIImageViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewTests.swift; sourceTree = "<group>"; };
 		AEBE05321DCD371B002DFBB6 /* UIScreenTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScreenTests.swift; sourceTree = "<group>"; };
 		AEC35CB61DA60E2A00974A52 /* TinySwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TinySwift.framework; path = "../../../Library/Developer/Xcode/DerivedData/TinySwift-cohddqsgxhzltkgtonmxnsexaswn/Build/Products/Debug-iphonesimulator/TinySwift/TinySwift.framework"; sourceTree = "<group>"; };
+		AECF6F961FB063CA0097F077 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		AED205D91DDCFCE2001C7C7C /* DictionaryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryTests.swift; sourceTree = "<group>"; };
 		AEF63C441DF234E1004B1980 /* BoolTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoolTests.swift; sourceTree = "<group>"; };
 		E00170ABCD2C04DE8432ECDF /* Pods-TinySwift_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinySwift_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-TinySwift_Example/Pods-TinySwift_Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				607FACD41AFB9204008FA782 /* Info.plist */,
+				AECF6F971FB063CA0097F077 /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
+				AECF6F951FB063CA0097F077 /* Localizable.strings in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
@@ -493,6 +497,14 @@
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
+		AECF6F971FB063CA0097F077 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AECF6F961FB063CA0097F077 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -603,6 +615,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = TinySwift/Info.plist;
@@ -620,6 +633,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = TinySwift/Info.plist;

@@ -28,10 +28,10 @@ public extension Data {
      - returns: The data represented by the hexadecimal string or `nil` if a data cannot be created.
     */
     public init?(hexadecimalString string: String) {
-        var data = Data(capacity: string.characters.count / 2)
+        var data = Data(capacity: string.count / 2)
         
         let regex = try? NSRegularExpression(pattern: "[0-9a-f]{1,2}", options: .caseInsensitive)
-        regex?.enumerateMatches(in: string, options: [], range: NSMakeRange(0, string.characters.count)) { match, flags, stop in
+        regex?.enumerateMatches(in: string, options: [], range: NSMakeRange(0, string.count)) { match, flags, stop in
             let byteString = (string as NSString).substring(with: match!.range)
             var num = UInt8(byteString, radix: 16)!
             data.append(&num, count: 1)

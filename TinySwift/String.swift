@@ -10,7 +10,7 @@ import Foundation
 
 public extension String {
     /// The collection of Latin letters and Arabic digits or a text constructed from this collection.
-    public enum RandomStringType {
+    public enum RandomString {
         /// The character set with 36 (`A-Z+0-9`, case insensitive) or 62 (`A-Z+a-z+0-9`, case-sensitive) alphanumeric characters.
         case alphanumeric(caseSensitive: Bool)
         /// The character set with 26 (`A-Z`, case insensitive) or 52 (`A-Z+a-z`, case-sensitive) Latin letters.
@@ -37,18 +37,18 @@ public extension String {
      - parameter nonRepeating: The boolean value that determines whether characters in the initialized can or cannot be repeated. The default value is `false`. If `true` and length is greater than number of characters in selected character set, then string with maximum allowed length will be produced.
      - returns: The new string with randomized characters.
      */
-    public init(random: RandomStringType, length: Int, nonRepeating: Bool = false) {
+    public init(random: RandomString, length: Int, nonRepeating: Bool = false) {
         var letters = random.characterSet
         
         var length = length
-        if length > random.characterSet.characters.count, nonRepeating {
-            length = random.characterSet.characters.count
+        if length > random.characterSet.count, nonRepeating {
+            length = random.characterSet.count
         }
         
         var string = ""
         
-        while string.characters.count < length {
-            let index = letters.characters.index(letters.startIndex, offsetBy: Int(arc4random_uniform(UInt32(letters.characters.count))))
+        while string.count < length {
+            let index = letters.index(letters.startIndex, offsetBy: Int(arc4random_uniform(UInt32(letters.count))))
             let letter = letters[index]
             string.append(letter)
             if nonRepeating {
@@ -105,8 +105,8 @@ public extension String {
     public var dataFromHexadecimalString: Data? {
         guard let regex = try? NSRegularExpression(pattern: "[0-9a-f]{1,2}", options: .caseInsensitive) else { return nil }
         
-        var data = Data(capacity: characters.count / 2)
-        regex.enumerateMatches(in: self, options: [], range: NSRange(location: 0, length: characters.count)) { (match, _, _) in
+        var data = Data(capacity: count / 2)
+        regex.enumerateMatches(in: self, options: [], range: NSRange(location: 0, length: count)) { match, _, _ in
             guard let match = match else { return }
             let byteString = (self as NSString).substring(with: match.range)
             guard var num = UInt8(byteString, radix: 16) else { return }
@@ -129,7 +129,7 @@ public extension String {
         guard let _ = rangeOfCharacter(from: .whitespacesAndNewlines) else { return lowercased() }
         
         let first = lowercased()[..<index(after: startIndex)]
-        let rest = String(upperCamelCased.characters.dropFirst())
+        let rest = String(upperCamelCased.dropFirst())
         
         return "\(first)\(rest)"
     }
@@ -153,6 +153,11 @@ public extension String {
         let firstMatch = dataDetector?.firstMatch(in: self, options: .reportCompletion, range: NSRange(location: 0, length: count))
         
         return (firstMatch?.range.location != NSNotFound && firstMatch?.url?.scheme == "mailto")
+    }
+    
+    ///  Returns a localized version of a string, using the main bundle.
+    public var localized: String {
+        return NSLocalizedString(self, comment: "")
     }
     
     /// Returns the number of occurrences of a given case-sensitive string within the `String`.

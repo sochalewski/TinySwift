@@ -126,6 +126,7 @@ It contains the following functions and properties:
 * `var initials` <sup>iOS, tvOS, watchOS</sup>
 * `var isEmailAddress` <sup>iOS, tvOS, watchOS</sup>
 * `var lines` <sup>iOS, tvOS, watchOS</sup>
+* `var localized` <sup>iOS, tvOS, watchOS</sup>
 * `var nonEmptyLines` <sup>iOS, tvOS, watchOS</sup>
 * `var trimmed` <sup>iOS, tvOS, watchOS</sup>
 * `var upperCamelCased` <sup>iOS, tvOS, watchOS</sup>
@@ -187,10 +188,6 @@ It contains the following functions and properties:
 * `var device` <sup>iOS, watchOS</sup>
 * `var is38mm` <sup>iOS, watchOS</sup>
 * `var is42mm` <sup>iOS, watchOS</sup>
-
-### Functions
-
-* `func NSLocalizedString(_:)` <sup>iOS, tvOS, watchOS</sup>
 
 ## Author
 
