@@ -32,7 +32,7 @@ public extension UIColor {
         var red, green, blue: CGFloat!
         var alphaChannel: CGFloat?
         
-        switch hexCode.characters.count {
+        switch hexCode.count {
         case 3, 4:
             divisor = 15
         case 6, 8:
@@ -41,7 +41,7 @@ public extension UIColor {
             return nil
         }
         
-        switch hexCode.characters.count {
+        switch hexCode.count {
         case 3:
             red = CGFloat((UInt16(hexInt) & 0xF00) >> 8) / divisor
             green = CGFloat((UInt16(hexInt) & 0x0F0) >> 4) / divisor

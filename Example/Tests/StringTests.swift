@@ -15,30 +15,30 @@ class StringTests: XCTestCase {
         let desiredLength = 12
         
         let randomString1 = String(random: .alphanumeric(caseSensitive: true), length: desiredLength)
-        XCTAssertTrue(randomString1.characters.count == desiredLength, "Randomized string has wrong length")
+        XCTAssertTrue(randomString1.count == desiredLength, "Randomized string has wrong length")
         XCTAssertFalse(randomString1.trimmed.isEmpty, "Randomized string contains only whitespaces")
         
         let randomString2 = String(random: .alphanumeric(caseSensitive: false), length: desiredLength)
         XCTAssertTrue(randomString2.uppercased() == randomString2, "Case insensitive string should be equal with uppercased string")
-        XCTAssertTrue(randomString2.characters.count == desiredLength, "Randomized string has wrong length")
+        XCTAssertTrue(randomString2.count == desiredLength, "Randomized string has wrong length")
         XCTAssertFalse(randomString2.trimmed.isEmpty, "Randomized string contains only whitespaces")
         
         let randomString3 = String(random: .alphabetic(caseSensitive: true), length: desiredLength)
-        XCTAssertTrue(randomString3.characters.count == desiredLength, "Randomized string has wrong length")
+        XCTAssertTrue(randomString3.count == desiredLength, "Randomized string has wrong length")
         XCTAssertFalse(randomString3.trimmed.isEmpty, "Randomized string contains only whitespaces")
         
         let randomString4 = String(random: .alphabetic(caseSensitive: false), length: desiredLength)
         XCTAssertTrue(randomString4.uppercased() == randomString4, "Case insensitive string should be equal with uppercased string")
-        XCTAssertTrue(randomString4.characters.count == desiredLength, "Randomized string has wrong length")
+        XCTAssertTrue(randomString4.count == desiredLength, "Randomized string has wrong length")
         XCTAssertFalse(randomString4.trimmed.isEmpty, "Randomized string contains only whitespaces")
         
         let randomString5 = String(random: .numeric, length: desiredLength)
-        XCTAssertTrue(randomString5.characters.count == desiredLength, "Randomized string has wrong length")
+        XCTAssertTrue(randomString5.count == desiredLength, "Randomized string has wrong length")
         XCTAssertFalse(randomString5.trimmed.isEmpty, "Randomized string contains only whitespaces")
         
         let randomString6 = String(random: .numeric, length: desiredLength, nonRepeating: true)
-        XCTAssertTrue(randomString6.characters.count == 10, "Randomized string has wrong length")
-        XCTAssertTrue(Array(Array(randomString6.characters).appearances!.values) == Array(repeatElement(1, count: 10)), "Each character should appear exactly once")
+        XCTAssertTrue(randomString6.count == 10, "Randomized string has wrong length")
+        XCTAssertTrue(Array(Array(randomString6).appearances!.values) == Array(repeatElement(1, count: 10)), "Each character should appear exactly once")
         XCTAssertFalse(randomString6.trimmed.isEmpty, "Randomized string contains only whitespaces")
     }
     
@@ -50,7 +50,7 @@ class StringTests: XCTestCase {
     
     func testTrimmed() {
         let stringToBeTrimmed = "\n\n  XX \n \r \t "
-        XCTAssert(stringToBeTrimmed.trimmed.characters.count == 2, "Trimmed string length is not desired length")
+        XCTAssert(stringToBeTrimmed.trimmed.count == 2, "Trimmed string length is not desired length")
     }
     
     func testInitials() {
@@ -85,7 +85,7 @@ class StringTests: XCTestCase {
         let hex = "54696e795377696674"
         guard let data = hex.dataFromHexadecimalString else { XCTFail(); return }
         
-        XCTAssert(data.count == hex.characters.count / 2)
+        XCTAssert(data.count == hex.count / 2)
         XCTAssert(String(data: data, encoding: .utf8) == "TinySwift")
     }
     
@@ -117,5 +117,9 @@ class StringTests: XCTestCase {
         
         validAddresses.forEach { XCTAssertTrue($0.isEmailAddress) }
         invalidAddresses.forEach { XCTAssertFalse($0.isEmailAddress) }
+    }
+    
+    func testLocalized() {
+        XCTAssert("WORD".localized == "TinySwift")
     }
 }
