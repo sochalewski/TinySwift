@@ -28,6 +28,7 @@
 		AE3D8CD51DA9623400A3DD82 /* TimeIntervalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3D8CD41DA9623400A3DD82 /* TimeIntervalTests.swift */; };
 		AE3DA4E01DC3F8E200DB23DB /* FloatingPointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3DA4DE1DC3F87700DB23DB /* FloatingPointTests.swift */; };
 		AE50CFEC1DBE5D9900278F23 /* RawRepresentableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE50CFEB1DBE5D9900278F23 /* RawRepresentableTests.swift */; };
+		AE70470A1FBF8875002963B6 /* WKInterfaceDeviceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7047091FBF8875002963B6 /* WKInterfaceDeviceTests.swift */; };
 		AE8FE41A1DD39CDC00C0C010 /* DataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8FE4191DD39CDC00C0C010 /* DataTests.swift */; };
 		AE9058161EBE754A00445A21 /* UIImageViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9058151EBE754A00445A21 /* UIImageViewTests.swift */; };
 		AEBE05331DCD371B002DFBB6 /* UIScreenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBE05321DCD371B002DFBB6 /* UIScreenTests.swift */; };
@@ -81,6 +82,7 @@
 		AE3D8CD41DA9623400A3DD82 /* TimeIntervalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeIntervalTests.swift; sourceTree = "<group>"; };
 		AE3DA4DE1DC3F87700DB23DB /* FloatingPointTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingPointTests.swift; sourceTree = "<group>"; };
 		AE50CFEB1DBE5D9900278F23 /* RawRepresentableTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RawRepresentableTests.swift; sourceTree = "<group>"; };
+		AE7047091FBF8875002963B6 /* WKInterfaceDeviceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKInterfaceDeviceTests.swift; sourceTree = "<group>"; };
 		AE8FE4191DD39CDC00C0C010 /* DataTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataTests.swift; sourceTree = "<group>"; };
 		AE9058151EBE754A00445A21 /* UIImageViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewTests.swift; sourceTree = "<group>"; };
 		AEBE05321DCD371B002DFBB6 /* UIScreenTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScreenTests.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 				AEBE05321DCD371B002DFBB6 /* UIScreenTests.swift */,
 				AE1D6B1D1DB804EE005BEEB7 /* UIViewTests.swift */,
 				AE2C0D551D9C5BE1002234C9 /* UIViewControllerTests.swift */,
+				AE7047091FBF8875002963B6 /* WKInterfaceDeviceTests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
 			path = Tests;
@@ -449,6 +452,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE3DA4E01DC3F8E200DB23DB /* FloatingPointTests.swift in Sources */,
+				AE70470A1FBF8875002963B6 /* WKInterfaceDeviceTests.swift in Sources */,
 				AE2ABEC31DC6B8E100A11DB3 /* UIDeviceTests.swift in Sources */,
 				AE2C0D581D9C5BE1002234C9 /* IntTests.swift in Sources */,
 				AEBE05331DCD371B002DFBB6 /* UIScreenTests.swift in Sources */,

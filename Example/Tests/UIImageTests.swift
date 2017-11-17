@@ -12,7 +12,7 @@ import TinySwift
 
 class UIImageTests: XCTestCase {
     
-    let image = UIImage(named: "land.jpg", in: Bundle(for: UIImageTests.self), compatibleWith: nil)
+    private let image = UIImage(named: "land.jpg", in: Bundle(for: UIImageTests.self), compatibleWith: nil)
     
     func testColorInit() {
         let color = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)

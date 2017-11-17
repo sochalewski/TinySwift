@@ -10,9 +10,9 @@ import XCTest
 
 class IntTests: XCTestCase {
     
-    let zero = 0
-    let five = 5
-    let minusFive = -5
+    private let zero = 0
+    private let five = 5
+    private let minusFive = -5
     
     func testFactorial() {
         let usnignedInt: UInt = 5

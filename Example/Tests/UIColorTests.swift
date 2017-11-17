@@ -10,9 +10,9 @@ import XCTest
 
 class UIColorTests: XCTestCase {
     
-    let black = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0)
-    let white = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-    let transparentWhite = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.0)
+    private let black = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0)
+    private let white = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+    private let transparentWhite = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.0)
     
     func testHexInit() {
         XCTAssert(UIColor(hex: "#000", alpha: 1.0) == black, "Three signs hex with hash should return proper color")

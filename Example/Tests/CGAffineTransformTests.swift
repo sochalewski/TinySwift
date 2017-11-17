@@ -10,7 +10,7 @@ import XCTest
 
 class CGAffineTransformTests: XCTestCase {
     
-    var view: UIView!
+    private var view: UIView!
     
     override func setUp() {
         super.setUp()

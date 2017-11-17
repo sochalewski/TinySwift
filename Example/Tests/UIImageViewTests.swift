@@ -12,8 +12,8 @@ import TinySwift
 
 class UIImageViewTests: XCTestCase {
     
-    let image = UIImage(named: "land.jpg", in: Bundle(for: UIImageViewTests.self), compatibleWith: nil)
-    let url = URL(string: "https://httpbin.org/image/jpeg")!
+    private let image = UIImage(named: "land.jpg", in: Bundle(for: UIImageViewTests.self), compatibleWith: nil)
+    private let url = URL(string: "https://httpbin.org/image/jpeg")!
     
     func testImageFromURL() {
         let expectation = self.expectation(description: "Image should be downloaded")

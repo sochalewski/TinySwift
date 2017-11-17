@@ -11,19 +11,24 @@ import TinySwift
 
 class UIScreenTests: XCTestCase {
     
+    private let allSizes = ScreenSize.all
+    
     func testScreenSize() {
         XCTAssertTrue(UIScreen.main.size == .inch4p7, "Wrong screen size returned. Please check if you run the tests on iPhone 7 simulator (like Travis CI).")
         XCTAssertFalse(UIScreen.main.isSmallScreen, "Wrong screen size returned. Please check if you run the tests on iPhone 7 simulator (like Travis CI).")
     }
     
+    func testEquatable() {
+        allSizes.forEach {
+            XCTAssert($0 == $0)
+            XCTAssert($0 != ScreenSize(rawValue: $0.rawValue + 1) ?? .unknown)
+        }
+    }
+    
     func testComparable() {
-        XCTAssert(ScreenSize.unknown < ScreenSize.inch3p5)
-        XCTAssert(ScreenSize.inch3p5 < ScreenSize.inch4)
-        XCTAssert(ScreenSize.inch4 < ScreenSize.inch4p7)
-        XCTAssert(ScreenSize.inch4p7 < ScreenSize.inch5p5)
-        XCTAssert(ScreenSize.inch5p5 < ScreenSize.inch5p8)
-        XCTAssert(ScreenSize.inch5p8 < ScreenSize.inch7p9)
-        XCTAssert(ScreenSize.inch7p9 < ScreenSize.inch9p7)
-        XCTAssert(ScreenSize.inch9p7 < ScreenSize.inch12p9)
+        allSizes.forEach {
+            guard let biggerSize = ScreenSize(rawValue: $0.rawValue + 1) else { return }
+            XCTAssert($0 < biggerSize)
+        }
     }
 }

@@ -141,7 +141,8 @@
     public func ==(lhs: PadModel, rhs: PadModel) -> Bool {
         switch (lhs, rhs) {
         case (.iPadPro(let size1), .iPadPro(let size2)): return size1 == size2
-        default: return lhs == rhs
+        case (.unknown, .unknown), (.iPad1, .iPad1), (.iPad2, .iPad2), (.iPad3, .iPad3), (.iPad4, .iPad4), (.iPad5, .iPad5), (.iPadAir, .iPadAir), (.iPadAir2, .iPadAir2), (.iPadMini, .iPadMini), (.iPadMini2, .iPadMini2), (.iPadMini3, .iPadMini3), (.iPadMini4, .iPadMini4): return true
+        default: return false
         }
     }
     

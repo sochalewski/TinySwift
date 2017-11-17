@@ -10,10 +10,10 @@ import XCTest
 
 class TimeIntervalTests: XCTestCase {
     
-    let ninetyMinutes: TimeInterval = 3600 * 1.5
-    let twentySeconds: TimeInterval = 20
-    let twentyFourHours: TimeInterval = 3600 * 24
-    let almostFiveMinutes: TimeInterval = 299
+    private let ninetyMinutes: TimeInterval = 3600 * 1.5
+    private let twentySeconds: TimeInterval = 20
+    private let twentyFourHours: TimeInterval = 3600 * 24
+    private let almostFiveMinutes: TimeInterval = 299
     
     func testTime() {
         XCTAssert(ninetyMinutes.time(with: .hhmmss) == "01:30:00")
