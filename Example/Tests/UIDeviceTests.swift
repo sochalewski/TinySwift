@@ -15,9 +15,24 @@ class UIDeviceTests: XCTestCase {
     private let allPads: [PadModel] = [.unknown, .iPad1, .iPad2, .iPad3, .iPad4, .iPad5, .iPadAir, .iPadAir2, .iPadMini, .iPadMini2, .iPadMini3, .iPadMini4, .iPadPro(size: .inch7p9), .iPadPro(size: .inch9p7), .iPadPro(size: .inch12p9)]
     private let allPods = PodModel.all
     private let allTVs = TVModel.all
+    private lazy var allDevices: [DeviceType] = {
+        let phones = allPhones.map { DeviceType.phone(model: $0) }
+        let pads = allPads.map { DeviceType.pad(model: $0) }
+        let pods = allPods.map { DeviceType.pod(model: $0) }
+        let tvs = allTVs.map { DeviceType.tv(model: $0) }
+        
+        return [.unknown, .simulator] + phones + pads + pods + tvs
+    }()
     
     func testDeviceType() {
         XCTAssertTrue(UIDevice.current.device == DeviceType.simulator)
+    }
+    
+    func testDeviceEquatable() {
+        allDevices.forEach {
+            XCTAssert($0 == $0)
+            XCTAssert($0 != allDevices[safe: allDevices.index(of: $0)!.advanced(by: 1)] ?? .unknown)
+        }
     }
     
     func testPhoneEquatable() {
