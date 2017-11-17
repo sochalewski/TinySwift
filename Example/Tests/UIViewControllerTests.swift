@@ -14,9 +14,9 @@ import TinySwift
 
 class UIViewControllerTests: XCTestCase {
     
-    let viewController = UIApplication.shared.keyWindow!.rootViewController!
-    let title = "Title"
-    let message = "Message"
+    private let viewController = UIApplication.shared.keyWindow!.rootViewController!
+    private let title = "Title"
+    private let message = "Message"
     
     func testPresentAlertController() {
         let alertTitleExceptation = expectation(description: "Alert controller's title should be correct")

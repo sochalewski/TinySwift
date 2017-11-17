@@ -10,8 +10,8 @@ import XCTest
 
 class DateTests: XCTestCase {
     
-    var date: Date! // April 26th, 2001, Thursday
-    let calendar = Calendar.current
+    private var date: Date! // April 26th, 2001, Thursday
+    private let calendar = Calendar.current
     
     override func setUp() {
         super.setUp()

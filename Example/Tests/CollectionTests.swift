@@ -11,8 +11,8 @@ import TinySwift
 
 class CollectionTests: XCTestCase {
     
-    var ints: [Int]!
-    var doubles: [Double]!
+    private var ints: [Int]!
+    private var doubles: [Double]!
     
     override func setUp() {
         super.setUp()
@@ -83,20 +83,20 @@ class CollectionTests: XCTestCase {
         XCTAssert(doubles.median == [doubles[doubles.count / 2], doubles[doubles.count / 2 - 1]].arithmeticMean, "Sample even float array median is wrong.")
         XCTAssert(ints.median == [ints[doubles.count / 2], ints[doubles.count / 2 - 1]].arithmeticMean, "Sample even int array median is wrong.")
         
-        let odddoubles = doubles.dropLast()
-        XCTAssert(odddoubles.median == odddoubles[odddoubles.count / 2], "Sample odd float array median is wrong.")
+        let oddDoubles = doubles.dropLast()
+        XCTAssert(oddDoubles.median == oddDoubles[oddDoubles.count / 2], "Sample odd float array median is wrong.")
         let oddInts = ints.dropLast()
         XCTAssert(oddInts.median == Double(oddInts[oddInts.count / 2]), "Sample odd int array median is wrong.")
     }
     
     func testVariance() {
-        XCTAssert(doubles.variance == 3.2758333333333333)
-        XCTAssert(ints.variance == 2.9166666666666667)
+        XCTAssertEqual(doubles.variance!, 3.2758, accuracy: 0.001)
+        XCTAssertEqual(ints.variance!, 2.917, accuracy: 0.001)
     }
     
     func testStandardDeviation() {
-        XCTAssert(doubles.standardDeviation == sqrt(3.2758333333333333))
-        XCTAssert(ints.standardDeviation == sqrt(2.9166666666666667))
+        XCTAssertEqual(doubles.standardDeviation!, sqrt(3.2758), accuracy: 0.001)
+        XCTAssertEqual(ints.standardDeviation!, sqrt(2.917), accuracy: 0.001)
     }
     
     func testAppearancesAndMode() {

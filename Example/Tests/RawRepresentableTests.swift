@@ -8,7 +8,7 @@
 
 import XCTest
 
-enum Card: Int {
+private enum Card: Int {
     case ace = 11
     case ten = 10
     case king = 4
@@ -17,7 +17,7 @@ enum Card: Int {
     case nine = 0
 }
 
-enum Platform: String {
+private enum Platform: String {
     case iOS = "iOS"
     case android = "Android"
 }

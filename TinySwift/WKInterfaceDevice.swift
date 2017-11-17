@@ -19,7 +19,6 @@
         case watch42mm
     }
     
-    public func ==(lhs: WatchDeviceType, rhs: WatchDeviceType) -> Bool { return lhs == rhs }
     public func <(lhs: WatchDeviceType, rhs: WatchDeviceType) -> Bool { return lhs.rawValue < rhs.rawValue }
 
     @available(iOS 8.2, watchOS 2.0, *)

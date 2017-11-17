@@ -10,11 +10,11 @@ import XCTest
 
 class DataTests: XCTestCase {
     
-    let hexString = "54696e795377696674"
-    let notHexString = "XYZ"
+    private let hexString = "54696e795377696674"
+    private let notHexString = "XYZ"
     
-    var data: Data?
-    var invalidData: Data?
+    private var data: Data?
+    private var invalidData: Data?
     
     override func setUp() {
         super.setUp()
