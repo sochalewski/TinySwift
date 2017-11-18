@@ -121,5 +121,6 @@ class StringTests: XCTestCase {
     
     func testLocalized() {
         XCTAssert("WORD".localized == "TinySwift")
+        XCTAssert(NSLocalizedString("WORD") == "WORD".localized)
     }
 }

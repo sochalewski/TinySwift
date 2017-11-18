@@ -32,6 +32,7 @@
 		AE8FE41A1DD39CDC00C0C010 /* DataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8FE4191DD39CDC00C0C010 /* DataTests.swift */; };
 		AE9058161EBE754A00445A21 /* UIImageViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9058151EBE754A00445A21 /* UIImageViewTests.swift */; };
 		AEBE05331DCD371B002DFBB6 /* UIScreenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBE05321DCD371B002DFBB6 /* UIScreenTests.swift */; };
+		AEBEED701FC015060016493F /* UITableViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBEED6F1FC015060016493F /* UITableViewCellTests.swift */; };
 		AECF6F951FB063CA0097F077 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AECF6F971FB063CA0097F077 /* Localizable.strings */; };
 		AED205DA1DDCFCE2001C7C7C /* DictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED205D91DDCFCE2001C7C7C /* DictionaryTests.swift */; };
 		AEF63C451DF234E1004B1980 /* BoolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF63C441DF234E1004B1980 /* BoolTests.swift */; };
@@ -86,6 +87,7 @@
 		AE8FE4191DD39CDC00C0C010 /* DataTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataTests.swift; sourceTree = "<group>"; };
 		AE9058151EBE754A00445A21 /* UIImageViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewTests.swift; sourceTree = "<group>"; };
 		AEBE05321DCD371B002DFBB6 /* UIScreenTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScreenTests.swift; sourceTree = "<group>"; };
+		AEBEED6F1FC015060016493F /* UITableViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCellTests.swift; sourceTree = "<group>"; };
 		AEC35CB61DA60E2A00974A52 /* TinySwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TinySwift.framework; path = "../../../Library/Developer/Xcode/DerivedData/TinySwift-cohddqsgxhzltkgtonmxnsexaswn/Build/Products/Debug-iphonesimulator/TinySwift/TinySwift.framework"; sourceTree = "<group>"; };
 		AECF6F961FB063CA0097F077 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		AED205D91DDCFCE2001C7C7C /* DictionaryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryTests.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 				AE2C0D541D9C5BE1002234C9 /* UIImageTests.swift */,
 				AE9058151EBE754A00445A21 /* UIImageViewTests.swift */,
 				AEBE05321DCD371B002DFBB6 /* UIScreenTests.swift */,
+				AEBEED6F1FC015060016493F /* UITableViewCellTests.swift */,
 				AE1D6B1D1DB804EE005BEEB7 /* UIViewTests.swift */,
 				AE2C0D551D9C5BE1002234C9 /* UIViewControllerTests.swift */,
 				AE7047091FBF8875002963B6 /* WKInterfaceDeviceTests.swift */,
@@ -455,6 +458,7 @@
 				AE70470A1FBF8875002963B6 /* WKInterfaceDeviceTests.swift in Sources */,
 				AE2ABEC31DC6B8E100A11DB3 /* UIDeviceTests.swift in Sources */,
 				AE2C0D581D9C5BE1002234C9 /* IntTests.swift in Sources */,
+				AEBEED701FC015060016493F /* UITableViewCellTests.swift in Sources */,
 				AEBE05331DCD371B002DFBB6 /* UIScreenTests.swift in Sources */,
 				AE8FE41A1DD39CDC00C0C010 /* DataTests.swift in Sources */,
 				AE50CFEC1DBE5D9900278F23 /* RawRepresentableTests.swift in Sources */,
