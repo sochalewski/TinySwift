@@ -20,6 +20,7 @@ class UIColorTests: XCTestCase {
         XCTAssert(UIColor(hex: "000000", alpha: 1.0) == black, "Six signs hex without hash should return proper color")
         XCTAssert(UIColor(hex: "#000000ff") == black, "Eight signs hex without hash should return proper color")
         XCTAssertNil(UIColor(hex: "#MKL666"), "Wrong hex should return nil")
+        XCTAssertNil(UIColor(hex: "#0000000000"), "Wrong hex code length should return nil")
     }
     
     func testHex() {

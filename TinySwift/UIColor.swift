@@ -60,8 +60,7 @@ public extension UIColor {
             green = CGFloat((hexInt & 0x00FF0000) >> 16) / divisor
             blue = CGFloat((hexInt & 0x0000FF00) >> 8) / divisor
             alphaChannel = CGFloat(hexInt & 0x000000FF) / divisor
-        default:
-            ()
+        default: ()
         }
         
         self.init(red: red, green: green, blue: blue, alpha: alphaChannel ?? alpha)
