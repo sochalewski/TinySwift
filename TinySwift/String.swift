@@ -155,13 +155,25 @@ public extension String {
         return (firstMatch?.range.location != NSNotFound && firstMatch?.url?.scheme == "mailto")
     }
     
-    ///  Returns a localized version of a string, using the main bundle.
+    /// Returns a localized version of a string, using the main bundle.
     public var localized: String {
         return NSLocalizedString(self, comment: "")
+    }
+    
+    /// Returns `nil` if `self` is empty, otherwise the value.
+    public var nilIfEmpty: String? {
+        return isEmpty ? nil : self
     }
     
     /// Returns the number of occurrences of a given case-sensitive string within the `String`.
     public func occurrences(of substring: String) -> Int {
         return components(separatedBy: substring).count - 1
+    }
+}
+
+public extension Optional where Wrapped == String {
+    /// Returns an empty string if `self` is `nil`, otherwise the valie.
+    public var emptyIfNil: String {
+        return self ?? ""
     }
 }
