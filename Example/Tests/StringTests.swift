@@ -123,4 +123,20 @@ class StringTests: XCTestCase {
         XCTAssert("WORD".localized == "TinySwift")
         XCTAssert(NSLocalizedString("WORD") == "WORD".localized)
     }
+    
+    func testEmptyIfNil() {
+        let string1: String? = "non-nil"
+        let string2: String? = nil
+        
+        XCTAssert(string1.emptyIfNil == "non-nil")
+        XCTAssert(string2.emptyIfNil == "")
+    }
+    
+    func testNilIfEmpty() {
+        let string1 = "non-empty"
+        let string2 = ""
+        
+        XCTAssert(string1.nilIfEmpty == "non-empty")
+        XCTAssertNil(string2.nilIfEmpty)
+    }
 }

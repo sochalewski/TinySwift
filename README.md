@@ -8,7 +8,7 @@
 
 ## Requirements
 
-Swift 4.0
+Swift 3.2/4.0
 
 iOS 8+, tvOS 9+, watchOS 2+
 
@@ -123,10 +123,12 @@ It contains the following functions and properties:
 * `init(random:length:nonRepeating:)` <sup>iOS, tvOS, watchOS</sup>
 * `var camelCased` <sup>iOS, tvOS, watchOS</sup>
 * `var dataFromHexadecimalString` <sup>iOS, tvOS, watchOS</sup>
+* `var emptyIfNil` <sup>iOS, tvOS, watchOS</sup>
 * `var initials` <sup>iOS, tvOS, watchOS</sup>
 * `var isEmailAddress` <sup>iOS, tvOS, watchOS</sup>
 * `var lines` <sup>iOS, tvOS, watchOS</sup>
 * `var localized` <sup>iOS, tvOS, watchOS</sup>
+* `var nilIfEmpty` <sup>iOS, tvOS, watchOS</sup>
 * `var nonEmptyLines` <sup>iOS, tvOS, watchOS</sup>
 * `var trimmed` <sup>iOS, tvOS, watchOS</sup>
 * `var upperCamelCased` <sup>iOS, tvOS, watchOS</sup>
