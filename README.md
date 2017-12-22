@@ -110,6 +110,7 @@ It contains the following functions and properties:
 #### Int
 
 * `init(random:)` <sup>iOS, tvOS, watchOS</sup>
+* `var random` <sup>iOS, tvOS, watchOS</sup>
 * `func times(execute:)` <sup>iOS, tvOS, watchOS</sup>
 
 ### RawRepresentable: Hashable

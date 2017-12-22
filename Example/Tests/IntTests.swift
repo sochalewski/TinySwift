@@ -84,10 +84,41 @@ class IntTests: XCTestCase {
     }
     
     func testRandom() {
-        var random = Int(random: -5..<6)
-        XCTAssertTrue(random >= -5 && random < 6)
-        random = Int(random: nil)
-        XCTAssertTrue(random >= Int(Int32.min) && random < Int(Int32.max))
+        (0...100).forEach { _ in
+            let random = Int.random
+            XCTAssert(random >= -INT32_MAX && random <= INT32_MAX)
+            XCTAssertNotEqual(random, Int.random)
+        }
+    }
+    
+    func testRandomUpperBound() {
+        (0...100).forEach { _ in
+            let random = Int(random: Int(INT32_MAX))
+            XCTAssert(random >= 0 && random <= INT32_MAX)
+            XCTAssertNotEqual(random, Int.random)
+        }
+        
+        let smallRandoms = (0...100).map { _ in Int(random: 2) }
+        XCTAssertFalse(smallRandoms.filter({ $0 == 0 }).isEmpty)
+        XCTAssertFalse(smallRandoms.filter({ $0 == 1 }).isEmpty)
+        XCTAssertTrue(smallRandoms.filter({ !($0 == 0 || $0 == 1) }).isEmpty)
+    }
+    
+    func testRandomRange() {
+        /// Positive values
+        let positiveRandom = Int(random: 1...1_000_000)
+        XCTAssert(positiveRandom >= 1 && positiveRandom <= 1_000_000)
+        XCTAssertNotEqual(positiveRandom, Int(random: 1_000_001...2_000_000))
+        
+        /// Negative values
+        let negativeRandom = Int(random: (-5)...(-3))
+        XCTAssert(negativeRandom >= -5 && negativeRandom <= -3)
+        
+        /// Small values
+        let smallRandoms = (0...100).map { _ in Int(random: 0...1) }
+        XCTAssertFalse(smallRandoms.filter({ $0 == 0 }).isEmpty)
+        XCTAssertFalse(smallRandoms.filter({ $0 == 1 }).isEmpty)
+        XCTAssertTrue(smallRandoms.filter({ !($0 == 0 || $0 == 1) }).isEmpty)
     }
     
     func testTimeIntervals() {
@@ -101,8 +132,8 @@ class IntTests: XCTestCase {
     
     func testAngles() {
         let fiveDegToRad = five.degreesToRadians
-        XCTAssert(0.08..<0.09 ~= fiveDegToRad) // 5 deg = ~0.087 radians
+        XCTAssertEqual(fiveDegToRad, 0.087, accuracy: 0.001)
         XCTAssert(fiveDegToRad.radiansToDegrees == Double(five))
-        XCTAssert(286..<287 ~= five.radiansToDegrees) // 5 radians = ~286.5 deg
+        XCTAssertEqual(five.radiansToDegrees, 286.478, accuracy: 0.01)
     }
 }
