@@ -7,6 +7,9 @@
 //
 
 import Foundation
+#if !os(watchOS)
+    import GameplayKit
+#endif
 
 public extension BinaryInteger {
     /**
@@ -92,31 +95,60 @@ public extension BinaryInteger {
     }
 }
 
-public extension SignedInteger {
-    /// Returns the opposite number.
-    public var additiveInverse: Self {
-        return self * -1
-    }
-}
-
 public extension Int {
-    /**
-     Generates and returns a random integer value.
-     
-     - parameter range: A half-open interval over a comparable type, from a lower bound up to, but not including, an upper bound. You create Range instances by using the half-open range operator (`..<`). You may specify `nil` for this parameter if you want randomized value in the range of `-2^31` to `2^31`.
-     - returns: A signed randomized integer value type.
-     */
-    public init(random range: Range<Int>? = nil) {
-        if let range = range {
-            self = Int(arc4random_uniform(UInt32(range.upperBound - range.lowerBound))) + range.lowerBound
+    /// Generates and returns a new random integer value in the range `[INT32_MIN, INT32_MAX]`.
+    public static var random: Int {
+        if #available(iOS 9.0, *) {
+            #if !os(watchOS)
+                return GKRandomSource.sharedRandom().nextInt()
+            #else
+                return Int(arc4random()) - Int(INT32_MAX)
+            #endif
         } else {
-            self = Int(arc4random()) + Int(Int32.min)
+            return Int(arc4random()) - Int(INT32_MAX)
         }
     }
     
     /**
-     Submits a block object for execution number or times defined by the value.
+     Generates and returns a new random integer less than the specified limit.
+     - parameter upperBound: A limit on the values of random numbers to generate.
+     - returns: A new random integer greater than or equal to zero and less than the value of the `upperBound` parameter.
+     */
+    public init(random upperBound: Int) {
+        if #available(iOS 9.0, *) {
+            #if !os(watchOS)
+                self = GKRandomSource.sharedRandom().nextInt(upperBound: upperBound)
+            #else
+                self = Int(arc4random_uniform(UInt32(upperBound)))
+            #endif
+        } else {
+            self = Int(arc4random_uniform(UInt32(upperBound)))
+        }
+    }
+    
+    /**
+     Generates and returns a new random integer greater than or equal to the lower limit and less than the upper limit.
 
+     - parameter range: A half-open interval over a comparable type, from a lower bound up to, but not including, an upper bound.
+     - returns: A new random integer value in the given range.
+     */
+    public init(random range: Range<Int>) {
+        self = range.lowerBound + Int(arc4random_uniform(UInt32(range.upperBound - range.lowerBound)))
+    }
+    
+    /**
+     Generates and returns a new random integer greater than or equal to the lower limit and less than or equal to the upper limit.
+     
+     - parameter range: An interval over a comparable type, from a lower bound up to, and including, an upper bound.
+     - returns: A new random integer value in the given range.
+     */
+    public init(random range: ClosedRange<Int>) {
+        self = range.lowerBound + Int(arc4random_uniform(UInt32(range.upperBound - range.lowerBound) + 1))
+    }
+    
+    /**
+     Submits a block object for execution number or times defined by the value.
+     
      - parameter block: The block to be invoked at least once. This parameter cannot be `NULL`.
      */
     public func times(execute block: @escaping () -> Void) {
