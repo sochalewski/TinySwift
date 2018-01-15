@@ -121,9 +121,9 @@ public extension String {
      
      Here’s an example of transforming a string to all camel case letters.
      
-     let variable = "Find way home"
-     print(variable.camelCased)
-     // Prints "findWayHome"
+         let variable = "Find way home"
+         print(variable.camelCased)
+         // Prints "findWayHome"
      */
     public var camelCased: String {
         guard let _ = rangeOfCharacter(from: .whitespacesAndNewlines) else { return lowercased() }
@@ -139,9 +139,9 @@ public extension String {
      
      Here’s an example of transforming a string to all upper camel case letters.
      
-     let variable = "find way home"
-     print(variable.camelCased)
-     // Prints "FindWayHome"
+         let variable = "find way home"
+         print(variable.camelCased)
+         // Prints "FindWayHome"
      */
     public var upperCamelCased: String {
         return capitalized.components(separatedBy: .whitespacesAndNewlines).joined()
