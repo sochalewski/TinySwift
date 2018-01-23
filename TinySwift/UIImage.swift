@@ -7,6 +7,9 @@
 //
 
 import UIKit
+#if !os(watchOS)
+import AVFoundation
+#endif
 
 public extension UIImage {
     
@@ -62,6 +65,26 @@ public extension UIImage {
     public func jpeg(quality: CGFloat = 1.0) -> Data? {
         return UIImageJPEGRepresentation(self, quality)
     }
+    
+    #if !os(watchOS)
+    /**
+     Returns the data for the image in HEIC format.
+     
+     - parameter quality: The quality of the resulting HEIC image, expressed as a value from 0.0 to 1.0. The value 0.0 represents the maximum compression (or lowest quality) while the value 1.0 represents the least compression (or best quality).
+     - returns: A data object containing the HEIC data, or `nil` if there was a problem generating the data. This function may return `nil` if the image has no data, if the underlying `CGImageRef` contains data in an unsupported bitmap format or if the function is executed on iOS simulator.
+     */
+    @available(iOS 11.0, tvOS 11.0, *)
+    public func heic(quality: CGFloat = 1.0) -> Data? {
+        let destinationData = NSMutableData()
+        guard let destination = CGImageDestinationCreateWithData(destinationData, AVFileType.heic as CFString, 1, nil), let cgImage = cgImage else { return nil }
+        
+        let options = [kCGImageDestinationLossyCompressionQuality: quality]
+        CGImageDestinationAddImage(destination, cgImage, options as CFDictionary)
+        CGImageDestinationFinalize(destination)
+        
+        return destinationData as Data
+    }
+    #endif
     
     /**
      Creates a bitmap image using the data contained within a subregion of an existing bitmap image.

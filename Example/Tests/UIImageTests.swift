@@ -12,7 +12,7 @@ import TinySwift
 
 class UIImageTests: XCTestCase {
     
-    private let image = UIImage(named: "land.jpg", in: Bundle(for: UIImageTests.self), compatibleWith: nil)
+    private let image = UIImage(named: "land.jpg", in: Bundle(for: UIImageTests.self), compatibleWith: nil)!
     
     func testColorInit() {
         let color = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
@@ -23,34 +23,47 @@ class UIImageTests: XCTestCase {
     }
     
     func testThumbnail() {
-        guard let thumbnail = image?.thumbnail else { XCTFail("Cannot generate thumbnail"); return }
+        guard let thumbnail = image.thumbnail else { XCTFail("Cannot generate thumbnail"); return }
         XCTAssert(thumbnail.size.width == 300.0 || thumbnail.size.height == 300.0, "Thumbnail's width or height should equal 300 px")
     }
     
+    func testPng() {
+        guard let _ = image.png else { XCTFail("Cannot generate compressed images"); return }
+    }
+    
     func testJpeg() {
-        guard let jpeg100 = image?.jpeg(), let jpeg40 = image?.jpeg(quality: 0.4), let _ = image?.png else { XCTFail("Cannot generate compressed images"); return }
+        guard let jpeg100 = image.jpeg(), let jpeg40 = image.jpeg(quality: 0.4) else { XCTFail("Cannot generate compressed images"); return }
         XCTAssert(jpeg100.count > jpeg40.count, "Stronger compression should correspond with smaller size")
     }
     
+    @available(iOS 11.0, tvOS 11.0, *)
+    func testHeic() {
+        // HEIC does not work on simulator, so early exit
+        guard UIDevice.current.device != .simulator else { return }
+        
+        guard let heic100 = image.heic(), let heic40 = image.heic(quality: 0.4) else { XCTFail("Cannot generate compressed images"); return }
+        XCTAssert(heic100.count > heic40.count, "Stronger compression should correspond with smaller size")
+    }
+    
     func testSquare() {
-        guard let square = image?.square else { XCTFail("Cannot generate square image"); return }
+        guard let square = image.square else { XCTFail("Cannot generate square image"); return }
         XCTAssert(square.size.height == square.size.width, "square() should return square image")
     }
     
     func testResize() {
-        guard let resized = image?.resize(to: CGSize(width: 100.0, height: 100.0)) else { XCTFail("Cannot generate resized image"); return }
+        guard let resized = image.resize(to: CGSize(width: 100.0, height: 100.0)) else { XCTFail("Cannot generate resized image"); return }
         XCTAssert(resized.size.width == 100.0 || resized.size.height == 100.0, "Resized image has wrong size")
     }
     
     func testBorderAndColorAtPoint() {
         let whiteColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0) // .white is UIExtendedGrayColorSpace and cannot be compared with UIImage.color(atPoint:) returning UIExtendedSRGBColorSpace
         
-        guard let bordered = image?.border(width: 2.0, color: whiteColor) else { XCTFail("Cannot generate bordered image"); return }
+        guard let bordered = image.border(width: 2.0, color: whiteColor) else { XCTFail("Cannot generate bordered image"); return }
         guard let borderedColorAtZeroZero = bordered.color(at: CGPoint(x: 0.0, y: 0.0)) else { XCTFail("Cannot get color at point"); return }
         XCTAssert(borderedColorAtZeroZero == whiteColor, "Border has wrong color/width OR color(atPoint:) returns wrong value")
     }
     
     func testGrayscale() {
-        XCTAssertNotNil(image?.grayscale, "Cannot generate grayscale image")
+        XCTAssertNotNil(image.grayscale, "Cannot generate grayscale image")
     }
 }
