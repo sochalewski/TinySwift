@@ -161,6 +161,7 @@ It contains the following functions and properties:
 * `func border(width:color:)` <sup>iOS, tvOS, watchOS</sup>
 * `func color(at:)` <sup>iOS, tvOS, watchOS</sup>
 * `func crop(to:)` <sup>iOS, tvOS, watchOS</sup>
+* `func heic(quality:)` <sup>iOS, tvOS</sup>
 * `func jpeg(quality:)` <sup>iOS, tvOS, watchOS</sup>
 * `func resize(to:)` <sup>iOS, tvOS, watchOS</sup>
 
