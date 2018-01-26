@@ -131,7 +131,8 @@ public extension UIImage {
      */
     public func resize(to size: CGSize) -> UIImage? {
         guard let cgImage = cgImage else { return nil }
-
+        guard min(self.size.width, self.size.height) > 0.0 else { return nil }
+        
         let horizontalRatio = size.width / self.size.width
         let verticalRatio = size.height / self.size.height
         let ratio = min(horizontalRatio, verticalRatio)
@@ -159,6 +160,7 @@ public extension UIImage {
      */
     public func resize(to shorterSide: CGFloat) -> UIImage? {
         let currentShorterSide = min(self.size.height, self.size.width)
+        guard currentShorterSide > 0.0 else { return nil }
         let scale = shorterSide / currentShorterSide
         let size = self.size.applying(CGAffineTransform(scaleX: scale, y: scale))
         
