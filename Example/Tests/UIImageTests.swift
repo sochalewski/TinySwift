@@ -50,9 +50,15 @@ class UIImageTests: XCTestCase {
         XCTAssert(square.size.height == square.size.width, "square() should return square image")
     }
     
-    func testResize() {
+    func testResizeToSize() {
         guard let resized = image.resize(to: CGSize(width: 100.0, height: 100.0)) else { XCTFail("Cannot generate resized image"); return }
         XCTAssert(resized.size.width == 100.0 || resized.size.height == 100.0, "Resized image has wrong size")
+    }
+    
+    func testResizeToShorterSide() {
+        guard let resized = image.resize(to: 100.0) else { XCTFail("Cannot generate resized image"); return }
+        XCTAssert(min(resized.size.width, resized.size.height) == 100.0, "Resized image has wrong length of shorter side")
+        XCTAssertEqual(max(resized.size.width, resized.size.height), 150.0, accuracy: 1.0, "Resized image has wrong length of longer side")
     }
     
     func testBorderAndColorAtPoint() {

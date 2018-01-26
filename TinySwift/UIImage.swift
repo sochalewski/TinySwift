@@ -152,6 +152,20 @@ public extension UIImage {
     }
     
     /**
+     Returns a resized non-stretched copy of the image.
+     
+     - parameter shorterSide: The desired shorter side length of the image.
+     - returns: A resized non-stretched UIImage object.
+     */
+    public func resize(to shorterSide: CGFloat) -> UIImage? {
+        let currentShorterSide = min(self.size.height, self.size.width)
+        let scale = shorterSide / currentShorterSide
+        let size = self.size.applying(CGAffineTransform(scaleX: scale, y: scale))
+        
+        return resize(to: size)
+    }
+    
+    /**
      Returns a copy of the image with a border.
      
      - parameter borderWidth: The desired width of the border.
