@@ -12,6 +12,7 @@
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
+		A5E8D469204D195BAA3F8757 /* Pods_TinySwift_iOS_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EBBEA1B0A6F678A600407FE /* Pods_TinySwift_iOS_Example.framework */; };
 		AE16F9C41E4E788900986870 /* CGAffineTransformTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE16F9C31E4E788900986870 /* CGAffineTransformTests.swift */; };
 		AE1D6B1E1DB804EE005BEEB7 /* UIViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1D6B1D1DB804EE005BEEB7 /* UIViewTests.swift */; };
 		AE1D6B211DB8054A005BEEB7 /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE1D6B201DB8054A005BEEB7 /* View.xib */; };
@@ -37,6 +38,7 @@
 		AED205DA1DDCFCE2001C7C7C /* DictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED205D91DDCFCE2001C7C7C /* DictionaryTests.swift */; };
 		AEF63C451DF234E1004B1980 /* BoolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF63C441DF234E1004B1980 /* BoolTests.swift */; };
 		C26BC6DA20ECA70E5F7D0CE7 /* Pods_TinySwift_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B4D15F9A03F907B504915B9 /* Pods_TinySwift_Example.framework */; };
+		CD75BB1DD18B27B882541C8F /* Pods_TinySwift_iOS_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E23BA4AB005240521370E4A4 /* Pods_TinySwift_iOS_Tests.framework */; };
 		F7790282FAE5CDF43B0D80FC /* Pods_TinySwift_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4DFA9BA4CF4C4571AA077E0 /* Pods_TinySwift_Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +55,8 @@
 /* Begin PBXFileReference section */
 		04B1C5DBCC19A57599C446B3 /* TinySwift.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = TinySwift.podspec; path = ../TinySwift.podspec; sourceTree = "<group>"; };
 		0E0B6E344ACAF1ACEE324239 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		0F83F84DA93C4C19EFDFF089 /* Pods-TinySwift-iOS_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinySwift-iOS_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TinySwift-iOS_Tests/Pods-TinySwift-iOS_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		1EBBEA1B0A6F678A600407FE /* Pods_TinySwift_iOS_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TinySwift_iOS_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD01AFB9204008FA782 /* TinySwift_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinySwift_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +69,8 @@
 		63C15F6D28CE979B0D7F926F /* Pods-TinySwift_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinySwift_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TinySwift_Tests/Pods-TinySwift_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		7B4D15F9A03F907B504915B9 /* Pods_TinySwift_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TinySwift_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D0F01B335284780D8AAF807 /* Pods-TinySwift_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinySwift_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TinySwift_Tests/Pods-TinySwift_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		8497FB45F8BD03ACD816AEA7 /* Pods-TinySwift-iOS_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinySwift-iOS_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TinySwift-iOS_Tests/Pods-TinySwift-iOS_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		8C0D9E04A8A48CE56342E9B8 /* Pods-TinySwift-iOS_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinySwift-iOS_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TinySwift-iOS_Example/Pods-TinySwift-iOS_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		8F1CDCC193DE9E72185A1D24 /* Pods-TinySwift_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinySwift_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TinySwift_Example/Pods-TinySwift_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		9EDF9AE1067EC86D0C92A727 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		AE16F9C31E4E788900986870 /* CGAffineTransformTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGAffineTransformTests.swift; sourceTree = "<group>"; };
@@ -92,7 +98,9 @@
 		AECF6F961FB063CA0097F077 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		AED205D91DDCFCE2001C7C7C /* DictionaryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryTests.swift; sourceTree = "<group>"; };
 		AEF63C441DF234E1004B1980 /* BoolTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoolTests.swift; sourceTree = "<group>"; };
+		D83AB5A1D99BF5D55D8E3A9A /* Pods-TinySwift-iOS_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinySwift-iOS_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-TinySwift-iOS_Example/Pods-TinySwift-iOS_Example.release.xcconfig"; sourceTree = "<group>"; };
 		E00170ABCD2C04DE8432ECDF /* Pods-TinySwift_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinySwift_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-TinySwift_Example/Pods-TinySwift_Example.release.xcconfig"; sourceTree = "<group>"; };
+		E23BA4AB005240521370E4A4 /* Pods_TinySwift_iOS_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TinySwift_iOS_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4DFA9BA4CF4C4571AA077E0 /* Pods_TinySwift_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TinySwift_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -102,6 +110,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C26BC6DA20ECA70E5F7D0CE7 /* Pods_TinySwift_Example.framework in Frameworks */,
+				A5E8D469204D195BAA3F8757 /* Pods_TinySwift_iOS_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +119,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7790282FAE5CDF43B0D80FC /* Pods_TinySwift_Tests.framework in Frameworks */,
+				CD75BB1DD18B27B882541C8F /* Pods_TinySwift_iOS_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,6 +132,8 @@
 				AEC35CB61DA60E2A00974A52 /* TinySwift.framework */,
 				7B4D15F9A03F907B504915B9 /* Pods_TinySwift_Example.framework */,
 				E4DFA9BA4CF4C4571AA077E0 /* Pods_TinySwift_Tests.framework */,
+				1EBBEA1B0A6F678A600407FE /* Pods_TinySwift_iOS_Example.framework */,
+				E23BA4AB005240521370E4A4 /* Pods_TinySwift_iOS_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -226,6 +238,10 @@
 				E00170ABCD2C04DE8432ECDF /* Pods-TinySwift_Example.release.xcconfig */,
 				7D0F01B335284780D8AAF807 /* Pods-TinySwift_Tests.debug.xcconfig */,
 				63C15F6D28CE979B0D7F926F /* Pods-TinySwift_Tests.release.xcconfig */,
+				8C0D9E04A8A48CE56342E9B8 /* Pods-TinySwift-iOS_Example.debug.xcconfig */,
+				D83AB5A1D99BF5D55D8E3A9A /* Pods-TinySwift-iOS_Example.release.xcconfig */,
+				0F83F84DA93C4C19EFDFF089 /* Pods-TinySwift-iOS_Tests.debug.xcconfig */,
+				8497FB45F8BD03ACD816AEA7 /* Pods-TinySwift-iOS_Tests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -627,10 +643,9 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = TinySwift/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "pl.sochalewski.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -645,10 +660,9 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = TinySwift/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "pl.sochalewski.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

@@ -24,7 +24,7 @@ fileprivate extension Array where Element: ExpressibleByNilLiteral {
 }
 
 public extension Array {
-    fileprivate var isOptionalAllowed: Bool {
+    private var isOptionalAllowed: Bool {
         return String(describing: Element.self).hasPrefix("Optional<") // ugh
     }
     
@@ -59,13 +59,13 @@ public extension Array {
     
     #if !os(watchOS)
     /// Shuffles the objects in the collection. The objects in the collection are shuffled based on a Fisher-Yates shuffle.
-    @available(iOS 9.0, tvOS 9.0, *)
+    @available(iOS 9.0, tvOS 9.0, macOS 10.11, *)
     public mutating func shuffle() {
         self = GKARC4RandomSource.sharedRandom().arrayByShufflingObjects(in: self) as! [Element]
     }
     
     /// Returns a shuffled instance of the collection. The objects in the collection are shuffled based on a Fisher-Yates shuffle.
-    @available(iOS 9.0, tvOS 9.0, *)
+    @available(iOS 9.0, tvOS 9.0, macOS 10.11, *)
     public var shuffled: [Element] {
         var copy = self
         copy.shuffle()

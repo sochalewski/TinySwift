@@ -10,7 +10,7 @@
 
 Swift 3.2/4.0
 
-iOS 8+, tvOS 9+, watchOS 2+
+iOS 8+, tvOS 9+, watchOS 2+, macOS 10.9+
 
 ## Installation
 
@@ -33,111 +33,111 @@ It contains the following functions and properties:
 
 ### Bool
 
-* `init(_: Integer)` <sup>iOS, tvOS, watchOS</sup>
-* `static var random` <sup>iOS, tvOS, watchOS</sup>
-* `func toggle()` <sup>iOS, tvOS, watchOS</sup>
+* `init(_: Integer)` <sup>iOS, tvOS, watchOS, macOS</sup>
+* `static var random` <sup>iOS, tvOS, watchOS, macOS</sup>
+* `func toggle()` <sup>iOS, tvOS, watchOS, macOS</sup>
 
 ### CGAffineTransform
 
-* `var rotationAngle` <sup>iOS, tvOS, watchOS</sup>
-* `var scaleX` <sup>iOS, tvOS, watchOS</sup>
-* `var scaleY` <sup>iOS, tvOS, watchOS</sup>
+* `var rotationAngle` <sup>iOS, tvOS, watchOS, macOS</sup>
+* `var scaleX` <sup>iOS, tvOS, watchOS, macOS</sup>
+* `var scaleY` <sup>iOS, tvOS, watchOS, macOS</sup>
 
 ### Collection
 
-* `var random` <sup>iOS, tvOS, watchOS</sup>
+* `var random` <sup>iOS, tvOS, watchOS, macOS</sup>
 
 #### Array
 
-* `subscript(safe:)` <sup>iOS, tvOS, watchOS</sup>
-* `var shuffled` <sup>iOS, tvOS</sup>
-* `func remove(element:)` <sup>iOS, tvOS, watchOS</sup>
-* `func shuffle()` <sup>iOS, tvOS</sup>
+* `subscript(safe:)` <sup>iOS, tvOS, watchOS, macOS</sup>
+* `var shuffled` <sup>iOS, tvOS, macOS</sup>
+* `func remove(element:)` <sup>iOS, tvOS, watchOS, macOS</sup>
+* `func shuffle()` <sup>iOS, tvOS, macOS</sup>
 
 #### RandomAccessCollection
 
-* `var appearances` <sup>iOS, tvOS, watchOS</sup>
-* `var arithmeticMean` <sup>iOS, tvOS, watchOS</sup>
-* `var areAllElementsEqual` <sup>iOS, tvOS, watchOS</sup>
-* `var geometricMean` <sup>iOS, tvOS, watchOS</sup>
-* `var median` <sup>iOS, tvOS, watchOS</sup>
-* `var mode` <sup>iOS, tvOS, watchOS</sup>
-* `var set` <sup>iOS, tvOS, watchOS</sup>
-* `var standardDeviation` <sup>iOS, tvOS, watchOS</sup>
-* `var sum` <sup>iOS, tvOS, watchOS</sup>
-* `var variance` <sup>iOS, tvOS, watchOS</sup>
+* `var appearances` <sup>iOS, tvOS, watchOS, macOS</sup>
+* `var arithmeticMean` <sup>iOS, tvOS, watchOS, macOS</sup>
+* `var areAllElementsEqual` <sup>iOS, tvOS, watchOS, macOS</sup>
+* `var geometricMean` <sup>iOS, tvOS, watchOS, macOS</sup>
+* `var median` <sup>iOS, tvOS, watchOS, macOS</sup>
+* `var mode` <sup>iOS, tvOS, watchOS, macOS</sup>
+* `var set` <sup>iOS, tvOS, watchOS, macOS</sup>
+* `var standardDeviation` <sup>iOS, tvOS, watchOS, macOS</sup>
+* `var sum` <sup>iOS, tvOS, watchOS, macOS</sup>
+* `var variance` <sup>iOS, tvOS, watchOS, macOS</sup>
 
 ### Data
 
-* `init(hexadecimalString:)` <sup>iOS, tvOS, watchOS</sup>
-* `var hexadecimalString` <sup>iOS, tvOS, watchOS</sup>
+* `init(hexadecimalString:)` <sup>iOS, tvOS, watchOS, macOS</sup>
+* `var hexadecimalString` <sup>iOS, tvOS, watchOS, macOS</sup>
 
 ### Date
 
-* `var day` <sup>iOS, tvOS, watchOS</sup>
-* `var firstOfMonth` <sup>iOS, tvOS, watchOS</sup>
-* `var firstOfYear` <sup>iOS, tvOS, watchOS</sup>
-* `var lastOfMonth` <sup>iOS, tvOS, watchOS</sup>
-* `var lastOfYear` <sup>iOS, tvOS, watchOS</sup>
-* `var month` <sup>iOS, tvOS, watchOS</sup>
-* `var nextDay` <sup>iOS, tvOS, watchOS</sup>
-* `var previousDay` <sup>iOS, tvOS, watchOS</sup>
-* `var weekday` <sup>iOS, tvOS, watchOS</sup>
-* `var year` <sup>iOS, tvOS, watchOS</sup>
+* `var day` <sup>iOS, tvOS, watchOS, macOS</sup>
+* `var firstOfMonth` <sup>iOS, tvOS, watchOS, macOS</sup>
+* `var firstOfYear` <sup>iOS, tvOS, watchOS, macOS</sup>
+* `var lastOfMonth` <sup>iOS, tvOS, watchOS, macOS</sup>
+* `var lastOfYear` <sup>iOS, tvOS, watchOS, macOS</sup>
+* `var month` <sup>iOS, tvOS, watchOS, macOS</sup>
+* `var nextDay` <sup>iOS, tvOS, watchOS, macOS</sup>
+* `var previousDay` <sup>iOS, tvOS, watchOS, macOS</sup>
+* `var weekday` <sup>iOS, tvOS, watchOS, macOS</sup>
+* `var year` <sup>iOS, tvOS, watchOS, macOS</sup>
 
 ### FloatingPoint
 
-* `var additiveInverse` <sup>iOS, tvOS, watchOS</sup>
-* `var degreesToRadians` <sup>iOS, tvOS, watchOS</sup>
-* `var multiplicativeInverse` <sup>iOS, tvOS, watchOS</sup>
-* `var radiansToDegrees` <sup>iOS, tvOS, watchOS</sup>
+* `var additiveInverse` <sup>iOS, tvOS, watchOS, macOS</sup>
+* `var degreesToRadians` <sup>iOS, tvOS, watchOS, macOS</sup>
+* `var multiplicativeInverse` <sup>iOS, tvOS, watchOS, macOS</sup>
+* `var radiansToDegrees` <sup>iOS, tvOS, watchOS, macOS</sup>
 
 ### Integer
 
-* `var additiveInverse` <sup>iOS, tvOS, watchOS</sup>
-* `var days` <sup>iOS, tvOS, watchOS</sup>
-* `var degreesToRadians` <sup>iOS, tvOS, watchOS</sup>
-* `var factorial` <sup>iOS, tvOS, watchOS</sup>
-* `var hours` <sup>iOS, tvOS, watchOS</sup>
-* `var isEven` <sup>iOS, tvOS, watchOS</sup>
-* `var isOdd` <sup>iOS, tvOS, watchOS</sup>
-* `var isPrime` <sup>iOS, tvOS, watchOS</sup>
-* `var minutes` <sup>iOS, tvOS, watchOS</sup>
-* `var multiplicativeInverse` <sup>iOS, tvOS, watchOS</sup>
-* `var radiansToDegrees` <sup>iOS, tvOS, watchOS</sup>
-* `var seconds` <sup>iOS, tvOS, watchOS</sup>
+* `var additiveInverse` <sup>iOS, tvOS, watchOS, macOS</sup>
+* `var days` <sup>iOS, tvOS, watchOS, macOS</sup>
+* `var degreesToRadians` <sup>iOS, tvOS, watchOS, macOS</sup>
+* `var factorial` <sup>iOS, tvOS, watchOS, macOS</sup>
+* `var hours` <sup>iOS, tvOS, watchOS, macOS</sup>
+* `var isEven` <sup>iOS, tvOS, watchOS, macOS</sup>
+* `var isOdd` <sup>iOS, tvOS, watchOS, macOS</sup>
+* `var isPrime` <sup>iOS, tvOS, watchOS, macOS</sup>
+* `var minutes` <sup>iOS, tvOS, watchOS, macOS</sup>
+* `var multiplicativeInverse` <sup>iOS, tvOS, watchOS, macOS</sup>
+* `var radiansToDegrees` <sup>iOS, tvOS, watchOS, macOS</sup>
+* `var seconds` <sup>iOS, tvOS, watchOS, macOS</sup>
 
 #### Int
 
-* `init(random:)` <sup>iOS, tvOS, watchOS</sup>
-* `var random` <sup>iOS, tvOS, watchOS</sup>
-* `func times(execute:)` <sup>iOS, tvOS, watchOS</sup>
+* `init(random:)` <sup>iOS, tvOS, watchOS, macOS</sup>
+* `var random` <sup>iOS, tvOS, watchOS, macOS</sup>
+* `func times(execute:)` <sup>iOS, tvOS, watchOS, macOS</sup>
 
 ### RawRepresentable: Hashable
 
-* `var all` <sup>iOS, tvOS, watchOS</sup>
-* `var sortedAll` <sup>iOS, tvOS, watchOS</sup>
+* `var all` <sup>iOS, tvOS, watchOS, macOS</sup>
+* `var sortedAll` <sup>iOS, tvOS, watchOS, macOS</sup>
 
 ### String
 
-* `init(path:)` <sup>iOS, tvOS, watchOS</sup>
-* `init(random:length:nonRepeating:)` <sup>iOS, tvOS, watchOS</sup>
-* `var camelCased` <sup>iOS, tvOS, watchOS</sup>
-* `var dataFromHexadecimalString` <sup>iOS, tvOS, watchOS</sup>
-* `var emptyIfNil` <sup>iOS, tvOS, watchOS</sup>
-* `var initials` <sup>iOS, tvOS, watchOS</sup>
-* `var isEmailAddress` <sup>iOS, tvOS, watchOS</sup>
-* `var lines` <sup>iOS, tvOS, watchOS</sup>
-* `var localized` <sup>iOS, tvOS, watchOS</sup>
-* `var nilIfEmpty` <sup>iOS, tvOS, watchOS</sup>
-* `var nonEmptyLines` <sup>iOS, tvOS, watchOS</sup>
-* `var trimmed` <sup>iOS, tvOS, watchOS</sup>
-* `var upperCamelCased` <sup>iOS, tvOS, watchOS</sup>
-* `func occurrences(of:)` <sup>iOS, tvOS, watchOS</sup>
+* `init(path:)` <sup>iOS, tvOS, watchOS, macOS</sup>
+* `init(random:length:nonRepeating:)` <sup>iOS, tvOS, watchOS, macOS</sup>
+* `var camelCased` <sup>iOS, tvOS, watchOS, macOS</sup>
+* `var dataFromHexadecimalString` <sup>iOS, tvOS, watchOS, macOS</sup>
+* `var emptyIfNil` <sup>iOS, tvOS, watchOS, macOS</sup>
+* `var initials` <sup>iOS, tvOS, watchOS, macOS</sup>
+* `var isEmailAddress` <sup>iOS, tvOS, watchOS, macOS</sup>
+* `var lines` <sup>iOS, tvOS, watchOS, macOS</sup>
+* `var localized` <sup>iOS, tvOS, watchOS, macOS</sup>
+* `var nilIfEmpty` <sup>iOS, tvOS, watchOS, macOS</sup>
+* `var nonEmptyLines` <sup>iOS, tvOS, watchOS, macOS</sup>
+* `var trimmed` <sup>iOS, tvOS, watchOS, macOS</sup>
+* `var upperCamelCased` <sup>iOS, tvOS, watchOS, macOS</sup>
+* `func occurrences(of:)` <sup>iOS, tvOS, watchOS, macOS</sup>
 
 ### TimeInterval
 
-* `func time(with:)` <sup>iOS, tvOS, watchOS</sup>
+* `func time(with:)` <sup>iOS, tvOS, watchOS, macOS</sup>
 
 ### UIColor
 

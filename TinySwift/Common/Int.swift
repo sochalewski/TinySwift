@@ -98,7 +98,7 @@ public extension BinaryInteger {
 public extension Int {
     /// Generates and returns a new random integer value in the range `[INT32_MIN, INT32_MAX]`.
     public static var random: Int {
-        if #available(iOS 9.0, *) {
+        if #available(iOS 9.0, macOS 10.11, *) {
             #if !os(watchOS)
                 return GKRandomSource.sharedRandom().nextInt()
             #else
@@ -115,7 +115,7 @@ public extension Int {
      - returns: A new random integer greater than or equal to zero and less than the value of the `upperBound` parameter.
      */
     public init(random upperBound: Int) {
-        if #available(iOS 9.0, *) {
+        if #available(iOS 9.0, macOS 10.11, *) {
             #if !os(watchOS)
                 self = GKRandomSource.sharedRandom().nextInt(upperBound: upperBound)
             #else

@@ -23,7 +23,7 @@ public extension Bool {
     /// Generates and returns a new random Boolean value.
     public static var random: Bool {
         #if !os(watchOS)
-        if #available(iOS 9.0, tvOS 9.0, *) {
+        if #available(iOS 9.0, tvOS 9.0, macOS 10.11, *) {
             return GKRandomSource.sharedRandom().nextBool()
         }
         #endif
