@@ -148,6 +148,8 @@ It contains the following functions and properties:
 
 * `var device` <sup>iOS, tvOS</sup>
 * `var deviceCode` <sup>iOS, tvOS</sup>
+* `var diskSize` <sup>iOS, tvOS</sup>
+* `var freeDiskSpace` <sup>iOS, tvOS</sup>
 
 ### UIImage
 

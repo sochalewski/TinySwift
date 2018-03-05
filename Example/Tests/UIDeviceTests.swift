@@ -83,4 +83,10 @@ class UIDeviceTests: XCTestCase {
             XCTAssert($0 < newerTV)
         }
     }
+    
+    func testDiskSpace() {
+        XCTAssert(UIDevice.current.freeDiskSpace > 0)
+        XCTAssert(UIDevice.current.diskSize > 0)
+        XCTAssert(UIDevice.current.diskSize > UIDevice.current.freeDiskSpace)
+    }
 }

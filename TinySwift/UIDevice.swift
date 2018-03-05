@@ -215,6 +215,22 @@
                 else { return .unknown }
             }
         }
+        
+        /// Returns the amount of free space on the file system in megabytes.
+        public var freeDiskSpace: Int64 {
+            if let attributes = try? FileManager.default.attributesOfFileSystem(forPath: NSHomeDirectory()) {
+                return (attributes[.systemFreeSize] as? Int64 ?? 0) / 1024 / 1024
+            }
+            return 0
+        }
+        
+        /// Returns the size of the file system in megabytes.
+        public var diskSize: Int64 {
+            if let attributes = try? FileManager.default.attributesOfFileSystem(forPath: NSHomeDirectory()) {
+                return (attributes[.systemSize] as? Int64 ?? 0) / 1024 / 1024
+            }
+            return 0
+        }
     }
 
 #endif
