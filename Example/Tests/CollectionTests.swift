@@ -48,10 +48,10 @@ class CollectionTests: XCTestCase {
         XCTAssert(fiveElements[safe: 2] == 5, "Elements should be able to change through the safe: subscript accessor")
         
         var fiveOptionalElements: [Int?] = Array(fiveElements)
-        XCTAssert(fiveOptionalElements.count == fiveOptionalElements.flatMap({ $0 }).count, "Pre-condition: fiveOptionalElements array should not have nils inside")
+        XCTAssert(fiveOptionalElements.count == fiveOptionalElements.compactMap({ $0 }).count, "Pre-condition: fiveOptionalElements array should not have nils inside")
         fiveOptionalElements[safe: 2] = nil
         XCTAssert(fiveOptionalElements[2] == nil, "Changed element should be nil")
-        XCTAssert(fiveOptionalElements.count - 1 == fiveOptionalElements.flatMap({ $0 }).count, "Changed array should have less not-nil elements")
+        XCTAssert(fiveOptionalElements.count - 1 == fiveOptionalElements.compactMap({ $0 }).count, "Changed array should have less not-nil elements")
         XCTAssert(fiveOptionalElements.count == fiveOptionalElements.count, "Changed array should have the same number of elements")
     }
     

@@ -169,7 +169,13 @@ public extension RandomAccessCollection where Iterator.Element: BinaryInteger {
     /// Returns the middle number in the collection, taken as the average of the two middle numbers when the collection has an even number of numbers.
     public var median: Double {
         guard !isEmpty else { return 0 }
-        let sort = sorted().flatMap { Int64($0) }
+        
+        #if swift(>=4.1)
+            let sort = sorted().compactMap { Int64($0) }
+        #else
+            let sort = sorted().flatMap { Int64($0) }
+        #endif
+        
         let count = Int(self.count)
         
         if count.isEven {
