@@ -18,10 +18,13 @@ class BoolTests: XCTestCase {
     }
     
     func testRandom() {
-        let randoms = (0..<20).flatMap { _ in Bool.random }
+        let randoms = (0..<20).compactMap { _ in Bool.random }
         XCTAssert(!randoms.areAllElementsEqual)
     }
     
+    #if swift(>=4.2)
+    // Since Swift 4.2 there is Swift.Bool.toggle()
+    #else
     func testToggle() {
         var bool = true
         
@@ -31,4 +34,5 @@ class BoolTests: XCTestCase {
         bool.toggle()
         XCTAssertTrue(bool)
     }
+    #endif
 }
