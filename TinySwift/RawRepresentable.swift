@@ -23,6 +23,10 @@ public extension RawRepresentable where Self: Hashable {
         }
     }
     
+    #if swift(>=4.2)
+    // Since Swift 4.2 there is CaseIterable.allCases
+    @available(*, deprecated, message: "Deprecated in favor of CaseIterable.allCases. Please make your enum conform to the CaseIterable protocol.")
+    #endif
     /// Returns an unordered collection of `RawRepresentable` conforming to `Hashable` cases or options.
     public static var all: Set<Self> {
         return Set(iterate())
@@ -30,6 +34,10 @@ public extension RawRepresentable where Self: Hashable {
 }
 
 public extension RawRepresentable where Self: Hashable, RawValue: Comparable {
+    #if swift(>=4.2)
+    // Since Swift 4.2 there is CaseIterable.allCases
+    @available(*, deprecated, message: "Deprecated in favor of CaseIterable.allCases. Please make your enum conform to the CaseIterable protocol.")
+    #endif
     /// Returns an ascendingly ordered collection of `RawRepresentable` conforming to `Hashable` cases and `RawValue` conforming to `Comparable`.
     public static var sortedAll: [Self] {
         return Array(iterate()).sorted { $0.rawValue < $1.rawValue }
