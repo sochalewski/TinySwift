@@ -52,8 +52,13 @@ public extension UIImage {
     }
     
     /// Returns the data for the image in PNG format.
+    @available(swift, deprecated: 4.2, message: "Deprecated in favor of UIImage.pngData().")
     public var png: Data? {
+        #if swift(>=4.2)
+        return pngData()
+        #else
         return UIImagePNGRepresentation(self)
+        #endif
     }
     
     /**
@@ -62,8 +67,13 @@ public extension UIImage {
      - parameter quality: The quality of the resulting JPEG image, expressed as a value from 0.0 to 1.0. The value 0.0 represents the maximum compression (or lowest quality) while the value 1.0 represents the least compression (or best quality).
      - returns: A data object containing the JPEG data, or `nil` if there was a problem generating the data. This function may return `nil` if the image has no data or if the underlying `CGImageRef` contains data in an unsupported bitmap format.
      */
+    @available(swift, deprecated: 4.2, message: "Deprecated in favor of UIImage.jpegData(compressionQuality:).")
     public func jpeg(quality: CGFloat = 1.0) -> Data? {
+        #if swift(>=4.2)
+        return jpegData(compressionQuality: quality)
+        #else
         return UIImageJPEGRepresentation(self, quality)
+        #endif
     }
     
     #if !os(watchOS)

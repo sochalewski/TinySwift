@@ -18,6 +18,10 @@
         /// The Apple Watch 42 mm case size.
         case watch42mm
     }
+
+    #if swift(>=4.2)
+    extension WatchDeviceType: CaseIterable {}
+    #endif
     
     public func <(lhs: WatchDeviceType, rhs: WatchDeviceType) -> Bool { return lhs.rawValue < rhs.rawValue }
 

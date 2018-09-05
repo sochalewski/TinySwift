@@ -11,10 +11,10 @@ import TinySwift
 
 class UIDeviceTests: XCTestCase {
     
-    private let allPhones = PhoneModel.all
+    private let allPhones = PhoneModel.allCases
     private let allPads: [PadModel] = [.unknown, .iPad1, .iPad2, .iPad3, .iPad4, .iPad5, .iPadAir, .iPadAir2, .iPadMini, .iPadMini2, .iPadMini3, .iPadMini4, .iPadPro(size: .inch7p9), .iPadPro(size: .inch9p7), .iPadPro(size: .inch12p9)]
-    private let allPods = PodModel.all
-    private let allTVs = TVModel.all
+    private let allPods = PodModel.allCases
+    private let allTVs = TVModel.allCases
     private lazy var allDevices: [DeviceType] = {
         let phones = allPhones.map { DeviceType.phone(model: $0) }
         let pads = allPads.map { DeviceType.pad(model: $0) }

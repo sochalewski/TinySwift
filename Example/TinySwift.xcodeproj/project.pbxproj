@@ -242,7 +242,6 @@
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
 				354CBCC0A6E9F8C98E359FD8 /* [CP] Embed Pods Frameworks */,
-				30BF76FFA3371292E447B47C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -261,8 +260,6 @@
 				607FACE11AFB9204008FA782 /* Sources */,
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
-				5441908344255615FC22E2C4 /* [CP] Embed Pods Frameworks */,
-				153ABF69609BAF0636226930 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -339,36 +336,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		153ABF69609BAF0636226930 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TinySwift_Tests/Pods-TinySwift_Tests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		30BF76FFA3371292E447B47C /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TinySwift_Example/Pods-TinySwift_Example-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		354CBCC0A6E9F8C98E359FD8 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -385,21 +352,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TinySwift_Example/Pods-TinySwift_Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5441908344255615FC22E2C4 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TinySwift_Tests/Pods-TinySwift_Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9E862BBCE67CE09356974109 /* [CP] Check Pods Manifest.lock */ = {
@@ -568,7 +520,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -616,7 +568,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
