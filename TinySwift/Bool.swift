@@ -31,9 +31,6 @@ public extension Bool {
         return arc4random_uniform(2) == 0
     }
     
-    #if swift(>=4.2)
-    // Since Swift 4.2 there is Swift.Bool.toggle()
-    #else
     /**
      Performs a logical NOT operation on a Boolean value.
      
@@ -44,8 +41,8 @@ public extension Bool {
          print(bool)
          // Prints false
      */
+    @available(swift, obsoleted: 4.2)
     public mutating func toggle() {
         self = !self
     }
-    #endif
 }

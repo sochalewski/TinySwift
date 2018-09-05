@@ -125,7 +125,13 @@
         /// The Apple TV 4K.
         case tv4k
     }
-    
+
+    #if swift(>=4.2)
+    extension PhoneModel: CaseIterable {}
+    extension PodModel: CaseIterable {}
+    extension TVModel: CaseIterable {}
+    #endif
+
     public func ==(lhs: DeviceType, rhs: DeviceType) -> Bool {
         switch (lhs, rhs) {
         case (.phone(let model1), .phone(let model2)): return model1 == model2
