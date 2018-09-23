@@ -113,11 +113,6 @@ It contains the following functions and properties:
 * `var random` <sup>iOS, tvOS, watchOS</sup>
 * `func times(execute:)` <sup>iOS, tvOS, watchOS</sup>
 
-### RawRepresentable: Hashable
-
-* `var all` <sup>iOS, tvOS, watchOS</sup>
-* `var sortedAll` <sup>iOS, tvOS, watchOS</sup>
-
 ### String
 
 * `init(path:)` <sup>iOS, tvOS, watchOS</sup>
@@ -192,8 +187,8 @@ It contains the following functions and properties:
 ### WKInterfaceDevice
 
 * `var device` <sup>iOS, watchOS</sup>
-* `var is38mm` <sup>iOS, watchOS</sup>
-* `var is42mm` <sup>iOS, watchOS</sup>
+* `var isSmaller` <sup>iOS, watchOS</sup>
+* `var isLarger` <sup>iOS, watchOS</sup>
 
 ## Author
 
