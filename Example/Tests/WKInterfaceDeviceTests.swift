@@ -11,7 +11,7 @@ import TinySwift
 
 class WKInterfaceDeviceTests: XCTestCase {
     
-    private let allTypes = WatchDeviceType.all
+    private let allTypes = WatchDeviceType.allCases
 
     func testEquatable() {
         allTypes.forEach {

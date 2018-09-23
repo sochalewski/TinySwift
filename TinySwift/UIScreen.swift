@@ -28,11 +28,17 @@ import UIKit
         case inch7p9
         /// The 9.7" screen size.
         case inch9p7
+        /// The 10.5" screen size.
+        case inch10p5
         /// The 12.9" screen size.
         case inch12p9
     }
 
     public func <(lhs: ScreenSize, rhs: ScreenSize) -> Bool { return lhs.rawValue < rhs.rawValue }
+
+    #if swift(>=4.2)
+    extension ScreenSize: CaseIterable {}
+    #endif
 
     public extension UIScreen {
         #if os(iOS)
@@ -53,6 +59,7 @@ import UIKit
                 default:
                     return .inch9p7
                 }
+            case 1112: return .inch10p5
             case 1366: return .inch12p9
             default: return .unknown
             }
