@@ -24,6 +24,10 @@ import UIKit
         case inch5p5
         /// The 5.8" screen size.
         case inch5p8
+		/// The 6.1" screen size.
+		case inch6p1
+		/// The 6.5" screen size.
+		case inch6p5
         /// The 7.9" screen size.
         case inch7p9
         /// The 9.7" screen size.
@@ -49,13 +53,16 @@ import UIKit
             switch height {
             case 480: return .inch3p5
             case 568: return .inch4
-            case 667: return .inch4p7
+			case 667: return scale == 3.0 ? .inch5p5 : .inch4p7
             case 736: return .inch5p5
             case 812: return .inch5p8
+			case 896: return scale == 3.0 ? .inch6p5 : .inch6p1
             case 1024:
                 switch UIDevice.current.device {
-                case .pad(model: .iPadMini), .pad(model: .iPadMini2), .pad(model: .iPadMini3), .pad(model: .iPadMini4):
+				case .pad(.iPadMini), .pad(.iPadMini2), .pad(.iPadMini3), .pad(.iPadMini4):
                     return .inch7p9
+				case .pad(.iPadPro(.inch10p5)), .pad(.iPadPro2(.inch10p5)):
+					return .inch10p5
                 default:
                     return .inch9p7
                 }

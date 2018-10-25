@@ -103,9 +103,9 @@
         /// The iPad mini 4.
         case iPadMini4
         /// The iPad Pro.
-        case iPadPro
+        case iPadPro(ScreenSize)
         /// The iPad Pro 2.
-        case iPadPro2
+        case iPadPro2(ScreenSize)
     }
 
     /// The iPod touch device type representation.
@@ -138,7 +138,6 @@
 
     #if swift(>=4.2)
     extension PhoneModel: CaseIterable {}
-    extension PadModel: CaseIterable {}
     extension PodModel: CaseIterable {}
     extension TVModel: CaseIterable {}
     #endif
@@ -203,9 +202,12 @@
             case "iPad4,4", "iPad4,5", "iPad4,6": return .pad(.iPadMini2)
             case "iPad4,7", "iPad4,8", "iPad4,9": return .pad(.iPadMini3)
             case "iPad5,1", "iPad5,2": return .pad(.iPadMini4)
-            case "iPad6,3", "iPad6,4", "iPad6,7", "iPad6,8": return .pad(.iPadPro)
+            case "iPad6,3", "iPad6,4": return .pad(.iPadPro(.inch9p7))
+			case "iPad6,7", "iPad6,8": return .pad(.iPadPro(.inch12p9))
+
             case "iPad6,11", "iPad6,12": return .pad(.iPad5)
-            case "iPad7,1", "iPad7,2", "iPad7,3", "iPad7,4": return .pad(.iPadPro2)
+            case "iPad7,1", "iPad7,2": return .pad(.iPadPro2(.inch12p9))
+			case "iPad7,3", "iPad7,4": return .pad(.iPadPro2(.inch10p5))
             case "iPad7,5", "iPad7,6": return .pad(.iPad6)
                 
             case "iPod1,1": return .pod(.touch1g)
