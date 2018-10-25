@@ -138,6 +138,16 @@
 
     #if swift(>=4.2)
     extension PhoneModel: CaseIterable {}
+	extension PadModel: CaseIterable {
+		public static var allCases: [PadModel] {
+			return [.unknown,
+					.iPad1, .iPad2, .iPad3, .iPad4, .iPad5, .iPad6,
+					.iPadAir, .iPadAir2,
+					.iPadMini, .iPadMini2, .iPadMini3, .iPadMini4,
+					.iPadPro(.inch9p7), .iPadPro(.inch12p9),
+					.iPadPro2(.inch10p5), .iPadPro2(.inch12p9)]
+		}
+	}
     extension PodModel: CaseIterable {}
     extension TVModel: CaseIterable {}
     #endif
