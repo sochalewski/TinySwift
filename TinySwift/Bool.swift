@@ -21,6 +21,7 @@ public extension Bool {
     }
     
     /// Generates and returns a new random Boolean value.
+    @available(swift, deprecated: 4.2, message: "Deprecated in favor of Bool.random().")
     public static var random: Bool {
         #if !os(watchOS)
         if #available(iOS 9.0, tvOS 9.0, *) {
