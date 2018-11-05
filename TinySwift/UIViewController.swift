@@ -11,7 +11,7 @@
 
     public extension UIViewController {
         /**
-         Presents an alert controller with "OK" button modally.
+         Presents an alert controller with a localized "OK" button modally.
          
          - parameter title: The title of the alert. Use this string to get the user’s attention and communicate the reason for the alert.
          - parameter message: Descriptive text that provides additional details about the reason for the alert.
@@ -20,7 +20,7 @@
          */
         public func presentAlertController(withTitle title: String?, message: String?, completion: (() -> Void)?, handler: ((UIAlertAction) -> Void)? = nil) {
             let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-            alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: handler))
+            alertController.addAction(UIAlertAction(title: "OK".localized, style: .default, handler: handler))
             present(alertController, animated: true, completion: completion)
         }
     }
