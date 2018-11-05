@@ -100,6 +100,7 @@ public extension RandomAccessCollection where Iterator.Element: Hashable {
 
 public extension Set {
     /// Returns a randomized element from the collection.
+    @available(swift, deprecated: 4.2, message: "Deprecated in favor of Collection.randomElement().")
     public var random: Iterator.Element? {
         return Array(self).random
     }
@@ -107,6 +108,7 @@ public extension Set {
 
 public extension RandomAccessCollection {
     /// Returns a randomized element from the collection.
+    @available(swift, deprecated: 4.2, message: "Deprecated in favor of Collection.randomElement().")
     public var random: Iterator.Element? {
         guard !isEmpty else { return nil }
         let offset = arc4random_uniform(numericCast(count))
@@ -120,7 +122,12 @@ public extension RandomAccessCollection where Iterator.Element: Hashable {
     /// A Boolean value that determines whether all elements of the collection are equal.
     public var areAllElementsEqual: Bool {
         guard !isEmpty else { return true }
-        return !Array(self).dropFirst().contains { $0 != first! }
+
+        #if swift(>=4.2)
+            return allSatisfy { $0 == first! }
+        #else
+            return !dropFirst().contains { $0 != first! }
+        #endif
     }
     
     /// Returns a dictionary with number of appearances for all elements of the collection.

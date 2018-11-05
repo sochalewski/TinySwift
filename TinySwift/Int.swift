@@ -97,6 +97,7 @@ public extension BinaryInteger {
 
 public extension Int {
     /// Generates and returns a new random integer value in the range `[INT32_MIN, INT32_MAX]`.
+    @available(swift, deprecated: 4.2, message: "Deprecated in favor of Int.random(in:).")
     public static var random: Int {
         if #available(iOS 9.0, *) {
             #if !os(watchOS)
@@ -114,6 +115,7 @@ public extension Int {
      - parameter upperBound: A limit on the values of random numbers to generate.
      - returns: A new random integer greater than or equal to zero and less than the value of the `upperBound` parameter.
      */
+    @available(swift, deprecated: 4.2, message: "Deprecated in favor of Int.random(in:).")
     public init(random upperBound: Int) {
         if #available(iOS 9.0, *) {
             #if !os(watchOS)
@@ -132,6 +134,7 @@ public extension Int {
      - parameter range: A half-open interval over a comparable type, from a lower bound up to, but not including, an upper bound.
      - returns: A new random integer value in the given range.
      */
+    @available(swift, deprecated: 4.2, message: "Deprecated in favor of Int.random(in:).")
     public init(random range: Range<Int>) {
         self = range.lowerBound + Int(arc4random_uniform(UInt32(range.upperBound - range.lowerBound)))
     }
@@ -142,6 +145,7 @@ public extension Int {
      - parameter range: An interval over a comparable type, from a lower bound up to, and including, an upper bound.
      - returns: A new random integer value in the given range.
      */
+    @available(swift, deprecated: 4.2, message: "Deprecated in favor of Int.random(in:).")
     public init(random range: ClosedRange<Int>) {
         self = range.lowerBound + Int(arc4random_uniform(UInt32(range.upperBound - range.lowerBound) + 1))
     }
