@@ -106,6 +106,8 @@
         case iPadPro(ScreenSize)
         /// The iPad Pro 2.
         case iPadPro2(ScreenSize)
+        /// The iPad Pro 3.
+        case iPadPro3(ScreenSize)
     }
 
     /// The iPod touch device type representation.
@@ -214,11 +216,12 @@
             case "iPad5,1", "iPad5,2": return .pad(.iPadMini4)
             case "iPad6,3", "iPad6,4": return .pad(.iPadPro(.inch9p7))
 			case "iPad6,7", "iPad6,8": return .pad(.iPadPro(.inch12p9))
-
             case "iPad6,11", "iPad6,12": return .pad(.iPad5)
             case "iPad7,1", "iPad7,2": return .pad(.iPadPro2(.inch12p9))
 			case "iPad7,3", "iPad7,4": return .pad(.iPadPro2(.inch10p5))
             case "iPad7,5", "iPad7,6": return .pad(.iPad6)
+            case "iPad8,1", "iPad8,2", "iPad8,3", "iPad8,4": return .pad(.iPadPro3(.inch11))
+            case "iPad8,5", "iPad8,6", "iPad8,7", "iPad8,8": return .pad(.iPadPro3(.inch12p9))
                 
             case "iPod1,1": return .pod(.touch1g)
             case "iPod2,1": return .pod(.touch2g)
