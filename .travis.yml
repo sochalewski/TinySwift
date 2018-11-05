@@ -10,7 +10,7 @@ before_install:
 script:
   - set -o pipefail
   - travis_retry xcodebuild test -workspace Example/TinySwift.xcworkspace -scheme TinySwift-Example -destination 'platform=iOS Simulator,name=iPhone 8' | xcpretty -c
-  - pod lib lint
+  - pod lib lint --allow-warnings
 after_success:
   - bash <(curl -s https://codecov.io/bash)
 notifications:
