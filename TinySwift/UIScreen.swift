@@ -34,6 +34,8 @@ import UIKit
         case inch9p7
         /// The 10.5" screen size.
         case inch10p5
+        /// The 11.0" screen size.
+        case inch11
         /// The 12.9" screen size.
         case inch12p9
     }
@@ -67,6 +69,7 @@ import UIKit
                     return .inch9p7
                 }
             case 1112: return .inch10p5
+            case 1194: return .inch11
             case 1366: return .inch12p9
             default: return .unknown
             }
