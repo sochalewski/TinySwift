@@ -20,7 +20,7 @@ public extension UIImageView {
      - parameter placeholder: The image to be set before sending the load request. If you pass `nil` then the current image would not be changed.
      - parameter completion: The completion handler to call when the load request is complete. This handler is executed on the main queue.
      */
-    public func setImage(from url: URL, placeholder placeholderImage: UIImage? = nil, completion: ((Bool) -> Void)? = nil) {
+    func setImage(from url: URL, placeholder placeholderImage: UIImage? = nil, completion: ((Bool) -> Void)? = nil) {
         if let placeholderImage = placeholderImage {
             image = placeholderImage
         }

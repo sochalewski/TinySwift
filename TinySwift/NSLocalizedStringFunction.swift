@@ -9,6 +9,6 @@
 import Foundation
 
 @available(*, deprecated, message: "Deprecated in favor of String.localized")
-public func NSLocalizedString(_ key: String) -> String {
+func NSLocalizedString(_ key: String) -> String {
     return NSLocalizedString(key, comment: "")
 }

@@ -31,7 +31,7 @@ class UIDeviceTests: XCTestCase {
     func testDeviceEquatable() {
         allDevices.forEach {
             XCTAssert($0 == $0)
-            XCTAssert($0 != allDevices[safe: allDevices.index(of: $0)!.advanced(by: 1)] ?? .unknown)
+            XCTAssert($0 != allDevices[safe: allDevices.firstIndex(of: $0)!.advanced(by: 1)] ?? .unknown)
         }
     }
     
@@ -52,7 +52,7 @@ class UIDeviceTests: XCTestCase {
     func testPadEquatable() {
         allPads.forEach {
             XCTAssert($0 == $0)
-            XCTAssert($0 != allPads[safe: allPads.index(of: $0)!.advanced(by: 1)] ?? .unknown)
+            XCTAssert($0 != allPads[safe: allPads.firstIndex(of: $0)!.advanced(by: 1)] ?? .unknown)
         }
     }
     

@@ -172,7 +172,7 @@
 
     public extension UIDevice {
         /// Returns a string containing the device code.
-        public var deviceCode: String {
+        var deviceCode: String {
             var systemInfo = utsname()
             uname(&systemInfo)
             
@@ -180,7 +180,7 @@
         }
         
         /// Returns the device type.
-        public var device: DeviceType {
+        var device: DeviceType {
             switch deviceCode {
             case "iPhone1,1": return .phone(.iPhone)
             case "iPhone1,2": return .phone(.iPhone3G)
@@ -245,7 +245,7 @@
         }
         
         /// Returns the amount of free space on the file system in megabytes.
-        public var freeDiskSpace: Int64 {
+        var freeDiskSpace: Int64 {
             if let attributes = try? FileManager.default.attributesOfFileSystem(forPath: NSHomeDirectory()) {
                 return (attributes[.systemFreeSize] as? Int64 ?? 0) / 1024 / 1024
             }
@@ -253,7 +253,7 @@
         }
         
         /// Returns the size of the file system in megabytes.
-        public var diskSize: Int64 {
+        var diskSize: Int64 {
             if let attributes = try? FileManager.default.attributesOfFileSystem(forPath: NSHomeDirectory()) {
                 return (attributes[.systemSize] as? Int64 ?? 0) / 1024 / 1024
             }

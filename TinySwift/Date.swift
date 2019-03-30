@@ -10,7 +10,7 @@ import Foundation
 
 public extension Date {
     /// The day of the date.
-    public var day: Int {
+    var day: Int {
         get {
             let calendar = Calendar.current
             let components = calendar.dateComponents([.day], from: self)
@@ -28,7 +28,7 @@ public extension Date {
     }
     
     /// The month of the date.
-    public var month: Int {
+    var month: Int {
         get {
             let calendar = Calendar.current
             let components = calendar.dateComponents([.month], from: self)
@@ -46,7 +46,7 @@ public extension Date {
     }
     
     /// The year of the date.
-    public var year: Int {
+    var year: Int {
         get {
             let calendar = Calendar.current
             let components = calendar.dateComponents([.year], from: self)
@@ -64,7 +64,7 @@ public extension Date {
     }
     
     /// Returns a new Date by setting this Date's day to first.
-    public var firstOfMonth: Date? {
+    var firstOfMonth: Date? {
         let calendar = Calendar.current
         let components = calendar.dateComponents([.year, .month], from: self)
         
@@ -72,7 +72,7 @@ public extension Date {
     }
     
     /// Returns a new Date by setting this Date's day to last.
-    public var lastOfMonth: Date? {
+    var lastOfMonth: Date? {
         guard let firstOfMonth = firstOfMonth else { return nil }
         
         var components = DateComponents()
@@ -83,7 +83,7 @@ public extension Date {
     }
     
     /// Returns a new Date by setting this Date's day and month to first.
-    public var firstOfYear: Date? {
+    var firstOfYear: Date? {
         let calendar = Calendar.current
         let components = calendar.dateComponents([.year], from: self)
         
@@ -91,7 +91,7 @@ public extension Date {
     }
     
     /// Returns a new Date by setting this Date's day and month to last.
-    public var lastOfYear: Date? {
+    var lastOfYear: Date? {
         guard let firstOfYear = firstOfYear else { return nil }
         
         var components = DateComponents()
@@ -102,7 +102,7 @@ public extension Date {
     }
     
     /// Returns a new Date with the day following this Date.
-    public var nextDay: Date? {
+    var nextDay: Date? {
         var components = DateComponents()
         components.day = 1
         
@@ -110,7 +110,7 @@ public extension Date {
     }
     
     /// Returns a new Date with the day preceding this Date.
-    public var previousDay: Date? {
+    var previousDay: Date? {
         var components = DateComponents()
         components.day = -1
         
@@ -122,7 +122,7 @@ public extension Date {
      
      - note: This value is interpreted in the context of the current calendar.
      */
-    public var weekday: Int? {
+    var weekday: Int? {
         let calendar = Calendar.current
         let components = calendar.dateComponents([.weekday], from: self)
         

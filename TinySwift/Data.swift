@@ -10,7 +10,7 @@ import Foundation
 
 public extension Data {
     /// Returns a hexadecimal encoded String.
-    public var hexadecimalString: String {
+    var hexadecimalString: String {
         return map { String(format: "%02x", $0) }.joined(separator: "")
     }
     
@@ -27,7 +27,7 @@ public extension Data {
      - note: If the string has any non-hexadecimal characters, those are ignored and only hexadecimal characters are processed.
      - returns: The data represented by the hexadecimal string or `nil` if a data cannot be created.
     */
-    public init?(hexadecimalString string: String) {
+    init?(hexadecimalString string: String) {
         var data = Data(capacity: string.count / 2)
         
         let regex = try? NSRegularExpression(pattern: "[0-9a-f]{1,2}", options: .caseInsensitive)

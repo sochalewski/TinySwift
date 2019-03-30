@@ -11,7 +11,7 @@ import Foundation
 public extension Dictionary {
     /// Returns a randomized key and value pair from the dictionary.
     @available(swift, deprecated: 4.2, message: "Deprecated in favor of Collection.randomElement().")
-    public var random: [Key : Value]? {
+    var random: [Key : Value]? {
         guard !isEmpty else { return nil }
         let index = Int(arc4random_uniform(UInt32(count)))
         

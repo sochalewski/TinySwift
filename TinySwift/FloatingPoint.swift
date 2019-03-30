@@ -10,12 +10,12 @@ import Foundation
 
 public extension FloatingPoint {
     /// Returns the opposite number.
-    public var additiveInverse: Self {
+    var additiveInverse: Self {
         return self * -1
     }
     
     /// Returns the value to the power of `-1`.
-    public var multiplicativeInverse: Self? {
+    var multiplicativeInverse: Self? {
         let zero: Self = 0
         guard self != zero else { return nil }
         
@@ -23,12 +23,12 @@ public extension FloatingPoint {
     }
     
     /// Converts an angle measured in degrees to radians.
-    public var degreesToRadians: Self {
+    var degreesToRadians: Self {
         return self * .pi / (180.0 as! Self)
     }
     
     /// Converts an angle measured in radians to degrees.
-    public var radiansToDegrees: Self {
+    var radiansToDegrees: Self {
         return self * (180.0 as! Self) / .pi
     }
 }

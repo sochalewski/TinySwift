@@ -32,17 +32,17 @@
     @available(iOS 8.2, watchOS 2.0, *)
     public extension WKInterfaceDevice {
         /// A Boolean value that determines whether the Apple watch case size equals 38 or 40 mm.
-        public var isSmaller: Bool {
+        var isSmaller: Bool {
             return device == .watch38mm || device == .watch40mm
         }
         
         /// A Boolean value that determines whether the Apple watch case size equals 42 or 44 mm.
-        public var isLarger: Bool {
+        var isLarger: Bool {
             return device == .watch42mm || device == .watch44mm
         }
         
         /// Returns a current Apple Watch device type based on a case size.
-        public var device: WatchDeviceType {
+        var device: WatchDeviceType {
             let watch38mm = CGRect(origin: .zero, size: CGSize(width: 136.0, height: 170.0))
             let watch40mm = CGRect(origin: .zero, size: CGSize(width: 162.0, height: 197.0))
             let watch42mm = CGRect(origin: .zero, size: CGSize(width: 156.0, height: 195.0))
