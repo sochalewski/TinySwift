@@ -30,7 +30,7 @@
                  }
              }
         */
-        public var viewFromNib: UIView? {
+        var viewFromNib: UIView? {
             let bundle = Bundle(for: type(of: self))
             let nib = UINib(nibName: String(describing: type(of: self)), bundle: bundle)
             let view = nib.instantiate(withOwner: self, options: nil).first as? UIView

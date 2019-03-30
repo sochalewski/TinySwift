@@ -16,13 +16,13 @@ public extension Bool {
      Creates an instance initialized to the specified integer value.
      - parameter integer: The integer value.
      */
-    public init<T: BinaryInteger>(_ integer: T) {
+    init<T: BinaryInteger>(_ integer: T) {
         self = integer != 0
     }
     
     /// Generates and returns a new random Boolean value.
     @available(swift, deprecated: 4.2, message: "Deprecated in favor of Bool.random().")
-    public static var random: Bool {
+    static var random: Bool {
         #if !os(watchOS)
         if #available(iOS 9.0, tvOS 9.0, *) {
             return GKRandomSource.sharedRandom().nextBool()
@@ -43,7 +43,7 @@ public extension Bool {
          // Prints false
      */
     @available(swift, obsoleted: 4.2)
-    public mutating func toggle() {
+    mutating func toggle() {
         self = !self
     }
 }

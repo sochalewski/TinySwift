@@ -10,7 +10,7 @@ import Foundation
 
 public extension String {
     /// The collection of Latin letters and Arabic digits or a text constructed from this collection.
-    public enum RandomString {
+    enum RandomString {
         /// The character set with 36 (`A-Z+0-9`, case insensitive) or 62 (`A-Z+a-z+0-9`, case-sensitive) alphanumeric characters.
         case alphanumeric(caseSensitive: Bool)
         /// The character set with 26 (`A-Z`, case insensitive) or 52 (`A-Z+a-z`, case-sensitive) Latin letters.
@@ -37,7 +37,7 @@ public extension String {
      - parameter nonRepeating: The boolean value that determines whether characters in the initialized can or cannot be repeated. The default value is `false`. If `true` and length is greater than number of characters in selected character set, then string with maximum allowed length will be produced.
      - returns: The new string with randomized characters.
      */
-    public init(random: RandomString, length: Int, nonRepeating: Bool = false) {
+    init(random: RandomString, length: Int, nonRepeating: Bool = false) {
         var letters = random.characterSet
         
         var length = length
@@ -66,7 +66,7 @@ public extension String {
      - note: The directory returned by this method may not exist. This method simply gives you the appropriate location for the requested directory. Depending on the application’s needs, it may be up to the developer to create the appropriate directory and any in between.
      - returns: The string with a path for the specified directories in the user's home directory or `nil` if a path cannot be found.
      */
-    public init?(path directory: FileManager.SearchPathDirectory) {
+    init?(path directory: FileManager.SearchPathDirectory) {
         guard let path = NSSearchPathForDirectoriesInDomains(directory, .userDomainMask, true).first else { return nil }
         self = path
     }
@@ -74,12 +74,12 @@ public extension String {
     /**
      Returns a new string made by removing from both ends of the String characters contained in Unicode General Category Z*, `U+000A ~ U+000D`, and `U+0085`.
      */
-    public var trimmed: String {
+    var trimmed: String {
         return trimmingCharacters(in: .whitespacesAndNewlines)
     }
     
     /// Returns a new string made by first letter of the each String word.
-    public var initials: String? {
+    var initials: String? {
         return components(separatedBy: .whitespacesAndNewlines)
             .filter { !$0.isEmpty }
             .map { $0[..<index(after: startIndex)] }
@@ -87,7 +87,7 @@ public extension String {
     }
     
     /// Returns an array of strings where elements are the String lines.
-    public var lines: [String] {
+    var lines: [String] {
         var result = [String]()
         enumerateLines { (line, _) in
             result.append(line)
@@ -97,12 +97,12 @@ public extension String {
     }
     
     /// Returns an array of strings where elements are the String non-empty lines.
-    public var nonEmptyLines: [String] {
+    var nonEmptyLines: [String] {
         return lines.filter { !$0.trimmed.isEmpty }
     }
     
     /// Returns a data created from the value treated as a hexadecimal string.
-    public var dataFromHexadecimalString: Data? {
+    var dataFromHexadecimalString: Data? {
         guard let regex = try? NSRegularExpression(pattern: "[0-9a-f]{1,2}", options: .caseInsensitive) else { return nil }
         
         var data = Data(capacity: count / 2)
@@ -125,7 +125,7 @@ public extension String {
          print(variable.camelCased)
          // Prints "findWayHome"
      */
-    public var camelCased: String {
+    var camelCased: String {
         guard let _ = rangeOfCharacter(from: .whitespacesAndNewlines) else { return lowercased() }
         
         let first = lowercased()[..<index(after: startIndex)]
@@ -143,12 +143,12 @@ public extension String {
          print(variable.camelCased)
          // Prints "FindWayHome"
      */
-    public var upperCamelCased: String {
+    var upperCamelCased: String {
         return capitalized.components(separatedBy: .whitespacesAndNewlines).joined()
     }
     
     /// Returns whether the value is a valid email address.
-    public var isEmailAddress: Bool {
+    var isEmailAddress: Bool {
         let dataDetector = try? NSDataDetector(types: NSTextCheckingResult.CheckingType.link.rawValue)
         let firstMatch = dataDetector?.firstMatch(in: self, options: .reportCompletion, range: NSRange(location: 0, length: count))
         
@@ -156,24 +156,24 @@ public extension String {
     }
     
     /// Returns a localized version of a string, using the main bundle.
-    public var localized: String {
+    var localized: String {
         return NSLocalizedString(self, comment: "")
     }
     
     /// Returns `nil` if `self` is empty, otherwise the value.
-    public var nilIfEmpty: String? {
+    var nilIfEmpty: String? {
         return isEmpty ? nil : self
     }
     
     /// Returns the number of occurrences of a given case-sensitive string within the `String`.
-    public func occurrences(of substring: String) -> Int {
+    func occurrences(of substring: String) -> Int {
         return components(separatedBy: substring).count - 1
     }
 }
 
 public extension Optional where Wrapped == String {
     /// Returns an empty string if `self` is `nil`, otherwise the valie.
-    public var emptyIfNil: String {
+    var emptyIfNil: String {
         return self ?? ""
     }
 }

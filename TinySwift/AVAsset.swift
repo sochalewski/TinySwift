@@ -11,7 +11,7 @@
 
     public extension AVAsset {
         /// Returns an image generated from the first frame of the given asset.
-        public var thumbnail: UIImage? {
+        var thumbnail: UIImage? {
             let thumbnailGenerator = AVAssetImageGenerator(asset: self)
             thumbnailGenerator.appliesPreferredTrackTransform = true
             var time = duration

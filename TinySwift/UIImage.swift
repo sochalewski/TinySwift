@@ -20,7 +20,7 @@ public extension UIImage {
      - parameter size: The size of the created image. When function requires `size` and is called without this parameter, then `(1.0, 1.0)` is used as a default value.
      - returns: An initialized `UIImage` object, or `nil` if the method could not initialize the image from the specified data.
      */
-    public convenience init?(color: UIColor, size: CGSize = CGSize(width: 1.0, height: 1.0)) {
+    convenience init?(color: UIColor, size: CGSize = CGSize(width: 1.0, height: 1.0)) {
         let rect = CGRect(origin: .zero, size: size)
         UIGraphicsBeginImageContext(size)
         guard let context = UIGraphicsGetCurrentContext() else { return nil }
@@ -35,12 +35,12 @@ public extension UIImage {
     }
     
     /// Returns the image scaled to maximum 300 × 300 resolution.
-    public var thumbnail: UIImage? {
+    var thumbnail: UIImage? {
         return resize(to: CGSize(width: 300.0, height: 300.0))
     }
     
     /// Returns the image with normalized orientation and scale.
-    public var normalizedImage: UIImage? {
+    var normalizedImage: UIImage? {
         guard imageOrientation != .up else { return self }
         
         UIGraphicsBeginImageContextWithOptions(size, false, scale)
@@ -53,7 +53,7 @@ public extension UIImage {
     
     /// Returns the data for the image in PNG format.
     @available(swift, deprecated: 4.2, message: "Deprecated in favor of UIImage.pngData().")
-    public var png: Data? {
+    var png: Data? {
         #if swift(>=4.2)
         return pngData()
         #else
@@ -68,7 +68,7 @@ public extension UIImage {
      - returns: A data object containing the JPEG data, or `nil` if there was a problem generating the data. This function may return `nil` if the image has no data or if the underlying `CGImageRef` contains data in an unsupported bitmap format.
      */
     @available(swift, deprecated: 4.2, message: "Deprecated in favor of UIImage.jpegData(compressionQuality:).")
-    public func jpeg(quality: CGFloat = 1.0) -> Data? {
+    func jpeg(quality: CGFloat = 1.0) -> Data? {
         #if swift(>=4.2)
         return jpegData(compressionQuality: quality)
         #else
@@ -84,7 +84,7 @@ public extension UIImage {
      - returns: A data object containing the HEIC data, or `nil` if there was a problem generating the data. This function may return `nil` if the image has no data, if the underlying `CGImageRef` contains data in an unsupported bitmap format or if the function is executed on iOS simulator.
      */
     @available(iOS 11.0, tvOS 11.0, *)
-    public func heic(quality: CGFloat = 1.0) -> Data? {
+    func heic(quality: CGFloat = 1.0) -> Data? {
         let destinationData = NSMutableData()
         guard let destination = CGImageDestinationCreateWithData(destinationData, AVFileType.heic as CFString, 1, nil), let cgImage = cgImage else { return nil }
         
@@ -102,13 +102,13 @@ public extension UIImage {
      - parameter bounds: A rectangle whose coordinates specify the area to create an image from.
      - returns: A UIImage object that specifies a subimage of the image. If the `rect` parameter defines an area that is not in the image, returns `nil`.
     */
-    public func crop(to bounds: CGRect) -> UIImage? {
+    func crop(to bounds: CGRect) -> UIImage? {
         guard let cgImage = normalizedImage?.cgImage, bounds.contains(bounds) else { return nil }
         return UIImage(cgImage: cgImage.cropping(to: bounds)!)
     }
     
     /// Returns a square bitmap image cropping the sides.
-    public var square: UIImage? {
+    var square: UIImage? {
         let size = CGSize(width: self.size.width * scale, height: self.size.height * scale)
         let shortest = min(size.width, size.height)
         let left: CGFloat = size.width > shortest ? (size.width - shortest) / 2.0 : 0.0
@@ -121,7 +121,7 @@ public extension UIImage {
     
     #if !os(watchOS)
     /// Returns a copy of the image converted to grayscale.
-    public var grayscale: UIImage? {
+    var grayscale: UIImage? {
         guard let ciImage = CIImage(image: self) else { return nil }
         #if swift(>=4.0)
         let grayscale = ciImage.applyingFilter("CIColorControls", parameters: [kCIInputSaturationKey : 0.0])
@@ -139,7 +139,7 @@ public extension UIImage {
      - parameter size: The desired size of the image.
      - returns: A resized non-stretched UIImage object.
      */
-    public func resize(to size: CGSize) -> UIImage? {
+    func resize(to size: CGSize) -> UIImage? {
         guard let cgImage = cgImage else { return nil }
         guard min(self.size.width, self.size.height) > 0.0 else { return nil }
         
@@ -168,7 +168,7 @@ public extension UIImage {
      - parameter shorterSide: The desired shorter side length of the image.
      - returns: A resized non-stretched UIImage object.
      */
-    public func resize(to shorterSide: CGFloat) -> UIImage? {
+    func resize(to shorterSide: CGFloat) -> UIImage? {
         let currentShorterSide = min(self.size.height, self.size.width)
         guard currentShorterSide > 0.0 else { return nil }
         let scale = shorterSide / currentShorterSide
@@ -184,7 +184,7 @@ public extension UIImage {
      - parameter borderColor: The desired color of the border.
      - returns: A bordered UIImage object.
      */
-    public func border(width borderWidth: CGFloat, color borderColor: UIColor) -> UIImage? {
+    func border(width borderWidth: CGFloat, color borderColor: UIColor) -> UIImage? {
         guard let cgImage = cgImage else { return nil }
 
         UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
@@ -219,7 +219,7 @@ public extension UIImage {
      - parameter point: The point to get color with.
      - returns: A UIColor object.
      */
-    public func color(at point: CGPoint) -> UIColor? {
+    func color(at point: CGPoint) -> UIColor? {
         guard let dataProvider = cgImage?.dataProvider, let data = CFDataGetBytePtr(dataProvider.data) else { return nil }
         
         let pixelInfo = ((Int(self.size.width) * Int(point.y)) + Int(point.x)) * 4
@@ -240,7 +240,7 @@ public extension UIImage {
      - parameter url: The URL to be retrieved.
      - parameter completion: The completion handler to call when the load request is complete. This handler is executed on the main queue.
      */
-    public static func get(from url: URL, completion: @escaping (UIImage?) -> Void) {
+    static func get(from url: URL, completion: @escaping (UIImage?) -> Void) {
         URLSession.shared.dataTask(with: url) { data, _, _ in
             var image: UIImage?
             if let data = data {

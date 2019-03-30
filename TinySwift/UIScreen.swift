@@ -49,7 +49,7 @@ import UIKit
     public extension UIScreen {
         #if os(iOS)
         /// Returns the display diagonal screen size.
-        public var size: ScreenSize {
+        var size: ScreenSize {
             let height = max(bounds.width, bounds.height)
             
             switch height {
@@ -76,14 +76,14 @@ import UIKit
         }
         
         /// A Boolean value that determines whether the display diagonal screen size equals 3.5" for iPhones (iPhone 4s and older) or 7.9" for iPads (iPad mini).
-        public var isSmallScreen: Bool {
+        var isSmallScreen: Bool {
             return [ScreenSize.inch3p5, ScreenSize.inch7p9].contains(size)
         }
         #endif
         
         #if os(tvOS)
         /// A Boolean value that determines whether the display screen resolution is equal or lower than 720p.
-        public var isLowResolution: Bool {
+        var isLowResolution: Bool {
             return min(bounds.width, bounds.height) <= 720.0
         }
         #endif

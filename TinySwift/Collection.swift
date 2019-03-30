@@ -12,7 +12,7 @@ import Foundation
 #endif
 
 fileprivate extension Array where Element: ExpressibleByNilLiteral {
-    fileprivate subscript(safeOptional index: Index) -> Element {
+    subscript(safeOptional index: Index) -> Element {
         get {
             return indices.contains(index) ? self[index] : nil
         }
@@ -33,7 +33,7 @@ public extension Array {
      
      - parameter index: The position of the element to access. `index` **may or may not** be greater than or equal to `startIndex` and less than `endIndex`, because elements are accessed in a safe way.
      */
-    public subscript(safe index: Index) -> Element? {
+    subscript(safe index: Index) -> Element? {
         get {
             if isOptionalAllowed {
                 var selfOfOptionals = self as Array<Optional<Any>>
@@ -60,13 +60,13 @@ public extension Array {
     #if !os(watchOS)
     /// Shuffles the objects in the collection. The objects in the collection are shuffled based on a Fisher-Yates shuffle.
     @available(iOS 9.0, tvOS 9.0, *)
-    public mutating func shuffle() {
+    mutating func shuffle() {
         self = GKARC4RandomSource.sharedRandom().arrayByShufflingObjects(in: self) as! [Element]
     }
     
     /// Returns a shuffled instance of the collection. The objects in the collection are shuffled based on a Fisher-Yates shuffle.
     @available(iOS 9.0, tvOS 9.0, *)
-    public var shuffled: [Element] {
+    var shuffled: [Element] {
         var copy = self
         copy.shuffle()
         
@@ -83,8 +83,13 @@ public extension Array where Iterator.Element: Equatable {
      - returns: A bool value that represents if the element was successfully removed.
      */
     @discardableResult
-    public mutating func remove(element: Iterator.Element) -> Bool {
-        guard let index = index(of: element) else { return false }
+    mutating func remove(element: Iterator.Element) -> Bool {
+        #if swift(>=5.0)
+        let i = firstIndex(of: element)
+        #else
+        let i = index(of: element)
+        #endif
+        guard let index = i else { return false }
         remove(at: index)
         
         return true
@@ -93,7 +98,7 @@ public extension Array where Iterator.Element: Equatable {
 
 public extension RandomAccessCollection where Iterator.Element: Hashable {
     /// Returns a set containing the elements of the collection.
-    public var set: Set<Iterator.Element> {
+    var set: Set<Iterator.Element> {
         return Set(self)
     }
 }
@@ -101,7 +106,7 @@ public extension RandomAccessCollection where Iterator.Element: Hashable {
 public extension Set {
     /// Returns a randomized element from the collection.
     @available(swift, deprecated: 4.2, message: "Deprecated in favor of Collection.randomElement().")
-    public var random: Iterator.Element? {
+    var random: Iterator.Element? {
         return Array(self).random
     }
 }
@@ -109,7 +114,7 @@ public extension Set {
 public extension RandomAccessCollection {
     /// Returns a randomized element from the collection.
     @available(swift, deprecated: 4.2, message: "Deprecated in favor of Collection.randomElement().")
-    public var random: Iterator.Element? {
+    var random: Iterator.Element? {
         guard !isEmpty else { return nil }
         let offset = arc4random_uniform(numericCast(count))
         let index = self.index(startIndex, offsetBy: numericCast(offset))
@@ -120,7 +125,7 @@ public extension RandomAccessCollection {
 
 public extension RandomAccessCollection where Iterator.Element: Hashable {
     /// A Boolean value that determines whether all elements of the collection are equal.
-    public var areAllElementsEqual: Bool {
+    var areAllElementsEqual: Bool {
         guard !isEmpty else { return true }
 
         #if swift(>=4.2)
@@ -131,7 +136,7 @@ public extension RandomAccessCollection where Iterator.Element: Hashable {
     }
     
     /// Returns a dictionary with number of appearances for all elements of the collection.
-    public var appearances: [Iterator.Element : Int]? {
+    var appearances: [Iterator.Element : Int]? {
         guard !isEmpty else { return nil }
         
         var counts = [first! : 0] // number: count
@@ -145,7 +150,7 @@ public extension RandomAccessCollection where Iterator.Element: Hashable {
      
      If there is a multimodal distribution, the value of the property is `nil`.
      */
-    public var mode: Iterator.Element? {
+    var mode: Iterator.Element? {
         guard let appearances = appearances, !isEmpty else { return nil }
         
         let sortedAppearances = Array(appearances.keys).sorted { appearances[$0]! > appearances[$1]! }
@@ -157,24 +162,24 @@ public extension RandomAccessCollection where Iterator.Element: Hashable {
 
 public extension Sequence where Iterator.Element: Numeric {
     /// Returns the sum of all elements in the sequence.
-    public var sum: Iterator.Element {
+    var sum: Iterator.Element {
         return reduce(0, +)
     }
 }
 
 public extension RandomAccessCollection where Iterator.Element: BinaryInteger {
     /// Returns the arithmetic mean of all elements in the collection.
-    public var arithmeticMean: Double {
+    var arithmeticMean: Double {
         return isEmpty ? 0 : Double(Int64(sum)) / Double(Int64(count))
     }
     
     /// Returns the geometric mean of all elements in the collection.
-    public var geometricMean: Double {
+    var geometricMean: Double {
         return isEmpty ? 0 : pow(map({ Double(Int64($0)) }).reduce(1, *), 1 / Double(Int64(count)))
     }
 
     /// Returns the middle number in the collection, taken as the average of the two middle numbers when the collection has an even number of numbers.
-    public var median: Double {
+    var median: Double {
         guard !isEmpty else { return 0 }
         
         #if swift(>=4.1)
@@ -197,7 +202,7 @@ public extension RandomAccessCollection where Iterator.Element: BinaryInteger {
      
      If the number of elements in the collection is lower than or equal to 1, the value of the property is `nil`.
      */
-    public var variance: Double? {
+    var variance: Double? {
         guard count >= 2 else { return nil }
 
         let arrayMean = arithmeticMean
@@ -211,7 +216,7 @@ public extension RandomAccessCollection where Iterator.Element: BinaryInteger {
      
      If the number of elements in the collection is lower than or equal to 1, the value of the property is `nil`.
      */
-    public var standardDeviation: Double? {
+    var standardDeviation: Double? {
         guard let variance = variance else { return nil }
         return sqrt(variance)
     }
@@ -219,17 +224,17 @@ public extension RandomAccessCollection where Iterator.Element: BinaryInteger {
 
 public extension RandomAccessCollection where Iterator.Element: FloatingPoint {
     /// Returns the arithmetic mean of all elements in the collection.
-    public var arithmeticMean: Iterator.Element {
+    var arithmeticMean: Iterator.Element {
         return isEmpty ? 0 : sum / Iterator.Element(Int64(count))
     }
     
     /// Returns the geometric mean of all elements in the collection.
-    public var geometricMean: Double {
+    var geometricMean: Double {
         return isEmpty ? 0 : pow((self as! [Double]).reduce(1.0, *), 1 / Double(Int64(count)))
     }
 
     /// Returns the middle number in the collection, taken as the average of the two middle numbers when the collection has an even number of numbers.
-    public var median: Iterator.Element {
+    var median: Iterator.Element {
         let sort = sorted()
         let count = Int(Int64(self.count))
 
@@ -245,7 +250,7 @@ public extension RandomAccessCollection where Iterator.Element: FloatingPoint {
 
      If the number of elements in the collection is lower than or equal to 1, the value of the property is `nil`.
      */
-    public var variance: Iterator.Element? {
+    var variance: Iterator.Element? {
         guard count >= 2 else { return nil }
 
         let arrayMean = arithmeticMean
@@ -259,7 +264,7 @@ public extension RandomAccessCollection where Iterator.Element: FloatingPoint {
 
      If the number of elements in the collection is lower than or equal to 1, the value of the property is `nil`.
      */
-    public var standardDeviation: Iterator.Element? {
+    var standardDeviation: Iterator.Element? {
         guard let variance = variance else { return nil }
         return sqrt(variance)
     }

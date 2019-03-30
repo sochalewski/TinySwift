@@ -18,7 +18,7 @@
          - parameter completion: The block to execute after the presentation finishes. This block has no return value and takes no parameters. You may specify nil for this parameter.
          - parameter handler: The block to execute when the user selects the action. This block has no return value and takes the selected action object as its only parameter.
          */
-        public func presentAlertController(withTitle title: String?, message: String?, completion: (() -> Void)?, handler: ((UIAlertAction) -> Void)? = nil) {
+        func presentAlertController(withTitle title: String?, message: String?, completion: (() -> Void)?, handler: ((UIAlertAction) -> Void)? = nil) {
             let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
             alertController.addAction(UIAlertAction(title: "OK".localized, style: .default, handler: handler))
             present(alertController, animated: true, completion: completion)
