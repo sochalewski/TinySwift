@@ -111,11 +111,11 @@ public extension UIImage {
     var square: UIImage? {
         let size = CGSize(width: self.size.width * scale, height: self.size.height * scale)
         let shortest = min(size.width, size.height)
-        let left: CGFloat = size.width > shortest ? (size.width - shortest) / 2.0 : 0.0
-        let top: CGFloat = size.height > shortest ? (size.height - shortest) / 2.0 : 0.0
-        let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
-        let insetRect = rect.insetBy(dx: left, dy: top)
-        
+        let left: CGFloat = round(size.width > shortest ? (size.width - shortest) / 2.0 : 0.0)
+        let top: CGFloat = round(size.height > shortest ? (size.height - shortest) / 2.0 : 0.0)
+        let rect = CGRect(x: 0, y: 0, width: shortest, height: shortest)
+        let insetRect = rect.offsetBy(dx: left, dy: top)
+
         return crop(to: insetRect)
     }
     
