@@ -172,7 +172,7 @@ public extension String {
 }
 
 public extension Optional where Wrapped == String {
-    /// Returns an empty string if `self` is `nil`, otherwise the valie.
+    /// Returns an empty string if `self` is `nil`, otherwise the value.
     var emptyIfNil: String {
         return self ?? ""
     }
