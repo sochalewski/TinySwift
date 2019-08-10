@@ -9,6 +9,7 @@
 import XCTest
 import TinySwift
 
+#if os(watchOS)
 class WKInterfaceDeviceTests: XCTestCase {
     
     private let allTypes = WatchDeviceType.allCases
@@ -27,3 +28,4 @@ class WKInterfaceDeviceTests: XCTestCase {
         }
     }
 }
+#endif
