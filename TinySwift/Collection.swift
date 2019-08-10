@@ -11,7 +11,10 @@ import Foundation
     import GameplayKit
 #endif
 
-fileprivate extension Array where Element: ExpressibleByNilLiteral {
+protocol OptionalProtocol { }
+extension Optional: OptionalProtocol { }
+
+extension Array where Element: ExpressibleByNilLiteral {
     subscript(safeOptional index: Index) -> Element {
         get {
             return indices.contains(index) ? self[index] : nil
@@ -25,7 +28,7 @@ fileprivate extension Array where Element: ExpressibleByNilLiteral {
 
 public extension Array {
     fileprivate var isOptionalAllowed: Bool {
-        return String(describing: Element.self).hasPrefix("Optional<") // ugh
+        return Element.self is OptionalProtocol.Type
     }
     
     /**
@@ -36,7 +39,7 @@ public extension Array {
     subscript(safe index: Index) -> Element? {
         get {
             if isOptionalAllowed {
-                var selfOfOptionals = self as Array<Optional<Any>>
+                let selfOfOptionals = self as Array<Optional<Any>>
                 return selfOfOptionals[safeOptional: index] as? Element
             }
             

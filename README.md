@@ -186,9 +186,9 @@ It contains the following functions and properties:
 
 ### WKInterfaceDevice
 
-* `var device` <sup>iOS, watchOS</sup>
-* `var isSmaller` <sup>iOS, watchOS</sup>
-* `var isLarger` <sup>iOS, watchOS</sup>
+* `var device` <sup>watchOS</sup>
+* `var isSmaller` <sup>watchOS</sup>
+* `var isLarger` <sup>watchOS</sup>
 
 ## Author
 

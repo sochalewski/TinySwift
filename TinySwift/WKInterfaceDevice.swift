@@ -6,7 +6,7 @@
 //  Copyright © 2016 Piotr Sochalewski. All rights reserved.
 //
 
-#if !os(tvOS)
+#if os(watchOS)
     import WatchKit
 
     /// The Apple Watch device type representation based on a case size.
