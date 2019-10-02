@@ -72,6 +72,12 @@
         case iPhoneXSMax
         /// The iPhone XR.
         case iPhoneXR
+        /// The iPhone 11.
+        case iPhone11
+        /// The iPhone 11 Pro.
+        case iPhone11Pro
+        /// The iPhone 11 Pro Max.
+        case iPhone11ProMax
     }
     
     /// The iPad device type representation.
@@ -94,6 +100,8 @@
         case iPadAir
         /// The iPad Air 2.
         case iPadAir2
+        /// The iPad Air 3.
+        case iPadAir3
         /// The first iPad mini.
         case iPadMini
         /// The iPad mini 2.
@@ -102,6 +110,8 @@
         case iPadMini3
         /// The iPad mini 4.
         case iPadMini4
+        /// The iPad mini 5.
+        case iPadMini5
         /// The iPad Pro.
         case iPadPro(ScreenSize)
         /// The iPad Pro 2.
@@ -126,6 +136,8 @@
         case touch5g
         /// The sixth generation of iPod touch.
         case touch6g
+        /// The seventh generation of iPod touch.
+        case touch7g
     }
     
     /// The Apple TV device type representation.
@@ -203,6 +215,9 @@
             case "iPhone11,2": return .phone(.iPhoneXS)
             case "iPhone11,4", "iPhone11,6": return .phone(.iPhoneXSMax)
             case "iPhone11,8": return .phone(.iPhoneXR)
+            case "iPhone12,1": return .phone(.iPhone11)
+            case "iPhone12,3": return .phone(.iPhone11Pro)
+            case "iPhone12,5": return .phone(.iPhone11ProMax)
                 
             case "iPad1,1": return .pad(.iPad1)
             case "iPad2,1", "iPad2,2", "iPad2,3", "iPad2,4": return .pad(.iPad2)
@@ -222,6 +237,8 @@
             case "iPad7,5", "iPad7,6": return .pad(.iPad6)
             case "iPad8,1", "iPad8,2", "iPad8,3", "iPad8,4": return .pad(.iPadPro3(.inch11))
             case "iPad8,5", "iPad8,6", "iPad8,7", "iPad8,8": return .pad(.iPadPro3(.inch12p9))
+            case "iPad11,1", "iPad11,2": return .pad(.iPadMini5)
+            case "iPad11,3", "iPad11,4": return .pad(.iPadAir3)
                 
             case "iPod1,1": return .pod(.touch1g)
             case "iPod2,1": return .pod(.touch2g)
@@ -229,6 +246,7 @@
             case "iPod4,1": return .pod(.touch4g)
             case "iPod5,1": return .pod(.touch5g)
             case "iPod7,1": return .pod(.touch6g)
+            case "iPod9,1": return .pod(.touch7g)
                 
             case "AppleTV5,3": return .tv(.tv4g)
             case "AppleTV6,2": return .tv(.tv4k)
