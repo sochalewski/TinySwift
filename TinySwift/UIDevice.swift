@@ -118,6 +118,8 @@
         case iPadPro2(ScreenSize)
         /// The iPad Pro 3.
         case iPadPro3(ScreenSize)
+        /// The iPad Pro 4.
+        case iPadPro4(ScreenSize)
     }
 
     /// The iPod touch device type representation.
@@ -154,29 +156,21 @@
     extension PhoneModel: CaseIterable {}
 	extension PadModel: CaseIterable {
 		public static var allCases: [PadModel] {
-			return [.unknown,
-					.iPad1, .iPad2, .iPad3, .iPad4, .iPad5, .iPad6,
-					.iPadAir, .iPadAir2,
-					.iPadMini, .iPadMini2, .iPadMini3, .iPadMini4,
-					.iPadPro(.inch9p7), .iPadPro(.inch12p9),
-					.iPadPro2(.inch10p5), .iPadPro2(.inch12p9)]
+			return [
+                .unknown,
+                .iPad1, .iPad2, .iPad3, .iPad4, .iPad5, .iPad6,
+                .iPadAir, .iPadAir2, .iPadAir3,
+                .iPadMini, .iPadMini2, .iPadMini3, .iPadMini4, .iPadMini5,
+                .iPadPro(.inch9p7), .iPadPro(.inch12p9),
+                .iPadPro2(.inch10p5), .iPadPro2(.inch12p9),
+                .iPadPro3(.inch11), .iPadPro3(.inch12p9),
+                .iPadPro4(.inch11), .iPadPro4(.inch12p9)
+            ]
 		}
 	}
     extension PodModel: CaseIterable {}
     extension TVModel: CaseIterable {}
     #endif
-
-    public func ==(lhs: DeviceType, rhs: DeviceType) -> Bool {
-        switch (lhs, rhs) {
-        case (.phone(let model1), .phone(let model2)): return model1 == model2
-        case (.pad(let model1), .pad(let model2)): return model1 == model2
-        case (.pod(let model1), .pod(let model2)): return model1 == model2
-        case (.tv(let model1), .tv(let model2)): return model1 == model2
-        case (.simulator, .simulator): return true
-        case (.unknown, .unknown): return true
-        default: return false
-        }
-    }
     
     public func <(lhs: PhoneModel, rhs: PhoneModel) -> Bool { return lhs.rawValue < rhs.rawValue }
     public func <(lhs: PodModel, rhs: PodModel) -> Bool { return lhs.rawValue < rhs.rawValue }
@@ -237,6 +231,8 @@
             case "iPad7,5", "iPad7,6": return .pad(.iPad6)
             case "iPad8,1", "iPad8,2", "iPad8,3", "iPad8,4": return .pad(.iPadPro3(.inch11))
             case "iPad8,5", "iPad8,6", "iPad8,7", "iPad8,8": return .pad(.iPadPro3(.inch12p9))
+            case "iPad8,9", "iPad8,10": return .pad(.iPadPro4(.inch11))
+            case "iPad8,11", "iPad8,12": return .pad(.iPadPro4(.inch12p9))
             case "iPad11,1", "iPad11,2": return .pad(.iPadMini5)
             case "iPad11,3", "iPad11,4": return .pad(.iPadAir3)
                 
