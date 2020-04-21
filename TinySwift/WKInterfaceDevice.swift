@@ -54,7 +54,7 @@
             case watch38mm: return .watch38mm
             case watch40mm: return .watch38mm
             case watch42mm: return .watch42mm
-            case watch44mm: return .watch38mm
+            case watch44mm: return .watch44mm
             default: return .unknown
             }
         }
