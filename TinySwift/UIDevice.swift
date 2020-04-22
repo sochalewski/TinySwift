@@ -78,6 +78,8 @@
         case iPhone11Pro
         /// The iPhone 11 Pro Max.
         case iPhone11ProMax
+        /// The second generation of iPhone SE (2020).
+        case iPhoneSE2020
     }
     
     /// The iPad device type representation.
@@ -212,6 +214,7 @@
             case "iPhone12,1": return .phone(.iPhone11)
             case "iPhone12,3": return .phone(.iPhone11Pro)
             case "iPhone12,5": return .phone(.iPhone11ProMax)
+            case "iPhone12,8": return .phone(.iPhoneSE2020)
                 
             case "iPad1,1": return .pad(.iPad1)
             case "iPad2,1", "iPad2,2", "iPad2,3", "iPad2,4": return .pad(.iPad2)
