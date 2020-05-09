@@ -139,4 +139,51 @@ class StringTests: XCTestCase {
         XCTAssert(string1.nilIfEmpty == "non-empty")
         XCTAssertNil(string2.nilIfEmpty)
     }
+    
+    func testFormattedSubstringExists() {
+        let string = "Lorem ipsum dolor"
+        let italicFont: UIFont = .italicSystemFont(ofSize: UIFont.systemFontSize)
+        let boldFont: UIFont = .boldSystemFont(ofSize: UIFont.systemFontSize)
+        
+        /// Lorem _ipsum_ dolor
+        let expectedFormattedString = NSMutableAttributedString(string: string)
+        expectedFormattedString.addAttributes(
+            [.font: italicFont],
+            range: NSRange(location: 6, length: 5)
+        )
+        
+        let formattedString = string.formatted(
+            substring: "ipsum",
+            font: italicFont
+        )
+        
+        XCTAssertEqual(formattedString, expectedFormattedString)
+        
+        /// Lorem _ipsum_ **dolor**
+        let expectedDoubleFormattedString = NSMutableAttributedString(attributedString: expectedFormattedString)
+        expectedDoubleFormattedString.addAttributes(
+            [.font: boldFont],
+            range: NSRange(location: 12, length: 5)
+        )
+        
+        let doubleFormattedString = formattedString.formatted(
+            substring: "dolor",
+            font: boldFont
+        )
+        
+        XCTAssertEqual(doubleFormattedString, expectedDoubleFormattedString)
+    }
+    
+    func testFormattedSubstringDoesNotExist() {
+        let string = "Lorem ipsum dolor"
+        
+        let expectedFormattedString = NSAttributedString(string: string)
+        
+        let formattedString = string.formatted(
+            substring: "IPSUM",
+            font: .italicSystemFont(ofSize: UIFont.systemFontSize)
+        )
+        
+        XCTAssertEqual(formattedString, expectedFormattedString)
+    }
 }

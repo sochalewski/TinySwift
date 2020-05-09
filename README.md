@@ -113,6 +113,10 @@ It contains the following functions and properties:
 * `var random` <sup>iOS, tvOS, watchOS</sup>
 * `func times(execute:)` <sup>iOS, tvOS, watchOS</sup>
 
+### NSAttributedString
+
+* `func formatted(substring:font:)` <sup>iOS, tvOS, watchOS</sup>
+
 ### String
 
 * `init(path:)` <sup>iOS, tvOS, watchOS</sup>
@@ -128,6 +132,7 @@ It contains the following functions and properties:
 * `var nonEmptyLines` <sup>iOS, tvOS, watchOS</sup>
 * `var trimmed` <sup>iOS, tvOS, watchOS</sup>
 * `var upperCamelCased` <sup>iOS, tvOS, watchOS</sup>
+* `func formatted(substring:font:)` <sup>iOS, tvOS, watchOS</sup>
 * `func occurrences(of:)` <sup>iOS, tvOS, watchOS</sup>
 
 ### TimeInterval
