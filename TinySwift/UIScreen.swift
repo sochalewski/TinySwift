@@ -20,6 +20,8 @@ import UIKit
         case inch4
         /// The 4.7" screen size.
         case inch4p7
+        /// The 5.4" screen size.
+        case inch5p4
         /// The 5.5" screen size.
         case inch5p5
         /// The 5.8" screen size.
@@ -28,12 +30,18 @@ import UIKit
 		case inch6p1
 		/// The 6.5" screen size.
 		case inch6p5
+        /// The 6.7" screen size.
+        case inch6p7
         /// The 7.9" screen size.
         case inch7p9
         /// The 9.7" screen size.
         case inch9p7
+        /// The 10.2" screen size.
+        case inch10p2
         /// The 10.5" screen size.
         case inch10p5
+        /// The 10.9" screen size.
+        case inch10p9
         /// The 11.0" screen size.
         case inch11
         /// The 12.9" screen size.
@@ -53,22 +61,38 @@ import UIKit
             let height = max(bounds.width, bounds.height)
             
             switch height {
-            case 480: return .inch3p5
+            case 240, 480: return .inch3p5
             case 568: return .inch4
 			case 667: return scale == 3.0 ? .inch5p5 : .inch4p7
             case 736: return .inch5p5
-            case 812: return .inch5p8
-			case 896: return scale == 3.0 ? .inch6p5 : .inch6p1
+            case 812:
+                switch UIDevice.current.device {
+                case .phone(.iPhone12Mini):
+                    return .inch5p4
+                default:
+                    return .inch5p8
+                }
+            case 844: return .inch6p1
+			case 896:
+                switch UIDevice.current.device {
+                case .phone(.iPhoneXSMax), .phone(.iPhone11ProMax):
+                    return .inch6p5
+                default:
+                    return .inch6p1
+                }
+            case 926: return .inch6p7
             case 1024:
                 switch UIDevice.current.device {
-				case .pad(.iPadMini), .pad(.iPadMini2), .pad(.iPadMini3), .pad(.iPadMini4):
+                case .pad(.iPadMini), .pad(.iPadMini2), .pad(.iPadMini3), .pad(.iPadMini4), .pad(.iPadMini5):
                     return .inch7p9
-				case .pad(.iPadPro(.inch10p5)), .pad(.iPadPro2(.inch10p5)):
+                case .pad(.iPadPro2(.inch10p5)):
 					return .inch10p5
                 default:
                     return .inch9p7
                 }
+            case 1080: return .inch10p2
             case 1112: return .inch10p5
+            case 1180: return .inch10p9
             case 1194: return .inch11
             case 1366: return .inch12p9
             default: return .unknown
