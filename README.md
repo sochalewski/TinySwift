@@ -8,7 +8,7 @@
 
 ## Requirements
 
-Swift 3.2-5.2
+Swift 3.2-5.4
 
 iOS 8+, tvOS 9+, watchOS 2+
 
