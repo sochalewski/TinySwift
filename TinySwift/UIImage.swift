@@ -140,6 +140,16 @@ public extension UIImage {
      - returns: A resized non-stretched UIImage object.
      */
     func resize(to size: CGSize) -> UIImage? {
+        #if !os(watchOS)
+        if #available(iOS 10.0, tvOS 10.0, *) {
+            let renderer = UIGraphicsImageRenderer(size: size)
+            
+            return renderer.image { _ in
+                draw(in: CGRect(origin: .zero, size: size))
+            }
+        }
+        #endif
+        
         guard let cgImage = cgImage else { return nil }
         guard min(self.size.width, self.size.height) > 0.0 else { return nil }
         
