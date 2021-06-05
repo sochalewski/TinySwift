@@ -142,7 +142,16 @@ public extension UIImage {
     func resize(to size: CGSize) -> UIImage? {
         #if !os(watchOS)
         if #available(iOS 10.0, tvOS 10.0, *) {
-            let renderer = UIGraphicsImageRenderer(size: size)
+            let format: UIGraphicsImageRendererFormat
+            
+            if #available(iOS 11.0, tvOS 11.0, *) {
+                format = .preferred()
+            } else {
+                format = .default()
+            }
+            
+            format.scale = scale
+            let renderer = UIGraphicsImageRenderer(size: size, format: format)
             
             return renderer.image { _ in
                 draw(in: CGRect(origin: .zero, size: size))
