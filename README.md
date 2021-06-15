@@ -71,6 +71,7 @@ It contains the following functions and properties:
 
 * `init(hexadecimalString:)` <sup>iOS, tvOS, watchOS</sup>
 * `var hexadecimalString` <sup>iOS, tvOS, watchOS</sup>
+* `func qrCode(correctionLevel:)` <sup>iOS, tvOS</sup>
 
 ### Date
 
@@ -134,6 +135,7 @@ It contains the following functions and properties:
 * `var upperCamelCased` <sup>iOS, tvOS, watchOS</sup>
 * `func formatted(substring:font:)` <sup>iOS, tvOS, watchOS</sup>
 * `func occurrences(of:)` <sup>iOS, tvOS, watchOS</sup>
+* `func qrCode(correctionLevel:)` <sup>iOS, tvOS</sup>
 
 ### TimeInterval
 
@@ -170,6 +172,7 @@ It contains the following functions and properties:
 ### UIImageView
 
 * `func setImage(from:placeholder:completion:)` <sup>iOS, tvOS</sup>
+* `func sharpenForQRCode()` <sup>iOS, tvOS</sup>
 
 ### UIScreen
 
@@ -188,6 +191,10 @@ It contains the following functions and properties:
 ### UIViewController
 
 * `func presentAlertController(withTitle:message:completion:handler:)` <sup>iOS, tvOS</sup>
+
+### URL
+
+* `func qrCode(correctionLevel:)` <sup>iOS, tvOS</sup>
 
 ### WKInterfaceDevice
 
