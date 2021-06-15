@@ -26,4 +26,12 @@ class UIImageViewTests: XCTestCase {
         
         waitForExpectations(timeout: 10.0)
     }
+    
+    func testSharpenForQRCode() {
+        let imageView = UIImageView()
+        
+        imageView.sharpenForQRCode()
+        
+        XCTAssertEqual(imageView.layer.magnificationFilter, .nearest)
+    }
 }
