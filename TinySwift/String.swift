@@ -165,7 +165,9 @@ public extension String {
         return isEmpty ? nil : self
     }
     
-    /// Returns the number of occurrences of a given case-sensitive string within the `String`.
+    /// Returns the number of occurrences of a given case-sensitive string within the string.
+    /// - Parameter substring: A substring of the string.
+    /// - Returns: The number of occurrences of a given case-sensitive string within the `String`.
     func occurrences(of substring: String) -> Int {
         return components(separatedBy: substring).count - 1
     }
