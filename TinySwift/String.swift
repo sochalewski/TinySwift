@@ -6,7 +6,7 @@
 //  Copyright © 2016 Piotr Sochalewski. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 public extension String {
     /// The collection of Latin letters and Arabic digits or a text constructed from this collection.
@@ -169,6 +169,15 @@ public extension String {
     func occurrences(of substring: String) -> Int {
         return components(separatedBy: substring).count - 1
     }
+    
+    #if !os(watchOS)
+    /// Generates a Quick Response code (two-dimensional barcode) from the string.
+    /// - Parameter correctionLevel: A desired QR code error correction capability. Default value is medium (`M`).
+    /// - Returns: A Quick Response code (two-dimensional barcode) from the string or `nil` if a QR code cannot be created.
+    func qrCode(correctionLevel: QRCodeCorrectionLevel = .medium) -> UIImage? {
+        data(using: .isoLatin1)?.qrCode(correctionLevel: correctionLevel)
+    }
+    #endif
 }
 
 public extension Optional where Wrapped == String {

@@ -30,5 +30,10 @@ public extension UIImageView {
             completion?(true)
         }
     }
+    
+    /// Set the layer's magnification filter to the nearest neighbor interpolation filter, which is perfect for low resolution pixel-art, e.g. Quick Response codes.
+    func sharpenForQRCode() {
+        layer.magnificationFilter = .nearest
+    }
 }
 #endif
