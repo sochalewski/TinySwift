@@ -186,4 +186,25 @@ class StringTests: XCTestCase {
         
         XCTAssertEqual(formattedString, expectedFormattedString)
     }
+    
+    func testQRCode() {
+        let string = "Lorem ipsum dolor"
+        
+        let low = string.qrCode(correctionLevel: .low)
+        let medium = string.qrCode(correctionLevel: .medium)
+        let quartile = string.qrCode(correctionLevel: .quartile)
+        let high = string.qrCode(correctionLevel: .high)
+        let defaultParameter = string.qrCode()
+        
+        XCTAssertEqual(low?.size, CGSize(width: 27, height: 27))
+        XCTAssertEqual(medium?.size, CGSize(width: 27, height: 27))
+        XCTAssertEqual(quartile?.size, CGSize(width: 27, height: 27))
+        XCTAssertEqual(high?.size, CGSize(width: 31, height: 31))
+        
+        XCTAssertNotEqual(low?.pngData(), medium?.pngData())
+        XCTAssertNotEqual(medium?.pngData(), quartile?.pngData())
+        XCTAssertNotEqual(quartile?.pngData(), high?.pngData())
+        XCTAssertNotEqual(high?.pngData(), low?.pngData())
+        XCTAssertEqual(medium?.pngData(), defaultParameter?.pngData())
+    }
 }
