@@ -6,7 +6,19 @@
 //  Copyright © 2016 Piotr Sochalewski. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+/// QR Code Error Correction Capability.
+public enum QRCodeCorrectionLevel: String {
+    /// 7% of data bytes can be restored.
+    case low = "L"
+    /// 15% of data bytes can be restored.
+    case medium = "M"
+    /// 25% of data bytes can be restored.
+    case quartile = "Q"
+    /// 30% of data bytes can be restored.
+    case high = "H"
+}
 
 public extension Data {
     /// Returns a hexadecimal encoded String.
@@ -41,4 +53,20 @@ public extension Data {
         
         self = data
     }
+    
+    #if !os(watchOS)
+    /// Generates a Quick Response code (two-dimensional barcode) from the data.
+    /// - Parameter correctionLevel: A desired QR code error correction capability. Default value is medium (`M`).
+    /// - Returns: A Quick Response code (two-dimensional barcode) from the data or `nil` if a QR code cannot be created.
+    func qrCode(correctionLevel: QRCodeCorrectionLevel = .medium) -> UIImage? {
+        guard let filter = CIFilter(name: "CIQRCodeGenerator") else { return nil }
+        
+        filter.setValue(self, forKey: "inputMessage")
+        filter.setValue(correctionLevel.rawValue, forKey: "inputCorrectionLevel")
+        
+        guard let output = filter.outputImage else { return nil }
+        
+        return UIImage(ciImage: output)
+    }
+    #endif
 }
