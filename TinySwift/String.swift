@@ -175,9 +175,13 @@ public extension String {
     #if !os(watchOS)
     /// Generates a Quick Response code (two-dimensional barcode) from the string.
     /// - Parameter correctionLevel: A desired QR code error correction capability. Default value is medium (`M`).
+    /// - Parameter encoding: A string encoding. Default value is ISO Latin 1.
     /// - Returns: A Quick Response code (two-dimensional barcode) from the string or `nil` if a QR code cannot be created.
-    func qrCode(correctionLevel: QRCodeCorrectionLevel = .medium) -> UIImage? {
-        data(using: .isoLatin1)?.qrCode(correctionLevel: correctionLevel)
+    func qrCode(
+        correctionLevel: QRCodeCorrectionLevel = .medium,
+        encoding: String.Encoding = .isoLatin1
+    ) -> UIImage? {
+        data(using: encoding)?.qrCode(correctionLevel: correctionLevel)
     }
     #endif
 }
