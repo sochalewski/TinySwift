@@ -1,6 +1,6 @@
 # TinySwift
 
-[![CI Status](https://api.travis-ci.com/sochalewski/TinySwift.svg)](https://travis-ci.com/github/sochalewski/TinySwift)
+[![CI Status](https://github.com/sochalewski/TinySwift/actions/workflows/actions.yml/badge.svg)](https://github.com/sochalewski/TinySwift/actions)
 [![codecov](https://codecov.io/gh/sochalewski/TinySwift/branch/master/graph/badge.svg)](https://codecov.io/gh/sochalewski/TinySwift)
 [![Version](https://img.shields.io/cocoapods/v/TinySwift.svg?style=flat)](http://cocoapods.org/pods/TinySwift)
 [![License](https://img.shields.io/cocoapods/l/TinySwift.svg?style=flat)](http://cocoapods.org/pods/TinySwift)
