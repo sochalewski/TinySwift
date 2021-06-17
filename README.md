@@ -135,7 +135,7 @@ It contains the following functions and properties:
 * `var upperCamelCased` <sup>iOS, tvOS, watchOS</sup>
 * `func formatted(substring:font:)` <sup>iOS, tvOS, watchOS</sup>
 * `func occurrences(of:)` <sup>iOS, tvOS, watchOS</sup>
-* `func qrCode(correctionLevel:)` <sup>iOS, tvOS</sup>
+* `func qrCode(correctionLevel:encoding:)` <sup>iOS, tvOS</sup>
 
 ### TimeInterval
 
@@ -194,7 +194,7 @@ It contains the following functions and properties:
 
 ### URL
 
-* `func qrCode(correctionLevel:)` <sup>iOS, tvOS</sup>
+* `func qrCode(correctionLevel:encoding:)` <sup>iOS, tvOS</sup>
 
 ### WKInterfaceDevice
 
