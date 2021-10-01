@@ -88,6 +88,14 @@
         case iPhone12Pro
         /// The iPhone 12 Pro Max.
         case iPhone12ProMax
+        /// The iPhone 13 Mini.
+        case iPhone13Mini
+        /// The iPhone 13.
+        case iPhone13
+        /// The iPhone 13 Pro.
+        case iPhone13Pro
+        /// The iPhone 13 Pro Max.
+        case iPhone13ProMax
     }
     
     /// The iPad device type representation.
@@ -110,6 +118,8 @@
         case iPad7
         /// The iPad 8.
         case iPad8
+        /// The iPad 9.
+        case iPad9
         /// The first iPad Air.
         case iPadAir
         /// The iPad Air 2.
@@ -128,6 +138,8 @@
         case iPadMini4
         /// The iPad mini 5.
         case iPadMini5
+        /// The iPad mini 6.
+        case iPadMini6
         /// The iPad Pro.
         case iPadPro(ScreenSize)
         /// The iPad Pro 2.
@@ -136,6 +148,8 @@
         case iPadPro3(ScreenSize)
         /// The iPad Pro 4.
         case iPadPro4(ScreenSize)
+        /// The iPad Pro 5.
+        case iPadPro5(ScreenSize)
     }
 
     /// The iPod touch device type representation.
@@ -166,6 +180,8 @@
         case tv4g
         /// The Apple TV 4K.
         case tv4k
+        /// The Apple TV 4K 2.
+        case tv4k2
     }
 
     #if swift(>=4.2)
@@ -174,13 +190,14 @@
 		public static var allCases: [PadModel] {
 			return [
                 .unknown,
-                .iPad1, .iPad2, .iPad3, .iPad4, .iPad5, .iPad6, .iPad7, .iPad8,
+                .iPad1, .iPad2, .iPad3, .iPad4, .iPad5, .iPad6, .iPad7, .iPad8, .iPad9,
                 .iPadAir, .iPadAir2, .iPadAir3, .iPadAir4,
-                .iPadMini, .iPadMini2, .iPadMini3, .iPadMini4, .iPadMini5,
+                .iPadMini, .iPadMini2, .iPadMini3, .iPadMini4, .iPadMini5, .iPadMini6,
                 .iPadPro(.inch9p7), .iPadPro(.inch12p9),
                 .iPadPro2(.inch10p5), .iPadPro2(.inch12p9),
                 .iPadPro3(.inch11), .iPadPro3(.inch12p9),
-                .iPadPro4(.inch11), .iPadPro4(.inch12p9)
+                .iPadPro4(.inch11), .iPadPro4(.inch12p9),
+                .iPadPro5(.inch11), .iPadPro5(.inch12p9)
             ]
 		}
 	}
@@ -233,7 +250,11 @@
             case "iPhone13,2": return .phone(.iPhone12)
             case "iPhone13,3": return .phone(.iPhone12Pro)
             case "iPhone13,4": return .phone(.iPhone12ProMax)
-                
+            case "iPhone14,2": return .phone(.iPhone13Pro)
+            case "iPhone14,3": return .phone(.iPhone13ProMax)
+            case "iPhone14,4": return .phone(.iPhone13Mini)
+            case "iPhone14,5": return .phone(.iPhone13)
+            
             case "iPad1,1": return .pad(.iPad1)
             case "iPad2,1", "iPad2,2", "iPad2,3", "iPad2,4": return .pad(.iPad2)
             case "iPad3,1", "iPad3,2", "iPad3,3": return .pad(.iPad3)
@@ -258,8 +279,12 @@
             case "iPad11,1", "iPad11,2": return .pad(.iPadMini5)
             case "iPad11,3", "iPad11,4": return .pad(.iPadAir3)
             case "iPad11,6", "iPad11,7": return .pad(.iPad8)
+            case "iPad12,1", "iPad12,2": return .pad(.iPad9)
             case "iPad13,1", "iPad13,2": return .pad(.iPadAir4)
-                
+            case "iPad13,4", "iPad13,5", "iPad13,6", "iPad13,7": return .pad(.iPadPro3(.inch11))
+            case "iPad13,8", "iPad13,9", "iPad13,10", "iPad13,11": return .pad(.iPadPro5(.inch12p9))
+            case "iPad14,1", "iPad14,2": return .pad(.iPadMini6)
+            
             case "iPod1,1": return .pod(.touch1g)
             case "iPod2,1": return .pod(.touch2g)
             case "iPod3,1": return .pod(.touch3g)
@@ -267,12 +292,13 @@
             case "iPod5,1": return .pod(.touch5g)
             case "iPod7,1": return .pod(.touch6g)
             case "iPod9,1": return .pod(.touch7g)
-                
+            
             case "AppleTV5,3": return .tv(.tv4g)
             case "AppleTV6,2": return .tv(.tv4k)
-                
+            case "AppleTV11,1": return .tv(.tv4k2)
+            
             case "i386", "x86_64": return .simulator
-                
+            
             default:
                 if deviceCode.contains("iPhone") { return .phone(.unknown) }
                 else if deviceCode.contains("iPad") { return .pad(.unknown) }
