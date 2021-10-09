@@ -13,7 +13,7 @@ import TinySwift
 class WKInterfaceDeviceTests: XCTestCase {
     
     private let allTypes = WatchDeviceType.allCases
-
+    
     func testEquatable() {
         allTypes.forEach {
             XCTAssert($0 == $0)
