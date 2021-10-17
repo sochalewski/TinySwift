@@ -297,7 +297,7 @@
             case "AppleTV6,2": return .tv(.tv4k)
             case "AppleTV11,1": return .tv(.tv4k2)
             
-            case "i386", "x86_64": return .simulator
+            case "i386", "x86_64", "arm64": return .simulator
             
             default:
                 if deviceCode.contains("iPhone") { return .phone(.unknown) }
