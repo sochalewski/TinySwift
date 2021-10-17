@@ -34,6 +34,8 @@ import UIKit
         case inch6p7
         /// The 7.9" screen size.
         case inch7p9
+        /// The 8.3" screen size.
+        case inch8p3
         /// The 9.7" screen size.
         case inch9p7
         /// The 10.2" screen size.
@@ -92,6 +94,7 @@ import UIKit
                 }
             case 1080: return .inch10p2
             case 1112: return .inch10p5
+            case 1133: return .inch8p3
             case 1180: return .inch10p9
             case 1194: return .inch11
             case 1366: return .inch12p9
