@@ -2,10 +2,9 @@ name: TinySwift
 
 on:
   push:
-    branches: [ master ]
+    branches: [ "master" ]
   pull_request:
-    branches: [ master ]
-  workflow_dispatch:
+    branches: [ "master" ]
 
 jobs:
   test:
@@ -13,19 +12,13 @@ jobs:
     runs-on: macos-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Install CocoaPods
-      run: gem install cocoapods
-    - name: Install xcpretty
-      run: gem install xcpretty -N
+    - uses: actions/checkout@v3
     - name: Install pod
       run: cd Example ; pod install ; cd ..
-    - name: Prepare for build
-      run: set -o pipefail
     - name: Test
-      run: xcodebuild test -workspace Example/TinySwift.xcworkspace -scheme TinySwift-Example -destination 'platform=iOS Simulator,name=iPhone 8' | xcpretty -c
+      run: xcodebuild test -workspace 'Example/TinySwift.xcworkspace' -scheme 'TinySwift-Example' -destination 'platform=iOS Simulator,name=iPhone 8'
     - name: Validate
       run: pod lib lint --allow-warnings
     - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v1
+      uses: codecov/codecov-action@v3
       if: github.ref == 'refs/heads/master'
