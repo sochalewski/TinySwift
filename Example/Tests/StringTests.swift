@@ -196,7 +196,7 @@ class StringTests: XCTestCase {
         let high = string.qrCode(correctionLevel: .high)
         let defaultParameter = string.qrCode()
         
-        XCTAssertEqual(low?.size, CGSize(width: 27, height: 27))
+        XCTAssertEqual(low?.size, CGSize(width: 23, height: 23))
         XCTAssertEqual(medium?.size, CGSize(width: 27, height: 27))
         XCTAssertEqual(quartile?.size, CGSize(width: 27, height: 27))
         XCTAssertEqual(high?.size, CGSize(width: 31, height: 31))
