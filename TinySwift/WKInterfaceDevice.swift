@@ -25,6 +25,8 @@
         case watch44mm
         /// The Apple Watch 45 mm case size.
         case watch45mm
+        /// The Apple Watch Ultra 49 mm case size.
+        case watch49mm
     }
 
     #if swift(>=4.2)
@@ -40,9 +42,9 @@
             return device == .watch38mm || device == .watch40mm || device == .watch41mm
         }
         
-        /// A Boolean value that determines whether the Apple watch case size equals 42, 44 or 45 mm.
+        /// A Boolean value that determines whether the Apple watch case size equals 42, 44, 45 or 49 mm.
         var isLarger: Bool {
-            return device == .watch42mm || device == .watch44mm || device == .watch45mm
+            return device == .watch42mm || device == .watch44mm || device == .watch45mm || device == .watch49mm
         }
         
         /// Returns a current Apple Watch device type based on a case size.
@@ -53,6 +55,7 @@
             let watch42mm = CGRect(origin: .zero, size: CGSize(width: 156.0, height: 195.0))
             let watch44mm = CGRect(origin: .zero, size: CGSize(width: 184.0, height: 224.0))
             let watch45mm = CGRect(origin: .zero, size: CGSize(width: 198.0, height: 242.0))
+            let watch49mm = CGRect(origin: .zero, size: CGSize(width: 205.0, height: 251.0))
             
             let currentBounds = WKInterfaceDevice.current().screenBounds
             
@@ -63,6 +66,7 @@
             case watch42mm: return .watch42mm
             case watch44mm: return .watch44mm
             case watch45mm: return .watch45mm
+            case watch49mm: return .watch49mm
             default: return .unknown
             }
         }
