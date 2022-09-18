@@ -74,7 +74,7 @@ import UIKit
                 default:
                     return .inch5p8
                 }
-            case 844: return .inch6p1
+            case 844, 852: return .inch6p1
 			case 896:
                 switch UIDevice.current.device {
                 case .phone(.iPhoneXSMax), .phone(.iPhone11ProMax):
@@ -82,7 +82,7 @@ import UIKit
                 default:
                     return .inch6p1
                 }
-            case 926: return .inch6p7
+            case 926, 932: return .inch6p7
             case 1024:
                 switch UIDevice.current.device {
                 case .pad(.iPadMini), .pad(.iPadMini2), .pad(.iPadMini3), .pad(.iPadMini4), .pad(.iPadMini5):

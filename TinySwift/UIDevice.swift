@@ -96,6 +96,17 @@
         case iPhone13Pro
         /// The iPhone 13 Pro Max.
         case iPhone13ProMax
+        /// The third generation of iPhone SE (2022).
+        case iPhoneSE2022
+        /// The iPhone 14.
+        case iPhone14
+        /// The iPhone 14 Plus.
+        case iPhone14Plus
+        /// The iPhone 14 Pro.
+        case iPhone14Pro
+        /// The iPhone 14 Pro Max.
+        case iPhone14ProMax
+
     }
     
     /// The iPad device type representation.
@@ -128,6 +139,8 @@
         case iPadAir3
         /// The iPad Air 4.
         case iPadAir4
+        /// The iPad Air 5.
+        case iPadAir5
         /// The first iPad mini.
         case iPadMini
         /// The iPad mini 2.
@@ -191,7 +204,7 @@
 			return [
                 .unknown,
                 .iPad1, .iPad2, .iPad3, .iPad4, .iPad5, .iPad6, .iPad7, .iPad8, .iPad9,
-                .iPadAir, .iPadAir2, .iPadAir3, .iPadAir4,
+                .iPadAir, .iPadAir2, .iPadAir3, .iPadAir4, .iPadAir5,
                 .iPadMini, .iPadMini2, .iPadMini3, .iPadMini4, .iPadMini5, .iPadMini6,
                 .iPadPro(.inch9p7), .iPadPro(.inch12p9),
                 .iPadPro2(.inch10p5), .iPadPro2(.inch12p9),
@@ -254,6 +267,11 @@
             case "iPhone14,3": return .phone(.iPhone13ProMax)
             case "iPhone14,4": return .phone(.iPhone13Mini)
             case "iPhone14,5": return .phone(.iPhone13)
+            case "iPhone14,6": return .phone(.iPhoneSE2022)
+            case "iPhone14,7": return .phone(.iPhone14)
+            case "iPhone14,8": return .phone(.iPhone14Plus)
+            case "iPhone15,2": return .phone(.iPhone14Pro)
+            case "iPhone15,3": return .phone(.iPhone14ProMax)
             
             case "iPad1,1": return .pad(.iPad1)
             case "iPad2,1", "iPad2,2", "iPad2,3", "iPad2,4": return .pad(.iPad2)
@@ -283,6 +301,7 @@
             case "iPad13,1", "iPad13,2": return .pad(.iPadAir4)
             case "iPad13,4", "iPad13,5", "iPad13,6", "iPad13,7": return .pad(.iPadPro3(.inch11))
             case "iPad13,8", "iPad13,9", "iPad13,10", "iPad13,11": return .pad(.iPadPro5(.inch12p9))
+            case "iPad13,16", "iPad13,17": return .pad(.iPadAir5)
             case "iPad14,1", "iPad14,2": return .pad(.iPadMini6)
             
             case "iPod1,1": return .pod(.touch1g)
