@@ -22,9 +22,9 @@ public extension UIColor {
             hexCode.remove(at: hexCode.range(of: "#")!.lowerBound)
         }
         
-        var hexInt: UInt32 = 0
+        var hexInt: UInt64 = 0
         let scanner = Scanner(string: hexCode)
-        if !scanner.scanHexInt32(&hexInt) {
+        if !scanner.scanHexInt64(&hexInt) {
             return nil
         }
         
