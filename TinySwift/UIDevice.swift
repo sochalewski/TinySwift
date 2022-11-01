@@ -106,7 +106,6 @@
         case iPhone14Pro
         /// The iPhone 14 Pro Max.
         case iPhone14ProMax
-
     }
     
     /// The iPad device type representation.
@@ -131,6 +130,8 @@
         case iPad8
         /// The iPad 9.
         case iPad9
+        /// The iPad 10.
+        case iPad10
         /// The first iPad Air.
         case iPadAir
         /// The iPad Air 2.
@@ -163,6 +164,8 @@
         case iPadPro4(ScreenSize)
         /// The iPad Pro 5.
         case iPadPro5(ScreenSize)
+        /// The iPad Pro 6.
+        case iPadPro6(ScreenSize)
     }
 
     /// The iPod touch device type representation.
@@ -191,9 +194,9 @@
         case unknown
         /// The fourth generation of Apple TV.
         case tv4g
-        /// The Apple TV 4K.
+        /// The first generation of Apple TV 4K.
         case tv4k
-        /// The Apple TV 4K 2.
+        /// The second generation of Apple TV 4K.
         case tv4k2
     }
 
@@ -203,14 +206,15 @@
 		public static var allCases: [PadModel] {
 			return [
                 .unknown,
-                .iPad1, .iPad2, .iPad3, .iPad4, .iPad5, .iPad6, .iPad7, .iPad8, .iPad9,
+                .iPad1, .iPad2, .iPad3, .iPad4, .iPad5, .iPad6, .iPad7, .iPad8, .iPad9, .iPad10,
                 .iPadAir, .iPadAir2, .iPadAir3, .iPadAir4, .iPadAir5,
                 .iPadMini, .iPadMini2, .iPadMini3, .iPadMini4, .iPadMini5, .iPadMini6,
                 .iPadPro(.inch9p7), .iPadPro(.inch12p9),
                 .iPadPro2(.inch10p5), .iPadPro2(.inch12p9),
                 .iPadPro3(.inch11), .iPadPro3(.inch12p9),
                 .iPadPro4(.inch11), .iPadPro4(.inch12p9),
-                .iPadPro5(.inch11), .iPadPro5(.inch12p9)
+                .iPadPro5(.inch11), .iPadPro5(.inch12p9),
+                .iPadPro6(.inch11), .iPadPro6(.inch12p9)
             ]
 		}
 	}
@@ -277,32 +281,38 @@
             case "iPad2,1", "iPad2,2", "iPad2,3", "iPad2,4": return .pad(.iPad2)
             case "iPad3,1", "iPad3,2", "iPad3,3": return .pad(.iPad3)
             case "iPad3,4", "iPad3,5", "iPad3,6": return .pad(.iPad4)
+            case "iPad6,11", "iPad6,12": return .pad(.iPad5)
+            case "iPad7,5", "iPad7,6": return .pad(.iPad6)
+            case "iPad7,11", "iPad7,12": return .pad(.iPad7)
+            case "iPad11,6", "iPad11,7": return .pad(.iPad8)
+            case "iPad12,1", "iPad12,2": return .pad(.iPad9)
+            case "iPad13,18", "iPad13,19": return .pad(.iPad10)
+            
             case "iPad4,1", "iPad4,2", "iPad4,3": return .pad(.iPadAir)
             case "iPad5,3", "iPad5,4": return .pad(.iPadAir2)
+            case "iPad11,3", "iPad11,4": return .pad(.iPadAir3)
+            case "iPad13,1", "iPad13,2": return .pad(.iPadAir4)
+            case "iPad13,16", "iPad13,17": return .pad(.iPadAir5)
+            
             case "iPad2,5", "iPad2,6", "iPad2,7": return .pad(.iPadMini)
             case "iPad4,4", "iPad4,5", "iPad4,6": return .pad(.iPadMini2)
             case "iPad4,7", "iPad4,8", "iPad4,9": return .pad(.iPadMini3)
             case "iPad5,1", "iPad5,2": return .pad(.iPadMini4)
+            case "iPad11,1", "iPad11,2": return .pad(.iPadMini5)
+            case "iPad14,1", "iPad14,2": return .pad(.iPadMini6)
+            
             case "iPad6,3", "iPad6,4": return .pad(.iPadPro(.inch9p7))
 			case "iPad6,7", "iPad6,8": return .pad(.iPadPro(.inch12p9))
-            case "iPad6,11", "iPad6,12": return .pad(.iPad5)
+            case "iPad7,3", "iPad7,4": return .pad(.iPadPro2(.inch10p5))
             case "iPad7,1", "iPad7,2": return .pad(.iPadPro2(.inch12p9))
-			case "iPad7,3", "iPad7,4": return .pad(.iPadPro2(.inch10p5))
-            case "iPad7,5", "iPad7,6": return .pad(.iPad6)
-            case "iPad7,11", "iPad7,12": return .pad(.iPad7)
             case "iPad8,1", "iPad8,2", "iPad8,3", "iPad8,4": return .pad(.iPadPro3(.inch11))
             case "iPad8,5", "iPad8,6", "iPad8,7", "iPad8,8": return .pad(.iPadPro3(.inch12p9))
             case "iPad8,9", "iPad8,10": return .pad(.iPadPro4(.inch11))
             case "iPad8,11", "iPad8,12": return .pad(.iPadPro4(.inch12p9))
-            case "iPad11,1", "iPad11,2": return .pad(.iPadMini5)
-            case "iPad11,3", "iPad11,4": return .pad(.iPadAir3)
-            case "iPad11,6", "iPad11,7": return .pad(.iPad8)
-            case "iPad12,1", "iPad12,2": return .pad(.iPad9)
-            case "iPad13,1", "iPad13,2": return .pad(.iPadAir4)
-            case "iPad13,4", "iPad13,5", "iPad13,6", "iPad13,7": return .pad(.iPadPro3(.inch11))
+            case "iPad13,4", "iPad13,5", "iPad13,6", "iPad13,7": return .pad(.iPadPro5(.inch11))
             case "iPad13,8", "iPad13,9", "iPad13,10", "iPad13,11": return .pad(.iPadPro5(.inch12p9))
-            case "iPad13,16", "iPad13,17": return .pad(.iPadAir5)
-            case "iPad14,1", "iPad14,2": return .pad(.iPadMini6)
+            case "iPad14,3-A", "iPad14,3-B", "iPad14,4-A", "iPad14,4-B": return .pad(.iPadPro6(.inch11))
+            case "iPad14,5-A", "iPad14,5-B", "iPad14,6-A", "iPad14,6-B": return .pad(.iPadPro6(.inch12p9))
             
             case "iPod1,1": return .pod(.touch1g)
             case "iPod2,1": return .pod(.touch2g)
