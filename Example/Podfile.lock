@@ -1,5 +1,5 @@
 PODS:
-  - TinySwift (2.7.0)
+  - TinySwift (2.7.1)
 
 DEPENDENCIES:
   - TinySwift (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  TinySwift: 3bf3f5e9c9886d1165416a34600f83598c43f1bb
+  TinySwift: e819a57c597fa4d1d5ff85efe03a70a0f6ac15b5
 
 PODFILE CHECKSUM: f3f643ea4082379c15036b889944a48f2554af05
 
