@@ -106,6 +106,14 @@
         case iPhone14Pro
         /// The iPhone 14 Pro Max.
         case iPhone14ProMax
+        /// The iPhone 15.
+        case iPhone15
+        /// The iPhone 15 Plus.
+        case iPhone15Plus
+        /// The iPhone 15 Pro.
+        case iPhone15Pro
+        /// The iPhone 15 Pro Max.
+        case iPhone15ProMax
     }
     
     /// The iPad device type representation.
@@ -198,6 +206,8 @@
         case tv4k
         /// The second generation of Apple TV 4K.
         case tv4k2
+        /// The third generation of Apple TV 4K.
+        case tv4k3
     }
 
     #if swift(>=4.2)
@@ -276,6 +286,10 @@
             case "iPhone14,8": return .phone(.iPhone14Plus)
             case "iPhone15,2": return .phone(.iPhone14Pro)
             case "iPhone15,3": return .phone(.iPhone14ProMax)
+            case "iPhone15,4": return .phone(.iPhone15)
+            case "iPhone15,5": return .phone(.iPhone15Plus)
+            case "iPhone16,1": return .phone(.iPhone15Pro)
+            case "iPhone16,2": return .phone(.iPhone15ProMax)
             
             case "iPad1,1": return .pad(.iPad1)
             case "iPad2,1", "iPad2,2", "iPad2,3", "iPad2,4": return .pad(.iPad2)
@@ -311,8 +325,8 @@
             case "iPad8,11", "iPad8,12": return .pad(.iPadPro4(.inch12p9))
             case "iPad13,4", "iPad13,5", "iPad13,6", "iPad13,7": return .pad(.iPadPro5(.inch11))
             case "iPad13,8", "iPad13,9", "iPad13,10", "iPad13,11": return .pad(.iPadPro5(.inch12p9))
-            case "iPad14,3-A", "iPad14,3-B", "iPad14,4-A", "iPad14,4-B": return .pad(.iPadPro6(.inch11))
-            case "iPad14,5-A", "iPad14,5-B", "iPad14,6-A", "iPad14,6-B": return .pad(.iPadPro6(.inch12p9))
+            case "iPad14,3", "iPad14,4": return .pad(.iPadPro6(.inch11))
+            case "iPad14,5", "iPad14,6": return .pad(.iPadPro6(.inch12p9))
             
             case "iPod1,1": return .pod(.touch1g)
             case "iPod2,1": return .pod(.touch2g)
@@ -325,6 +339,7 @@
             case "AppleTV5,3": return .tv(.tv4g)
             case "AppleTV6,2": return .tv(.tv4k)
             case "AppleTV11,1": return .tv(.tv4k2)
+            case "AppleTV14,1": return .tv(.tv4k3)
             
             case "i386", "x86_64", "arm64": return .simulator
             
