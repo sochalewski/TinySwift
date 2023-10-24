@@ -16,7 +16,7 @@ jobs:
     - name: Install pod
       run: cd Example ; pod install ; cd ..
     - name: Test
-      run: xcodebuild test -workspace 'Example/TinySwift.xcworkspace' -scheme 'TinySwift-Example' -destination 'platform=iOS Simulator,name=iPhone 8'
+      run: xcodebuild test -workspace 'Example/TinySwift.xcworkspace' -scheme 'TinySwift-Example' -destination 'platform=iOS Simulator,name=iPhone 15 Pro'
     - name: Validate
       run: pod lib lint --allow-warnings
     - name: Upload coverage to Codecov
