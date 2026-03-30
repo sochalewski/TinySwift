@@ -7,6 +7,7 @@
 //
 
 #if !os(watchOS)
+    import UIKit
     import AVFoundation
 
     public extension AVAsset {

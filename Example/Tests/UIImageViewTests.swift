@@ -11,8 +11,14 @@ import XCTest
 import TinySwift
 
 class UIImageViewTests: XCTestCase {
+
+    #if SWIFT_PACKAGE
+    private let resourceBundle = Bundle.module
+    #else
+    private let resourceBundle = Bundle(for: UIImageViewTests.self)
+    #endif
     
-    private let image = UIImage(named: "land.jpg", in: Bundle(for: UIImageViewTests.self), compatibleWith: nil)
+    private lazy var image = UIImage(named: "land.jpg", in: resourceBundle, compatibleWith: nil)
     private let url = URL(string: "https://httpbin.org/image/jpeg")!
     
     func testImageFromURL() {
