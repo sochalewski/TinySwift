@@ -12,12 +12,24 @@ iOS 12+, tvOS 12+, watchOS 4+
 
 ## Installation
 
+### CocoaPods
+
 TinySwift is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
 pod "TinySwift"
 ```
+
+### Swift Package Manager
+
+Add TinySwift to your `Package.swift` dependencies:
+
+```swift
+.package(url: "https://github.com/sochalewski/TinySwift.git", from: "2.9.0")
+```
+
+Then add `"TinySwift"` to your target dependencies.
 
 ## Usage
 
