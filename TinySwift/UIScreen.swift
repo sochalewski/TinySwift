@@ -28,10 +28,14 @@ import UIKit
         case inch5p8
 		/// The 6.1" screen size.
 		case inch6p1
+        /// The 6.3" screen size.
+        case inch6p3
 		/// The 6.5" screen size.
 		case inch6p5
         /// The 6.7" screen size.
         case inch6p7
+        /// The 6.9" screen size.
+        case inch6p9
         /// The 7.9" screen size.
         case inch7p9
         /// The 8.3" screen size.
@@ -48,6 +52,8 @@ import UIKit
         case inch11
         /// The 12.9" screen size.
         case inch12p9
+        /// The 13.0" screen size.
+        case inch13
     }
 
     public func <(lhs: ScreenSize, rhs: ScreenSize) -> Bool { return lhs.rawValue < rhs.rawValue }
@@ -75,14 +81,17 @@ import UIKit
                     return .inch5p8
                 }
             case 844, 852: return .inch6p1
-			case 896:
+            case 874: return .inch6p3
+            case 896:
                 switch UIDevice.current.device {
                 case .phone(.iPhoneXSMax), .phone(.iPhone11ProMax):
                     return .inch6p5
                 default:
                     return .inch6p1
                 }
+            case 912: return .inch6p5
             case 926, 932: return .inch6p7
+            case 956: return .inch6p9
             case 1024:
                 switch UIDevice.current.device {
                 case .pad(.iPadMini), .pad(.iPadMini2), .pad(.iPadMini3), .pad(.iPadMini4), .pad(.iPadMini5):
@@ -95,9 +104,21 @@ import UIKit
             case 1080: return .inch10p2
             case 1112: return .inch10p5
             case 1133: return .inch8p3
-            case 1180: return .inch10p9
-            case 1194: return .inch11
-            case 1366: return .inch12p9
+            case 1180:
+                switch UIDevice.current.device {
+                case .pad(.iPadAir6(.inch11)), .pad(.iPadAir7(.inch11)), .pad(.iPadAir8(.inch11)):
+                    return .inch11
+                default:
+                    return .inch10p9
+                }
+            case 1194, 1210: return .inch11
+            case 1366:
+                switch UIDevice.current.device {
+                case .pad(.iPadAir6(.inch13)), .pad(.iPadAir7(.inch13)), .pad(.iPadAir8(.inch13)), .pad(.iPadPro7(.inch13)):
+                    return .inch13
+                default:
+                    return .inch12p9
+                }
             default: return .unknown
             }
         }

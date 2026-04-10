@@ -114,6 +114,26 @@
         case iPhone15Pro
         /// The iPhone 15 Pro Max.
         case iPhone15ProMax
+        /// The iPhone 16e.
+        case iPhone16e
+        /// The iPhone 16.
+        case iPhone16
+        /// The iPhone 16 Plus.
+        case iPhone16Plus
+        /// The iPhone 16 Pro.
+        case iPhone16Pro
+        /// The iPhone 16 Pro Max.
+        case iPhone16ProMax
+        /// The iPhone 17.
+        case iPhone17
+        /// The iPhone 17 Pro.
+        case iPhone17Pro
+        /// The iPhone 17 Pro Max.
+        case iPhone17ProMax
+        /// The iPhone Air.
+        case iPhoneAir
+        /// The iPhone 17e.
+        case iPhone17e
     }
     
     /// The iPad device type representation.
@@ -140,6 +160,8 @@
         case iPad9
         /// The iPad 10.
         case iPad10
+        /// The iPad 11.
+        case iPad11
         /// The first iPad Air.
         case iPadAir
         /// The iPad Air 2.
@@ -150,6 +172,12 @@
         case iPadAir4
         /// The iPad Air 5.
         case iPadAir5
+        /// The iPad Air 6.
+        case iPadAir6(ScreenSize)
+        /// The iPad Air 7.
+        case iPadAir7(ScreenSize)
+        /// The iPad Air 8.
+        case iPadAir8(ScreenSize)
         /// The first iPad mini.
         case iPadMini
         /// The iPad mini 2.
@@ -162,6 +190,8 @@
         case iPadMini5
         /// The iPad mini 6.
         case iPadMini6
+        /// The iPad mini 7.
+        case iPadMini7
         /// The iPad Pro.
         case iPadPro(ScreenSize)
         /// The iPad Pro 2.
@@ -174,6 +204,8 @@
         case iPadPro5(ScreenSize)
         /// The iPad Pro 6.
         case iPadPro6(ScreenSize)
+        /// The iPad Pro 7.
+        case iPadPro7(ScreenSize)
     }
 
     /// The iPod touch device type representation.
@@ -216,15 +248,16 @@
 		public static var allCases: [PadModel] {
 			return [
                 .unknown,
-                .iPad1, .iPad2, .iPad3, .iPad4, .iPad5, .iPad6, .iPad7, .iPad8, .iPad9, .iPad10,
-                .iPadAir, .iPadAir2, .iPadAir3, .iPadAir4, .iPadAir5,
-                .iPadMini, .iPadMini2, .iPadMini3, .iPadMini4, .iPadMini5, .iPadMini6,
+                .iPad1, .iPad2, .iPad3, .iPad4, .iPad5, .iPad6, .iPad7, .iPad8, .iPad9, .iPad10, .iPad11,
+                .iPadAir, .iPadAir2, .iPadAir3, .iPadAir4, .iPadAir5, .iPadAir6(.inch11), .iPadAir6(.inch13), .iPadAir7(.inch11), .iPadAir7(.inch13), .iPadAir8(.inch11), .iPadAir8(.inch13),
+                .iPadMini, .iPadMini2, .iPadMini3, .iPadMini4, .iPadMini5, .iPadMini6, .iPadMini7,
                 .iPadPro(.inch9p7), .iPadPro(.inch12p9),
                 .iPadPro2(.inch10p5), .iPadPro2(.inch12p9),
                 .iPadPro3(.inch11), .iPadPro3(.inch12p9),
                 .iPadPro4(.inch11), .iPadPro4(.inch12p9),
                 .iPadPro5(.inch11), .iPadPro5(.inch12p9),
-                .iPadPro6(.inch11), .iPadPro6(.inch12p9)
+                .iPadPro6(.inch11), .iPadPro6(.inch12p9),
+                .iPadPro7(.inch11), .iPadPro7(.inch13)
             ]
 		}
 	}
@@ -290,6 +323,16 @@
             case "iPhone15,5": return .phone(.iPhone15Plus)
             case "iPhone16,1": return .phone(.iPhone15Pro)
             case "iPhone16,2": return .phone(.iPhone15ProMax)
+            case "iPhone17,1": return .phone(.iPhone16Pro)
+            case "iPhone17,2": return .phone(.iPhone16ProMax)
+            case "iPhone17,3": return .phone(.iPhone16)
+            case "iPhone17,4": return .phone(.iPhone16Plus)
+            case "iPhone17,5": return .phone(.iPhone16e)
+            case "iPhone18,1": return .phone(.iPhone17Pro)
+            case "iPhone18,2": return .phone(.iPhone17ProMax)
+            case "iPhone18,3": return .phone(.iPhone17)
+            case "iPhone18,4": return .phone(.iPhoneAir)
+            case "iPhone18,5": return .phone(.iPhone17e)
             
             case "iPad1,1": return .pad(.iPad1)
             case "iPad2,1", "iPad2,2", "iPad2,3", "iPad2,4": return .pad(.iPad2)
@@ -301,12 +344,19 @@
             case "iPad11,6", "iPad11,7": return .pad(.iPad8)
             case "iPad12,1", "iPad12,2": return .pad(.iPad9)
             case "iPad13,18", "iPad13,19": return .pad(.iPad10)
+            case "iPad15,7", "iPad15,8": return .pad(.iPad11)
             
             case "iPad4,1", "iPad4,2", "iPad4,3": return .pad(.iPadAir)
             case "iPad5,3", "iPad5,4": return .pad(.iPadAir2)
             case "iPad11,3", "iPad11,4": return .pad(.iPadAir3)
             case "iPad13,1", "iPad13,2": return .pad(.iPadAir4)
             case "iPad13,16", "iPad13,17": return .pad(.iPadAir5)
+            case "iPad14,8", "iPad14,9": return .pad(.iPadAir6(.inch11))
+            case "iPad14,10", "iPad14,11": return .pad(.iPadAir6(.inch13))
+            case "iPad15,3", "iPad15,4": return .pad(.iPadAir7(.inch11))
+            case "iPad15,5", "iPad15,6": return .pad(.iPadAir7(.inch13))
+            case "iPad16,8", "iPad16,9": return .pad(.iPadAir8(.inch11))
+            case "iPad16,10", "iPad16,11": return .pad(.iPadAir8(.inch13))
             
             case "iPad2,5", "iPad2,6", "iPad2,7": return .pad(.iPadMini)
             case "iPad4,4", "iPad4,5", "iPad4,6": return .pad(.iPadMini2)
@@ -314,6 +364,7 @@
             case "iPad5,1", "iPad5,2": return .pad(.iPadMini4)
             case "iPad11,1", "iPad11,2": return .pad(.iPadMini5)
             case "iPad14,1", "iPad14,2": return .pad(.iPadMini6)
+            case "iPad16,1", "iPad16,2": return .pad(.iPadMini7)
             
             case "iPad6,3", "iPad6,4": return .pad(.iPadPro(.inch9p7))
 			case "iPad6,7", "iPad6,8": return .pad(.iPadPro(.inch12p9))
@@ -327,6 +378,8 @@
             case "iPad13,8", "iPad13,9", "iPad13,10", "iPad13,11": return .pad(.iPadPro5(.inch12p9))
             case "iPad14,3", "iPad14,4": return .pad(.iPadPro6(.inch11))
             case "iPad14,5", "iPad14,6": return .pad(.iPadPro6(.inch12p9))
+            case "iPad16,3", "iPad16,4": return .pad(.iPadPro7(.inch11))
+            case "iPad16,5", "iPad16,6": return .pad(.iPadPro7(.inch13))
             
             case "iPod1,1": return .pod(.touch1g)
             case "iPod2,1": return .pod(.touch2g)
